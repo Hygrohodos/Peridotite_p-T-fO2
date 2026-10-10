@@ -11,7 +11,10 @@ Workflow (``python scripts/fit_calibration.py`` runs all of it):
 2. Uncorrected estimates at ΔT = ``emp_fit_dt_c`` (25 °C; Fig. 5b).
 3. Error groups at that ΔT (Fig. 5b):
      blue  measured − estimated > ``emp_blue_threshold`` (0.05)
-     red   sample IDs in ``emp_red_ids`` (estimated > measured by > 0.05)
+     red   sample IDs in ``emp_red_ids``: the samples at T > 1250 °C with
+           estimated > measured by > 0.05 (21-6, +0.054 at 1136 °C, meets
+           the 0.05 criterion but lies on the high-T trend and is kept in
+           the regression set)
 4. Regression samples = calibration set minus blue and red, with
    T_TA98 ≥ ``t_emp_min_c`` (1130 °C).  These are the samples inside the
    dashed envelope of Fig. 5b.

@@ -1090,8 +1090,10 @@ def fig06_dt_sweep(df):
     ax2.set_ylabel("Success rate (%)")
     h1, l1 = ax1.get_legend_handles_labels()
     h2, l2 = ax2.get_legend_handles_labels()
-    ax1.legend(h1 + h2, l1 + l2, frameon=True, facecolor="white", edgecolor="0.55",
-               framealpha=0.92, fontsize=7, loc="center right")
+    # Drawn on ax2 (the top axes) so no curve is drawn over it; lower left
+    # is clear of all three curves.
+    ax2.legend(h1 + h2, l1 + l2, frameon=True, facecolor="white", edgecolor="0.55",
+               framealpha=0.92, fontsize=7, loc="lower left")
     ax1.tick_params(direction="in")
     ax2.tick_params(direction="in")
     _save(fig, "Fig06_dt_match_calibration")
