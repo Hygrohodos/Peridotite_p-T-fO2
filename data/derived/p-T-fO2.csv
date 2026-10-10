@@ -1,1172 +1,1172 @@
-﻿SampleID,Location,Craton,Lithology,Reference,P_CA91,T_TA98,Screen_pass,XGtFe3+_iter,XGtFe3+_corr,logfO2(ΔFMQ)
- 22-4,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,37.2,794.0,False,0.032,0.032,-2.84
- 25-4,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,48.0,983.0,False,0.21,0.21,-0.48
- 26-11,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,43.0,923.0,False,0.156,0.156,-0.58
- 4-2,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,49.4,925.0,False,0.089,0.089,-2.21
-41-4,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,26.0,623.0,False,0.01,0.01,-3.29
-40-7,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,43.3,935.0,False,0.201,0.201,-0.17
- 22-5,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,40.8,868.0,False,0.09,0.09,-1.03
- 26-3,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,37.0,797.0,False,0.084,0.084,-1.08
- 9-2,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,32.2,749.0,False,0.058,0.058,-1.11
- 22-1,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,24.4,661.0,False,0.01,0.01,-3.19
- 21-1,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,32.3,791.0,False,0.041,0.041,-1.9
- 5-3,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,38.7,858.0,False,0.075,0.075,-1.49
- 25-9,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,33.3,759.0,False,0.01,0.01,-4.38
- 4-3,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,39.5,860.0,False,0.058,0.058,-2.04
-14-77,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,36.7,807.0,False,0.01,0.01,-4.73
-21-Jun,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,59.9,1136.0,True,0.113,0.079,-2.99
- 21-4,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,52.7,1021.0,True,0.067,0.067,-2.83
-14-107,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,48.5,995.0,True,0.062,0.062,-2.76
-40-11,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,51.9,1048.0,True,0.051,0.051,-3.36
- 21-2,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,56.7,1291.0,False,0.164,0.188,-1.48
- 22-7,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,55.9,1115.0,True,0.083,0.083,-2.75
-14-78,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,58.0,1242.0,False,0.149,0.154,-1.86
- 8-1,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,54.4,1223.0,False,0.142,0.14,-1.81
-40-9,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,57.6,1260.0,False,0.156,0.168,-1.71
-41-1,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,54.9,1213.0,True,0.136,0.131,-1.95
- 23-5,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,56.7,1210.0,True,0.131,0.124,-2.08
-40-21,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,53.6,1209.0,True,0.115,0.108,-2.23
-40-36,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,56.0,1214.0,True,0.13,0.125,-2.13
-40-38,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,55.0,1268.0,False,0.172,0.187,-1.47
-40-5,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,55.4,1264.0,False,0.15,0.164,-1.61
-21-Mar,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,50.2,1028.0,False,0.09,0.09,-2.09
- 26-12,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,62.3,1186.0,True,0.134,0.119,-2.58
-14-105,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,56.1,1129.0,False,,,
-14-124,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,57.8,1161.0,True,0.134,0.109,-2.5
- 9-10,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,55.6,1135.0,True,0.126,0.091,-2.63
-41-3,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,57.5,1214.0,True,0.106,0.101,-2.47
-JD 82 Mx3,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 2009,56.1,1212.0,False,0.136,0.13,-1.83
-JD 14 Mx99,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 2009,71.2,1377.0,False,0.21,0.266,-1.49
-JGG-002,Jericho,Slave Craton,Pyroxenite/megacryst,Veglio et al. 2022,56.6,1142.0,True,0.087,0.055,-3.53
-Musk-11,Muskox,Slave Craton,Peridotite,Veglio et al. 2022,62.7,1228.0,True,0.125,0.125,-2.45
-Musk-17,Muskox,Slave Craton,Peridotite,Veglio et al. 2022,45.8,979.0,True,0.01,0.01,-5.73
-Musk-02,Muskox,Slave Craton,Pyroxenite/megacryst,Veglio et al. 2022,53.4,1115.0,True,0.084,0.084,-2.69
-Musk-24,Muskox,Slave Craton,Pyroxenite/megacryst,Veglio et al. 2022,54.9,1119.0,True,0.13,0.13,-1.93
-VYG-394,Voyageur,Slave Craton,Peridotite,Veglio et al. 2022,36.0,763.0,False,0.01,0.01,-4.45
-VYG-402,Voyageur,Slave Craton,Peridotite,Veglio et al. 2022,31.7,702.0,False,0.01,0.01,-3.98
-VYG-347,Voyageur,Slave Craton,Pyroxenite/megacryst,Veglio et al. 2022,56.3,1143.0,False,0.01,0.0,
-vr09356,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr09358,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr09359,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,62.5,1214.0,True,0.115,0.11,-2.75
-vr09361,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,55.1,1188.0,False,0.144,0.129,-1.98
-vr09364,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr09366a,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr09371,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr09372a,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr19674 pg3,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,40.2,772.0,False,0.01,0.01,-5.01
-vr40332,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,58.5,1184.0,True,0.032,0.016,-5.68
-vr40358,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr40391,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr50851,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr50855,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,False,,,
-vr50861,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,45.3,862.0,False,0.01,0.01,-5.59
-vr50875,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,49.8,1056.0,True,0.015,0.015,-5.39
-vr50886,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,56.3,1210.0,True,0.054,0.048,-3.8
-vr50914,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,56.8,1201.0,True,0.062,0.052,-3.68
-JJG 5049-29,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-30,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-31,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-32,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-33,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-34,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-35,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-36,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-37,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-38,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-39,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-40,Arnie,Slave Craton,,Menzies et al. 2004,52.7,1167.0,True,0.084,0.061,-3.18
-JJG 5049-41,Arnie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5049-43,Arnie,Slave Craton,,Menzies et al. 2004,48.9,986.0,True,0.042,0.042,-3.46
-JJG 5049-44,Arnie,Slave Craton,,Menzies et al. 2004,61.5,1210.0,False,0.062,0.055,-3.73
-JJG 5055-1,Grizzly,Slave Craton,,Menzies et al. 2004,19.7,554.0,False,,,
-JJG 5055-10,Grizzly,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5055-11,Grizzly,Slave Craton,,Menzies et al. 2004,58.2,1235.0,True,0.109,0.112,-2.43
-JJG 5055-6,Grizzly,Slave Craton,,Menzies et al. 2004,40.3,847.0,False,,,
-JJG 5055-9,Grizzly,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-16,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-17,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-19,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-20,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-21,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-22,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-23,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-25,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-26,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-27,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-28,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-31,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-32,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-47,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-49,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-50,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-51,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5054-52,Leslie,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5048-30,Mark,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5048-32,Mark,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5048-33,Mark,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5048-35,Mark,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5048-36,Mark,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5948-48,Mark,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-1,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-10,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-100,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-101,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-102,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-103,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-105,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-106,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-107,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-108,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-109,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-11,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-110,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-111,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-112,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-113,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-114,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-115,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-116,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-117,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-118,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-119,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-12,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-120,Panda,Slave Craton,,Menzies et al. 2004,80.0,1497.0,False,0.21,0.31,-1.32
-JJG 5050-121,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-13,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-14,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-15,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-16,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-17,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-18,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-19,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-2,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-20,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-21,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-22,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-23,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-24,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-25,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-26,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-27,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-28,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-29,Panda,Slave Craton,,Menzies et al. 2004,46.2,994.0,True,0.026,0.026,-4.1
-JJG 5050-3,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-30,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-31,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-32,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-33,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-34,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-35,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-36,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-37,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-38,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-39,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-4,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-40,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-41,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-42,Panda,Slave Craton,,Menzies et al. 2004,64.8,1107.0,False,,,
-JJG 5050-43,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-44,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-45,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-46,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-47,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-48,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-49,Panda,Slave Craton,,Menzies et al. 2004,69.2,1082.0,True,0.118,0.118,-3.45
-JJG 5050-5,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-50,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-51,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-52,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-53,Panda,Slave Craton,,Menzies et al. 2004,13.7,684.0,False,,,
-JJG 5050-54,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-56,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-57,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-59,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-6,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-60,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-61,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-62,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-63,Panda,Slave Craton,,Menzies et al. 2004,49.6,1105.0,False,0.066,0.066,-3.08
-JJG 5050-64,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-66,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-67,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-68,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-69,Panda,Slave Craton,,Menzies et al. 2004,64.1,1068.0,False,0.163,0.163,-2.8
-JJG 5050-7,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-70,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-71,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-72,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-73,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-74,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-75,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-76,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-79,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-8,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-80,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-81,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-82,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-83,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-84,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-85,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-86,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-87,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-88,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-9,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-90,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-91,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-92,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-93,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-95,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-96,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-97,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-98,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5050-99,Panda,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-25,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-26,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-27,Pigeon,Slave Craton,,Menzies et al. 2004,58.8,1191.0,True,0.055,0.041,-4.24
-JJG 5047-28,Pigeon,Slave Craton,,Menzies et al. 2004,61.6,1208.0,False,,,
-JJG 5047-29,Pigeon,Slave Craton,,Menzies et al. 2004,56.5,1166.0,False,,,
-JJG 5047-30,Pigeon,Slave Craton,,Menzies et al. 2004,41.7,852.0,False,,,
-JJG 5047-31,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-32,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-33,Pigeon,Slave Craton,,Menzies et al. 2004,63.0,1217.0,False,,,
-JJG 5047-34,Pigeon,Slave Craton,,Menzies et al. 2004,56.6,1101.0,False,0.02,0.02,-5.28
-JJG 5047-35,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-36,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-37,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-38,Pigeon,Slave Craton,,Menzies et al. 2004,52.2,1027.0,True,0.05,0.05,-3.52
-JJG 5047-39,Pigeon,Slave Craton,,Menzies et al. 2004,43.8,866.0,False,,,
-JJG 5047-40,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-41,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-42,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-43,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-44,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-45,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-46,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-47,Pigeon,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5047-48,Pigeon,Slave Craton,,Menzies et al. 2004,60.8,1237.0,True,0.062,0.066,-3.47
-JJG 5047-49,Pigeon,Slave Craton,,Menzies et al. 2004,61.0,1250.0,False,,,
-JJG 5047-50,Pigeon,Slave Craton,,Menzies et al. 2004,61.9,1253.0,False,,,
-JJG 5047-51,Pigeon,Slave Craton,,Menzies et al. 2004,58.8,1233.0,True,0.142,0.144,-2.05
-JJG 5051-1,Sable,Slave Craton,,Menzies et al. 2004,46.6,873.0,False,0.012,0.012,-5.44
-JJG 5051-10,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-11,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-12,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-13,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-14,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-15,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-16,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-17,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-18,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-19,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-2,Sable,Slave Craton,,Menzies et al. 2004,43.7,883.0,False,,,
-JJG 5051-20,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-21,Sable,Slave Craton,,Menzies et al. 2004,50.3,1019.0,False,,,
-JJG 5051-22,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-23,Sable,Slave Craton,,Menzies et al. 2004,50.1,1007.0,False,,,
-JJG 5051-24,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-25,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-26,Sable,Slave Craton,,Menzies et al. 2004,33.0,732.0,False,,,
-JJG 5051-27,Sable,Slave Craton,,Menzies et al. 2004,31.4,698.0,False,,,
-JJG 5051-28,Sable,Slave Craton,,Menzies et al. 2004,38.3,806.0,False,,,
-JJG 5051-29,Sable,Slave Craton,,Menzies et al. 2004,60.8,1308.0,False,,,
-JJG 5051-3,Sable,Slave Craton,,Menzies et al. 2004,48.1,905.0,False,,,
-JJG 5051-30,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-31,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-32,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-33,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-34,Sable,Slave Craton,,Menzies et al. 2004,,,False,,,
-JJG 5051-4,Sable,Slave Craton,,Menzies et al. 2004,45.0,876.0,False,,,
-JJG 5051-5,Sable,Slave Craton,,Menzies et al. 2004,46.1,902.0,False,,,
-JJG 5051-6,Sable,Slave Craton,,Menzies et al. 2004,46.2,863.0,False,0.012,0.012,-5.42
-JJG 5051-7,Sable,Slave Craton,,Menzies et al. 2004,44.9,856.0,False,,,
-JJG 5051-8,Sable,Slave Craton,,Menzies et al. 2004,47.3,883.0,False,,,
-JJG 5051-9,Sable,Slave Craton,,Menzies et al. 2004,46.0,863.0,False,0.027,0.027,-3.93
-vr51067,A154N/S A418 A841,Slave Craton,Sp lherz,Aulbach et al. 2007,,,False,,,
-yk1923,A154N/S A418 A841,Slave Craton,Sp-gt lherzolite,Aulbach et al. 2007,15.0,566.0,False,0.01,0.01,-1.45
-vr50904,A154N/S A418 A841,Slave Craton,Gt harzburgite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),,,False,,,
-vr50867,A154N/S A418 A841,Slave Craton,Gt harzburgite,Pearson et al. unpublished data (in Aulbach et al. 2007),,,False,,,
-vr43461,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,False,,,
-vr43466,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,False,,,
-vr43467,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.4,1200.0,True,0.11,0.1,-2.56
-vr43499,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,52.3,1035.0,True,0.031,0.031,-4.23
-vr51902,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.4,1230.0,True,0.08,0.081,-2.83
-vr67106,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,False,,,
-vr67112,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.3,1193.0,True,0.061,0.048,-3.86
-vr67125,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.0,1189.0,True,0.09,0.076,-3.21
-yk1912,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,False,,,
-yk1917,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,53.9,1150.0,True,0.052,0.023,-4.95
-yk1919,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,59.3,1198.0,True,0.053,0.042,-4.07
-yk1919 rim,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,False,,,
-yk1920,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,53.9,1175.0,True,0.1,0.08,-2.72
-yk1938,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,False,,,
-yk2471,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,54.8,1169.0,True,0.071,0.049,-3.63
-yk2472,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.8,1188.0,True,0.118,0.103,-2.49
-yk2474,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,49.3,1059.0,True,0.043,0.043,-3.51
-vr09370,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),49.4,1023.0,True,0.068,0.068,-2.59
-vr50879,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),54.1,1198.0,True,0.093,0.082,-2.7
-vr50882,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),,,False,,,
-vr50885,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),,,False,,,
-vr50933,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),,,False,,,
-vr40304,A154N/S A418 A841,Slave Craton,Gt lherzolite,Pearson et al. unpublished data (in Aulbach et al. 2007),59.6,1205.0,True,0.093,0.085,-2.94
-vr40335,A154N/S A418 A841,Slave Craton,Gt lherzolite,Pearson et al. unpublished data (in Aulbach et al. 2007),54.2,1028.0,False,0.01,0.01,-6.25
-vr19674 pg2,A154N/S A418 A841,Slave Craton,Gt lherzolite,Pearson et al. unpublished data (in Aulbach et al. 2007),,,False,,,
-A154-01,A154N/S,Slave Craton,,Creighton et al. 2010,59.7,1174.0,False,0.21,0.19,-1.22
-A154-06,A154N/S,Slave Craton,,Creighton et al. 2010,57.5,1199.0,False,0.157,0.146,-1.93
-A154-09CR,A154N/S,Slave Craton,,Creighton et al. 2010,52.8,1092.0,True,0.083,0.083,-2.49
-A154-10,A154N/S,Slave Craton,,Creighton et al. 2010,,,False,,,
-MX001,A154N/S,Slave Craton,,Creighton et al. 2010,59.3,1267.0,True,0.127,0.142,-1.97
-MX029,A154N/S,Slave Craton,,Creighton et al. 2010,59.6,1190.0,False,0.21,0.196,-1.3
-MX031,A154N/S,Slave Craton,,Creighton et al. 2010,,,False,,,
-MX032,A154N/S,Slave Craton,,Creighton et al. 2010,61.2,1241.0,False,0.177,0.182,-1.67
-MX044,A154N/S,Slave Craton,,Creighton et al. 2010,65.4,1323.0,True,0.139,0.175,-1.91
-MX088,A154N/S,Slave Craton,,Creighton et al. 2010,57.7,1173.0,True,0.11,0.09,-2.69
-MX104,A154N/S,Slave Craton,,Creighton et al. 2010,63.3,1256.0,True,0.153,0.164,-1.95
-MX118,A154N/S,Slave Craton,,Creighton et al. 2010,,,False,,,
-MX131,A154N/S,Slave Craton,,Creighton et al. 2010,63.1,1259.0,True,0.099,0.111,-2.58
-MX144,A154N/S,Slave Craton,,Creighton et al. 2010,66.3,1250.0,True,0.078,0.086,-3.16
-MX158,A154N/S,Slave Craton,,Creighton et al. 2010,62.8,1180.0,False,0.132,0.114,-2.56
-MX162,A154N/S,Slave Craton,,Creighton et al. 2010,57.8,1199.0,True,0.096,0.085,-2.78
-MX165,A154N/S,Slave Craton,,Creighton et al. 2010,62.4,1245.0,False,0.173,0.18,-1.73
-MX5000,A154N/S,Slave Craton,,Creighton et al. 2010,62.5,1266.0,True,0.121,0.135,-2.26
-MX5001,A154N/S,Slave Craton,,Creighton et al. 2010,61.9,1245.0,True,0.118,0.125,-2.37
-MX5003,A154N/S,Slave Craton,,Creighton et al. 2010,42.7,893.0,False,0.117,0.117,-1.0
-MX5004,A154N/S,Slave Craton,,Creighton et al. 2010,58.0,1214.0,True,0.117,0.112,-2.4
-MX5006,A154N/S,Slave Craton,,Creighton et al. 2010,59.1,1214.0,True,0.128,0.123,-2.26
-MX5007,A154N/S,Slave Craton,,Creighton et al. 2010,,,False,,,
-MX5008,A154N/S,Slave Craton,,Creighton et al. 2010,64.0,1267.0,True,0.132,0.147,-2.15
-MX5009,A154N/S,Slave Craton,,Creighton et al. 2010,60.8,1277.0,True,0.147,0.166,-1.77
-MX5010,A154N/S,Slave Craton,,Creighton et al. 2010,,,False,,,
-MX5011,A154N/S,Slave Craton,,Creighton et al. 2010,59.7,1266.0,True,0.137,0.151,-1.94
-MX5012,A154N/S,Slave Craton,,Creighton et al. 2010,56.6,1201.0,True,0.089,0.079,-2.84
-MX5020,A154N/S,Slave Craton,,Creighton et al. 2010,,,False,,,
-507141455,Diavik,Slave Craton,,Yaxley et al. 2017,58.0,1212.0,True,0.097,0.091,-2.83
-507101450,Diavik,Slave Craton,,Yaxley et al. 2017,53.6,1141.0,True,0.099,0.067,-2.85
-507111505,Diavik,Slave Craton,,Yaxley et al. 2017,58.1,1272.0,False,0.141,0.158,-1.48
-507131422,Diavik,Slave Craton,,Yaxley et al. 2017,62.9,1224.0,False,0.071,0.07,-3.21
-507101448,Diavik,Slave Craton,,Yaxley et al. 2017,19.8,451.0,False,0.01,0.01,-1.37
-605301147,Diavik,Slave Craton,,Yaxley et al. 2017,57.8,1182.0,True,0.06,0.043,-4.0
-605051108,Diavik,Slave Craton,,Yaxley et al. 2017,55.8,1170.0,True,0.09,0.069,-3.01
-507151052,Diavik,Slave Craton,,Yaxley et al. 2017,57.7,1190.0,False,0.103,0.089,-2.56
-60505115,Diavik,Slave Craton,,Yaxley et al. 2017,57.3,1184.0,False,0.107,0.091,-2.29
-507151714,Diavik,Slave Craton,,Yaxley et al. 2017,60.4,1291.0,True,0.08,0.104,-2.74
-507151034,Diavik,Slave Craton,,Yaxley et al. 2017,53.5,1142.0,False,0.065,0.033,-3.96
-87/100,Udachnaya,Siberian Craton,Coarse SGP,Goncharov et al. 2012,45.9,1131.0,False,0.21,0.174,-0.88
-87/59,Udachnaya,Siberian Craton,Coarse GP,Goncharov et al. 2012,41.8,548.0,False,0.01,0.01,-5.06
-Y-17,Udachnaya,Siberian Craton,Coarse GP,Goncharov et al. 2012,28.7,780.0,False,0.01,0.01,-4.08
-87/114,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,53.4,1253.0,False,0.155,0.164,-1.38
-87/70,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,55.0,1234.0,True,0.11,0.112,-2.29
-87/97,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,62.6,1373.0,True,0.02,0.074,-3.6
-Y-1,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,52.7,1244.0,False,0.176,0.182,-1.24
-Y-10,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,51.7,1164.0,True,0.087,0.063,-3.04
-Y-16,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,63.3,1292.0,True,0.059,0.083,-3.2
-Y-19,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,51.7,1201.0,True,0.081,0.071,-2.8
-Y-3,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,59.7,1262.0,False,0.01,0.023,-5.47
-Y-4,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,55.1,1242.0,True,0.121,0.126,-2.01
-Uv-4-05,Udachnaya,Siberian Craton,,Yaxley et al. 2012,62.8,1294.0,True,0.123,0.148,-2.16
-Uv-5-04,Udachnaya,Siberian Craton,,Yaxley et al. 2012,45.9,895.0,False,0.037,0.037,-3.27
-Uv-9-05,Udachnaya,Siberian Craton,,Yaxley et al. 2012,30.3,763.0,False,0.01,0.01,-4.16
-Uv-26-04,Udachnaya,Siberian Craton,,Yaxley et al. 2012,52.8,963.0,True,0.024,0.024,-4.76
-Uv-50-04,Udachnaya,Siberian Craton,,Yaxley et al. 2012,62.4,1299.0,True,0.13,0.157,-1.96
-Uv129-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,59.3,1185.0,False,0.025,0.009,-6.74
-Uv-87-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,62.1,1327.0,True,0.118,0.155,-2.15
-Uv-59-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,60.4,1247.0,False,0.111,0.118,-2.41
-Uv-45-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,37.1,898.0,False,0.065,0.065,-1.79
-Uv-88-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,70.1,1367.0,False,0.14,0.192,-2.16
-Uv130-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,70.7,1259.0,False,0.21,0.222,-1.83
-Uv-101-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,10.3,718.0,False,0.072,0.072,1.6
-Uv-68-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,66.7,1284.0,True,0.045,0.066,-3.72
-Uv-89-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,64.0,1250.0,False,0.078,0.087,-3.46
-Uv-34-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,62.1,1292.0,True,0.118,0.142,-2.15
-Uv-42-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,38.5,945.0,False,0.04,0.04,-2.86
-Uv-37-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,45.7,850.0,False,0.01,0.01,-5.8
-Uv-28-05,Udachnaya,Siberian Craton,,Yaxley et al. 2012,34.6,851.0,False,0.067,0.067,-1.36
-F-1,Finch,Kaapvaal Craton,,Lazarov et al. 2009,57.8,1176.0,True,0.073,0.054,-3.47
-F-3,Finch,Kaapvaal Craton,,Lazarov et al. 2009,52.7,1125.0,True,0.062,0.062,-2.88
-F-5,Finch,Kaapvaal Craton,,Lazarov et al. 2009,54.9,1151.0,True,0.067,0.039,-3.95
-F-6,Finch,Kaapvaal Craton,,Lazarov et al. 2009,55.2,1188.0,True,0.083,0.068,-3.01
-F-8,Finch,Kaapvaal Craton,,Lazarov et al. 2009,56.0,1168.0,True,0.074,0.052,-3.46
-F-11,Finch,Kaapvaal Craton,,Lazarov et al. 2009,55.0,1189.0,True,0.098,0.084,-2.61
-F-12,Finch,Kaapvaal Craton,,Lazarov et al. 2009,57.2,1135.0,True,0.057,0.022,-4.98
-F-14,Finch,Kaapvaal Craton,,Lazarov et al. 2009,59.8,1210.0,True,0.087,0.08,-3.02
-F-15,Finch,Kaapvaal Craton,,Lazarov et al. 2009,54.9,1165.0,True,0.069,0.046,-3.62
-F-16,Finch,Kaapvaal Craton,,Lazarov et al. 2009,58.3,1181.0,True,0.056,0.039,-4.06
-695,Finch,Kaapvaal Craton,,Lazarov et al. 2009,56.3,1173.0,False,0.043,0.023,-5.25
-Bo-01,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,34.9,861.0,False,0.035,0.035,-2.46
-Bo-05,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,31.9,811.0,False,0.01,0.01,-4.18
-Bo-08,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,47.4,1077.0,True,0.017,0.017,-4.92
-Bo-13,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,53.1,1192.0,False,0.104,0.091,-2.58
-Bo-14,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,32.7,834.0,False,0.038,0.038,-1.96
-Bo-18,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,42.4,1031.0,True,0.065,0.065,-2.11
-Bo-19,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,31.0,819.0,False,0.01,0.01,-4.08
-Bo-26,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,33.6,853.0,False,0.038,0.038,-2.15
-Bo-30,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,48.3,1133.0,False,0.177,0.142,-1.24
-KBD12,Wesselton,Kaapvaal Craton,,Hanger et al. 2015,44.0,1043.0,False,0.01,0.01,-5.29
-CIM15-003,Premier,Kaapvaal Craton,sheared,Tappe et al. 2021,60.2,1329.0,True,0.057,0.095,-2.75
-CIM15-016,Premier,Kaapvaal Craton,sheared,Tappe et al. 2021,66.1,1370.0,True,0.053,0.106,-2.82
-CIM15-021,Premier,Kaapvaal Craton,sheared,Tappe et al. 2021,62.3,1330.0,False,0.046,0.084,-3.04
-CIM15-022,Premier,Kaapvaal Craton,sheared,Tappe et al. 2021,65.4,1348.0,False,0.031,0.076,-3.4
-CIM15-035,Premier,Kaapvaal Craton,,Tappe et al. 2021,47.9,1089.0,True,0.011,0.011,-5.89
-FRB338/10,Somacuanza,,LHZ,Ref113,32.5,1031.0,True,0.042,0.042,-2.39
-FRB338/11,Somacuanza,,LHZ,Ref113,33.1,1051.0,True,0.124,0.124,-0.47
-FRB338/5,Somacuanza,,LHZ,Ref113,32.8,976.0,True,0.018,0.018,-3.87
-FRB338/6,Somacuanza,,LHZ,Ref113,29.4,907.0,True,0.01,0.01,-4.44
-FRB338/2,Somacuanza,,LHZ,Ref113,33.3,976.0,True,0.01,0.01,-4.81
-FRB338/4,Somacuanza,,LHZ,Ref113,27.4,860.0,False,0.01,0.01,-4.19
-FRB338/7,Somacuanza,,LHZ,Ref113,29.7,906.0,True,0.01,0.01,-4.48
-FRB338/8,Somacuanza,,LHZ,Ref113,30.0,958.0,True,0.023,0.023,-3.12
-FRB339/6,Somacuanza,,LHZ,Ref113,32.0,984.0,True,0.01,0.01,-4.78
-U-16,Jetty_Peninsula,,LHZ,Ref507,17.2,1052.0,False,0.01,0.01,-4.1
-U-47,Jetty_Peninsula,,LHZ,Ref507,16.5,981.0,True,0.028,0.028,-1.75
-D-A3,Jetty_Peninsula,,LHZ,Ref507,19.6,1143.0,False,0.01,0.0,
-D-N1,Jetty_Peninsula,,LHZ,Ref507,17.9,1107.0,False,0.079,0.079,-0.35
-D-N4,Jetty_Peninsula,,LHZ,Ref507,21.6,1152.0,True,0.08,0.052,-1.47
-3/01/2003,Jetty_Peninsula,,LHZ,Ref507,18.9,1144.0,False,0.055,0.024,-2.66
-JSL134,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,36.5,850.0,False,0.01,0.01,-5.02
-JSL108,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,59.0,1270.0,False,0.01,0.026,-5.15
-JSL119,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,63.4,1299.0,True,0.039,0.066,-3.68
-JSL126,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,55.4,1209.0,False,0.01,0.003,-8.84
-JSL140,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,63.0,1296.0,False,0.01,0.035,-4.67
-JSL279,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,62.1,1272.0,False,0.016,0.033,-4.92
-JSL280,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,70.3,1409.0,True,0.041,0.109,-3.0
-JSL-/177,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,37.2,863.0,False,0.01,0.01,-5.19
-JSL111,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,34.9,857.0,False,,,
-JSL142,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,46.9,999.0,False,0.01,0.01,-5.93
-JSL151,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,60.4,1160.0,False,,,
-JSL504,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,39.8,889.0,False,0.01,0.01,-5.32
-JSL533,Lethlakane_DK1,Kaapvaal Craton,LHZ_HINA,Ref181,36.1,851.0,False,0.01,0.01,-4.82
-AK1/132,Orapa,Kaapvaal Craton,PRX,Ref217,29.3,774.0,False,,,
-16-Mx2,5034,,LHZ,Ref383,65.9,1114.0,True,0.06,0.06,-3.99
-3-Mx8,5034,,LHZ,Ref383,66.0,1168.0,False,0.126,0.104,-2.88
-38-Mx1,5034,,LHZ,Ref383,59.9,1077.0,True,0.07,0.07,-3.35
-18-Mx1,5034,,LHZ,Ref383,59.5,1067.0,True,0.079,0.079,-3.0
-AMA6,Amayersuk_Somerset_Islnd,Rae Craton,LHZ,Ref116,46.3,1257.0,False,,,
-AMA4,Amayersuk_Somerset_Islnd,Rae Craton,LHZ,Ref116,42.6,1137.0,False,,,
-AMA1,Amayersuk_Somerset_Islnd,Rae Craton,LHZ,Ref116,42.5,1028.0,False,,,
-K11A1-2,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,44.7,1106.0,True,0.077,0.077,-2.12
-K11A5-1,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,41.7,1047.0,True,0.043,0.043,-3.01
-K11A9,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,45.3,1136.0,True,0.061,0.027,-4.05
-K11A15-4,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244+Ref448,42.7,1111.0,True,0.034,0.034,-3.61
-K12A2-4,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,43.0,1155.0,True,0.05,0.023,-4.12
-K12A3-,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,43.0,1150.0,False,0.01,0.0,
-13-35-1,Cross_BC_Canada,,LHZ,Ref295,46.9,1122.0,False,0.034,0.034,-4.08
-HCR-15,Cross_BC_Canada,,LHZ,Ref295,46.4,1115.0,True,0.01,0.01,-6.08
-vr09359a,Diavik,Slave Craton,LHZ,Ref487,64.2,1219.0,True,0.112,0.109,-2.85
-vr09361a,Diavik,Slave Craton,LHZ,Ref388,63.3,1216.0,True,0.122,0.118,-2.6
-vr09370a,Diavik,Slave Craton,LHZ,Ref487,56.4,1041.0,True,0.051,0.051,-3.57
-vr19674per-g3,Diavik,Slave Craton,LHZ,Ref388,41.1,779.0,False,0.01,0.01,-5.09
-vr40304a,Diavik,Slave Craton,LHZ,Ref487,59.8,1209.0,True,0.095,0.088,-2.87
-vr40335a,Diavik,Slave Craton,LHZ,Ref487,54.3,1030.0,False,0.01,0.01,-6.26
-vr40338a,Diavik,Slave Craton,LHZ,Ref388,55.7,1197.0,True,0.105,0.094,-2.5
-vr40341aa,Diavik,Slave Craton,LHZ,Ref388,48.5,1000.0,True,0.01,0.01,-5.92
-vr50875a,Diavik,Slave Craton,LHZ,Ref487,49.8,1056.0,True,0.016,0.016,-5.28
-vr50879a,Diavik,Slave Craton,LHZ,Ref487,59.1,1217.0,True,0.086,0.082,-2.98
-vr50914a,Diavik,Slave Craton,LHZ,Ref388,56.7,1203.0,True,0.098,0.089,-2.72
-vr09384a,Diavik,Slave Craton,PRX,Ref388,43.8,823.0,False,,,
-vr19674per-g1,Diavik,Slave Craton,LHZ,Ref388,52.5,1085.0,False,,,
-vr19674per-g4,Diavik,Slave Craton,LHZ,Ref388,60.4,1206.0,False,,,
-vr40302a,Diavik,Slave Craton,LHZ,Ref388,50.1,1049.0,False,,,
-vr40336a,Diavik,Slave Craton,LHZ,Ref388,57.6,1177.0,False,,,
-vr40336a,Diavik,Slave Craton,LHZ,Ref388,58.7,1180.0,False,,,
-vr40382a,Diavik,Slave Craton,PRX,Ref388,40.1,798.0,False,,,
-vr50899a,Diavik,Slave Craton,LHZ,Ref388,40.4,788.0,False,,,
-vr43467,Diavik,Slave Craton,LHZ,Ref487,57.2,1197.0,True,0.107,0.096,-2.62
-vr43499,Diavik,Slave Craton,LHZ,Ref487,52.3,1036.0,True,0.031,0.031,-4.23
-vr50886,Diavik,Slave Craton,LHZ,Ref487,56.5,1214.0,True,0.058,0.053,-3.63
-vr51902,Diavik,Slave Craton,LHZ,Ref487,57.5,1230.0,True,0.081,0.082,-2.81
-vr67112,Diavik,Slave Craton,LHZ,Ref487,60.8,1206.0,True,0.058,0.05,-3.99
-vr67125,Diavik,Slave Craton,LHZ,Ref487,60.4,1199.0,True,0.082,0.071,-3.51
-yk1917,Diavik,Slave Craton,LHZ,Ref487,53.8,1148.0,True,0.051,0.021,-5.08
-yk1919,Diavik,Slave Craton,LHZ,Ref487,59.2,1197.0,True,0.053,0.042,-4.1
-yk1920,Diavik,Slave Craton,LHZ,Ref487,54.0,1175.0,True,0.101,0.081,-2.69
-yk2471,Diavik,Slave Craton,LHZ,Ref487,55.5,1171.0,True,0.069,0.048,-3.71
-yk2472,Diavik,Slave Craton,LHZ,Ref487,57.7,1186.0,True,0.119,0.104,-2.48
-yk2474,Diavik,Slave Craton,LHZ,Ref487,51.5,1069.0,True,0.04,0.04,-3.78
-VR67103A,Diavik,Slave Craton,LHZ,Ref494,59.3,1228.0,False,,,
-vr19673ecl-g1,Diavik,Slave Craton,PRX,Ref497,47.3,869.0,False,,,
-vr19674ecl-g1,Diavik,Slave Craton,PRX,Ref497,60.5,1103.0,False,,,
-vr19674ecl-g2,Diavik,Slave Craton,PRX,Ref497,55.5,1079.0,False,,,
-vr40382,Diavik,Slave Craton,PRX,Ref497,40.1,799.0,False,,,
-vr50899,Diavik,Slave Craton,PRX,Ref497,41.0,792.0,False,,,
-yk1952,Diavik,Slave Craton,PRX,Ref497,53.6,977.0,False,,,
-JJG 5049-40,Ekati_Arnie,Slave Craton,LHZ,Ref480,52.8,1169.0,True,0.083,0.061,-3.2
-9-40-575,Ekati_Grizzly,Slave Craton,PRX,Ref480,43.8,822.0,False,0.014,0.014,-5.35
-9-45-648.9,Ekati_Grizzly,Slave Craton,LHZ,Ref480,40.7,840.0,False,0.047,0.047,-2.4
-L-21-127,Ekati_Grizzly,Slave Craton,PRX,Ref480,50.4,892.0,False,,,
-JJG 5055-11,Ekati_Grizzly,Slave Craton,LHZ,Ref480,58.2,1235.0,True,0.11,0.113,-2.42
-JJG 5055-6,Ekati_Grizzly,Slave Craton,LHZ,Ref480,39.9,840.0,False,,,
-EGL12,Elwin_Bay_Somerset_Islnd,Rae Craton,LHZ,Ref115,41.9,1057.0,False,,,
-EGL16,Elwin_Bay_Somerset_Islnd,Rae Craton,LHZ,Ref115,30.9,804.0,False,0.01,0.01,-4.21
-EGL38,Elwin_Bay_Somerset_Islnd,Rae Craton,LHZ,Ref116,44.4,1149.0,False,,,
-3-Aug,Gahcho_Kué,Slave Craton,LHZ,Ref513,66.0,1168.0,False,0.125,0.103,-2.9
-38-1,Gahcho_Kué,Slave Craton,LHZ,Ref513,60.1,1078.0,True,0.084,0.084,-3.0
-002a,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,49.1,1100.0,True,0.048,0.048,-3.22
-021a,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,47.2,1157.0,True,0.01,0.0,
-032c,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,40.5,949.0,True,0.01,0.01,-5.27
-036b,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,49.3,1177.0,False,0.01,0.0,
-057b,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,48.9,1217.0,False,0.028,0.024,-4.71
- 22-4,Jericho,Slave Craton,LHZ,Ref180+Ref356,37.8,806.0,False,0.047,0.047,-2.24
- 9-2,Jericho,Slave Craton,LHZ,Ref180+Ref356,32.3,752.0,False,0.063,0.063,-0.98
- 21-1,Jericho,Slave Craton,LHZ,Ref180+Ref356,31.9,783.0,False,0.034,0.034,-2.18
- 4-2,Jericho,Slave Craton,LHZ,Ref180,49.0,917.0,False,0.081,0.081,-2.35
- 26-3,Jericho,Slave Craton,LHZ,Ref180,37.2,801.0,False,0.09,0.09,-0.98
- 21-6,Jericho,Slave Craton,LHZ,Ref180,59.8,1134.0,True,0.112,0.077,-3.03
- 14-77,Jericho,Slave Craton,LHZ,Ref180,36.7,806.0,False,0.01,0.01,-4.73
- 21-4,Jericho,Slave Craton,LHZ,Ref180,52.6,1020.0,True,0.068,0.068,-2.8
- 14-107,Jericho,Slave Craton,LHZ,Ref180,48.4,993.0,True,0.059,0.059,-2.84
- 40-11,Jericho,Slave Craton,LHZ,Ref180,51.7,1044.0,True,0.049,0.049,-3.41
- 5-3,Jericho,Slave Craton,LHZ,Ref180+Ref356,38.7,858.0,False,0.075,0.075,-1.49
- 25-9,Jericho,Slave Craton,LHZ,Ref180,34.0,766.0,False,0.01,0.01,-4.46
- 4-3,Jericho,Slave Craton,LHZ,Ref180,40.6,858.0,False,0.047,0.047,-2.48
- 22-7,Jericho,Slave Craton,LHZ,Ref180,56.0,1119.0,True,0.086,0.086,-2.69
- 41-1,Jericho,Slave Craton,LHZ,Ref180,54.8,1211.0,True,0.133,0.127,-2.0
- 23-5,Jericho,Slave Craton,LHZ,Ref180+Ref356,56.7,1209.0,True,0.132,0.125,-2.06
- 40-21,Jericho,Slave Craton,LHZ,Ref180+Ref356,53.5,1208.0,True,0.112,0.105,-2.29
- 40-36,Jericho,Slave Craton,LHZ,Ref180,56.0,1216.0,True,0.129,0.125,-2.15
- 21-3,Jericho,Slave Craton,LHZ,Ref180+Ref356,50.0,1024.0,False,0.088,0.088,-2.11
- 26-12,Jericho,Slave Craton,PRX,Ref180,62.5,1188.0,True,0.134,0.119,-2.58
- 14-105,Jericho,Slave Craton,PRX,Ref180,55.9,1125.0,False,,,
- 14-124,Jericho,Slave Craton,PRX,Ref180,57.9,1163.0,True,0.132,0.108,-2.52
- 9-10,Jericho,Slave Craton,PRX,Ref180+Ref356,55.5,1133.0,True,0.126,0.091,-2.64
- 41-3,Jericho,Slave Craton,MEG,Ref180,57.4,1214.0,True,0.104,0.099,-2.5
-10-12a,Jericho,Slave Craton,LHZ,Ref512,32.9,742.0,False,0.037,0.037,-1.94
-JP1-X05,JP_Somerset_Islnd,Rae Craton,LHZ,Ref107,35.9,1060.0,True,0.01,0.01,-5.17
-JP1-X17 host,JP_Somerset_Islnd,Rae Craton,LHZ,Ref107,37.0,976.0,True,0.01,0.01,-5.36
-JP1-X20,JP_Somerset_Islnd,Rae Craton,LHZ,Ref107,40.4,1108.0,True,0.019,0.019,-4.45
-K14-1,K14,Slave Craton,LHZ,Ref502,66.6,1294.0,True,0.082,0.107,-2.8
-A1-P1,Kirkland_Lake_A1,Superior Craton,LHZ,Ref310,35.5,779.0,False,0.01,0.01,-4.63
-A1-P6,Kirkland_Lake_A1,Superior Craton,LHZ,Ref310,34.1,734.0,False,0.01,0.01,-4.47
-A1-P17,Kirkland_Lake_A1,Superior Craton,LHZ,Ref310,45.0,1137.0,False,0.01,0.0,
-A4-P1,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,52.1,1242.0,False,0.047,0.053,-3.67
-A4-P3,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,51.3,1180.0,False,0.01,0.0,
-A4-P4,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,49.0,1236.0,False,0.042,0.045,-3.75
-A4-P8,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,53.8,1322.0,False,0.091,0.126,-2.16
-A4-P12,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,51.2,1211.0,True,0.078,0.072,-2.93
-A4-P13,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,52.8,1191.0,True,0.091,0.077,-2.82
-308.5,Kirkland_Lake_C14,Superior Craton,LHZ,Ref16,47.7,1026.0,True,0.032,0.032,-3.99
-168,Kirkland_Lake_C14,Superior Craton,LHZ,Ref16,55.6,1077.0,True,0.023,0.023,-5.08
-198.2,Kirkland_Lake_C14,Superior Craton,LHZ,Ref16,51.1,1192.0,True,0.129,0.116,-1.78
-C-P4,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,30.3,755.0,False,0.01,0.01,-4.26
-C-P5,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,40.6,938.0,False,0.01,0.01,-5.61
-C-P7,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,29.7,723.0,False,0.01,0.01,-4.05
-C-P9,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,42.8,977.0,False,0.022,0.022,-4.39
-C-P10,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,45.3,1037.0,False,0.01,0.01,-6.01
-C-P12,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,35.1,797.0,False,0.01,0.01,-4.78
-C-P14,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,40.3,884.0,False,0.01,0.01,-5.49
-C-P15,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,41.3,920.0,False,0.01,0.01,-5.72
-C-P16,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,45.6,999.0,True,0.01,0.01,-5.95
-C-P17,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,44.7,1018.0,True,0.01,0.01,-6.05
-C-P18,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,41.2,940.0,True,0.01,0.01,-5.57
-C-P20,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,41.8,947.0,True,0.01,0.01,-5.55
-C-P21,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,42.7,995.0,True,0.038,0.038,-3.44
-C-P25,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,48.1,1139.0,True,0.056,0.023,-4.63
-C-P27,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,41.5,951.0,False,0.01,0.01,-5.97
-NAN1,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,31.4,860.0,False,,,
-NAN3,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,39.8,1014.0,False,,,
-NAN10,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,42.7,1084.0,False,,,
-NAN16,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,48.2,1096.0,False,,,
-NAN20,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,43.5,1141.0,False,,,
-NAN24,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,40.2,1050.0,False,,,
-NK1-1  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,43.1,1071.0,False,0.114,0.114,-1.24
-NK1-2  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,34.3,895.0,False,0.01,0.01,-4.64
-NK1-3  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,34.8,907.0,True,0.056,0.056,-1.69
-NK1-4  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,27.1,753.0,False,0.01,0.01,-3.82
-NK1-5  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,41.3,1096.0,True,0.111,0.111,-1.25
-NK1-6  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,32.2,915.0,True,0.049,0.049,-1.67
-NK1-9  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,40.9,1054.0,False,0.102,0.102,-1.26
-NK1-14 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,32.6,877.0,False,0.037,0.037,-2.23
-NK1-15 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,36.9,993.0,True,0.058,0.058,-2.03
-NK1-17 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386,30.9,854.0,False,0.01,0.01,-4.31
-NK1-18 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,39.3,1073.0,True,0.09,0.09,-1.47
-NK2-2  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,40.1,1144.0,True,0.106,0.075,-1.87
-NK2-3  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,28.6,775.0,False,0.037,0.037,-1.52
-NK2-5  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,45.5,1202.0,True,0.121,0.111,-1.72
-NK2-10 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,30.9,854.0,False,0.043,0.043,-1.71
-NK3-1  ,Nikos_Somerset_Islnd,Rae Craton,PRX,Ref386+Ref387,20.5,703.0,False,,,
-NK3-4  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,44.3,1192.0,False,0.146,0.133,-1.06
-NK3-7  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386,38.7,1057.0,True,0.1,0.1,-1.18
-NK3-13 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,25.6,740.0,False,0.02,0.02,-2.33
-NK3-16 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,39.7,1103.0,True,0.084,0.084,-1.69
-NK3-19 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386,33.0,874.0,False,0.01,0.01,-4.46
-NK3-20 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,24.2,715.0,False,0.049,0.049,-0.3
-NK3-24 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,21.1,710.0,False,0.01,0.01,-2.89
-NK3-25 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,40.1,1095.0,True,0.101,0.101,-1.33
-TQ9513B,Torrie,Slave Craton,LHZ,Ref184,56.0,1223.0,True,0.1,0.098,-2.53
-CP84,Pale_Aike_Chile,,LHZ,Ref333+Ref334,16.2,925.0,False,,,
-Pa1,Pali_Aike,,LHZ,Ref462,21.6,1029.0,True,0.011,0.011,-4.03
-BN-4,Pali_Aike_Chile,,LHZ,Ref122,20.9,1007.0,False,0.01,0.01,-4.17
-SN-3-B,Pali_Aike_Chile,,LHZ,Ref122,22.9,1047.0,False,0.01,0.01,-4.26
-CP7,Pali_Aike_Chile,,PRX,Ref333+Ref334,21.4,1008.0,False,,,
-CP11,Pali_Aike_Chile,,LHZ,Ref333,18.0,925.0,False,,,
-Q9307,Qilin_SE_China,,PRX,Ref99,9.6,881.0,False,,,
-Q9323,Qilin_SE_China,,PRX,Ref99,9.3,901.0,False,,,
-Q9324,Qilin_SE_China,,PRX,Ref99,9.1,909.0,False,,,
-Q8907,Qilin_SE_China,,PRX,Ref99,12.0,949.0,False,,,
-Q9352,Qilin_SE_China,,PRX,Ref99,8.8,893.0,False,,,
-Q9355,Qilin_SE_China,,PRX,Ref99,10.5,906.0,False,,,
-Q9327,Qilin_SE_China,,PRX,Ref99,8.4,886.0,False,,,
-Q9351,Qilin_SE_China,,PRX,Ref99,12.2,927.0,False,,,
-14.01/1,Kuopio_Kaavi_Pipe_14,Karelian Craton,LHZ,Ref197+Ref485,56.1,1162.0,True,0.087,0.063,-3.25
-9.2/1,Kuopio_Kaavi_Pipe_9,Karelian Craton,LHZ,Ref197+Ref485,36.1,831.0,False,0.042,0.042,-2.18
-L29,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,62.9,1219.0,False,,,
-L60,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,58.5,1184.0,False,,,
-L66,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,64.1,1231.0,False,,,
-L57,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,63.9,1223.0,False,,,
-L1-A,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,64.0,1195.0,False,,,
-20HH,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,62.5,1178.0,False,,,
-L44,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,64.4,1188.0,False,,,
-PHN2273,Kao,Kaapvaal Craton,LHZ,Ref7,53.3,1238.0,True,0.09,0.094,-2.32
-PHN2549,Lemphane,Kaapvaal Craton,LHZ,Ref34+Ref277,44.1,1038.0,False,0.079,0.079,-1.76
-PHN2573,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref1+Ref277,62.3,1380.0,True,0.052,0.109,-2.57
-PHN2575/2,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref1,63.4,1401.0,True,0.052,0.117,-2.56
-BD1870/2,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref157,30.0,777.0,False,0.01,0.01,-4.14
-PHN4259,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref178,36.0,934.0,True,0.01,0.01,-5.01
-PHN2012,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref178+Ref277,41.9,1027.0,True,0.034,0.034,-3.29
-LET29,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref447,39.0,989.0,True,0.048,0.048,-2.45
-LET38,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref447,41.0,992.0,True,0.013,0.013,-4.94
-LET64,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref447,42.5,1025.0,True,0.013,0.013,-5.05
-Lock_1,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,42.3,981.0,True,0.01,0.01,-5.4
-Lock_6,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,40.6,975.0,True,0.01,0.01,-5.49
-Lock_7,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,42.2,963.0,True,0.01,0.01,-5.44
-Lock_12,Letseng_la_Terae,Kaapvaal Craton,PRX,Ref481,44.2,1024.0,True,0.043,0.043,-3.17
-Lock_103,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,38.9,979.0,True,0.01,0.01,-5.3
-Lock_104,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,39.1,961.0,True,0.01,0.01,-5.27
-Lock_166,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,28.9,763.0,False,0.01,0.01,-4.14
-Lock_197,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,43.2,979.0,True,0.01,0.01,-5.49
-Lock_426.1,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,41.0,993.0,True,0.01,0.01,-5.46
-Lock_426.2,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,42.3,1030.0,True,0.01,0.01,-5.59
-Lock_426.3,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,43.4,1098.0,True,0.054,0.054,-2.71
-Lock_427.1,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,43.1,1038.0,True,0.044,0.044,-2.91
-Lock_427.2,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,41.1,1015.0,True,0.03,0.03,-3.46
-Lock_441,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,40.0,1000.0,True,0.046,0.046,-2.54
-Lock_492,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,40.0,982.0,True,0.01,0.01,-5.3
-Lock_495,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,49.3,1207.0,True,0.077,0.069,-2.68
-PHN2302A,Liqhobong,Kaapvaal Craton,LHZ,Ref8+Ref205+Ref277,34.8,883.0,False,0.01,0.01,-4.77
-PHN2823,Liqhobong,Kaapvaal Craton,LHZ,Ref75,54.9,1010.0,True,0.01,0.01,-6.38
-LQ5,Liqhobong,Kaapvaal Craton,LHZ,Ref447,42.1,1013.0,True,0.036,0.036,-3.21
-LQ6,Liqhobong,Kaapvaal Craton,LHZ,Ref447,39.6,978.0,True,0.041,0.041,-2.66
-LQ8,Liqhobong,Kaapvaal Craton,LHZ,Ref447,38.8,984.0,True,0.01,0.01,-5.23
-LBM9,Matsoku,Kaapvaal Craton,LHZ,Ref6,43.1,1022.0,True,0.1,0.1,-1.44
-LBM11/UM-19,Matsoku,Kaapvaal Craton,LHZ,Ref6+Ref30,43.0,1028.0,True,0.101,0.101,-1.42
-LBM12,Matsoku,Kaapvaal Craton,PRX,Ref6+Ref232,47.5,1089.0,False,0.132,0.132,-1.65
-LBM18,Matsoku,Kaapvaal Craton,PRX,Ref6,56.4,1133.0,False,,,
-LBM32,Matsoku,Kaapvaal Craton,LHZ,Ref6,36.2,905.0,True,0.01,0.01,-5.18
-LBM37,Matsoku,Kaapvaal Craton,PRX,Ref6+Ref30+Ref196,49.4,1115.0,True,0.123,0.123,-1.53
-LBM38_A,Matsoku,Kaapvaal Craton,LHZ,Ref54,45.3,1028.0,True,0.01,0.01,-5.92
-PHN1654,Matsoku,Kaapvaal Craton,LHZ,Ref6+Ref277,42.3,1000.0,True,0.013,0.013,-4.89
-BD1355,Matsoku,Kaapvaal Craton,LHZ,Ref6+Ref73,46.1,1081.0,False,0.01,0.01,-6.14
-JVS73-152,Matsoku,Kaapvaal Craton,LHZ,Ref34,36.1,934.0,True,0.01,0.01,-5.11
-JVS73-165,Matsoku,Kaapvaal Craton,LHZ,Ref34,35.7,911.0,True,0.01,0.01,-4.81
-JVS73-165,Matsoku,Kaapvaal Craton,LHZ,Ref157,35.3,902.0,True,0.01,0.01,-4.75
-PHN1654,Matsoku,Kaapvaal Craton,LHZ,Ref157+Ref277,40.6,993.0,False,0.14,0.14,-0.16
-BD1359,Matsoku,Kaapvaal Craton,LHZ,Ref157,45.1,1029.0,True,0.045,0.045,-3.11
-BD1361,Matsoku,Kaapvaal Craton,PRX,Ref157,42.1,1002.0,True,0.017,0.017,-4.73
-LBM11/UM-19,Matsoku,Kaapvaal Craton,LHZ,Ref178+Ref196,43.1,1028.0,True,0.101,0.101,-1.4
-BD1359,Matsoku,Kaapvaal Craton,LHZ,Ref33+Ref34,39.8,964.0,True,0.01,0.01,-5.27
-BD1361,Matsoku,Kaapvaal Craton,PRX,Ref33+Ref34,43.4,1007.0,True,0.015,0.015,-5.04
-BD1362,Matsoku,Kaapvaal Craton,PRX,Ref33+Ref34orRef157,45.1,1059.0,True,0.082,0.082,-2.47
-?BD1363,Matsoku,Kaapvaal Craton,PRX,Ref33+Ref34,44.8,1037.0,False,,,
-1031,Matsoku,Kaapvaal Craton,PRX,Ref239,56.4,1160.0,False,,,
-LBM6 ,Matsoku,Kaapvaal Craton,LHZ,Ref309,45.0,1029.0,True,0.06,0.06,-2.83
-LBM10,Matsoku,Kaapvaal Craton,LHZ,Ref309,48.8,1040.0,True,0.01,0.01,-6.05
-LBM36-2 ,Matsoku,Kaapvaal Craton,PRX,Ref309,48.8,1070.0,True,0.068,0.068,-2.76
-PHN1917,Mothae,Kaapvaal Craton,LHZ,Ref3+Ref205+Ref249+Ref277,45.9,1043.0,True,0.01,0.01,-5.76
-PHN1559B,Mothae,Kaapvaal Craton,LHZ,Ref3,39.0,957.0,True,0.01,0.01,-5.25
-PHN1925,Mothae,Kaapvaal Craton,LHZ,Ref3+Ref249+Ref277,65.7,1398.0,False,0.07,0.133,-2.23
-BD2125,Mothae,Kaapvaal Craton,LHZ,Ref20+Ref277,43.3,1036.0,True,0.01,0.01,-5.75
-BD2125,Mothae,Kaapvaal Craton,LHZ,Ref157+Ref277,44.7,1059.0,True,0.034,0.034,-3.64
-PHN1925,Mothae,Kaapvaal Craton,LHZ,Ref157+Ref205+Ref277,63.8,1387.0,False,0.021,0.081,-3.23
-PHN2044,Mothae,Kaapvaal Craton,LHZ,Ref178,32.9,861.0,False,0.01,0.01,-4.65
-BD2125,Mothae,Kaapvaal Craton,LHZ,Ref33+Ref34+Ref277,42.5,1034.0,True,0.01,0.01,-5.7
-BD2501,Mothae,Kaapvaal Craton,LHZ,Ref211+Ref249,52.6,1255.0,True,0.101,0.111,-2.01
-AJE62,Mothae,Kaapvaal Craton,LHZ,Ref211,45.4,1051.0,True,0.029,0.029,-3.94
-JJG703,Mothae,Kaapvaal Craton,LHZ,Ref211,52.9,1245.0,True,0.046,0.053,-3.53
-FRB135,Mothae,Kaapvaal Craton,LHZ,Ref249,36.8,919.0,True,0.01,0.01,-4.96
-FRB131,Mothae,Kaapvaal Craton,LHZ,Ref249,43.9,1013.0,True,0.043,0.043,-3.03
-FRB140,Mothae,Kaapvaal Craton,LHZ,Ref249,61.2,1299.0,True,0.054,0.081,-3.05
-M1,Mothae,Kaapvaal Craton,LHZ,Ref447,41.1,974.0,True,0.011,0.011,-5.26
-M9,Mothae,Kaapvaal Craton,LHZ,Ref447,40.7,962.0,True,0.01,0.01,-5.32
-M13,Mothae,Kaapvaal Craton,LHZ,Ref447,41.5,939.0,True,0.01,0.01,-5.57
-WLG1,Ngopetsoeu,Kaapvaal Craton,MEG,Ref246,25.0,755.0,False,,,
-PTH400,Pipe_200,Kaapvaal Craton,LHZ,Ref85,39.7,962.0,True,0.01,0.01,-5.22
-PTH405,Pipe_200,Kaapvaal Craton,LHZ,Ref85,37.8,953.0,True,0.035,0.035,-2.88
-PTH407,Pipe_200,Kaapvaal Craton,LHZ,Ref85,38.1,952.0,True,0.01,0.01,-5.21
-PTH410,Pipe_200,Kaapvaal Craton,LHZ,Ref85,37.9,977.0,True,0.031,0.031,-3.12
-PHN4474,Ramatseliso,Kaapvaal Craton,LHZ,Ref109+Ref205,40.3,1280.0,True,0.101,0.121,-1.41
-PHN1725X,Ramatseliso,Kaapvaal Craton,LHZ,Ref109,41.9,1272.0,True,0.062,0.079,-2.31
-PHN1726A,Ramatseliso,Kaapvaal Craton,LHZ,Ref109,41.2,1294.0,False,0.043,0.068,-2.61
-PHN3060,Ramatseliso,Kaapvaal Craton,LHZ,Ref109,42.4,1331.0,True,0.057,0.096,-2.09
-PHN1595,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref277,34.9,878.0,False,0.01,0.01,-4.89
-PHN1567,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3,35.3,927.0,True,0.033,0.033,-2.7
-PHN1569,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref4+Ref3+Ref205,36.0,917.0,True,0.01,0.01,-5.01
-PHN1591,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref4+Ref277,54.3,1345.0,True,0.09,0.134,-1.95
-PHN1611,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref4+Ref277,62.2,1413.0,True,0.054,0.123,-2.53
-PHN1591,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref277,54.6,1351.0,True,0.095,0.141,-1.94
-E-3,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref205+Ref277,55.6,1360.0,True,0.096,0.146,-1.8
-PHN1610,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref277,62.9,1423.0,True,0.083,0.156,-2.06
-PHN1566,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref205+Ref277,63.1,1436.0,True,0.093,0.171,-1.76
-PHN1566,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref34orRef157+Ref205+Ref277,60.0,1418.0,True,0.097,0.168,-1.85
-PHN1568,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref34,39.0,941.0,True,0.046,0.046,-2.56
-PHN1573,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref34+Ref277,35.7,850.0,False,0.01,0.01,-5.05
-PHN1610,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref34orRef157+Ref277,63.4,1425.0,True,0.133,0.207,-1.57
-PHN1567,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref277,31.5,857.0,False,0.049,0.049,-1.45
-PHN1568,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157,34.2,920.0,True,0.049,0.049,-2.04
-PHN1569,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref205+Ref277,35.1,902.0,True,0.01,0.01,-5.13
-PHN1570,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref205+Ref277,37.8,935.0,True,0.01,0.01,-5.2
-PHN1573,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref277,34.0,853.0,False,0.01,0.01,-4.93
-PHN1592,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref277,33.3,889.0,False,0.01,0.01,-4.63
-JVS73-210,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157,57.1,1280.0,True,0.082,0.102,-2.59
-JVS73-210,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref160,57.1,1280.0,True,0.082,0.101,-2.59
-PHN1591,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref277,54.6,1349.0,False,0.057,0.102,-2.59
-PHN1611,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref205+Ref277,62.2,1403.0,False,0.103,0.168,-1.86
-TP5,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref447,34.0,870.0,False,0.01,0.01,-4.74
-TP6,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref447,38.1,920.0,True,0.01,0.01,-5.25
-DB-1,Dsun-Bussular_SE_Mongolia,,LHZ,Ref332,19.3,1074.0,False,0.01,0.01,-4.08
-198/2,Mongolia,,LHZ,Ref411,19.1,1116.0,False,0.024,0.024,-2.84
-MK-5,Shavaryn_Tsaram_Tariat_Mongolia,,LHZ,Ref319,18.7,1119.0,False,,,
-A18,Shavaryn_Tsaram_Tariat_Mongolia,,LHZ,Ref319,16.1,991.0,False,,,
-198,Shavaryn_Tsaram_Tariat_Mongolia,,LHZ,Ref319,17.4,1075.0,False,,,
-69,Shavaryn_Tsaram_Tariat_Mongolia,,PRX,Ref319,13.2,937.0,False,,,
-KAK2,Anis_Kubub,,LHZ,Ref37,40.0,1059.0,True,0.111,0.111,-1.28
-KAK6,Anis_Kubub,,LHZ,Ref37,38.4,1028.0,True,0.069,0.069,-1.84
-KAK9,Anis_Kubub,,LHZ,Ref37,37.1,989.0,True,0.01,0.01,-5.14
-KAK12,Anis_Kubub,,LHZ,Ref37,43.4,1067.0,True,0.077,0.077,-2.06
-KGG31,Gibeon_Townlands,,LHZ,Ref36,39.4,1043.0,True,0.068,0.068,-1.96
-KGG63,Gibeon_Townlands,,LHZ,Ref36,39.2,955.0,True,0.013,0.013,-4.76
-KGG45,Gibeon_Townlands,,LHZ,Ref36,39.8,1011.0,True,0.079,0.079,-1.6
-KGG23,Gibeon_Townlands,,LHZ,Ref36,38.7,987.0,True,0.071,0.071,-1.9
-KGG13,Gibeon_Townlands,,LHZ,Ref36,40.1,1030.0,True,0.064,0.064,-2.18
-KGG20B,Gibeon_Townlands,,LHZ,Ref36,41.2,1040.0,True,0.053,0.053,-2.54
-KGG14,Gibeon_Townlands,,LHZ,Ref36,42.5,1002.0,True,0.068,0.068,-2.1
-KGG62,Gibeon_Townlands,,LHZ,Ref36,40.3,964.0,True,0.068,0.068,-1.95
-KGG06,Gibeon_Townlands,,LHZ,Ref36,37.1,932.0,True,0.01,0.01,-5.06
-KGG54,Gibeon_Townlands,,LHZ,Ref36,38.9,973.0,True,0.031,0.031,-3.29
-KGG20A,Gibeon_Townlands,,LHZ,Ref36,35.8,985.0,True,0.04,0.04,-2.54
-KGG50,Gibeon_Townlands,,LHZ,Ref36,40.3,998.0,True,0.039,0.039,-2.99
-KGG72,Gibeon_Townlands,,LHZ,Ref36,39.6,1008.0,True,0.069,0.069,-1.92
-KGG60,Gibeon_Townlands,,LHZ,Ref36,36.0,979.0,True,0.055,0.055,-1.97
-KGG83,Gibeon_Townlands,,LHZ,Ref36,42.6,1023.0,True,0.041,0.041,-3.12
-KGG65,Gibeon_Townlands,,LHZ,Ref36,38.3,972.0,True,0.124,0.124,-0.55
-KGG88A,Gibeon_Townlands,,LHZ,Ref36,38.9,940.0,True,0.01,0.01,-5.22
-KGG30,Gibeon_Townlands,,LHZ,Ref36,40.0,971.0,True,0.01,0.01,-5.31
-KGG81,Gibeon_Townlands,,LHZ,Ref36,37.7,954.0,True,0.041,0.041,-2.63
-KGG70,Gibeon_Townlands,,LHZ,Ref36,40.6,987.0,True,0.042,0.042,-2.78
-KGG62A,Gibeon_Townlands,,LHZ,Ref36,40.3,1088.0,True,0.073,0.073,-2.0
-KGG77,Gibeon_Townlands,,LHZ,Ref36,40.3,1102.0,True,0.14,0.14,-0.85
-KGG55,Gibeon_Townlands,,LHZ,Ref36,43.2,1080.0,True,0.08,0.08,-1.99
-KGG55,Gibeon_Townlands,,LHZ,Ref36,38.2,1070.0,True,0.097,0.097,-1.31
-KGG37,Gibeon_Townlands,,LHZ,Ref36,43.9,1112.0,False,0.12,0.12,-1.38
-KGG37,Gibeon_Townlands,,LHZ,Ref36,41.6,1111.0,False,0.01,0.01,-5.93
-KHA3,Hanaus,,LHZ,Ref37,36.2,1126.0,False,,,
-KHA103,Hanaus,,LHZ,Ref37,23.3,728.0,False,,,
-H1,Hanaus,,LHZ,Ref70,35.1,949.0,True,0.055,0.055,-1.87
-H7,Hanaus,,LHZ,Ref70,37.8,933.0,False,,,
-H17,Hanaus,,LHZ,Ref70,34.0,871.0,False,,,
-H18,Hanaus,,LHZ,Ref70,36.2,937.0,False,,,
-H19,Hanaus,,LHZ,Ref70,38.3,993.0,False,,,
-H27,Hanaus,,LHZ,Ref70,31.9,854.0,False,,,
-FRB1680,Louwrencia,,LHZ,Ref31,39.1,954.0,True,0.01,0.01,-5.3
-FRB1682,Louwrencia,,LHZ,Ref31,43.6,1081.0,True,0.043,0.043,-3.16
-FRB1685,Louwrencia,,LHZ,Ref501,37.9,988.0,True,0.028,0.028,-3.36
-FRB1687,Louwrencia,,LHZ,Ref501,34.2,908.0,True,0.01,0.01,-4.86
-L4,Louwrencia,,LHZ,Ref70,28.3,812.0,False,0.01,0.01,-3.95
-L10,Louwrencia,,LHZ,Ref70,40.1,982.0,True,0.04,0.04,-2.81
-L14,Louwrencia,,LHZ,Ref70,37.6,945.0,True,0.01,0.01,-5.18
-L19,Louwrencia,,LHZ,Ref70,35.1,913.0,False,0.01,0.01,-4.91
-L20,Louwrencia,,LHZ,Ref70,40.7,989.0,True,0.032,0.032,-3.31
-L32,Louwrencia,,LHZ,Ref70,30.9,852.0,False,0.01,0.01,-4.45
-L34,Louwrencia,,LHZ,Ref70,38.2,975.0,True,0.01,0.01,-5.15
-L35,Louwrencia,,LHZ,Ref70,31.2,799.0,False,,,
-L41,Louwrencia,,LHZ,Ref70,41.5,969.0,True,0.022,0.022,-3.89
-L42,Louwrencia,,LHZ,Ref70,36.9,1028.0,True,0.077,0.077,-1.45
-L43,Louwrencia,,LHZ,Ref70,35.7,928.0,True,0.01,0.01,-4.89
-FRB1685,Louwrencia,,LHZ,Ref501,39.5,991.0,True,0.024,0.024,-3.74
-FRB1687,Louwrencia,,LHZ,Ref501,34.2,908.0,True,0.01,0.01,-4.86
-FRB1687,Louwrencia,,LHZ,Ref501,34.2,908.0,True,0.01,0.01,-4.86
-JJG2517,Louwrencia,,LHZ,Ref501,38.6,938.0,True,0.01,0.01,-5.19
-PHN5315,Louwrencia,,LHZ,Ref501,43.8,1039.0,True,0.038,0.038,-3.3
-PHN5316,Louwrencia,,LHZ,Ref501,41.0,1010.0,True,0.014,0.014,-4.87
-PHN5365,Louwrencia,,LHZ,Ref501,26.3,776.0,False,0.01,0.01,-3.99
-A239,Mir,Siberian Craton,LHZ,Ref444,33.3,740.0,False,0.01,0.01,-4.09
-M-607,Mir?,Siberian Craton,LHZ,Ref297,30.7,759.0,False,0.01,0.01,-4.18
-OBJ-2,Obnazhennaya,Siberian Craton,MEG,Ref297,23.7,739.0,False,,,
-O-85/91,Obnazhennaya,Siberian Craton,PRX,Ref466,30.3,776.0,False,,,
-O-1085,Obnazhennaya,Siberian Craton,PRX,Ref466,27.3,740.0,False,,,
-Uv404/86,Udachnaya,Siberian Craton,LHZ,Ref65,36.6,850.0,False,0.01,0.01,-4.9
-Uv-293/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,43.4,915.0,True,0.046,0.046,-2.89
-Uv-306/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,31.5,818.0,False,0.01,0.01,-4.3
-Uv-417/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,46.7,918.0,True,0.01,0.01,-5.59
-Uv-485/89,Udachnaya,Siberian Craton,LHZ,Ref17,42.4,870.0,False,0.01,0.01,-5.33
-Uv-178/93,Udachnaya,Siberian Craton,LHZ,Ref17,34.5,831.0,False,0.031,0.031,-2.63
-Uv-52/76,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,57.7,1258.0,True,0.128,0.139,-1.97
-Uv-74/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,59.3,1254.0,True,0.081,0.091,-2.78
-Uv-115/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,58.3,1206.0,True,0.082,0.074,-3.1
-Uv-228/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,61.8,1243.0,True,0.089,0.095,-2.85
-Uv-246/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,63.6,1251.0,True,0.045,0.054,-3.96
-Uv-267/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,58.5,1205.0,True,0.099,0.091,-2.72
-Uv-424/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,61.8,1304.0,True,0.119,0.147,-2.01
-Uv-61/91,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,60.8,1198.0,True,0.065,0.054,-3.86
-Uv-121/91,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,60.4,1274.0,True,0.104,0.121,-2.35
-Uv-70/92,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,57.7,1207.0,True,0.047,0.039,-4.28
-Uv-76/92,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,70.8,1359.0,True,0.104,0.153,-2.51
-Uv-80/92,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,61.3,1299.0,True,0.127,0.154,-1.87
-Uv-12/93,Udachnaya,Siberian Craton,LHZ,Ref17,61.8,1268.0,True,0.061,0.076,-3.22
-Uv-128/93,Udachnaya,Siberian Craton,LHZ,Ref17,62.1,1261.0,True,0.085,0.098,-2.83
-Uv-115/89,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,58.7,1213.0,True,0.079,0.074,-3.13
-Uv-61/91,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,61.1,1203.0,True,0.068,0.059,-3.72
-Uv-121/91,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,60.6,1275.0,True,0.09,0.108,-2.58
-Uv-51/92,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,67.7,1310.0,True,0.087,0.118,-2.66
-Uv-12/93,Udachnaya,Siberian Craton,LHZ,Ref169,61.9,1269.0,True,0.056,0.071,-3.33
-Uv-128/93,Udachnaya,Siberian Craton,LHZ,Ref169,62.2,1262.0,True,0.085,0.098,-2.8
-Uv-293/89,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,44.3,917.0,False,0.058,0.058,-2.57
-Uv-485/89,Udachnaya,Siberian Craton,LHZ,Ref169,43.4,872.0,False,0.01,0.01,-5.41
-Uv-178/93,Udachnaya,Siberian Craton,LHZ,Ref169,36.1,834.0,False,0.025,0.025,-3.14
-Uv-1,Udachnaya,Siberian Craton,LHZ,Ref131orRef297,60.2,1241.0,True,0.096,0.101,-2.73
-Uv-111,Udachnaya,Siberian Craton,LHZ,Ref131,67.6,1310.0,True,0.055,0.086,-3.35
-Uv-1111,Udachnaya,Siberian Craton,LHZ,Ref131orRef297,61.7,1296.0,True,0.109,0.134,-2.27
-Uv-163/76,Udachnaya,Siberian Craton,LHZ,Ref131,37.8,874.0,False,0.03,0.03,-3.12
-Uv-255/75,Udachnaya,Siberian Craton,LHZ,Ref131+Ref43,65.8,1290.0,True,0.062,0.085,-3.12
-Uv-89/76,Udachnaya,Siberian Craton,LHZ,Ref131,71.4,1321.0,True,0.065,0.1,-3.46
-Uv-963/FRB555,Udachnaya,Siberian Craton,LHZ,Ref131,63.6,1284.0,True,0.094,0.115,-2.61
-Uv-964/FRB554,Udachnaya,Siberian Craton,LHZ,Ref131,65.4,1302.0,True,0.12,0.148,-2.22
-Uv-2/76,Udachnaya,Siberian Craton,LHZ,Ref131,68.2,1306.0,False,0.038,0.067,-4.02
-Uv-624/86,Udachnaya,Siberian Craton,LHZ,Ref40+Ref41,41.4,841.0,False,0.01,0.01,-5.32
-Uv-255/75,Udachnaya,Siberian Craton,LHZ,Ref43+Ref42+Ref190,63.4,1275.0,True,0.092,0.11,-2.57
-Uv-61/91,Udachnaya,Siberian Craton,LHZ,Ref251,61.9,1202.0,True,0.131,0.121,-2.34
-555/80,Udachnaya,Siberian Craton,PRX,Ref348,41.2,846.0,False,0.01,0.01,-5.07
-U-275/87,Udachnaya,Siberian Craton,LHZ,Ref361,35.1,745.0,False,0.01,0.01,-4.35
-V-231,Vitim,,PRX,Ref458,18.6,966.0,False,,,
-V-252,Vitim,,PRX,Ref458,19.8,1012.0,False,,,
-V-426,Vitim,,PRX,Ref458,19.0,998.0,False,0.01,0.01,-3.96
-V-211,Vitim,,PRX,Ref458,23.5,1236.0,False,,,
-Vi313-10,Vitim,,LHZ,Ref462,19.9,1124.0,False,0.048,0.048,-1.4
-SF-93163,Vitim,,LHZ,Ref410,22.8,1134.0,False,0.032,0.0,
-SG-96B13,Vitim,,LHZ,Ref410,19.4,1014.0,False,0.01,0.01,-3.91
-313-1,Vitim_area,,LHZ,Ref21,19.6,1005.0,True,0.01,0.01,-4.11
-313-103,Vitim_area,,LHZ,Ref21,17.0,963.0,False,0.01,0.01,-3.58
-313-110,Vitim_area,,LHZ,Ref21+Ref26,17.8,972.0,False,0.01,0.01,-3.73
-313-113G,Vitim_area,,LHZ,Ref22,19.8,1019.0,False,0.01,0.01,-4.01
-313-113SG,Vitim_area,,LHZ,Ref22,17.8,997.0,False,0.01,0.01,-3.83
-313-115,Vitim_area,,LHZ,Ref22,20.7,1017.0,False,0.01,0.01,-4.06
-313-116G,Vitim_area,,LHZ,Ref22,22.6,1165.0,False,0.017,0.0,
-313-116SG,Vitim_area,,LHZ,Ref22,22.3,1160.0,False,0.01,0.0,
-313-240,Vitim_area,,LHZ,Ref22,22.4,1077.0,False,0.01,0.01,-4.28
-313-3,Vitim_area,,LHZ,Ref21,20.9,1020.0,True,0.01,0.01,-4.11
-313-37,Vitim_area,,LHZ,Ref21+Ref26,18.1,993.0,False,0.01,0.01,-3.93
-313-6,Vitim_area,,LHZ,Ref21,20.2,1057.0,False,0.01,0.01,-4.23
-313-8,Vitim_area,,LHZ,Ref21,20.6,1064.0,False,0.01,0.01,-4.19
-314-580,Vitim_area,,LHZ,Ref21+Ref26,20.7,1102.0,False,0.028,0.028,-2.38
-313-1,Vitim_area,,LHZ,Ref491,17.2,924.0,False,0.01,0.01,-3.57
-313-2,Vitim_area,,LHZ,Ref491,19.2,1027.0,False,0.01,0.01,-4.08
-313-3,Vitim_area,,LHZ,Ref491,18.7,960.0,False,0.01,0.01,-3.78
-313-5,Vitim_area,,LHZ,Ref491,20.1,1082.0,False,0.032,0.032,-2.03
-313-6,Vitim_area,,LHZ,Ref491,19.5,1042.0,False,,,
-313-7,Vitim_area,,LHZ,Ref491,21.6,1081.0,False,0.024,0.024,-2.67
-313-8,Vitim_area,,LHZ,Ref491,18.7,990.0,False,0.01,0.01,-3.91
-313-54,Vitim_area,,LHZ,Ref491,20.1,1012.0,False,0.01,0.01,-4.0
-313-102,Vitim_area,,LHZ,Ref491,21.5,1043.0,False,0.01,0.01,-4.21
-313-104,Vitim_area,,LHZ,Ref491,19.9,1034.0,False,0.01,0.01,-4.06
-313-105,Vitim_area,,LHZ,Ref491,19.8,1022.0,False,0.01,0.01,-4.03
-313-106,Vitim_area,,LHZ,Ref491,18.8,984.0,True,0.01,0.01,-3.91
-313-112,Vitim_area,,LHZ,Ref491,20.9,1011.0,False,0.01,0.01,-4.03
-313-240,Vitim_area,,LHZ,Ref491,19.2,1004.0,False,0.01,0.01,-3.92
-313-241,Vitim_area,,LHZ,Ref491,19.4,999.0,False,0.01,0.01,-3.96
-313-37,Vitim_area,,LHZ,Ref491,20.0,1015.0,False,0.01,0.01,-4.0
-313-37,Vitim_area,,LHZ,Ref491,20.0,1015.0,False,0.01,0.01,-3.99
-313-37,Vitim_area,,LHZ,Ref491,22.1,1071.0,False,0.036,0.036,-1.92
-313-110,Vitim_area,,LHZ,Ref491,19.1,995.0,False,0.01,0.01,-3.88
-314-2,Vitim_area,,LHZ,Ref491,23.6,1137.0,False,0.01,0.0,
-314-2,Vitim_area,,LHZ,Ref491,22.3,1137.0,False,0.01,0.0,
-314-74,Vitim_area,,LHZ,Ref491,18.8,1035.0,False,0.01,0.01,-4.11
-314-74,Vitim_area,,LHZ,Ref491,21.3,1094.0,False,0.01,0.01,-4.32
-314-230,Vitim_area,,LHZ,Ref491,19.1,1069.0,False,0.038,0.038,-1.65
-314-580,Vitim_area,,LHZ,Ref491,20.4,1070.0,False,0.01,0.01,-4.2
-SF-93163,Vitim_Bereya,,LHZ,Ref410,22.8,1134.0,False,0.032,0.0,
-SG-96B13,Vitim_Bereya,,LHZ,Ref410,19.4,1014.0,False,0.01,0.01,-3.91
-SAE101,Malaita,,PRX,Ref492,15.7,893.0,False,0.01,0.01,-3.35
-SAE122,Malaita,,PRX,Ref492,17.6,835.0,False,,,
-SAE103,Malaita,,PRX,Ref492,21.4,902.0,False,,,
-SAE128,Malaita,,PRX,Ref492,16.9,812.0,False,,,
-SAE144,Malaita,,PRX,Ref492,20.4,879.0,False,,,
-SAE145,Malaita,,PRX,Ref492,20.1,878.0,False,,,
-SAG10,Malaita,,LHZ,Ref492,19.3,862.0,False,0.01,0.01,-3.5
-SAG12,Malaita,,LHZ,Ref492,19.4,869.0,False,,,
-SAG14,Malaita,,LHZ,Ref492,22.1,944.0,True,0.01,0.01,-3.99
-SAG17,Malaita,,LHZ,Ref492,21.1,919.0,True,0.021,0.021,-2.52
-SAG20,Malaita,,LHZ,Ref492,21.0,909.0,True,0.01,0.01,-3.77
-SAG24,Malaita,,LHZ,Ref492,18.1,959.0,True,0.088,0.088,0.17
-SAS11,Malaita,,LHZ,Ref492,15.7,913.0,False,0.066,0.066,-0.07
-SAG4,Malaita,,LHZ,Ref492,22.7,949.0,True,0.041,0.041,-1.63
-SAG6,Malaita,,LHZ,Ref492,22.3,940.0,True,0.018,0.018,-2.98
-SAG8,Malaita,,LHZ,Ref492,22.4,951.0,True,0.034,0.034,-1.93
-SAG22,Malaita,,LHZ,Ref492,23.3,966.0,True,0.065,0.065,-0.91
-SAE131,Malaita,,LHZ,Ref492,22.2,943.0,True,0.022,0.022,-2.62
-SAG11,Malaita,,LHZ,Ref492,13.8,894.0,False,0.075,0.075,0.43
-SAG18,Malaita,,LHZ,Ref492,23.7,966.0,True,0.052,0.052,-1.18
-SAG23,Malaita,,LHZ,Ref492,20.5,915.0,True,0.024,0.024,-2.27
-SAG25,Malaita,,LHZ,Ref492,20.2,901.0,False,,,
-SAG31,Malaita,,LHZ,Ref492,23.9,984.0,True,0.022,0.022,-2.83
-SAS44,Malaita,,LHZ,Ref492,22.7,949.0,True,0.01,0.01,-4.09
-SAS55,Malaita,,LHZ,Ref492,24.1,990.0,True,0.035,0.035,-2.07
-SAS60,Malaita,,LHZ,Ref492,21.3,975.0,False,0.065,0.065,-0.77
-PHN3532J,Malaita_Babaruu,,LHZ,Ref128,15.1,787.0,False,0.01,0.01,-2.96
-PHN3550A,Malaita_Babaruu,,LHZ,Ref128,18.0,846.0,False,,,
-PHN3567,Malaita_Babaruu,,LHZ,Ref128,18.5,874.0,False,0.01,0.01,-3.63
-PHN3536,Malaita_Babaruu,,LHZ,Ref159,22.7,943.0,False,,,
-142,Abrahamskraal,Kaapvaal Craton,LHZ,Ref136,27.8,807.0,False,0.01,0.01,-4.17
-81-001-026,Bellsbank,Kaapvaal Craton,PRX,Ref222,55.2,1056.0,False,,,
-FRB437-2,Bellsbank_Main,Kaapvaal Craton,PRX,Ref399+Ref400,36.4,786.0,False,,,
-BD2358,Bultfontein,Kaapvaal Craton,LHZ,Ref467,24.9,722.0,False,0.01,0.01,-3.48
-BD2379,Bultfontein,Kaapvaal Craton,LHZ,Ref467,35.4,885.0,False,0.071,0.071,-1.33
-691,Finsch,Kaapvaal Craton,LHZ,Ref14,59.2,1195.0,True,0.071,0.059,-3.77
-869,Finsch,Kaapvaal Craton,LHZ,Ref14,63.9,1230.0,True,0.078,0.079,-3.32
-689,Finsch,Kaapvaal Craton,LHZ,Ref14,59.7,1187.0,True,0.076,0.061,-3.51
-868,Finsch,Kaapvaal Craton,LHZ,Ref14,56.5,1175.0,True,0.055,0.036,-4.4
-871,Finsch,Kaapvaal Craton,LHZ,Ref14,54.2,1133.0,True,0.024,0.0,
-880,Finsch,Kaapvaal Craton,LHZ,Ref14,59.4,1209.0,True,0.09,0.083,-2.98
-584,Finsch,Kaapvaal Craton,LHZ,Ref14,56.9,1199.0,True,0.056,0.045,-4.07
-726,Finsch,Kaapvaal Craton,LHZ,Ref14,51.9,1141.0,True,0.076,0.044,-3.73
-875,Finsch,Kaapvaal Craton,LHZ,Ref14,55.5,1167.0,True,0.062,0.039,-4.12
-881,Finsch,Kaapvaal Craton,LHZ,Ref14,56.8,1195.0,True,0.074,0.062,-3.35
-873,Finsch,Kaapvaal Craton,LHZ,Ref14,57.2,1185.0,True,0.027,0.011,-6.47
-521,Finsch,Kaapvaal Craton,LHZ,Ref14,57.1,1185.0,True,0.074,0.058,-3.52
-874,Finsch,Kaapvaal Craton,LHZ,Ref14,56.9,1176.0,True,0.022,0.003,-8.92
-543,Finsch,Kaapvaal Craton,LHZ,Ref14,58.6,1201.0,True,0.01,0.0,-14.89
-725,Finsch,Kaapvaal Craton,LHZ,Ref14,65.6,1199.0,False,0.045,0.034,-5.06
-708,Finsch,Kaapvaal Craton,LHZ,Ref14,55.6,1168.0,True,0.061,0.039,-4.14
-876,Finsch,Kaapvaal Craton,LHZ,Ref14,57.9,1196.0,True,0.064,0.052,-3.67
-878,Finsch,Kaapvaal Craton,LHZ,Ref14,55.0,1172.0,True,0.076,0.055,-3.44
-724,Finsch,Kaapvaal Craton,LHZ,Ref14,56.6,1196.0,True,0.045,0.033,-4.49
-695,Finsch,Kaapvaal Craton,LHZ,Ref14,56.3,1173.0,False,0.043,0.023,-5.25
-872,Finsch,Kaapvaal Craton,LHZ,Ref14,55.6,1181.0,True,0.082,0.065,-3.19
-JJG147,Finsch,Kaapvaal Craton,LHZ,Ref117,56.4,1165.0,True,0.061,0.038,-4.34
-JJG545,Finsch,Kaapvaal Craton,PRX,Ref117,56.3,1167.0,False,,,
-XM46.554,Finsch,Kaapvaal Craton,LHZ,Ref18,65.6,1252.0,True,0.117,0.126,-2.68
-XM48.556,Finsch,Kaapvaal Craton,LHZ,Ref18,58.5,1169.0,False,0.03,0.008,-7.27
-F-1,Finsch,Kaapvaal Craton,LHZ,Ref515,57.6,1174.0,True,0.073,0.053,-3.47
-F-3,Finsch,Kaapvaal Craton,LHZ,Ref515,52.7,1125.0,True,0.061,0.061,-2.9
-F-4,Finsch,Kaapvaal Craton,LHZ,Ref515,55.0,1157.0,True,0.087,0.061,-3.19
-F-5,Finsch,Kaapvaal Craton,LHZ,Ref515,54.8,1150.0,True,0.066,0.037,-4.01
-F-6,Finsch,Kaapvaal Craton,LHZ,Ref515,55.2,1187.0,True,0.083,0.068,-3.01
-F-8,Finsch,Kaapvaal Craton,LHZ,Ref515,56.2,1167.0,True,0.073,0.051,-3.51
-F-10,Finsch,Kaapvaal Craton,LHZ,Ref515,51.9,1131.0,True,0.077,0.041,-3.59
-F-11,Finsch,Kaapvaal Craton,LHZ,Ref515,54.6,1187.0,True,0.099,0.084,-2.58
-F-12,Finsch,Kaapvaal Craton,LHZ,Ref515,57.1,1134.0,True,0.057,0.022,-4.99
-F-13,Finsch,Kaapvaal Craton,LHZ,Ref515,58.3,1177.0,False,0.04,0.021,-5.13
-F-14,Finsch,Kaapvaal Craton,LHZ,Ref515,59.6,1208.0,True,0.087,0.08,-3.02
-F-15,Finsch,Kaapvaal Craton,LHZ,Ref515,54.9,1164.0,True,0.069,0.046,-3.62
-F-16,Finsch,Kaapvaal Craton,LHZ,Ref515,58.2,1181.0,True,0.055,0.038,-4.12
-F-25b,Finsch,Kaapvaal Craton,LHZ,Ref515,58.7,1212.0,True,0.125,0.119,-2.1
-F-25c,Finsch,Kaapvaal Craton,LHZ,Ref515,58.4,1210.0,True,0.112,0.106,-2.27
-F-26,Finsch,Kaapvaal Craton,LHZ,Ref515,56.7,1196.0,True,0.117,0.105,-2.17
-695,Finsch,Kaapvaal Craton,LHZ,Ref515,56.3,1173.0,False,0.043,0.023,-5.25
-FRB33,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,59.1,1293.0,True,0.053,0.077,-3.04
-FRB35,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,57.6,1286.0,True,0.085,0.107,-2.39
-FRB416,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,36.9,832.0,False,0.01,0.01,-4.76
-FRB418,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,34.9,862.0,False,0.026,0.026,-2.88
-FRB81,Frank_Smith,Kaapvaal Craton,LHZ,Ref105,57.0,1290.0,True,0.079,0.103,-2.41
-FRB82,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,58.6,1303.0,True,0.057,0.085,-2.88
-FRB83,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,57.0,1300.0,True,0.069,0.096,-2.58
-FRB85,Frank_Smith,Kaapvaal Craton,LHZ,Ref105,58.6,1313.0,True,0.093,0.125,-2.13
-FS-1,Frank_Smith,Kaapvaal Craton,PRX,Ref105,41.8,932.0,False,,,
-JVS73-105,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,54.8,1163.0,False,0.033,0.009,-6.9
-JVS73-106,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,53.8,1156.0,True,0.019,0.0,
-PHN3245/100,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,56.5,1320.0,False,0.025,0.059,-3.58
-PHN3245/6,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,56.6,1297.0,True,0.056,0.082,-2.91
-PHN3246/2,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,36.0,814.0,False,0.01,0.01,-4.73
-PHN3246/3,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,57.6,1321.0,True,0.041,0.076,-3.07
-PHN3246/4,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,55.1,1318.0,True,0.071,0.105,-2.43
-1,Frank_Smith,Kaapvaal Craton,PRX,Ref459,33.6,787.0,False,,,
-2,Frank_Smith,Kaapvaal Craton,PRX,Ref459,32.0,780.0,False,,,
-7033,Hebron,,LHZ,Ref110,24.4,834.0,False,0.01,0.01,-3.8
-7143,Hebron,,LHZ,Ref110,18.5,735.0,False,0.01,0.01,-3.02
-FRB795,Hebron,,LHZ,FBPN_HEBRON.FRB,20.7,755.0,False,0.01,0.01,-3.31
-FRB797/1,Hebron,,LHZ,FBPN_HEBRON.FRB,22.6,791.0,False,0.01,0.01,-3.5
-PHN4933,Hebron,,LHZ,FBPN_HEBRON.FRB,21.1,773.0,False,0.01,0.01,-3.33
-RAJ106,Hebron,,LHZ,FBPN_HEBRON.FRB,17.9,705.0,False,0.01,0.01,-2.87
-FRB998,Jagersfontein,Kaapvaal Craton,LHZ,Ref178,57.5,1194.0,False,0.011,0.0,
-J-133,Jagersfontein,Kaapvaal Craton,LHZ,Ref106,34.4,744.0,False,0.01,0.01,-4.34
-J-134,Jagersfontein,Kaapvaal Craton,LHZ,Ref106,32.5,798.0,False,0.025,0.025,-2.61
-J-24,Jagersfontein,Kaapvaal Craton,LHZ,Ref106,32.3,743.0,False,0.01,0.01,-4.06
-J34,Jagersfontein,Kaapvaal Craton,LHZ,Ref132+Ref133,28.1,745.0,False,0.01,0.01,-3.71
-JJG859,Jagersfontein,Kaapvaal Craton,LHZ,Ref211,56.7,1311.0,True,0.077,0.108,-2.45
-JJH35,Jagersfontein,Kaapvaal Craton,LHZ,Ref267,53.7,1201.0,True,0.067,0.057,-3.54
-JJH13,Jagersfontein,Kaapvaal Craton,LHZ,Ref267,58.0,1264.0,True,0.05,0.063,-3.43
-JJG1713,Jagersfontein,Kaapvaal Craton,LHZ,Ref267,53.3,1303.0,True,0.108,0.136,-1.7
-JJG1710,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,56.7,1284.0,True,0.106,0.127,-1.96
-JJH10,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,59.0,1238.0,True,0.063,0.067,-3.24
-JJH28,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,54.3,1224.0,True,0.084,0.083,-2.84
-JJH35,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,55.4,1208.0,True,0.053,0.046,-3.93
-JJH8,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,56.2,1246.0,True,0.126,0.133,-1.86
-FRB1009,Jagersfontein,Kaapvaal Craton,LHZ,Ref398+Ref439,31.1,778.0,False,0.01,0.01,-4.22
-JAG90-72,Jagersfontein,Kaapvaal Craton,LHZ,Ref439,52.3,1020.0,True,0.025,0.025,-4.47
-JAG93-8,Jagersfontein,Kaapvaal Craton,LHZ,Ref439,40.7,936.0,True,0.021,0.021,-3.88
-UX497,Jagersfontein,Kaapvaal Craton,LHZ,Ref439,30.0,734.0,False,0.01,0.01,-3.94
-J8,Jagersfontein,Kaapvaal Craton,LHZ,Ref447,29.0,748.0,False,0.035,0.035,-1.52
-JAG90-10,Jagersfontein,Kaapvaal Craton,LHZ,Ref467,39.7,934.0,True,0.01,0.01,-5.2
-JAG90-12,Jagersfontein,Kaapvaal Craton,LHZ,Ref467,27.4,736.0,False,0.01,0.01,-3.57
-JAG90-13,Jagersfontein,Kaapvaal Craton,LHZ,Ref467,56.2,1263.0,True,0.095,0.108,-2.38
-K13core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,42.9,1015.0,True,0.062,0.062,-2.39
-K14core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,43.8,994.0,True,0.01,0.01,-5.76
-K18core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,44.2,1034.0,True,0.01,0.01,-5.6
-K1core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,40.2,970.0,True,0.044,0.044,-2.69
-K24core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,42.1,987.0,True,0.03,0.03,-3.49
-K27core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,43.8,1022.0,True,0.021,0.021,-4.32
-K17core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,42.8,1000.0,True,0.01,0.01,-5.42
-K3core,Kby_Boshof_dump,Kaapvaal Craton,PRX,Ref505,42.5,992.0,True,0.017,0.017,-4.76
-Bo-01,Kby_Boshof_Rd_dump,Kaapvaal Craton,LHZ,Ref514,34.8,861.0,False,0.037,0.037,-2.35
-Bo-05,Kby_Boshof_Rd_dump,Kaapvaal Craton,LHZ,Ref514,31.7,809.0,False,0.01,0.01,-4.16
-Bo-08,Kby_Boshof_Rd_dump,Kaapvaal Craton,LHZ,Ref514,47.3,1076.0,True,0.017,0.017,-4.92
-Bo-26,Kby_Boshof_Rd_dump,Kaapvaal Craton,LHZ,Ref514,33.5,852.0,False,0.037,0.037,-2.19
-FRB349,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref157,28.7,708.0,False,0.01,0.01,-3.82
-FRB351,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref157,38.0,898.0,False,0.01,0.01,-5.4
-CHE-BT 7,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref157,39.1,934.0,True,0.01,0.01,-5.26
-BD1149,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref157,39.2,943.0,True,0.01,0.01,-5.19
-BD1140,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref33+Ref34+Ref73,30.3,787.0,False,0.01,0.01,-4.04
-BD1149,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref33+Ref34,37.6,938.0,True,0.01,0.01,-4.93
-BT7,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref33+Ref34,37.7,931.0,True,0.01,0.01,-5.14
-BD2384,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,42.2,1018.0,True,0.072,0.072,-1.98
-EJB4,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,40.4,982.0,True,0.074,0.074,-1.71
-EJB48,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,36.7,916.0,True,0.01,0.01,-4.88
-MB3,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,37.8,938.0,True,0.02,0.02,-3.76
-MB4,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,42.6,1038.0,True,0.047,0.047,-2.74
-MB7,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,40.7,992.0,True,0.038,0.038,-2.96
-MB12,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,40.5,984.0,True,0.019,0.019,-4.18
-MB13,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,40.1,973.0,True,0.038,0.038,-2.82
-PHN2762,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,39.6,939.0,True,0.01,0.01,-5.18
-FRB838,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref249,34.6,858.0,False,0.015,0.015,-3.85
-K1,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref439,39.3,926.0,True,0.01,0.01,-5.05
-PHN2755,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,44.7,1027.0,True,0.032,0.032,-3.61
-PHN2759,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,41.5,1024.0,True,0.043,0.043,-2.78
-PHN2760,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,48.7,1071.0,True,0.056,0.056,-3.0
-PHN2766/1,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,41.1,980.0,True,0.012,0.012,-5.0
-PHN2766/2,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,39.6,958.0,True,0.01,0.01,-5.17
-PHN2766/3,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,41.0,939.0,True,0.01,0.01,-5.36
-PHN2768/1,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,27.3,730.0,False,0.01,0.01,-3.79
-PHN2768/2,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,37.1,915.0,True,0.01,0.01,-4.85
-PHN2770,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,33.1,856.0,False,0.021,0.021,-3.18
-KBBF-11,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,41.0,932.0,True,0.01,0.01,-5.31
-FRB347,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,37.4,956.0,True,0.01,0.01,-4.99
-FRB348,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,37.8,906.0,True,0.01,0.01,-5.06
-FRB350,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,27.1,716.0,False,0.01,0.01,-3.65
-FRB351,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,42.1,954.0,True,0.01,0.01,-5.41
-EJ8601,Kby_Floors,Kaapvaal Craton,LHZ,Ref51,37.4,869.0,False,0.01,0.01,-4.91
-DB-2,Kby_mines_DeBeers,Kaapvaal Craton,LHZ,Ref83,40.7,959.0,True,0.01,0.01,-5.35
-AB0929,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,34.3,808.0,False,0.01,0.01,-4.51
-AB0975,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,38.0,904.0,True,0.01,0.01,-5.06
-AB0991,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,37.7,925.0,True,0.01,0.01,-5.06
-AB1004,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,40.2,974.0,True,0.012,0.012,-4.93
-AB1006,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,40.5,972.0,True,0.022,0.022,-3.94
-XM32,Koffiefontein,Kaapvaal Craton,LHZ,Ref108,38.1,885.0,False,0.01,0.01,-5.16
-XM38,Koffiefontein,Kaapvaal Craton,LHZ,Ref108,25.2,706.0,False,0.01,0.01,-3.46
-XM56,Koffiefontein,Kaapvaal Craton,LHZ,Ref108,58.8,1306.0,True,0.027,0.056,-3.72
-81-002-007,Koffiefontein,Kaapvaal Craton,MEG,Ref222,41.5,844.0,False,,,
-PHN4803,Lekkerfontein,Kaapvaal Craton,LHZ,Ref179orRef132,31.6,836.0,False,,,
-RAJ-41,Lekkerfontein,Kaapvaal Craton,LHZ,FBPN_LEKKER.PDT,52.1,1341.0,True,0.1,0.143,-1.51
-PHN4803,Lekkerfontein,Kaapvaal Craton,LHZ,Ref132orRef179,31.8,841.0,False,,,
-8053,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,35.4,848.0,False,,,
-8063,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,37.9,881.0,False,,,
-8073,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,41.0,1026.0,False,,,
-8083,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,40.8,959.0,False,,,
-8113,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,37.3,853.0,False,,,
-8123,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,40.3,922.0,False,,,
-PHN4905,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,43.7,990.0,True,0.01,0.01,-5.47
-PHN4906,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,39.7,894.0,False,0.01,0.01,-5.15
-FRB1,Monastery,Kaapvaal Craton,LHZ,Ref4,56.6,1257.0,True,0.057,0.068,-3.08
-FRB1,Monastery,Kaapvaal Craton,LHZ,Ref178,54.4,1248.0,True,0.101,0.109,-2.07
-rom194,Monastery,Kaapvaal Craton,LHZ,Ref467,31.6,839.0,False,0.01,0.01,-4.52
-ROM-30,Monastery,Kaapvaal Craton,LHZ,Ref506,35.9,909.0,True,0.01,0.01,-4.86
-ROM-198,Monastery,Kaapvaal Craton,LHZ,Ref506,30.7,828.0,False,0.01,0.01,-4.17
-ROM-03,Monastery,Kaapvaal Craton,LHZ,Ref506,36.7,933.0,True,0.01,0.01,-5.01
-ROM-210,Monastery,Kaapvaal Craton,LHZ,Ref506,36.6,936.0,True,0.036,0.036,-2.71
-ROM-377 LH-108,Monastery,Kaapvaal Craton,LHZ,Ref506,40.3,981.0,True,0.101,0.101,-1.32
-ROM-68,Monastery,Kaapvaal Craton,LHZ,Ref506,40.4,986.0,True,0.038,0.038,-2.95
-ROM-69,Monastery,Kaapvaal Craton,LHZ,Ref506,26.3,734.0,False,0.01,0.01,-3.68
-ROM-302,Monastery,Kaapvaal Craton,LHZ,Ref506,35.3,900.0,False,0.01,0.01,-5.02
-ROM-377 LH-83,Monastery,Kaapvaal Craton,LHZ,Ref506,24.9,703.0,False,0.01,0.01,-3.51
-BD-2264,Monastery,Kaapvaal Craton,LHZ,Ref506,23.8,705.0,False,0.01,0.01,-3.32
-BD-2234,Monastery,Kaapvaal Craton,LHZ,Ref506,24.7,724.0,False,0.01,0.01,-3.33
-ROM-377 DP-01,Monastery,Kaapvaal Craton,LHZ,Ref506,55.3,1264.0,True,0.095,0.109,-2.31
-JJG-1975,Monastery,Kaapvaal Craton,PRX,Ref506,27.0,772.0,False,,,
-ROM-108,Monastery,Kaapvaal Craton,LHZ,Ref506,25.6,734.0,False,,,
-ROM-318 PY-07,Monastery,Kaapvaal Craton,LHZ,Ref506,29.4,802.0,False,0.051,0.051,-1.19
-ROM-10,Monastery,Kaapvaal Craton,PRX,Ref506,30.3,812.0,False,0.083,0.083,-0.66
-RVD100,Premier,Kaapvaal Craton,LHZ,Ref79,65.5,1372.0,True,0.048,0.102,-2.91
-RVD101,Premier,Kaapvaal Craton,LHZ,Ref80+Ref79,61.8,1337.0,True,0.088,0.129,-2.26
-RVD132,Premier,Kaapvaal Craton,LHZ,Ref79,63.1,1336.0,True,0.08,0.121,-2.35
-RVD155,Premier,Kaapvaal Craton,LHZ,Ref80+Ref79,36.0,960.0,True,0.01,0.01,-4.88
-RVD159,Premier,Kaapvaal Craton,LHZ,Ref79,64.1,1371.0,True,0.101,0.155,-1.97
-RVD174,Premier,Kaapvaal Craton,LHZ,Ref79,57.8,1322.0,True,0.113,0.148,-1.77
-PHN5246,Premier,Kaapvaal Craton,LHZ,FRB_SPGAPE.MIN,23.0,787.0,False,0.01,0.01,-3.5
-JJG1289,Premier,Kaapvaal Craton,LHZ,Ref178,39.7,952.0,True,0.01,0.01,-5.25
-FRB921,Premier,Kaapvaal Craton,LHZ,Ref251,35.5,964.0,True,0.018,0.018,-3.79
-JJG-2693,Premier,Kaapvaal Craton,PRX,Ref479,26.9,795.0,False,,,
-PC_5.2/1,Rietfontein,Kaapvaal Craton,PRX,Ref499,32.8,786.0,False,,,
-Rtfn_56.1,Rietfontein,Kaapvaal Craton,PRX,Ref499,41.3,943.0,False,,,
-CMA_3,Rietfontein,Kaapvaal Craton,PRX,Ref499,38.4,893.0,False,,,
-CMA_11,Rietfontein,Kaapvaal Craton,PRX,Ref499,29.0,723.0,False,,,
-CMA_13,Rietfontein,Kaapvaal Craton,PRX,Ref499,26.0,711.0,False,,,
-Ven_4,Venetia,Kaapvaal Craton,PRX,Ref156,39.5,918.0,False,,,
-Ven_8,Venetia,Kaapvaal Craton,PRX,Ref156,42.7,965.0,False,,,
-Ven_9,Venetia,Kaapvaal Craton,PRX,Ref156,40.2,927.0,False,,,
-Ven_10,Venetia,Kaapvaal Craton,PRX,Ref156,41.2,941.0,False,,,
-Ven_41,Venetia,Kaapvaal Craton,LHZ,Ref156,55.7,1319.0,True,0.081,0.115,-2.14
-Ven_60,Venetia,Kaapvaal Craton,LHZ,Ref156,56.6,1339.0,True,0.083,0.124,-2.19
-Ven_63,Venetia,Kaapvaal Craton,LHZ,Ref156,51.4,1131.0,True,0.131,0.095,-2.04
-Ven_64,Venetia,Kaapvaal Craton,LHZ,Ref156,55.1,1102.0,True,0.092,0.092,-2.43
-Ven_65,Venetia,Kaapvaal Craton,LHZ,Ref156,54.6,1283.0,True,0.088,0.109,-2.32
-Ven_72,Venetia,Kaapvaal Craton,LHZ,Ref156,58.4,1390.0,False,0.053,0.113,-2.52
-Ven_73,Venetia,Kaapvaal Craton,LHZ,Ref156,22.3,809.0,False,0.01,0.01,-3.39
-Ven_75,Venetia,Kaapvaal Craton,LHZ,Ref156,28.9,884.0,False,0.072,0.072,-0.61
-Ven_91,Venetia,Kaapvaal Craton,PRX,Ref156,29.0,816.0,False,,,
-Ven_92,Venetia,Kaapvaal Craton,LHZ,Ref156,25.0,783.0,False,,,
-Ven_96,Venetia,Kaapvaal Craton,PRX,Ref156,41.4,957.0,False,,,
-Ven_97,Venetia,Kaapvaal Craton,PRX,Ref156,41.0,909.0,False,,,
-PHN5073,West_End,Kaapvaal Craton,LHZ,FRB_WEST.END,51.2,1149.0,False,,,
-DdB/WPG-1,Witberg,,LHZ,Ref482,39.7,1007.0,False,,,
-DdB/WPG-3,Witberg,,LHZ,Ref482,40.6,1007.0,False,,,
-275,Zero,,LHZ,Ref102,29.8,831.0,False,0.027,0.027,-2.43
-312,Zero,,LHZ,Ref102,39.8,1004.0,True,0.057,0.057,-2.33
-316,Zero,,LHZ,Ref102,38.9,993.0,True,0.01,0.01,-5.32
-348,Zero,,LHZ,Ref102,47.8,1318.0,True,0.109,0.143,-1.37
-363,Zero,,LHZ,Ref102,39.0,992.0,False,0.01,0.01,-5.56
-399,Zero,,LHZ,Ref102,44.9,1231.0,True,0.11,0.111,-1.56
-BD4202/GL4202,Labait_Tanzania,Tanzania Craton,LHZ,Ref343,46.3,1253.0,True,0.043,0.053,-3.2
-H93-X1/GL-X1,Labait_Tanzania,Tanzania Craton,LHZ,Ref343,47.9,1294.0,False,0.061,0.086,-2.62
-H93-X9/GL-X9,Labait_Tanzania,Tanzania Craton,LHZ,Ref343,44.6,1212.0,False,0.05,0.044,-3.22
-BD776,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref157,35.2,989.0,False,0.01,0.01,-5.29
-BD730,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref58+Ref60+Ref61,36.6,1049.0,True,0.01,0.01,-5.39
-BD740,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref58+Ref61,42.9,1066.0,False,0.01,0.01,-5.77
-BD776A,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref58+Ref61,34.4,1037.0,True,0.045,0.045,-2.47
-BD794,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref58+Ref61,40.1,1069.0,True,0.01,0.01,-5.58
-89-719,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref62+Ref251,43.0,1083.0,False,0.01,0.01,-5.68
-TZ2-13,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref62,42.2,1024.0,True,0.01,0.01,-5.65
-12-90-19,Hamilton_Branch,,LHZ,Ref139,42.0,915.0,False,,,
-12-90-44,Hamilton_Branch,,LHZ,Ref139,41.6,1019.0,False,,,
-12-91-49,Hamilton_Branch,,LHZ,Ref139,51.9,1264.0,False,,,
-12-91-9,Hamilton_Branch,,LHZ,Ref139,45.0,1051.0,False,,,
-12-91-45,Hamilton_Branch,,LHZ,Ref139,49.2,1260.0,True,0.043,0.055,-3.24
-12-94-108,Hamilton_Branch,,LHZ,Ref139,51.7,1276.0,True,0.042,0.06,-3.26
-12-94-109,Hamilton_Branch,,LHZ,Ref139,50.2,1277.0,True,0.063,0.081,-2.5
-12-94-111,Hamilton_Branch,,LHZ,Ref139,53.4,1276.0,True,0.066,0.084,-2.72
-IM26-P64,Iron_Mtn_Grp,,PRX,Ref68,27.4,756.0,False,,,
-S2L102,Sloan_02,,LHZ,Ref46,48.6,1072.0,True,0.042,0.042,-3.46
-SD2-L69,Sloan_Grp,,LHZ,Ref68,53.6,1238.0,True,0.15,0.154,-1.51
-SD2-L98,Sloan_Grp,,LHZ,Ref68,57.6,1240.0,False,0.166,0.171,-1.46
-SD2-L101,Sloan_Grp,,LHZ,Ref68,58.9,1278.0,False,0.167,0.186,-1.55
-SD2-L102,Sloan_Grp,,LHZ,Ref87orRef68,47.8,1067.0,True,0.038,0.038,-3.59
-SD2-L80,Sloan_Grp,,PRX,Ref87orRef68,24.1,719.0,False,,,
-SD2-L85,Sloan_Grp,,PRX,Ref68,29.4,755.0,False,,,
-SD2-L117,Sloan_Grp,,PRX,Ref68,27.7,744.0,False,,,
-SD2-L8,Sloan_Grp,,LHZ,Ref68,22.8,749.0,False,0.074,0.074,0.35
-SD2-L68,Sloan_Grp,,PRX,Ref68,30.4,809.0,False,,,
-SD2-L72,Sloan_Grp,,PRX,Ref68,23.3,756.0,False,0.092,0.092,0.65
-SD2-L124,Sloan_Grp,,PRX,Ref68,21.8,730.0,False,0.056,0.056,-0.11
-SD2-L67,Sloan_Grp,,LHZ,Ref118,28.2,764.0,False,0.031,0.031,-1.46
-H68-17D2,Williams,,LHZ,FRB_MONTAN.BCH,42.9,1255.0,True,0.055,0.065,-2.59
-T3-4,Williams,,LHZ,FRB_MONTAN.BCH,37.0,888.0,False,0.01,0.01,-5.65
-T3-7,Williams,,LHZ,FRB_MONTAN.BCH,47.8,1279.0,False,0.029,0.048,-3.6
-H67-28K-1,Williams,,LHZ,Ref53,44.3,1245.0,False,0.058,0.064,-2.82
-H67-28I-2,Williams,,LHZ,Ref53,45.3,1264.0,True,0.06,0.073,-2.56
-H69-15F,Williams,,LHZ,Ref53,46.5,1285.0,True,0.093,0.114,-1.75
-GSL1,Williams,,LHZ,Ref67,37.5,910.0,True,0.01,0.01,-5.13
-12F2,Williams,,MEG,Ref52,48.2,1142.0,False,,,
+﻿SampleID,Location,Craton,Lithology,Reference,P_CA91,P_GPa,T_TA98,Screen_pass,XGtFe3+_iter,XGtFe3+_corr,logfO2(ΔFMQ)
+ 22-4,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,37.2,3.72,794.0,False,0.027,0.027,-3.13
+ 25-4,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,48.0,4.8,983.0,False,0.21,0.21,-0.48
+ 26-11,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,43.0,4.3,923.0,False,0.153,0.153,-0.62
+ 4-2,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,49.4,4.94,925.0,False,0.085,0.085,-2.29
+41-4,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,26.0,2.6,623.0,False,0.01,0.01,-3.29
+40-7,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,43.3,4.33,935.0,False,0.198,0.198,-0.2
+ 22-5,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,40.8,4.08,868.0,False,0.086,0.086,-1.11
+ 26-3,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,37.0,3.7,797.0,False,0.08,0.08,-1.16
+ 9-2,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,32.2,3.22,749.0,False,0.054,0.054,-1.23
+ 22-1,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,24.4,2.44,661.0,False,0.01,0.01,-3.19
+ 21-1,Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,32.3,3.23,791.0,False,0.037,0.037,-2.08
+ 5-3,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,38.7,3.87,858.0,False,0.071,0.071,-1.58
+ 25-9,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,33.3,3.33,759.0,False,0.01,0.01,-4.38
+ 4-3,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,39.5,3.95,860.0,False,0.054,0.054,-2.16
+14-77,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,36.7,3.67,807.0,False,0.01,0.01,-4.73
+21-6,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,59.9,5.99,1136.0,True,0.111,0.08,-2.97
+ 21-4,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,52.7,5.27,1021.0,True,0.063,0.063,-2.94
+14-107,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,48.5,4.85,995.0,True,0.058,0.058,-2.88
+40-11,Jericho,Slave Craton,Coarse gt peridotite,Kopylova et al. 1999,51.9,5.19,1048.0,True,0.048,0.048,-3.46
+ 21-2,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,56.7,5.67,1291.0,False,0.162,0.19,-1.46
+ 22-7,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,55.9,5.59,1115.0,True,0.08,0.08,-2.81
+14-78,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,58.0,5.8,1242.0,False,0.146,0.155,-1.85
+ 8-1,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,54.4,5.44,1223.0,False,0.14,0.142,-1.79
+40-9,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,57.6,5.76,1260.0,False,0.154,0.17,-1.69
+41-1,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,54.9,5.49,1213.0,True,0.134,0.132,-1.93
+ 23-5,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,56.7,5.67,1210.0,True,0.129,0.126,-2.06
+40-21,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,53.6,5.36,1209.0,True,0.112,0.108,-2.23
+40-36,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,56.0,5.6,1214.0,True,0.127,0.126,-2.13
+40-38,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,55.0,5.5,1268.0,False,0.17,0.189,-1.45
+40-5,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,55.4,5.54,1264.0,False,0.148,0.166,-1.59
+21-3,Jericho,Slave Craton,Porph. gt peridotite,Kopylova et al. 1999,50.2,5.02,1028.0,False,0.087,0.087,-2.15
+ 26-12,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,62.3,6.23,1186.0,True,0.131,0.119,-2.58
+14-105,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,56.1,5.61,1129.0,False,,,
+14-124,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,57.8,5.78,1161.0,True,0.131,0.109,-2.5
+ 9-10,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,55.6,5.56,1135.0,True,0.123,0.091,-2.63
+41-3,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 1999,57.5,5.75,1214.0,True,0.103,0.102,-2.46
+JD 82 Mx3,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 2009,56.1,5.61,1212.0,False,0.133,0.131,-1.82
+JD 14 Mx99,Jericho,Slave Craton,Pyroxenite/megacryst,Kopylova et al. 2009,71.2,7.12,1377.0,False,0.21,0.271,-1.45
+JGG-002,Jericho,Slave Craton,Pyroxenite/megacryst,Veglio et al. 2022,56.6,5.66,1142.0,True,0.085,0.056,-3.51
+Musk-11,Muskox,Slave Craton,Peridotite,Veglio et al. 2022,62.7,6.27,1228.0,True,0.122,0.126,-2.44
+Musk-17,Muskox,Slave Craton,Peridotite,Veglio et al. 2022,45.8,4.58,979.0,True,0.01,0.01,-5.73
+Musk-02,Muskox,Slave Craton,Pyroxenite/megacryst,Veglio et al. 2022,53.4,5.34,1115.0,True,0.081,0.081,-2.75
+Musk-24,Muskox,Slave Craton,Pyroxenite/megacryst,Veglio et al. 2022,54.9,5.49,1119.0,True,0.128,0.128,-1.96
+VYG-394,Voyageur,Slave Craton,Peridotite,Veglio et al. 2022,36.0,3.6,763.0,False,0.01,0.01,-4.45
+VYG-402,Voyageur,Slave Craton,Peridotite,Veglio et al. 2022,31.7,3.17,702.0,False,0.01,0.01,-3.98
+VYG-347,Voyageur,Slave Craton,Pyroxenite/megacryst,Veglio et al. 2022,56.3,5.63,1143.0,False,0.01,0.0,
+vr09356,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr09358,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr09359,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,62.5,6.25,1214.0,True,0.113,0.111,-2.72
+vr09361,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,55.1,5.51,1188.0,False,0.141,0.13,-1.98
+vr09364,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr09366a,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr09371,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr09372a,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr19674 pg3,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,40.2,4.02,772.0,False,0.01,0.01,-5.01
+vr40332,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,58.5,5.85,1184.0,True,0.029,0.016,-5.66
+vr40358,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr40391,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr50851,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr50855,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,,,,False,,,
+vr50861,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,45.3,4.53,862.0,False,0.01,0.01,-5.59
+vr50875,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,49.8,4.98,1056.0,True,0.012,0.012,-5.78
+vr50886,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,56.3,5.63,1210.0,True,0.051,0.048,-3.79
+vr50914,DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,56.8,5.68,1201.0,True,0.059,0.052,-3.66
+JJG 5049-29,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-30,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-31,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-32,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-33,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-34,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-35,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-36,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-37,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-38,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-39,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-40,Arnie,Slave Craton,,Menzies et al. 2004,52.7,5.27,1167.0,True,0.082,0.062,-3.15
+JJG 5049-41,Arnie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5049-43,Arnie,Slave Craton,,Menzies et al. 2004,48.9,4.89,986.0,True,0.039,0.039,-3.59
+JJG 5049-44,Arnie,Slave Craton,,Menzies et al. 2004,61.5,6.15,1210.0,False,0.059,0.056,-3.72
+JJG 5055-1,Grizzly,Slave Craton,,Menzies et al. 2004,19.7,1.97,554.0,False,,,
+JJG 5055-10,Grizzly,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5055-11,Grizzly,Slave Craton,,Menzies et al. 2004,58.2,5.82,1235.0,True,0.107,0.114,-2.4
+JJG 5055-6,Grizzly,Slave Craton,,Menzies et al. 2004,40.3,4.03,847.0,False,,,
+JJG 5055-9,Grizzly,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-16,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-17,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-19,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-20,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-21,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-22,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-23,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-25,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-26,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-27,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-28,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-31,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-32,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-47,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-49,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-50,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-51,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5054-52,Leslie,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5048-30,Mark,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5048-32,Mark,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5048-33,Mark,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5048-35,Mark,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5048-36,Mark,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5948-48,Mark,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-1,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-10,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-100,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-101,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-102,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-103,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-105,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-106,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-107,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-108,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-109,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-11,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-110,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-111,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-112,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-113,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-114,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-115,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-116,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-117,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-118,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-119,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-12,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-120,Panda,Slave Craton,,Menzies et al. 2004,80.0,8.0,1497.0,False,0.21,0.317,-1.28
+JJG 5050-121,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-13,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-14,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-15,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-16,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-17,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-18,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-19,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-2,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-20,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-21,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-22,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-23,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-24,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-25,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-26,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-27,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-28,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-29,Panda,Slave Craton,,Menzies et al. 2004,46.2,4.62,994.0,True,0.022,0.022,-4.39
+JJG 5050-3,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-30,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-31,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-32,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-33,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-34,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-35,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-36,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-37,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-38,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-39,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-4,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-40,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-41,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-42,Panda,Slave Craton,,Menzies et al. 2004,64.8,6.48,1107.0,False,,,
+JJG 5050-43,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-44,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-45,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-46,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-47,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-48,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-49,Panda,Slave Craton,,Menzies et al. 2004,69.2,6.92,1082.0,True,0.115,0.115,-3.5
+JJG 5050-5,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-50,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-51,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-52,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-53,Panda,Slave Craton,,Menzies et al. 2004,13.7,1.37,684.0,False,,,
+JJG 5050-54,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-56,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-57,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-59,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-6,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-60,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-61,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-62,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-63,Panda,Slave Craton,,Menzies et al. 2004,49.6,4.96,1105.0,False,0.063,0.063,-3.16
+JJG 5050-64,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-66,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-67,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-68,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-69,Panda,Slave Craton,,Menzies et al. 2004,64.1,6.41,1068.0,False,0.16,0.16,-2.84
+JJG 5050-7,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-70,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-71,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-72,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-73,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-74,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-75,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-76,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-79,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-8,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-80,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-81,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-82,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-83,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-84,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-85,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-86,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-87,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-88,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-9,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-90,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-91,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-92,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-93,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-95,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-96,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-97,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-98,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5050-99,Panda,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-25,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-26,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-27,Pigeon,Slave Craton,,Menzies et al. 2004,58.8,5.88,1191.0,True,0.052,0.042,-4.23
+JJG 5047-28,Pigeon,Slave Craton,,Menzies et al. 2004,61.6,6.16,1208.0,False,,,
+JJG 5047-29,Pigeon,Slave Craton,,Menzies et al. 2004,56.5,5.65,1166.0,False,,,
+JJG 5047-30,Pigeon,Slave Craton,,Menzies et al. 2004,41.7,4.17,852.0,False,,,
+JJG 5047-31,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-32,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-33,Pigeon,Slave Craton,,Menzies et al. 2004,63.0,6.3,1217.0,False,,,
+JJG 5047-34,Pigeon,Slave Craton,,Menzies et al. 2004,56.6,5.66,1101.0,False,0.017,0.017,-5.57
+JJG 5047-35,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-36,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-37,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-38,Pigeon,Slave Craton,,Menzies et al. 2004,52.2,5.22,1027.0,True,0.047,0.047,-3.63
+JJG 5047-39,Pigeon,Slave Craton,,Menzies et al. 2004,43.8,4.38,866.0,False,,,
+JJG 5047-40,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-41,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-42,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-43,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-44,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-45,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-46,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-47,Pigeon,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5047-48,Pigeon,Slave Craton,,Menzies et al. 2004,60.8,6.08,1237.0,True,0.059,0.066,-3.45
+JJG 5047-49,Pigeon,Slave Craton,,Menzies et al. 2004,61.0,6.1,1250.0,False,,,
+JJG 5047-50,Pigeon,Slave Craton,,Menzies et al. 2004,61.9,6.19,1253.0,False,,,
+JJG 5047-51,Pigeon,Slave Craton,,Menzies et al. 2004,58.8,5.88,1233.0,True,0.139,0.145,-2.04
+JJG 5051-1,Sable,Slave Craton,,Menzies et al. 2004,46.6,4.66,873.0,False,0.01,0.01,-5.76
+JJG 5051-10,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-11,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-12,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-13,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-14,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-15,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-16,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-17,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-18,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-19,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-2,Sable,Slave Craton,,Menzies et al. 2004,43.7,4.37,883.0,False,,,
+JJG 5051-20,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-21,Sable,Slave Craton,,Menzies et al. 2004,50.3,5.03,1019.0,False,,,
+JJG 5051-22,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-23,Sable,Slave Craton,,Menzies et al. 2004,50.1,5.01,1007.0,False,,,
+JJG 5051-24,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-25,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-26,Sable,Slave Craton,,Menzies et al. 2004,33.0,3.3,732.0,False,,,
+JJG 5051-27,Sable,Slave Craton,,Menzies et al. 2004,31.4,3.14,698.0,False,,,
+JJG 5051-28,Sable,Slave Craton,,Menzies et al. 2004,38.3,3.83,806.0,False,,,
+JJG 5051-29,Sable,Slave Craton,,Menzies et al. 2004,60.8,6.08,1308.0,False,,,
+JJG 5051-3,Sable,Slave Craton,,Menzies et al. 2004,48.1,4.81,905.0,False,,,
+JJG 5051-30,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-31,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-32,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-33,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-34,Sable,Slave Craton,,Menzies et al. 2004,,,,False,,,
+JJG 5051-4,Sable,Slave Craton,,Menzies et al. 2004,45.0,4.5,876.0,False,,,
+JJG 5051-5,Sable,Slave Craton,,Menzies et al. 2004,46.1,4.61,902.0,False,,,
+JJG 5051-6,Sable,Slave Craton,,Menzies et al. 2004,46.2,4.62,863.0,False,0.01,0.01,-5.74
+JJG 5051-7,Sable,Slave Craton,,Menzies et al. 2004,44.9,4.49,856.0,False,,,
+JJG 5051-8,Sable,Slave Craton,,Menzies et al. 2004,47.3,4.73,883.0,False,,,
+JJG 5051-9,Sable,Slave Craton,,Menzies et al. 2004,46.0,4.6,863.0,False,0.022,0.022,-4.28
+vr51067,A154N/S A418 A841,Slave Craton,Sp lherz,Aulbach et al. 2007,,,,False,,,
+yk1923,A154N/S A418 A841,Slave Craton,Sp-gt lherzolite,Aulbach et al. 2007,15.0,1.5,566.0,False,0.01,0.01,-1.45
+vr50904,A154N/S A418 A841,Slave Craton,Gt harzburgite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),,,,False,,,
+vr50867,A154N/S A418 A841,Slave Craton,Gt harzburgite,Pearson et al. unpublished data (in Aulbach et al. 2007),,,,False,,,
+vr43461,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,,False,,,
+vr43466,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,,False,,,
+vr43467,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.4,5.74,1200.0,True,0.107,0.1,-2.56
+vr43499,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,52.3,5.23,1035.0,True,0.027,0.027,-4.47
+vr51902,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.4,5.74,1230.0,True,0.077,0.081,-2.82
+vr67106,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,,False,,,
+vr67112,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.3,5.73,1193.0,True,0.059,0.049,-3.82
+vr67125,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.0,5.7,1189.0,True,0.087,0.076,-3.2
+yk1912,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,,False,,,
+yk1917,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,53.9,5.39,1150.0,True,0.049,0.023,-4.96
+yk1919,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,59.3,5.93,1198.0,True,0.05,0.042,-4.06
+yk1919 rim,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,,False,,,
+yk1920,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,53.9,5.39,1175.0,True,0.097,0.08,-2.72
+yk1938,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,,,,False,,,
+yk2471,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,54.8,5.48,1169.0,True,0.068,0.049,-3.63
+yk2472,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,57.8,5.78,1188.0,True,0.116,0.105,-2.47
+yk2474,A154N/S A418 A841,Slave Craton,Gt lherzolite,Aulbach et al. 2007,49.3,4.93,1059.0,True,0.04,0.04,-3.64
+vr09370,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),49.4,4.94,1023.0,True,0.064,0.064,-2.7
+vr50879,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),54.1,5.41,1198.0,True,0.09,0.082,-2.69
+vr50882,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),,,,False,,,
+vr50885,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),,,,False,,,
+vr50933,A154N/S A418 A841,Slave Craton,Gt lherzolite,van Achterbergh et al. unpublished data (in Aulbach et al. 2007),,,,False,,,
+vr40304,A154N/S A418 A841,Slave Craton,Gt lherzolite,Pearson et al. unpublished data (in Aulbach et al. 2007),59.6,5.96,1205.0,True,0.09,0.085,-2.93
+vr40335,A154N/S A418 A841,Slave Craton,Gt lherzolite,Pearson et al. unpublished data (in Aulbach et al. 2007),54.2,5.42,1028.0,False,0.01,0.01,-6.25
+vr19674 pg2,A154N/S A418 A841,Slave Craton,Gt lherzolite,Pearson et al. unpublished data (in Aulbach et al. 2007),,,,False,,,
+A154-01,A154N/S,Slave Craton,,Creighton et al. 2010,59.7,5.97,1174.0,False,0.21,0.193,-1.19
+A154-06,A154N/S,Slave Craton,,Creighton et al. 2010,57.5,5.75,1199.0,False,0.154,0.147,-1.92
+A154-09CR,A154N/S,Slave Craton,,Creighton et al. 2010,52.8,5.28,1092.0,True,0.08,0.08,-2.55
+A154-10,A154N/S,Slave Craton,,Creighton et al. 2010,,,,False,,,
+MX001,A154N/S,Slave Craton,,Creighton et al. 2010,59.3,5.93,1267.0,True,0.125,0.144,-1.94
+MX029,A154N/S,Slave Craton,,Creighton et al. 2010,59.6,5.96,1190.0,False,0.21,0.199,-1.27
+MX031,A154N/S,Slave Craton,,Creighton et al. 2010,,,,False,,,
+MX032,A154N/S,Slave Craton,,Creighton et al. 2010,61.2,6.12,1241.0,False,0.175,0.184,-1.66
+MX044,A154N/S,Slave Craton,,Creighton et al. 2010,65.4,6.54,1323.0,True,0.137,0.177,-1.88
+MX088,A154N/S,Slave Craton,,Creighton et al. 2010,57.7,5.77,1173.0,True,0.108,0.091,-2.67
+MX104,A154N/S,Slave Craton,,Creighton et al. 2010,63.3,6.33,1256.0,True,0.151,0.166,-1.93
+MX118,A154N/S,Slave Craton,,Creighton et al. 2010,,,,False,,,
+MX131,A154N/S,Slave Craton,,Creighton et al. 2010,63.1,6.31,1259.0,True,0.097,0.113,-2.55
+MX144,A154N/S,Slave Craton,,Creighton et al. 2010,66.3,6.63,1250.0,True,0.076,0.088,-3.12
+MX158,A154N/S,Slave Craton,,Creighton et al. 2010,62.8,6.28,1180.0,False,0.13,0.116,-2.55
+MX162,A154N/S,Slave Craton,,Creighton et al. 2010,57.8,5.78,1199.0,True,0.094,0.087,-2.75
+MX165,A154N/S,Slave Craton,,Creighton et al. 2010,62.4,6.24,1245.0,False,0.171,0.181,-1.71
+MX5000,A154N/S,Slave Craton,,Creighton et al. 2010,62.5,6.25,1266.0,True,0.118,0.136,-2.25
+MX5001,A154N/S,Slave Craton,,Creighton et al. 2010,61.9,6.19,1245.0,True,0.116,0.126,-2.34
+MX5003,A154N/S,Slave Craton,,Creighton et al. 2010,42.7,4.27,893.0,False,0.113,0.113,-1.06
+MX5004,A154N/S,Slave Craton,,Creighton et al. 2010,58.0,5.8,1214.0,True,0.114,0.113,-2.39
+MX5006,A154N/S,Slave Craton,,Creighton et al. 2010,59.1,5.91,1214.0,True,0.126,0.124,-2.23
+MX5007,A154N/S,Slave Craton,,Creighton et al. 2010,,,,False,,,
+MX5008,A154N/S,Slave Craton,,Creighton et al. 2010,64.0,6.4,1267.0,True,0.129,0.148,-2.13
+MX5009,A154N/S,Slave Craton,,Creighton et al. 2010,60.8,6.08,1277.0,True,0.145,0.168,-1.75
+MX5010,A154N/S,Slave Craton,,Creighton et al. 2010,,,,False,,,
+MX5011,A154N/S,Slave Craton,,Creighton et al. 2010,59.7,5.97,1266.0,True,0.134,0.152,-1.93
+MX5012,A154N/S,Slave Craton,,Creighton et al. 2010,56.6,5.66,1201.0,True,0.087,0.08,-2.81
+MX5020,A154N/S,Slave Craton,,Creighton et al. 2010,,,,False,,,
+507141455,Diavik,Slave Craton,,Yaxley et al. 2017,58.0,5.8,1212.0,True,0.094,0.092,-2.82
+507101450,Diavik,Slave Craton,,Yaxley et al. 2017,53.6,5.36,1141.0,True,0.096,0.066,-2.86
+507111505,Diavik,Slave Craton,,Yaxley et al. 2017,58.1,5.81,1272.0,False,0.139,0.16,-1.46
+507131422,Diavik,Slave Craton,,Yaxley et al. 2017,62.9,6.29,1224.0,False,0.068,0.07,-3.2
+507101448,Diavik,Slave Craton,,Yaxley et al. 2017,19.8,1.98,451.0,False,0.01,0.01,-1.37
+605301147,Diavik,Slave Craton,,Yaxley et al. 2017,57.8,5.78,1182.0,True,0.057,0.043,-4.0
+605051108,Diavik,Slave Craton,,Yaxley et al. 2017,55.8,5.58,1170.0,True,0.088,0.07,-2.98
+507151052,Diavik,Slave Craton,,Yaxley et al. 2017,57.7,5.77,1190.0,False,0.101,0.09,-2.54
+60505115,Diavik,Slave Craton,,Yaxley et al. 2017,57.3,5.73,1184.0,False,0.104,0.091,-2.29
+507151714,Diavik,Slave Craton,,Yaxley et al. 2017,60.4,6.04,1291.0,True,0.078,0.106,-2.7
+507151034,Diavik,Slave Craton,,Yaxley et al. 2017,53.5,5.35,1142.0,False,0.062,0.033,-3.97
+87/100,Udachnaya,Siberian Craton,Coarse SGP,Goncharov et al. 2012,45.9,4.59,1131.0,False,0.21,0.177,-0.85
+87/59,Udachnaya,Siberian Craton,Coarse GP,Goncharov et al. 2012,41.8,4.18,548.0,False,0.01,0.01,-5.06
+Y-17,Udachnaya,Siberian Craton,Coarse GP,Goncharov et al. 2012,28.7,2.87,780.0,False,0.01,0.01,-4.08
+87/114,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,53.4,5.34,1253.0,False,0.153,0.166,-1.36
+87/70,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,55.0,5.5,1234.0,True,0.108,0.114,-2.27
+87/97,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,62.6,6.26,1373.0,True,0.018,0.078,-3.53
+Y-1,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,52.7,5.27,1244.0,False,0.173,0.183,-1.23
+Y-10,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,51.7,5.17,1164.0,True,0.084,0.063,-3.04
+Y-16,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,63.3,6.33,1292.0,True,0.056,0.084,-3.17
+Y-19,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,51.7,5.17,1201.0,True,0.078,0.072,-2.79
+Y-3,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,59.7,5.97,1262.0,False,0.01,0.027,-5.19
+Y-4,Udachnaya,Siberian Craton,Sheared GP,Goncharov et al. 2012,55.1,5.51,1242.0,True,0.118,0.127,-2.0
+Uv-4-05,Udachnaya,Siberian Craton,,Yaxley et al. 2012,62.8,6.28,1294.0,True,0.121,0.15,-2.13
+Uv-5-04,Udachnaya,Siberian Craton,,Yaxley et al. 2012,45.9,4.59,895.0,False,0.033,0.033,-3.47
+Uv-9-05,Udachnaya,Siberian Craton,,Yaxley et al. 2012,30.3,3.03,763.0,False,0.01,0.01,-4.16
+Uv-26-04,Udachnaya,Siberian Craton,,Yaxley et al. 2012,52.8,5.28,963.0,True,0.021,0.021,-4.99
+Uv-50-04,Udachnaya,Siberian Craton,,Yaxley et al. 2012,62.4,6.24,1299.0,True,0.128,0.159,-1.93
+Uv129-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,59.3,5.93,1185.0,False,0.022,0.009,-6.71
+Uv-87-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,62.1,6.21,1327.0,True,0.116,0.158,-2.12
+Uv-59-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,60.4,6.04,1247.0,False,0.109,0.12,-2.38
+Uv-45-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,37.1,3.71,898.0,False,0.061,0.061,-1.9
+Uv-88-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,70.1,7.01,1367.0,False,0.138,0.195,-2.13
+Uv130-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,70.7,7.07,1259.0,False,0.21,0.226,-1.8
+Uv-101-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,10.3,1.03,718.0,False,0.068,0.068,1.5
+Uv-68-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,66.7,6.67,1284.0,True,0.043,0.068,-3.67
+Uv-89-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,64.0,6.4,1250.0,False,0.076,0.088,-3.43
+Uv-34-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,62.1,6.21,1292.0,True,0.115,0.143,-2.14
+Uv-42-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,38.5,3.85,945.0,False,0.036,0.036,-3.04
+Uv-37-03,Udachnaya,Siberian Craton,,Yaxley et al. 2012,45.7,4.57,850.0,False,0.01,0.01,-5.8
+Uv-28-05,Udachnaya,Siberian Craton,,Yaxley et al. 2012,34.6,3.46,851.0,False,0.063,0.063,-1.47
+F-1,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,57.8,5.78,1176.0,True,0.07,0.054,-3.46
+F-3,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,52.7,5.27,1125.0,True,0.059,0.059,-2.96
+F-5,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,54.9,5.49,1151.0,True,0.064,0.038,-3.96
+F-6,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,55.2,5.52,1188.0,True,0.08,0.068,-3.0
+F-8,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,56.0,5.6,1168.0,True,0.071,0.052,-3.46
+F-11,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,55.0,5.5,1189.0,True,0.096,0.085,-2.59
+F-12,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,57.2,5.72,1135.0,True,0.054,0.022,-5.01
+F-14,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,59.8,5.98,1210.0,True,0.084,0.081,-3.01
+F-15,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,54.9,5.49,1165.0,True,0.066,0.046,-3.62
+F-16,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,58.3,5.83,1181.0,True,0.053,0.039,-4.06
+695,Finsch,Kaapvaal Craton,,Lazarov et al. 2009,56.3,5.63,1173.0,False,0.04,0.023,-5.24
+Bo-01,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,34.9,3.49,861.0,False,0.031,0.031,-2.67
+Bo-05,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,31.9,3.19,811.0,False,0.01,0.01,-4.18
+Bo-08,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,47.4,4.74,1077.0,True,0.014,0.014,-5.26
+Bo-13,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,53.1,5.31,1192.0,False,0.102,0.092,-2.55
+Bo-14,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,32.7,3.27,834.0,False,0.034,0.034,-2.15
+Bo-18,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,42.4,4.24,1031.0,True,0.062,0.062,-2.19
+Bo-19,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,31.0,3.1,819.0,False,0.01,0.01,-4.08
+Bo-26,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,33.6,3.36,853.0,False,0.034,0.034,-2.34
+Bo-30,Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,48.3,4.83,1133.0,False,0.174,0.141,-1.25
+KBD12,Wesselton,Kaapvaal Craton,,Hanger et al. 2015,44.0,4.4,1043.0,False,0.01,0.01,-5.29
+CIM15-003,Premier,Kaapvaal Craton,sheared,Tappe et al. 2021,60.2,6.02,1329.0,True,0.055,0.098,-2.7
+CIM15-016,Premier,Kaapvaal Craton,sheared,Tappe et al. 2021,66.1,6.61,1370.0,True,0.05,0.108,-2.78
+CIM15-021,Premier,Kaapvaal Craton,sheared,Tappe et al. 2021,62.3,6.23,1330.0,False,0.043,0.086,-3.0
+CIM15-022,Premier,Kaapvaal Craton,sheared,Tappe et al. 2021,65.4,6.54,1348.0,False,0.028,0.078,-3.36
+CIM15-035,Premier,Kaapvaal Craton,,Tappe et al. 2021,47.9,4.79,1089.0,True,0.01,0.01,-6.05
+FRB338/10,Somacuanza,,LHZ,Ref113,32.5,3.25,1031.0,True,0.039,0.039,-2.52
+FRB338/11,Somacuanza,,LHZ,Ref113,33.1,3.31,1051.0,True,0.121,0.121,-0.51
+FRB338/5,Somacuanza,,LHZ,Ref113,32.8,3.28,976.0,True,0.015,0.015,-4.19
+FRB338/6,Somacuanza,,LHZ,Ref113,29.4,2.94,907.0,True,0.01,0.01,-4.44
+FRB338/2,Somacuanza,,LHZ,Ref113,33.3,3.33,976.0,True,0.01,0.01,-4.81
+FRB338/4,Somacuanza,,LHZ,Ref113,27.4,2.74,860.0,False,0.01,0.01,-4.19
+FRB338/7,Somacuanza,,LHZ,Ref113,29.7,2.97,906.0,True,0.01,0.01,-4.48
+FRB338/8,Somacuanza,,LHZ,Ref113,30.0,3.0,958.0,True,0.019,0.019,-3.45
+FRB339/6,Somacuanza,,LHZ,Ref113,32.0,3.2,984.0,True,0.01,0.01,-4.78
+U-16,Jetty_Peninsula,,LHZ,Ref507,17.2,1.72,1052.0,False,0.01,0.01,-4.1
+U-47,Jetty_Peninsula,,LHZ,Ref507,16.5,1.65,981.0,True,0.025,0.025,-1.94
+D-A3,Jetty_Peninsula,,LHZ,Ref507,19.6,1.96,1143.0,False,0.01,0.0,
+D-N1,Jetty_Peninsula,,LHZ,Ref507,17.9,1.79,1107.0,False,0.076,0.076,-0.42
+D-N4,Jetty_Peninsula,,LHZ,Ref507,21.6,2.16,1152.0,True,0.078,0.053,-1.45
+3/01/2003,Jetty_Peninsula,,LHZ,Ref507,18.9,1.89,1144.0,False,0.052,0.024,-2.68
+JSL134,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,36.5,3.65,850.0,False,0.01,0.01,-5.02
+JSL108,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,59.0,5.9,1270.0,False,0.01,0.03,-4.9
+JSL119,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,63.4,6.34,1299.0,True,0.036,0.067,-3.64
+JSL126,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,55.4,5.54,1209.0,False,0.01,0.006,-7.53
+JSL140,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,63.0,6.3,1296.0,False,0.01,0.04,-4.48
+JSL279,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,62.1,6.21,1272.0,False,0.013,0.034,-4.87
+JSL280,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,70.3,7.03,1409.0,True,0.039,0.112,-2.94
+JSL-/177,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,37.2,3.72,863.0,False,0.01,0.01,-5.19
+JSL111,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,34.9,3.49,857.0,False,,,
+JSL142,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,46.9,4.69,999.0,False,0.01,0.01,-5.93
+JSL151,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,60.4,6.04,1160.0,False,,,
+JSL504,Lethlakane_DK1,Kaapvaal Craton,LHZ,Ref181,39.8,3.98,889.0,False,0.01,0.01,-5.32
+JSL533,Lethlakane_DK1,Kaapvaal Craton,LHZ_HINA,Ref181,36.1,3.61,851.0,False,0.01,0.01,-4.82
+AK1/132,Orapa,Kaapvaal Craton,PRX,Ref217,29.3,2.93,774.0,False,,,
+16-Mx2,5034,,LHZ,Ref383,65.9,6.59,1114.0,True,0.057,0.057,-4.08
+3-Mx8,5034,,LHZ,Ref383,66.0,6.6,1168.0,False,0.124,0.105,-2.86
+38-Mx1,5034,,LHZ,Ref383,59.9,5.99,1077.0,True,0.067,0.067,-3.43
+18-Mx1,5034,,LHZ,Ref383,59.5,5.95,1067.0,True,0.076,0.076,-3.07
+AMA6,Amayersuk_Somerset_Islnd,Rae Craton,LHZ,Ref116,46.3,4.63,1257.0,False,,,
+AMA4,Amayersuk_Somerset_Islnd,Rae Craton,LHZ,Ref116,42.6,4.26,1137.0,False,,,
+AMA1,Amayersuk_Somerset_Islnd,Rae Craton,LHZ,Ref116,42.5,4.25,1028.0,False,,,
+K11A1-2,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,44.7,4.47,1106.0,True,0.074,0.074,-2.18
+K11A5-1,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,41.7,4.17,1047.0,True,0.039,0.039,-3.18
+K11A9,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,45.3,4.53,1136.0,True,0.058,0.026,-4.07
+K11A15-4,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244+Ref448,42.7,4.27,1111.0,True,0.031,0.031,-3.77
+K12A2-4,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,43.0,4.3,1155.0,True,0.047,0.023,-4.13
+K12A3-,Batty_Bay_Somerset_Island,Rae Craton,LHZ,Ref138+Ref244,43.0,4.3,1150.0,False,0.01,0.0,
+13-35-1,Cross_BC_Canada,,LHZ,Ref295,46.9,4.69,1122.0,False,0.03,0.03,-4.3
+HCR-15,Cross_BC_Canada,,LHZ,Ref295,46.4,4.64,1115.0,True,0.01,0.01,-6.08
+vr09359a,Diavik,Slave Craton,LHZ,Ref487,64.2,6.42,1219.0,True,0.109,0.11,-2.85
+vr09361a,Diavik,Slave Craton,LHZ,Ref388,63.3,6.33,1216.0,True,0.119,0.118,-2.59
+vr09370a,Diavik,Slave Craton,LHZ,Ref487,56.4,5.64,1041.0,True,0.047,0.047,-3.71
+vr19674per-g3,Diavik,Slave Craton,LHZ,Ref388,41.1,4.11,779.0,False,0.01,0.01,-5.09
+vr40304a,Diavik,Slave Craton,LHZ,Ref487,59.8,5.98,1209.0,True,0.093,0.09,-2.85
+vr40335a,Diavik,Slave Craton,LHZ,Ref487,54.3,5.43,1030.0,False,0.01,0.01,-6.26
+vr40338a,Diavik,Slave Craton,LHZ,Ref388,55.7,5.57,1197.0,True,0.102,0.094,-2.49
+vr40341aa,Diavik,Slave Craton,LHZ,Ref388,48.5,4.85,1000.0,True,0.01,0.01,-5.92
+vr50875a,Diavik,Slave Craton,LHZ,Ref487,49.8,4.98,1056.0,True,0.013,0.013,-5.64
+vr50879a,Diavik,Slave Craton,LHZ,Ref487,59.1,5.91,1217.0,True,0.084,0.084,-2.94
+vr50914a,Diavik,Slave Craton,LHZ,Ref388,56.7,5.67,1203.0,True,0.096,0.09,-2.69
+vr09384a,Diavik,Slave Craton,PRX,Ref388,43.8,4.38,823.0,False,,,
+vr19674per-g1,Diavik,Slave Craton,LHZ,Ref388,52.5,5.25,1085.0,False,,,
+vr19674per-g4,Diavik,Slave Craton,LHZ,Ref388,60.4,6.04,1206.0,False,,,
+vr40302a,Diavik,Slave Craton,LHZ,Ref388,50.1,5.01,1049.0,False,,,
+vr40336a,Diavik,Slave Craton,LHZ,Ref388,57.6,5.76,1177.0,False,,,
+vr40336a,Diavik,Slave Craton,LHZ,Ref388,58.7,5.87,1180.0,False,,,
+vr40382a,Diavik,Slave Craton,PRX,Ref388,40.1,4.01,798.0,False,,,
+vr50899a,Diavik,Slave Craton,LHZ,Ref388,40.4,4.04,788.0,False,,,
+vr43467,Diavik,Slave Craton,LHZ,Ref487,57.2,5.72,1197.0,True,0.104,0.096,-2.62
+vr43499,Diavik,Slave Craton,LHZ,Ref487,52.3,5.23,1036.0,True,0.028,0.028,-4.4
+vr50886,Diavik,Slave Craton,LHZ,Ref487,56.5,5.65,1214.0,True,0.055,0.053,-3.61
+vr51902,Diavik,Slave Craton,LHZ,Ref487,57.5,5.75,1230.0,True,0.079,0.084,-2.78
+vr67112,Diavik,Slave Craton,LHZ,Ref487,60.8,6.08,1206.0,True,0.055,0.05,-3.98
+vr67125,Diavik,Slave Craton,LHZ,Ref487,60.4,6.04,1199.0,True,0.079,0.072,-3.5
+yk1917,Diavik,Slave Craton,LHZ,Ref487,53.8,5.38,1148.0,True,0.048,0.021,-5.09
+yk1919,Diavik,Slave Craton,LHZ,Ref487,59.2,5.92,1197.0,True,0.05,0.042,-4.08
+yk1920,Diavik,Slave Craton,LHZ,Ref487,54.0,5.4,1175.0,True,0.099,0.083,-2.67
+yk2471,Diavik,Slave Craton,LHZ,Ref487,55.5,5.55,1171.0,True,0.066,0.048,-3.71
+yk2472,Diavik,Slave Craton,LHZ,Ref487,57.7,5.77,1186.0,True,0.116,0.104,-2.48
+yk2474,Diavik,Slave Craton,LHZ,Ref487,51.5,5.15,1069.0,True,0.037,0.037,-3.91
+VR67103A,Diavik,Slave Craton,LHZ,Ref494,59.3,5.93,1228.0,False,,,
+vr19673ecl-g1,Diavik,Slave Craton,PRX,Ref497,47.3,4.73,869.0,False,,,
+vr19674ecl-g1,Diavik,Slave Craton,PRX,Ref497,60.5,6.05,1103.0,False,,,
+vr19674ecl-g2,Diavik,Slave Craton,PRX,Ref497,55.5,5.55,1079.0,False,,,
+vr40382,Diavik,Slave Craton,PRX,Ref497,40.1,4.01,799.0,False,,,
+vr50899,Diavik,Slave Craton,PRX,Ref497,41.0,4.1,792.0,False,,,
+yk1952,Diavik,Slave Craton,PRX,Ref497,53.6,5.36,977.0,False,,,
+JJG 5049-40,Ekati_Arnie,Slave Craton,LHZ,Ref480,52.8,5.28,1169.0,True,0.081,0.062,-3.17
+9-40-575,Ekati_Grizzly,Slave Craton,PRX,Ref480,43.8,4.38,822.0,False,0.01,0.01,-5.93
+9-45-648.9,Ekati_Grizzly,Slave Craton,LHZ,Ref480,40.7,4.07,840.0,False,0.043,0.043,-2.56
+L-21-127,Ekati_Grizzly,Slave Craton,PRX,Ref480,50.4,5.04,892.0,False,,,
+JJG 5055-11,Ekati_Grizzly,Slave Craton,LHZ,Ref480,58.2,5.82,1235.0,True,0.108,0.115,-2.39
+JJG 5055-6,Ekati_Grizzly,Slave Craton,LHZ,Ref480,39.9,3.99,840.0,False,,,
+EGL12,Elwin_Bay_Somerset_Islnd,Rae Craton,LHZ,Ref115,41.9,4.19,1057.0,False,,,
+EGL16,Elwin_Bay_Somerset_Islnd,Rae Craton,LHZ,Ref115,30.9,3.09,804.0,False,0.01,0.01,-4.21
+EGL38,Elwin_Bay_Somerset_Islnd,Rae Craton,LHZ,Ref116,44.4,4.44,1149.0,False,,,
+3-8,Gahcho_Kué,Slave Craton,LHZ,Ref513,66.0,6.6,1168.0,False,0.122,0.103,-2.9
+38-1,Gahcho_Kué,Slave Craton,LHZ,Ref513,60.1,6.01,1078.0,True,0.081,0.081,-3.06
+002a,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,49.1,4.91,1100.0,True,0.045,0.045,-3.33
+021a,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,47.2,4.72,1157.0,True,0.01,0.0,
+032c,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,40.5,4.05,949.0,True,0.01,0.01,-5.27
+036b,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,49.3,4.93,1177.0,False,0.01,0.0,
+057b,Ham_Somerset_Islnd,Rae Craton,LHZ,Ref114,48.9,4.89,1217.0,False,0.025,0.025,-4.68
+ 22-4,Jericho,Slave Craton,LHZ,Ref180+Ref356,37.8,3.78,806.0,False,0.042,0.042,-2.43
+ 9-2,Jericho,Slave Craton,LHZ,Ref180+Ref356,32.3,3.23,752.0,False,0.059,0.059,-1.1
+ 21-1,Jericho,Slave Craton,LHZ,Ref180+Ref356,31.9,3.19,783.0,False,0.029,0.029,-2.46
+ 4-2,Jericho,Slave Craton,LHZ,Ref180,49.0,4.9,917.0,False,0.077,0.077,-2.43
+ 26-3,Jericho,Slave Craton,LHZ,Ref180,37.2,3.72,801.0,False,0.086,0.086,-1.06
+ 21-6,Jericho,Slave Craton,LHZ,Ref180,59.8,5.98,1134.0,True,0.11,0.078,-3.01
+ 14-77,Jericho,Slave Craton,LHZ,Ref180,36.7,3.67,806.0,False,0.01,0.01,-4.73
+ 21-4,Jericho,Slave Craton,LHZ,Ref180,52.6,5.26,1020.0,True,0.064,0.064,-2.91
+ 14-107,Jericho,Slave Craton,LHZ,Ref180,48.4,4.84,993.0,True,0.056,0.056,-2.93
+ 40-11,Jericho,Slave Craton,LHZ,Ref180,51.7,5.17,1044.0,True,0.046,0.046,-3.52
+ 5-3,Jericho,Slave Craton,LHZ,Ref180+Ref356,38.7,3.87,858.0,False,0.071,0.071,-1.58
+ 25-9,Jericho,Slave Craton,LHZ,Ref180,34.0,3.4,766.0,False,0.01,0.01,-4.46
+ 4-3,Jericho,Slave Craton,LHZ,Ref180,40.6,4.06,858.0,False,0.043,0.043,-2.64
+ 22-7,Jericho,Slave Craton,LHZ,Ref180,56.0,5.6,1119.0,True,0.083,0.083,-2.75
+ 41-1,Jericho,Slave Craton,LHZ,Ref180,54.8,5.48,1211.0,True,0.131,0.128,-1.98
+ 23-5,Jericho,Slave Craton,LHZ,Ref180+Ref356,56.7,5.67,1209.0,True,0.129,0.126,-2.06
+ 40-21,Jericho,Slave Craton,LHZ,Ref180+Ref356,53.5,5.35,1208.0,True,0.109,0.105,-2.28
+ 40-36,Jericho,Slave Craton,LHZ,Ref180,56.0,5.6,1216.0,True,0.127,0.126,-2.12
+ 21-3,Jericho,Slave Craton,LHZ,Ref180+Ref356,50.0,5.0,1024.0,False,0.084,0.084,-2.19
+ 26-12,Jericho,Slave Craton,PRX,Ref180,62.5,6.25,1188.0,True,0.131,0.12,-2.57
+ 14-105,Jericho,Slave Craton,PRX,Ref180,55.9,5.59,1125.0,False,,,
+ 14-124,Jericho,Slave Craton,PRX,Ref180,57.9,5.79,1163.0,True,0.13,0.109,-2.51
+ 9-10,Jericho,Slave Craton,PRX,Ref180+Ref356,55.5,5.55,1133.0,True,0.123,0.09,-2.65
+ 41-3,Jericho,Slave Craton,MEG,Ref180,57.4,5.74,1214.0,True,0.101,0.1,-2.49
+10-12a,Jericho,Slave Craton,LHZ,Ref512,32.9,3.29,742.0,False,0.032,0.032,-2.19
+JP1-X05,JP_Somerset_Islnd,Rae Craton,LHZ,Ref107,35.9,3.59,1060.0,True,0.01,0.01,-5.17
+JP1-X17 host,JP_Somerset_Islnd,Rae Craton,LHZ,Ref107,37.0,3.7,976.0,True,0.01,0.01,-5.36
+JP1-X20,JP_Somerset_Islnd,Rae Craton,LHZ,Ref107,40.4,4.04,1108.0,True,0.016,0.016,-4.75
+K14-1,K14,Slave Craton,LHZ,Ref502,66.6,6.66,1294.0,True,0.08,0.109,-2.77
+A1-P1,Kirkland_Lake_A1,Superior Craton,LHZ,Ref310,35.5,3.55,779.0,False,0.01,0.01,-4.63
+A1-P6,Kirkland_Lake_A1,Superior Craton,LHZ,Ref310,34.1,3.41,734.0,False,0.01,0.01,-4.47
+A1-P17,Kirkland_Lake_A1,Superior Craton,LHZ,Ref310,45.0,4.5,1137.0,False,0.01,0.0,
+A4-P1,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,52.1,5.21,1242.0,False,0.045,0.054,-3.61
+A4-P3,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,51.3,5.13,1180.0,False,0.01,0.0,
+A4-P4,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,49.0,4.9,1236.0,False,0.04,0.047,-3.69
+A4-P8,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,53.8,5.38,1322.0,False,0.089,0.129,-2.12
+A4-P12,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,51.2,5.12,1211.0,True,0.076,0.074,-2.89
+A4-P13,Kirkland_Lake_A4,Superior Craton,LHZ,Ref310,52.8,5.28,1191.0,True,0.089,0.079,-2.79
+308.5,Kirkland_Lake_C14,Superior Craton,LHZ,Ref16,47.7,4.77,1026.0,True,0.028,0.028,-4.22
+168,Kirkland_Lake_C14,Superior Craton,LHZ,Ref16,55.6,5.56,1077.0,True,0.02,0.02,-5.32
+198.2,Kirkland_Lake_C14,Superior Craton,LHZ,Ref16,51.1,5.11,1192.0,True,0.126,0.116,-1.77
+C-P4,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,30.3,3.03,755.0,False,0.01,0.01,-4.26
+C-P5,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,40.6,4.06,938.0,False,0.01,0.01,-5.61
+C-P7,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,29.7,2.97,723.0,False,0.01,0.01,-4.05
+C-P9,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,42.8,4.28,977.0,False,0.019,0.019,-4.64
+C-P10,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,45.3,4.53,1037.0,False,0.01,0.01,-6.01
+C-P12,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,35.1,3.51,797.0,False,0.01,0.01,-4.78
+C-P14,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,40.3,4.03,884.0,False,0.01,0.01,-5.49
+C-P15,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,41.3,4.13,920.0,False,0.01,0.01,-5.72
+C-P16,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,45.6,4.56,999.0,True,0.01,0.01,-5.95
+C-P17,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,44.7,4.47,1018.0,True,0.01,0.01,-6.05
+C-P18,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,41.2,4.12,940.0,True,0.01,0.01,-5.57
+C-P20,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,41.8,4.18,947.0,True,0.01,0.01,-5.55
+C-P21,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,42.7,4.27,995.0,True,0.034,0.034,-3.64
+C-P25,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,48.1,4.81,1139.0,True,0.053,0.023,-4.66
+C-P27,Kirkland_Lake_C14,Superior Craton,LHZ,Ref310,41.5,4.15,951.0,False,0.01,0.01,-5.97
+NAN1,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,31.4,3.14,860.0,False,,,
+NAN3,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,39.8,3.98,1014.0,False,,,
+NAN10,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,42.7,4.27,1084.0,False,,,
+NAN16,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,48.2,4.82,1096.0,False,,,
+NAN20,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,43.5,4.35,1141.0,False,,,
+NAN24,Nanorluk_Somerset_Island,Rae Craton,LHZ,Ref116,40.2,4.02,1050.0,False,,,
+NK1-1  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,43.1,4.31,1071.0,False,0.111,0.111,-1.28
+NK1-2  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,34.3,3.43,895.0,False,0.01,0.01,-4.64
+NK1-3  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,34.8,3.48,907.0,True,0.053,0.053,-1.79
+NK1-4  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,27.1,2.71,753.0,False,0.01,0.01,-3.82
+NK1-5  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,41.3,4.13,1096.0,True,0.108,0.108,-1.3
+NK1-6  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,32.2,3.22,915.0,True,0.045,0.045,-1.82
+NK1-9  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,40.9,4.09,1054.0,False,0.099,0.099,-1.31
+NK1-14 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,32.6,3.26,877.0,False,0.033,0.033,-2.43
+NK1-15 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,36.9,3.69,993.0,True,0.054,0.054,-2.16
+NK1-17 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386,30.9,3.09,854.0,False,0.01,0.01,-4.31
+NK1-18 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,39.3,3.93,1073.0,True,0.087,0.087,-1.53
+NK2-2  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,40.1,4.01,1144.0,True,0.103,0.074,-1.87
+NK2-3  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,28.6,2.86,775.0,False,0.033,0.033,-1.72
+NK2-5  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,45.5,4.55,1202.0,True,0.118,0.112,-1.71
+NK2-10 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,30.9,3.09,854.0,False,0.039,0.039,-1.88
+NK3-1  ,Nikos_Somerset_Islnd,Rae Craton,PRX,Ref386+Ref387,20.5,2.05,703.0,False,,,
+NK3-4  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,44.3,4.43,1192.0,False,0.144,0.134,-1.04
+NK3-7  ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386,38.7,3.87,1057.0,True,0.097,0.097,-1.24
+NK3-13 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,25.6,2.56,740.0,False,0.016,0.016,-2.72
+NK3-16 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,39.7,3.97,1103.0,True,0.081,0.081,-1.75
+NK3-19 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386,33.0,3.3,874.0,False,0.01,0.01,-4.46
+NK3-20 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,24.2,2.42,715.0,False,0.045,0.045,-0.45
+NK3-24 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,21.1,2.11,710.0,False,0.01,0.01,-2.89
+NK3-25 ,Nikos_Somerset_Islnd,Rae Craton,LHZ,Ref386+Ref387,40.1,4.01,1095.0,True,0.098,0.098,-1.38
+TQ9513B,Torrie,Slave Craton,LHZ,Ref184,56.0,5.6,1223.0,True,0.098,0.1,-2.51
+CP84,Pale_Aike_Chile,,LHZ,Ref333+Ref334,16.2,1.62,925.0,False,,,
+Pa1,Pali_Aike,,LHZ,Ref462,21.6,2.16,1029.0,True,0.01,0.01,-4.2
+BN-4,Pali_Aike_Chile,,LHZ,Ref122,20.9,2.09,1007.0,False,0.01,0.01,-4.17
+SN-3-B,Pali_Aike_Chile,,LHZ,Ref122,22.9,2.29,1047.0,False,0.01,0.01,-4.26
+CP7,Pali_Aike_Chile,,PRX,Ref333+Ref334,21.4,2.14,1008.0,False,,,
+CP11,Pali_Aike_Chile,,LHZ,Ref333,18.0,1.8,925.0,False,,,
+Q9307,Qilin_SE_China,,PRX,Ref99,9.6,0.96,881.0,False,,,
+Q9323,Qilin_SE_China,,PRX,Ref99,9.3,0.93,901.0,False,,,
+Q9324,Qilin_SE_China,,PRX,Ref99,9.1,0.91,909.0,False,,,
+Q8907,Qilin_SE_China,,PRX,Ref99,12.0,1.2,949.0,False,,,
+Q9352,Qilin_SE_China,,PRX,Ref99,8.8,0.88,893.0,False,,,
+Q9355,Qilin_SE_China,,PRX,Ref99,10.5,1.05,906.0,False,,,
+Q9327,Qilin_SE_China,,PRX,Ref99,8.4,0.84,886.0,False,,,
+Q9351,Qilin_SE_China,,PRX,Ref99,12.2,1.22,927.0,False,,,
+14.01/1,Kuopio_Kaavi_Pipe_14,Karelian Craton,LHZ,Ref197+Ref485,56.1,5.61,1162.0,True,0.085,0.063,-3.22
+9.2/1,Kuopio_Kaavi_Pipe_9,Karelian Craton,LHZ,Ref197+Ref485,36.1,3.61,831.0,False,0.037,0.037,-2.4
+L29,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,62.9,6.29,1219.0,False,,,
+L60,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,58.5,5.85,1184.0,False,,,
+L66,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,64.1,6.41,1231.0,False,,,
+L57,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,63.9,6.39,1223.0,False,,,
+L1-A,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,64.0,6.4,1195.0,False,,,
+20HH,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,62.5,6.25,1178.0,False,,,
+L44,Lahtojoki_Pipe_7,Karelian Craton,LHZ,Ref197,64.4,6.44,1188.0,False,,,
+PHN2273,Kao,Kaapvaal Craton,LHZ,Ref7,53.3,5.33,1238.0,True,0.087,0.095,-2.31
+PHN2549,Lemphane,Kaapvaal Craton,LHZ,Ref34+Ref277,44.1,4.41,1038.0,False,0.075,0.075,-1.85
+PHN2573,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref1+Ref277,62.3,6.23,1380.0,True,0.05,0.112,-2.52
+PHN2575/2,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref1,63.4,6.34,1401.0,True,0.05,0.12,-2.51
+BD1870/2,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref157,30.0,3.0,777.0,False,0.01,0.01,-4.14
+PHN4259,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref178,36.0,3.6,934.0,True,0.01,0.01,-5.01
+PHN2012,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref178+Ref277,41.9,4.19,1027.0,True,0.03,0.03,-3.51
+LET29,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref447,39.0,3.9,989.0,True,0.044,0.044,-2.61
+LET38,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref447,41.0,4.1,992.0,True,0.01,0.01,-5.4
+LET64,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref447,42.5,4.25,1025.0,True,0.01,0.01,-5.51
+Lock_1,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,42.3,4.23,981.0,True,0.01,0.01,-5.4
+Lock_6,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,40.6,4.06,975.0,True,0.01,0.01,-5.49
+Lock_7,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,42.2,4.22,963.0,True,0.01,0.01,-5.44
+Lock_12,Letseng_la_Terae,Kaapvaal Craton,PRX,Ref481,44.2,4.42,1024.0,True,0.04,0.04,-3.29
+Lock_103,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,38.9,3.89,979.0,True,0.01,0.01,-5.3
+Lock_104,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,39.1,3.91,961.0,True,0.01,0.01,-5.27
+Lock_166,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,28.9,2.89,763.0,False,0.01,0.01,-4.14
+Lock_197,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,43.2,4.32,979.0,True,0.01,0.01,-5.49
+Lock_426.1,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,41.0,4.1,993.0,True,0.01,0.01,-5.46
+Lock_426.2,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,42.3,4.23,1030.0,True,0.01,0.01,-5.59
+Lock_426.3,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,43.4,4.34,1098.0,True,0.051,0.051,-2.81
+Lock_427.1,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,43.1,4.31,1038.0,True,0.041,0.041,-3.03
+Lock_427.2,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,41.1,4.11,1015.0,True,0.027,0.027,-3.64
+Lock_441,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,40.0,4.0,1000.0,True,0.043,0.043,-2.66
+Lock_492,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,40.0,4.0,982.0,True,0.01,0.01,-5.3
+Lock_495,Letseng_la_Terae,Kaapvaal Craton,LHZ,Ref481,49.3,4.93,1207.0,True,0.074,0.07,-2.67
+PHN2302A,Liqhobong,Kaapvaal Craton,LHZ,Ref8+Ref205+Ref277,34.8,3.48,883.0,False,0.01,0.01,-4.77
+PHN2823,Liqhobong,Kaapvaal Craton,LHZ,Ref75,54.9,5.49,1010.0,True,0.01,0.01,-6.38
+LQ5,Liqhobong,Kaapvaal Craton,LHZ,Ref447,42.1,4.21,1013.0,True,0.033,0.033,-3.36
+LQ6,Liqhobong,Kaapvaal Craton,LHZ,Ref447,39.6,3.96,978.0,True,0.037,0.037,-2.84
+LQ8,Liqhobong,Kaapvaal Craton,LHZ,Ref447,38.8,3.88,984.0,True,0.01,0.01,-5.23
+LBM9,Matsoku,Kaapvaal Craton,LHZ,Ref6,43.1,4.31,1022.0,True,0.097,0.097,-1.5
+LBM11/UM-19,Matsoku,Kaapvaal Craton,LHZ,Ref6+Ref30,43.0,4.3,1028.0,True,0.098,0.098,-1.48
+LBM12,Matsoku,Kaapvaal Craton,PRX,Ref6+Ref232,47.5,4.75,1089.0,False,0.129,0.129,-1.69
+LBM18,Matsoku,Kaapvaal Craton,PRX,Ref6,56.4,5.64,1133.0,False,,,
+LBM32,Matsoku,Kaapvaal Craton,LHZ,Ref6,36.2,3.62,905.0,True,0.01,0.01,-5.18
+LBM37,Matsoku,Kaapvaal Craton,PRX,Ref6+Ref30+Ref196,49.4,4.94,1115.0,True,0.12,0.12,-1.58
+LBM38_A,Matsoku,Kaapvaal Craton,LHZ,Ref54,45.3,4.53,1028.0,True,0.01,0.01,-5.92
+PHN1654,Matsoku,Kaapvaal Craton,LHZ,Ref6+Ref277,42.3,4.23,1000.0,True,0.01,0.01,-5.34
+BD1355,Matsoku,Kaapvaal Craton,LHZ,Ref6+Ref73,46.1,4.61,1081.0,False,0.01,0.01,-6.14
+JVS73-152,Matsoku,Kaapvaal Craton,LHZ,Ref34,36.1,3.61,934.0,True,0.01,0.01,-5.11
+JVS73-165,Matsoku,Kaapvaal Craton,LHZ,Ref34,35.7,3.57,911.0,True,0.01,0.01,-4.81
+JVS73-165,Matsoku,Kaapvaal Craton,LHZ,Ref157,35.3,3.53,902.0,True,0.01,0.01,-4.75
+PHN1654,Matsoku,Kaapvaal Craton,LHZ,Ref157+Ref277,40.6,4.06,993.0,False,0.137,0.137,-0.19
+BD1359,Matsoku,Kaapvaal Craton,LHZ,Ref157,45.1,4.51,1029.0,True,0.042,0.042,-3.23
+BD1361,Matsoku,Kaapvaal Craton,PRX,Ref157,42.1,4.21,1002.0,True,0.013,0.013,-5.2
+LBM11/UM-19,Matsoku,Kaapvaal Craton,LHZ,Ref178+Ref196,43.1,4.31,1028.0,True,0.097,0.097,-1.47
+BD1359,Matsoku,Kaapvaal Craton,LHZ,Ref33+Ref34,39.8,3.98,964.0,True,0.01,0.01,-5.27
+BD1361,Matsoku,Kaapvaal Craton,PRX,Ref33+Ref34,43.4,4.34,1007.0,True,0.012,0.012,-5.43
+BD1362,Matsoku,Kaapvaal Craton,PRX,Ref33+Ref34orRef157,45.1,4.51,1059.0,True,0.079,0.079,-2.54
+?BD1363,Matsoku,Kaapvaal Craton,PRX,Ref33+Ref34,44.8,4.48,1037.0,False,,,
+1031,Matsoku,Kaapvaal Craton,PRX,Ref239,56.4,5.64,1160.0,False,,,
+LBM6 ,Matsoku,Kaapvaal Craton,LHZ,Ref309,45.0,4.5,1029.0,True,0.057,0.057,-2.92
+LBM10,Matsoku,Kaapvaal Craton,LHZ,Ref309,48.8,4.88,1040.0,True,0.01,0.01,-6.05
+LBM36-2 ,Matsoku,Kaapvaal Craton,PRX,Ref309,48.8,4.88,1070.0,True,0.065,0.065,-2.84
+PHN1917,Mothae,Kaapvaal Craton,LHZ,Ref3+Ref205+Ref249+Ref277,45.9,4.59,1043.0,True,0.01,0.01,-5.76
+PHN1559B,Mothae,Kaapvaal Craton,LHZ,Ref3,39.0,3.9,957.0,True,0.01,0.01,-5.25
+PHN1925,Mothae,Kaapvaal Craton,LHZ,Ref3+Ref249+Ref277,65.7,6.57,1398.0,False,0.068,0.137,-2.18
+BD2125,Mothae,Kaapvaal Craton,LHZ,Ref20+Ref277,43.3,4.33,1036.0,True,0.01,0.01,-5.75
+BD2125,Mothae,Kaapvaal Craton,LHZ,Ref157+Ref277,44.7,4.47,1059.0,True,0.031,0.031,-3.8
+PHN1925,Mothae,Kaapvaal Craton,LHZ,Ref157+Ref205+Ref277,63.8,6.38,1387.0,False,0.019,0.084,-3.16
+PHN2044,Mothae,Kaapvaal Craton,LHZ,Ref178,32.9,3.29,861.0,False,0.01,0.01,-4.65
+BD2125,Mothae,Kaapvaal Craton,LHZ,Ref33+Ref34+Ref277,42.5,4.25,1034.0,True,0.01,0.01,-5.7
+BD2501,Mothae,Kaapvaal Craton,LHZ,Ref211+Ref249,52.6,5.26,1255.0,True,0.099,0.113,-1.98
+AJE62,Mothae,Kaapvaal Craton,LHZ,Ref211,45.4,4.54,1051.0,True,0.026,0.026,-4.13
+JJG703,Mothae,Kaapvaal Craton,LHZ,Ref211,52.9,5.29,1245.0,True,0.044,0.054,-3.47
+FRB135,Mothae,Kaapvaal Craton,LHZ,Ref249,36.8,3.68,919.0,True,0.01,0.01,-4.96
+FRB131,Mothae,Kaapvaal Craton,LHZ,Ref249,43.9,4.39,1013.0,True,0.04,0.04,-3.16
+FRB140,Mothae,Kaapvaal Craton,LHZ,Ref249,61.2,6.12,1299.0,True,0.052,0.083,-3.0
+M1,Mothae,Kaapvaal Craton,LHZ,Ref447,41.1,4.11,974.0,True,0.01,0.01,-5.43
+M9,Mothae,Kaapvaal Craton,LHZ,Ref447,40.7,4.07,962.0,True,0.01,0.01,-5.32
+M13,Mothae,Kaapvaal Craton,LHZ,Ref447,41.5,4.15,939.0,True,0.01,0.01,-5.57
+WLG1,Ngopetsoeu,Kaapvaal Craton,MEG,Ref246,25.0,2.5,755.0,False,,,
+PTH400,Pipe_200,Kaapvaal Craton,LHZ,Ref85,39.7,3.97,962.0,True,0.01,0.01,-5.22
+PTH405,Pipe_200,Kaapvaal Craton,LHZ,Ref85,37.8,3.78,953.0,True,0.032,0.032,-3.03
+PTH407,Pipe_200,Kaapvaal Craton,LHZ,Ref85,38.1,3.81,952.0,True,0.01,0.01,-5.21
+PTH410,Pipe_200,Kaapvaal Craton,LHZ,Ref85,37.9,3.79,977.0,True,0.028,0.028,-3.29
+PHN4474,Ramatseliso,Kaapvaal Craton,LHZ,Ref109+Ref205,40.3,4.03,1280.0,True,0.099,0.123,-1.38
+PHN1725X,Ramatseliso,Kaapvaal Craton,LHZ,Ref109,41.9,4.19,1272.0,True,0.06,0.081,-2.27
+PHN1726A,Ramatseliso,Kaapvaal Craton,LHZ,Ref109,41.2,4.12,1294.0,False,0.04,0.069,-2.57
+PHN3060,Ramatseliso,Kaapvaal Craton,LHZ,Ref109,42.4,4.24,1331.0,True,0.054,0.097,-2.06
+PHN1595,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref277,34.9,3.49,878.0,False,0.01,0.01,-4.89
+PHN1567,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3,35.3,3.53,927.0,True,0.029,0.029,-2.93
+PHN1569,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref4+Ref3+Ref205,36.0,3.6,917.0,True,0.01,0.01,-5.01
+PHN1591,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref4+Ref277,54.3,5.43,1345.0,True,0.088,0.137,-1.92
+PHN1611,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref4+Ref277,62.2,6.22,1413.0,True,0.052,0.127,-2.48
+PHN1591,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref277,54.6,5.46,1351.0,True,0.093,0.144,-1.91
+E-3,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref205+Ref277,55.6,5.56,1360.0,True,0.093,0.148,-1.78
+PHN1610,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref277,62.9,6.29,1423.0,True,0.081,0.159,-2.02
+PHN1566,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref3+Ref205+Ref277,63.1,6.31,1436.0,True,0.091,0.175,-1.73
+PHN1566,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref34orRef157+Ref205+Ref277,60.0,6.0,1418.0,True,0.095,0.171,-1.82
+PHN1568,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref34,39.0,3.9,941.0,True,0.043,0.043,-2.68
+PHN1573,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref34+Ref277,35.7,3.57,850.0,False,0.01,0.01,-5.05
+PHN1610,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref34orRef157+Ref277,63.4,6.34,1425.0,True,0.131,0.21,-1.54
+PHN1567,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref277,31.5,3.15,857.0,False,0.045,0.045,-1.6
+PHN1568,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157,34.2,3.42,920.0,True,0.045,0.045,-2.19
+PHN1569,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref205+Ref277,35.1,3.51,902.0,True,0.01,0.01,-5.13
+PHN1570,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref205+Ref277,37.8,3.78,935.0,True,0.01,0.01,-5.2
+PHN1573,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref277,34.0,3.4,853.0,False,0.01,0.01,-4.93
+PHN1592,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref277,33.3,3.33,889.0,False,0.01,0.01,-4.63
+JVS73-210,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157,57.1,5.71,1280.0,True,0.079,0.103,-2.57
+JVS73-210,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref160,57.1,5.71,1280.0,True,0.079,0.103,-2.57
+PHN1591,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref277,54.6,5.46,1349.0,False,0.054,0.104,-2.56
+PHN1611,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref157+Ref205+Ref277,62.2,6.22,1403.0,False,0.101,0.172,-1.82
+TP5,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref447,34.0,3.4,870.0,False,0.01,0.01,-4.74
+TP6,Thaba_Putsoa,Kaapvaal Craton,LHZ,Ref447,38.1,3.81,920.0,True,0.01,0.01,-5.25
+DB-1,Dsun-Bussular_SE_Mongolia,,LHZ,Ref332,19.3,1.93,1074.0,False,0.01,0.01,-4.08
+198/2,Mongolia,,LHZ,Ref411,19.1,1.91,1116.0,False,0.022,0.022,-2.99
+MK-5,Shavaryn_Tsaram_Tariat_Mongolia,,LHZ,Ref319,18.7,1.87,1119.0,False,,,
+A18,Shavaryn_Tsaram_Tariat_Mongolia,,LHZ,Ref319,16.1,1.61,991.0,False,,,
+198,Shavaryn_Tsaram_Tariat_Mongolia,,LHZ,Ref319,17.4,1.74,1075.0,False,,,
+69,Shavaryn_Tsaram_Tariat_Mongolia,,PRX,Ref319,13.2,1.32,937.0,False,,,
+KAK2,Anis_Kubub,,LHZ,Ref37,40.0,4.0,1059.0,True,0.108,0.108,-1.33
+KAK6,Anis_Kubub,,LHZ,Ref37,38.4,3.84,1028.0,True,0.066,0.066,-1.92
+KAK9,Anis_Kubub,,LHZ,Ref37,37.1,3.71,989.0,True,0.01,0.01,-5.14
+KAK12,Anis_Kubub,,LHZ,Ref37,43.4,4.34,1067.0,True,0.073,0.073,-2.15
+KGG31,Gibeon_Townlands,,LHZ,Ref36,39.4,3.94,1043.0,True,0.065,0.065,-2.04
+KGG63,Gibeon_Townlands,,LHZ,Ref36,39.2,3.92,955.0,True,0.01,0.01,-5.22
+KGG45,Gibeon_Townlands,,LHZ,Ref36,39.8,3.98,1011.0,True,0.076,0.076,-1.67
+KGG23,Gibeon_Townlands,,LHZ,Ref36,38.7,3.87,987.0,True,0.068,0.068,-1.97
+KGG13,Gibeon_Townlands,,LHZ,Ref36,40.1,4.01,1030.0,True,0.061,0.061,-2.26
+KGG20B,Gibeon_Townlands,,LHZ,Ref36,41.2,4.12,1040.0,True,0.05,0.05,-2.64
+KGG14,Gibeon_Townlands,,LHZ,Ref36,42.5,4.25,1002.0,True,0.065,0.065,-2.18
+KGG62,Gibeon_Townlands,,LHZ,Ref36,40.3,4.03,964.0,True,0.065,0.065,-2.03
+KGG06,Gibeon_Townlands,,LHZ,Ref36,37.1,3.71,932.0,True,0.01,0.01,-5.06
+KGG54,Gibeon_Townlands,,LHZ,Ref36,38.9,3.89,973.0,True,0.028,0.028,-3.47
+KGG20A,Gibeon_Townlands,,LHZ,Ref36,35.8,3.58,985.0,True,0.037,0.037,-2.67
+KGG50,Gibeon_Townlands,,LHZ,Ref36,40.3,4.03,998.0,True,0.036,0.036,-3.13
+KGG72,Gibeon_Townlands,,LHZ,Ref36,39.6,3.96,1008.0,True,0.066,0.066,-1.99
+KGG60,Gibeon_Townlands,,LHZ,Ref36,36.0,3.6,979.0,True,0.051,0.051,-2.1
+KGG83,Gibeon_Townlands,,LHZ,Ref36,42.6,4.26,1023.0,True,0.038,0.038,-3.25
+KGG65,Gibeon_Townlands,,LHZ,Ref36,38.3,3.83,972.0,True,0.121,0.121,-0.59
+KGG88A,Gibeon_Townlands,,LHZ,Ref36,38.9,3.89,940.0,True,0.01,0.01,-5.22
+KGG30,Gibeon_Townlands,,LHZ,Ref36,40.0,4.0,971.0,True,0.01,0.01,-5.31
+KGG81,Gibeon_Townlands,,LHZ,Ref36,37.7,3.77,954.0,True,0.038,0.038,-2.76
+KGG70,Gibeon_Townlands,,LHZ,Ref36,40.6,4.06,987.0,True,0.038,0.038,-2.96
+KGG62A,Gibeon_Townlands,,LHZ,Ref36,40.3,4.03,1088.0,True,0.07,0.07,-2.08
+KGG77,Gibeon_Townlands,,LHZ,Ref36,40.3,4.03,1102.0,True,0.137,0.137,-0.88
+KGG55,Gibeon_Townlands,,LHZ,Ref36,43.2,4.32,1080.0,True,0.078,0.078,-2.04
+KGG55,Gibeon_Townlands,,LHZ,Ref36,38.2,3.82,1070.0,True,0.094,0.094,-1.36
+KGG37,Gibeon_Townlands,,LHZ,Ref36,43.9,4.39,1112.0,False,0.118,0.118,-1.41
+KGG37,Gibeon_Townlands,,LHZ,Ref36,41.6,4.16,1111.0,False,0.01,0.01,-5.93
+KHA3,Hanaus,,LHZ,Ref37,36.2,3.62,1126.0,False,,,
+KHA103,Hanaus,,LHZ,Ref37,23.3,2.33,728.0,False,,,
+H1,Hanaus,,LHZ,Ref70,35.1,3.51,949.0,True,0.052,0.052,-1.96
+H7,Hanaus,,LHZ,Ref70,37.8,3.78,933.0,False,,,
+H17,Hanaus,,LHZ,Ref70,34.0,3.4,871.0,False,,,
+H18,Hanaus,,LHZ,Ref70,36.2,3.62,937.0,False,,,
+H19,Hanaus,,LHZ,Ref70,38.3,3.83,993.0,False,,,
+H27,Hanaus,,LHZ,Ref70,31.9,3.19,854.0,False,,,
+FRB1680,Louwrencia,,LHZ,Ref31,39.1,3.91,954.0,True,0.01,0.01,-5.3
+FRB1682,Louwrencia,,LHZ,Ref31,43.6,4.36,1081.0,True,0.04,0.04,-3.29
+FRB1685,Louwrencia,,LHZ,Ref501,37.9,3.79,988.0,True,0.025,0.025,-3.55
+FRB1687,Louwrencia,,LHZ,Ref501,34.2,3.42,908.0,True,0.01,0.01,-4.86
+L4,Louwrencia,,LHZ,Ref70,28.3,2.83,812.0,False,0.01,0.01,-3.95
+L10,Louwrencia,,LHZ,Ref70,40.1,4.01,982.0,True,0.037,0.037,-2.94
+L14,Louwrencia,,LHZ,Ref70,37.6,3.76,945.0,True,0.01,0.01,-5.18
+L19,Louwrencia,,LHZ,Ref70,35.1,3.51,913.0,False,0.01,0.01,-4.91
+L20,Louwrencia,,LHZ,Ref70,40.7,4.07,989.0,True,0.029,0.029,-3.48
+L32,Louwrencia,,LHZ,Ref70,30.9,3.09,852.0,False,0.01,0.01,-4.45
+L34,Louwrencia,,LHZ,Ref70,38.2,3.82,975.0,True,0.01,0.01,-5.15
+L35,Louwrencia,,LHZ,Ref70,31.2,3.12,799.0,False,,,
+L41,Louwrencia,,LHZ,Ref70,41.5,4.15,969.0,True,0.018,0.018,-4.23
+L42,Louwrencia,,LHZ,Ref70,36.9,3.69,1028.0,True,0.074,0.074,-1.52
+L43,Louwrencia,,LHZ,Ref70,35.7,3.57,928.0,True,0.01,0.01,-4.89
+FRB1685,Louwrencia,,LHZ,Ref501,39.5,3.95,991.0,True,0.021,0.021,-3.97
+FRB1687,Louwrencia,,LHZ,Ref501,34.2,3.42,908.0,True,0.01,0.01,-4.86
+FRB1687,Louwrencia,,LHZ,Ref501,34.2,3.42,908.0,True,0.01,0.01,-4.86
+JJG2517,Louwrencia,,LHZ,Ref501,38.6,3.86,938.0,True,0.01,0.01,-5.19
+PHN5315,Louwrencia,,LHZ,Ref501,43.8,4.38,1039.0,True,0.035,0.035,-3.44
+PHN5316,Louwrencia,,LHZ,Ref501,41.0,4.1,1010.0,True,0.01,0.01,-5.46
+PHN5365,Louwrencia,,LHZ,Ref501,26.3,2.63,776.0,False,0.01,0.01,-3.99
+A239,Mir,Siberian Craton,LHZ,Ref444,33.3,3.33,740.0,False,0.01,0.01,-4.09
+M-607,Mir?,Siberian Craton,LHZ,Ref297,30.7,3.07,759.0,False,0.01,0.01,-4.18
+OBJ-2,Obnazhennaya,Siberian Craton,MEG,Ref297,23.7,2.37,739.0,False,,,
+O-85/91,Obnazhennaya,Siberian Craton,PRX,Ref466,30.3,3.03,776.0,False,,,
+O-1085,Obnazhennaya,Siberian Craton,PRX,Ref466,27.3,2.73,740.0,False,,,
+Uv404/86,Udachnaya,Siberian Craton,LHZ,Ref65,36.6,3.66,850.0,False,0.01,0.01,-4.9
+Uv-293/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,43.4,4.34,915.0,True,0.042,0.042,-3.05
+Uv-306/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,31.5,3.15,818.0,False,0.01,0.01,-4.3
+Uv-417/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,46.7,4.67,918.0,True,0.01,0.01,-5.59
+Uv-485/89,Udachnaya,Siberian Craton,LHZ,Ref17,42.4,4.24,870.0,False,0.01,0.01,-5.33
+Uv-178/93,Udachnaya,Siberian Craton,LHZ,Ref17,34.5,3.45,831.0,False,0.027,0.027,-2.87
+Uv-52/76,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,57.7,5.77,1258.0,True,0.126,0.141,-1.94
+Uv-74/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,59.3,5.93,1254.0,True,0.078,0.092,-2.76
+Uv-115/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,58.3,5.83,1206.0,True,0.079,0.075,-3.09
+Uv-228/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,61.8,6.18,1243.0,True,0.087,0.097,-2.82
+Uv-246/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,63.6,6.36,1251.0,True,0.042,0.055,-3.93
+Uv-267/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,58.5,5.85,1205.0,True,0.097,0.092,-2.7
+Uv-424/89,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,61.8,6.18,1304.0,True,0.117,0.15,-1.98
+Uv-61/91,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,60.8,6.08,1198.0,True,0.063,0.055,-3.82
+Uv-121/91,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,60.4,6.04,1274.0,True,0.102,0.123,-2.32
+Uv-70/92,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,57.7,5.77,1207.0,True,0.044,0.04,-4.26
+Uv-76/92,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,70.8,7.08,1359.0,True,0.101,0.155,-2.49
+Uv-80/92,Udachnaya,Siberian Craton,LHZ,Ref17+Ref345,61.3,6.13,1299.0,True,0.124,0.155,-1.86
+Uv-12/93,Udachnaya,Siberian Craton,LHZ,Ref17,61.8,6.18,1268.0,True,0.058,0.077,-3.2
+Uv-128/93,Udachnaya,Siberian Craton,LHZ,Ref17,62.1,6.21,1261.0,True,0.082,0.099,-2.82
+Uv-115/89,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,58.7,5.87,1213.0,True,0.076,0.074,-3.11
+Uv-61/91,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,61.1,6.11,1203.0,True,0.066,0.06,-3.68
+Uv-121/91,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,60.6,6.06,1275.0,True,0.087,0.109,-2.56
+Uv-51/92,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,67.7,6.77,1310.0,True,0.085,0.12,-2.62
+Uv-12/93,Udachnaya,Siberian Craton,LHZ,Ref169,61.9,6.19,1269.0,True,0.053,0.072,-3.3
+Uv-128/93,Udachnaya,Siberian Craton,LHZ,Ref169,62.2,6.22,1262.0,True,0.082,0.099,-2.78
+Uv-293/89,Udachnaya,Siberian Craton,LHZ,Ref169+Ref345,44.3,4.43,917.0,False,0.054,0.054,-2.7
+Uv-485/89,Udachnaya,Siberian Craton,LHZ,Ref169,43.4,4.34,872.0,False,0.01,0.01,-5.41
+Uv-178/93,Udachnaya,Siberian Craton,LHZ,Ref169,36.1,3.61,834.0,False,0.021,0.021,-3.45
+Uv-1,Udachnaya,Siberian Craton,LHZ,Ref131orRef297,60.2,6.02,1241.0,True,0.094,0.103,-2.7
+Uv-111,Udachnaya,Siberian Craton,LHZ,Ref131,67.6,6.76,1310.0,True,0.052,0.087,-3.32
+Uv-1111,Udachnaya,Siberian Craton,LHZ,Ref131orRef297,61.7,6.17,1296.0,True,0.107,0.137,-2.24
+Uv-163/76,Udachnaya,Siberian Craton,LHZ,Ref131,37.8,3.78,874.0,False,0.026,0.026,-3.37
+Uv-255/75,Udachnaya,Siberian Craton,LHZ,Ref131+Ref43,65.8,6.58,1290.0,True,0.06,0.088,-3.07
+Uv-89/76,Udachnaya,Siberian Craton,LHZ,Ref131,71.4,7.14,1321.0,True,0.063,0.102,-3.41
+Uv-963/FRB555,Udachnaya,Siberian Craton,LHZ,Ref131,63.6,6.36,1284.0,True,0.091,0.116,-2.59
+Uv-964/FRB554,Udachnaya,Siberian Craton,LHZ,Ref131,65.4,6.54,1302.0,True,0.118,0.15,-2.19
+Uv-2/76,Udachnaya,Siberian Craton,LHZ,Ref131,68.2,6.82,1306.0,False,0.036,0.07,-3.95
+Uv-624/86,Udachnaya,Siberian Craton,LHZ,Ref40+Ref41,41.4,4.14,841.0,False,0.01,0.01,-5.32
+Uv-255/75,Udachnaya,Siberian Craton,LHZ,Ref43+Ref42+Ref190,63.4,6.34,1275.0,True,0.09,0.112,-2.54
+Uv-61/91,Udachnaya,Siberian Craton,LHZ,Ref251,61.9,6.19,1202.0,True,0.129,0.123,-2.32
+555/80,Udachnaya,Siberian Craton,PRX,Ref348,41.2,4.12,846.0,False,0.01,0.01,-5.07
+U-275/87,Udachnaya,Siberian Craton,LHZ,Ref361,35.1,3.51,745.0,False,0.01,0.01,-4.35
+V-231,Vitim,,PRX,Ref458,18.6,1.86,966.0,False,,,
+V-252,Vitim,,PRX,Ref458,19.8,1.98,1012.0,False,,,
+V-426,Vitim,,PRX,Ref458,19.0,1.9,998.0,False,0.01,0.01,-3.96
+V-211,Vitim,,PRX,Ref458,23.5,2.35,1236.0,False,,,
+Vi313-10,Vitim,,LHZ,Ref462,19.9,1.99,1124.0,False,0.045,0.045,-1.51
+SF-93163,Vitim,,LHZ,Ref410,22.8,2.28,1134.0,False,0.03,0.0,
+SG-96B13,Vitim,,LHZ,Ref410,19.4,1.94,1014.0,False,0.01,0.01,-3.91
+313-1,Vitim_area,,LHZ,Ref21,19.6,1.96,1005.0,True,0.01,0.01,-4.11
+313-103,Vitim_area,,LHZ,Ref21,17.0,1.7,963.0,False,0.01,0.01,-3.58
+313-110,Vitim_area,,LHZ,Ref21+Ref26,17.8,1.78,972.0,False,0.01,0.01,-3.73
+313-113G,Vitim_area,,LHZ,Ref22,19.8,1.98,1019.0,False,0.01,0.01,-4.01
+313-113SG,Vitim_area,,LHZ,Ref22,17.8,1.78,997.0,False,0.01,0.01,-3.83
+313-115,Vitim_area,,LHZ,Ref22,20.7,2.07,1017.0,False,0.01,0.01,-4.06
+313-116G,Vitim_area,,LHZ,Ref22,22.6,2.26,1165.0,False,0.014,0.0,
+313-116SG,Vitim_area,,LHZ,Ref22,22.3,2.23,1160.0,False,0.01,0.0,
+313-240,Vitim_area,,LHZ,Ref22,22.4,2.24,1077.0,False,0.01,0.01,-4.28
+313-3,Vitim_area,,LHZ,Ref21,20.9,2.09,1020.0,True,0.01,0.01,-4.11
+313-37,Vitim_area,,LHZ,Ref21+Ref26,18.1,1.81,993.0,False,0.01,0.01,-3.93
+313-6,Vitim_area,,LHZ,Ref21,20.2,2.02,1057.0,False,0.01,0.01,-4.23
+313-8,Vitim_area,,LHZ,Ref21,20.6,2.06,1064.0,False,0.01,0.01,-4.19
+314-580,Vitim_area,,LHZ,Ref21+Ref26,20.7,2.07,1102.0,False,0.025,0.025,-2.58
+313-1,Vitim_area,,LHZ,Ref491,17.2,1.72,924.0,False,0.01,0.01,-3.57
+313-2,Vitim_area,,LHZ,Ref491,19.2,1.92,1027.0,False,0.01,0.01,-4.08
+313-3,Vitim_area,,LHZ,Ref491,18.7,1.87,960.0,False,0.01,0.01,-3.78
+313-5,Vitim_area,,LHZ,Ref491,20.1,2.01,1082.0,False,0.029,0.029,-2.21
+313-6,Vitim_area,,LHZ,Ref491,19.5,1.95,1042.0,False,,,
+313-7,Vitim_area,,LHZ,Ref491,21.6,2.16,1081.0,False,0.022,0.022,-2.82
+313-8,Vitim_area,,LHZ,Ref491,18.7,1.87,990.0,False,0.01,0.01,-3.91
+313-54,Vitim_area,,LHZ,Ref491,20.1,2.01,1012.0,False,0.01,0.01,-4.0
+313-102,Vitim_area,,LHZ,Ref491,21.5,2.15,1043.0,False,0.01,0.01,-4.21
+313-104,Vitim_area,,LHZ,Ref491,19.9,1.99,1034.0,False,0.01,0.01,-4.06
+313-105,Vitim_area,,LHZ,Ref491,19.8,1.98,1022.0,False,0.01,0.01,-4.03
+313-106,Vitim_area,,LHZ,Ref491,18.8,1.88,984.0,True,0.01,0.01,-3.91
+313-112,Vitim_area,,LHZ,Ref491,20.9,2.09,1011.0,False,0.01,0.01,-4.03
+313-240,Vitim_area,,LHZ,Ref491,19.2,1.92,1004.0,False,0.01,0.01,-3.92
+313-241,Vitim_area,,LHZ,Ref491,19.4,1.94,999.0,False,0.01,0.01,-3.96
+313-37,Vitim_area,,LHZ,Ref491,20.0,2.0,1015.0,False,0.01,0.01,-4.0
+313-37,Vitim_area,,LHZ,Ref491,20.0,2.0,1015.0,False,0.01,0.01,-3.99
+313-37,Vitim_area,,LHZ,Ref491,22.1,2.21,1071.0,False,0.033,0.033,-2.07
+313-110,Vitim_area,,LHZ,Ref491,19.1,1.91,995.0,False,0.01,0.01,-3.88
+314-2,Vitim_area,,LHZ,Ref491,23.6,2.36,1137.0,False,0.01,0.0,
+314-2,Vitim_area,,LHZ,Ref491,22.3,2.23,1137.0,False,0.01,0.0,
+314-74,Vitim_area,,LHZ,Ref491,18.8,1.88,1035.0,False,0.01,0.01,-4.11
+314-74,Vitim_area,,LHZ,Ref491,21.3,2.13,1094.0,False,0.01,0.01,-4.32
+314-230,Vitim_area,,LHZ,Ref491,19.1,1.91,1069.0,False,0.035,0.035,-1.8
+314-580,Vitim_area,,LHZ,Ref491,20.4,2.04,1070.0,False,0.01,0.01,-4.2
+SF-93163,Vitim_Bereya,,LHZ,Ref410,22.8,2.28,1134.0,False,0.03,0.0,
+SG-96B13,Vitim_Bereya,,LHZ,Ref410,19.4,1.94,1014.0,False,0.01,0.01,-3.91
+SAE101,Malaita,,PRX,Ref492,15.7,1.57,893.0,False,0.01,0.01,-3.35
+SAE122,Malaita,,PRX,Ref492,17.6,1.76,835.0,False,,,
+SAE103,Malaita,,PRX,Ref492,21.4,2.14,902.0,False,,,
+SAE128,Malaita,,PRX,Ref492,16.9,1.69,812.0,False,,,
+SAE144,Malaita,,PRX,Ref492,20.4,2.04,879.0,False,,,
+SAE145,Malaita,,PRX,Ref492,20.1,2.01,878.0,False,,,
+SAG10,Malaita,,LHZ,Ref492,19.3,1.93,862.0,False,0.01,0.01,-3.5
+SAG12,Malaita,,LHZ,Ref492,19.4,1.94,869.0,False,,,
+SAG14,Malaita,,LHZ,Ref492,22.1,2.21,944.0,True,0.01,0.01,-3.99
+SAG17,Malaita,,LHZ,Ref492,21.1,2.11,919.0,True,0.018,0.018,-2.79
+SAG20,Malaita,,LHZ,Ref492,21.0,2.1,909.0,True,0.01,0.01,-3.77
+SAG24,Malaita,,LHZ,Ref492,18.1,1.81,959.0,True,0.085,0.085,0.11
+SAS11,Malaita,,LHZ,Ref492,15.7,1.57,913.0,False,0.063,0.063,-0.15
+SAG4,Malaita,,LHZ,Ref492,22.7,2.27,949.0,True,0.038,0.038,-1.76
+SAG6,Malaita,,LHZ,Ref492,22.3,2.23,940.0,True,0.015,0.015,-3.3
+SAG8,Malaita,,LHZ,Ref492,22.4,2.24,951.0,True,0.03,0.03,-2.15
+SAG22,Malaita,,LHZ,Ref492,23.3,2.33,966.0,True,0.062,0.062,-0.99
+SAE131,Malaita,,LHZ,Ref492,22.2,2.22,943.0,True,0.018,0.018,-2.97
+SAG11,Malaita,,LHZ,Ref492,13.8,1.38,894.0,False,0.072,0.072,0.36
+SAG18,Malaita,,LHZ,Ref492,23.7,2.37,966.0,True,0.049,0.049,-1.29
+SAG23,Malaita,,LHZ,Ref492,20.5,2.05,915.0,True,0.02,0.02,-2.59
+SAG25,Malaita,,LHZ,Ref492,20.2,2.02,901.0,False,,,
+SAG31,Malaita,,LHZ,Ref492,23.9,2.39,984.0,True,0.018,0.018,-3.18
+SAS44,Malaita,,LHZ,Ref492,22.7,2.27,949.0,True,0.01,0.01,-4.09
+SAS55,Malaita,,LHZ,Ref492,24.1,2.41,990.0,True,0.032,0.032,-2.23
+SAS60,Malaita,,LHZ,Ref492,21.3,2.13,975.0,False,0.061,0.061,-0.88
+PHN3532J,Malaita_Babaruu,,LHZ,Ref128,15.1,1.51,787.0,False,0.01,0.01,-2.96
+PHN3550A,Malaita_Babaruu,,LHZ,Ref128,18.0,1.8,846.0,False,,,
+PHN3567,Malaita_Babaruu,,LHZ,Ref128,18.5,1.85,874.0,False,0.01,0.01,-3.63
+PHN3536,Malaita_Babaruu,,LHZ,Ref159,22.7,2.27,943.0,False,,,
+142,Abrahamskraal,Kaapvaal Craton,LHZ,Ref136,27.8,2.78,807.0,False,0.01,0.01,-4.17
+81-001-026,Bellsbank,Kaapvaal Craton,PRX,Ref222,55.2,5.52,1056.0,False,,,
+FRB437-2,Bellsbank_Main,Kaapvaal Craton,PRX,Ref399+Ref400,36.4,3.64,786.0,False,,,
+BD2358,Bultfontein,Kaapvaal Craton,LHZ,Ref467,24.9,2.49,722.0,False,0.01,0.01,-3.48
+BD2379,Bultfontein,Kaapvaal Craton,LHZ,Ref467,35.4,3.54,885.0,False,0.067,0.067,-1.43
+691,Finsch,Kaapvaal Craton,LHZ,Ref14,59.2,5.92,1195.0,True,0.069,0.06,-3.73
+869,Finsch,Kaapvaal Craton,LHZ,Ref14,63.9,6.39,1230.0,True,0.075,0.08,-3.31
+689,Finsch,Kaapvaal Craton,LHZ,Ref14,59.7,5.97,1187.0,True,0.073,0.061,-3.5
+868,Finsch,Kaapvaal Craton,LHZ,Ref14,56.5,5.65,1175.0,True,0.052,0.036,-4.4
+871,Finsch,Kaapvaal Craton,LHZ,Ref14,54.2,5.42,1133.0,True,0.021,0.0,
+880,Finsch,Kaapvaal Craton,LHZ,Ref14,59.4,5.94,1209.0,True,0.087,0.083,-2.97
+584,Finsch,Kaapvaal Craton,LHZ,Ref14,56.9,5.69,1199.0,True,0.053,0.046,-4.06
+726,Finsch,Kaapvaal Craton,LHZ,Ref14,51.9,5.19,1141.0,True,0.073,0.044,-3.74
+875,Finsch,Kaapvaal Craton,LHZ,Ref14,55.5,5.55,1167.0,True,0.059,0.039,-4.12
+881,Finsch,Kaapvaal Craton,LHZ,Ref14,56.8,5.68,1195.0,True,0.072,0.063,-3.31
+873,Finsch,Kaapvaal Craton,LHZ,Ref14,57.2,5.72,1185.0,True,0.024,0.011,-6.45
+521,Finsch,Kaapvaal Craton,LHZ,Ref14,57.1,5.71,1185.0,True,0.071,0.058,-3.51
+874,Finsch,Kaapvaal Craton,LHZ,Ref14,56.9,5.69,1176.0,True,0.019,0.003,-8.87
+543,Finsch,Kaapvaal Craton,LHZ,Ref14,58.6,5.86,1201.0,True,0.01,0.003,-8.6
+725,Finsch,Kaapvaal Craton,LHZ,Ref14,65.6,6.56,1199.0,False,0.042,0.035,-5.05
+708,Finsch,Kaapvaal Craton,LHZ,Ref14,55.6,5.56,1168.0,True,0.058,0.039,-4.14
+876,Finsch,Kaapvaal Craton,LHZ,Ref14,57.9,5.79,1196.0,True,0.061,0.052,-3.66
+878,Finsch,Kaapvaal Craton,LHZ,Ref14,55.0,5.5,1172.0,True,0.073,0.055,-3.44
+724,Finsch,Kaapvaal Craton,LHZ,Ref14,56.6,5.66,1196.0,True,0.042,0.034,-4.47
+695,Finsch,Kaapvaal Craton,LHZ,Ref14,56.3,5.63,1173.0,False,0.04,0.023,-5.24
+872,Finsch,Kaapvaal Craton,LHZ,Ref14,55.6,5.56,1181.0,True,0.079,0.065,-3.18
+JJG147,Finsch,Kaapvaal Craton,LHZ,Ref117,56.4,5.64,1165.0,True,0.058,0.038,-4.35
+JJG545,Finsch,Kaapvaal Craton,PRX,Ref117,56.3,5.63,1167.0,False,,,
+XM46.554,Finsch,Kaapvaal Craton,LHZ,Ref18,65.6,6.56,1252.0,True,0.114,0.127,-2.66
+XM48.556,Finsch,Kaapvaal Craton,LHZ,Ref18,58.5,5.85,1169.0,False,0.026,0.007,-7.5
+F-1,Finsch,Kaapvaal Craton,LHZ,Ref515,57.6,5.76,1174.0,True,0.07,0.053,-3.47
+F-3,Finsch,Kaapvaal Craton,LHZ,Ref515,52.7,5.27,1125.0,True,0.058,0.058,-2.99
+F-4,Finsch,Kaapvaal Craton,LHZ,Ref515,55.0,5.5,1157.0,True,0.085,0.062,-3.17
+F-5,Finsch,Kaapvaal Craton,LHZ,Ref515,54.8,5.48,1150.0,True,0.063,0.037,-4.02
+F-6,Finsch,Kaapvaal Craton,LHZ,Ref515,55.2,5.52,1187.0,True,0.08,0.068,-3.01
+F-8,Finsch,Kaapvaal Craton,LHZ,Ref515,56.2,5.62,1167.0,True,0.07,0.051,-3.51
+F-10,Finsch,Kaapvaal Craton,LHZ,Ref515,51.9,5.19,1131.0,True,0.074,0.041,-3.61
+F-11,Finsch,Kaapvaal Craton,LHZ,Ref515,54.6,5.46,1187.0,True,0.096,0.084,-2.58
+F-12,Finsch,Kaapvaal Craton,LHZ,Ref515,57.1,5.71,1134.0,True,0.054,0.022,-5.01
+F-13,Finsch,Kaapvaal Craton,LHZ,Ref515,58.3,5.83,1177.0,False,0.037,0.021,-5.12
+F-14,Finsch,Kaapvaal Craton,LHZ,Ref515,59.6,5.96,1208.0,True,0.084,0.08,-3.01
+F-15,Finsch,Kaapvaal Craton,LHZ,Ref515,54.9,5.49,1164.0,True,0.066,0.045,-3.63
+F-16,Finsch,Kaapvaal Craton,LHZ,Ref515,58.2,5.82,1181.0,True,0.053,0.039,-4.06
+F-25b,Finsch,Kaapvaal Craton,LHZ,Ref515,58.7,5.87,1212.0,True,0.123,0.121,-2.08
+F-25c,Finsch,Kaapvaal Craton,LHZ,Ref515,58.4,5.84,1210.0,True,0.11,0.107,-2.25
+F-26,Finsch,Kaapvaal Craton,LHZ,Ref515,56.7,5.67,1196.0,True,0.114,0.106,-2.17
+695,Finsch,Kaapvaal Craton,LHZ,Ref515,56.3,5.63,1173.0,False,0.04,0.023,-5.24
+FRB33,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,59.1,5.91,1293.0,True,0.051,0.08,-2.99
+FRB35,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,57.6,5.76,1286.0,True,0.083,0.109,-2.35
+FRB416,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,36.9,3.69,832.0,False,0.01,0.01,-4.76
+FRB418,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,34.9,3.49,862.0,False,0.022,0.022,-3.17
+FRB81,Frank_Smith,Kaapvaal Craton,LHZ,Ref105,57.0,5.7,1290.0,True,0.077,0.105,-2.37
+FRB82,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,58.6,5.86,1303.0,True,0.054,0.086,-2.85
+FRB83,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,57.0,5.7,1300.0,True,0.066,0.098,-2.56
+FRB85,Frank_Smith,Kaapvaal Craton,LHZ,Ref105,58.6,5.86,1313.0,True,0.09,0.126,-2.11
+FS-1,Frank_Smith,Kaapvaal Craton,PRX,Ref105,41.8,4.18,932.0,False,,,
+JVS73-105,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,54.8,5.48,1163.0,False,0.03,0.009,-6.91
+JVS73-106,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,53.8,5.38,1156.0,True,0.016,0.0,
+PHN3245/100,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,56.5,5.65,1320.0,False,0.023,0.062,-3.51
+PHN3245/6,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,56.6,5.66,1297.0,True,0.054,0.084,-2.86
+PHN3246/2,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,36.0,3.6,814.0,False,0.01,0.01,-4.73
+PHN3246/3,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,57.6,5.76,1321.0,True,0.039,0.079,-3.01
+PHN3246/4,Frank_Smith,Kaapvaal Craton,LHZ,FRB_FSMITH.PDT,55.1,5.51,1318.0,True,0.068,0.106,-2.41
+1,Frank_Smith,Kaapvaal Craton,PRX,Ref459,33.6,3.36,787.0,False,,,
+2,Frank_Smith,Kaapvaal Craton,PRX,Ref459,32.0,3.2,780.0,False,,,
+7033,Hebron,,LHZ,Ref110,24.4,2.44,834.0,False,0.01,0.01,-3.8
+7143,Hebron,,LHZ,Ref110,18.5,1.85,735.0,False,0.01,0.01,-3.02
+FRB795,Hebron,,LHZ,FBPN_HEBRON.FRB,20.7,2.07,755.0,False,0.01,0.01,-3.31
+FRB797/1,Hebron,,LHZ,FBPN_HEBRON.FRB,22.6,2.26,791.0,False,0.01,0.01,-3.5
+PHN4933,Hebron,,LHZ,FBPN_HEBRON.FRB,21.1,2.11,773.0,False,0.01,0.01,-3.33
+RAJ106,Hebron,,LHZ,FBPN_HEBRON.FRB,17.9,1.79,705.0,False,0.01,0.01,-2.87
+FRB998,Jagersfontein,Kaapvaal Craton,LHZ,Ref178,57.5,5.75,1194.0,False,0.01,0.001,-11.15
+J-133,Jagersfontein,Kaapvaal Craton,LHZ,Ref106,34.4,3.44,744.0,False,0.01,0.01,-4.34
+J-134,Jagersfontein,Kaapvaal Craton,LHZ,Ref106,32.5,3.25,798.0,False,0.021,0.021,-2.92
+J-24,Jagersfontein,Kaapvaal Craton,LHZ,Ref106,32.3,3.23,743.0,False,0.01,0.01,-4.06
+J34,Jagersfontein,Kaapvaal Craton,LHZ,Ref132+Ref133,28.1,2.81,745.0,False,0.01,0.01,-3.71
+JJG859,Jagersfontein,Kaapvaal Craton,LHZ,Ref211,56.7,5.67,1311.0,True,0.075,0.111,-2.41
+JJH35,Jagersfontein,Kaapvaal Craton,LHZ,Ref267,53.7,5.37,1201.0,True,0.064,0.057,-3.53
+JJH13,Jagersfontein,Kaapvaal Craton,LHZ,Ref267,58.0,5.8,1264.0,True,0.048,0.065,-3.38
+JJG1713,Jagersfontein,Kaapvaal Craton,LHZ,Ref267,53.3,5.33,1303.0,True,0.106,0.138,-1.67
+JJG1710,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,56.7,5.67,1284.0,True,0.104,0.129,-1.93
+JJH10,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,59.0,5.9,1238.0,True,0.061,0.068,-3.2
+JJH28,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,54.3,5.43,1224.0,True,0.081,0.083,-2.82
+JJH35,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,55.4,5.54,1208.0,True,0.05,0.046,-3.91
+JJH8,Jagersfontein,Kaapvaal Craton,LHZ,Ref309,56.2,5.62,1246.0,True,0.124,0.135,-1.83
+FRB1009,Jagersfontein,Kaapvaal Craton,LHZ,Ref398+Ref439,31.1,3.11,778.0,False,0.01,0.01,-4.22
+JAG90-72,Jagersfontein,Kaapvaal Craton,LHZ,Ref439,52.3,5.23,1020.0,True,0.021,0.021,-4.78
+JAG93-8,Jagersfontein,Kaapvaal Craton,LHZ,Ref439,40.7,4.07,936.0,True,0.018,0.018,-4.15
+UX497,Jagersfontein,Kaapvaal Craton,LHZ,Ref439,30.0,3.0,734.0,False,0.01,0.01,-3.94
+J8,Jagersfontein,Kaapvaal Craton,LHZ,Ref447,29.0,2.9,748.0,False,0.03,0.03,-1.78
+JAG90-10,Jagersfontein,Kaapvaal Craton,LHZ,Ref467,39.7,3.97,934.0,True,0.01,0.01,-5.2
+JAG90-12,Jagersfontein,Kaapvaal Craton,LHZ,Ref467,27.4,2.74,736.0,False,0.01,0.01,-3.57
+JAG90-13,Jagersfontein,Kaapvaal Craton,LHZ,Ref467,56.2,5.62,1263.0,True,0.093,0.11,-2.35
+K13core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,42.9,4.29,1015.0,True,0.058,0.058,-2.51
+K14core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,43.8,4.38,994.0,True,0.01,0.01,-5.76
+K18core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,44.2,4.42,1034.0,True,0.01,0.01,-5.6
+K1core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,40.2,4.02,970.0,True,0.041,0.041,-2.82
+K24core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,42.1,4.21,987.0,True,0.026,0.026,-3.74
+K27core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,43.8,4.38,1022.0,True,0.018,0.018,-4.59
+K17core,Kby_Boshof_dump,Kaapvaal Craton,LHZ,Ref505,42.8,4.28,1000.0,True,0.01,0.01,-5.42
+K3core,Kby_Boshof_dump,Kaapvaal Craton,PRX,Ref505,42.5,4.25,992.0,True,0.014,0.014,-5.1
+Bo-01,Kby_Boshof_Rd_dump,Kaapvaal Craton,LHZ,Ref514,34.8,3.48,861.0,False,0.033,0.033,-2.55
+Bo-05,Kby_Boshof_Rd_dump,Kaapvaal Craton,LHZ,Ref514,31.7,3.17,809.0,False,0.01,0.01,-4.16
+Bo-08,Kby_Boshof_Rd_dump,Kaapvaal Craton,LHZ,Ref514,47.3,4.73,1076.0,True,0.014,0.014,-5.25
+Bo-26,Kby_Boshof_Rd_dump,Kaapvaal Craton,LHZ,Ref514,33.5,3.35,852.0,False,0.033,0.033,-2.38
+FRB349,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref157,28.7,2.87,708.0,False,0.01,0.01,-3.82
+FRB351,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref157,38.0,3.8,898.0,False,0.01,0.01,-5.4
+CHE-BT 7,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref157,39.1,3.91,934.0,True,0.01,0.01,-5.26
+BD1149,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref157,39.2,3.92,943.0,True,0.01,0.01,-5.19
+BD1140,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref33+Ref34+Ref73,30.3,3.03,787.0,False,0.01,0.01,-4.04
+BD1149,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref33+Ref34,37.6,3.76,938.0,True,0.01,0.01,-4.93
+BT7,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref33+Ref34,37.7,3.77,931.0,True,0.01,0.01,-5.14
+BD2384,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,42.2,4.22,1018.0,True,0.069,0.069,-2.06
+EJB4,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,40.4,4.04,982.0,True,0.07,0.07,-1.81
+EJB48,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,36.7,3.67,916.0,True,0.01,0.01,-4.88
+MB3,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,37.8,3.78,938.0,True,0.017,0.017,-4.04
+MB4,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,42.6,4.26,1038.0,True,0.044,0.044,-2.85
+MB7,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,40.7,4.07,992.0,True,0.035,0.035,-3.1
+MB12,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,40.5,4.05,984.0,True,0.016,0.016,-4.48
+MB13,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,40.1,4.01,973.0,True,0.034,0.034,-3.01
+PHN2762,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref211,39.6,3.96,939.0,True,0.01,0.01,-5.18
+FRB838,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref249,34.6,3.46,858.0,False,0.011,0.011,-4.39
+K1,Kby_Bultfontein,Kaapvaal Craton,LHZ,Ref439,39.3,3.93,926.0,True,0.01,0.01,-5.05
+PHN2755,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,44.7,4.47,1027.0,True,0.028,0.028,-3.84
+PHN2759,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,41.5,4.15,1024.0,True,0.039,0.039,-2.95
+PHN2760,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,48.7,4.87,1071.0,True,0.053,0.053,-3.09
+PHN2766/1,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,41.1,4.11,980.0,True,0.01,0.01,-5.32
+PHN2766/2,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,39.6,3.96,958.0,True,0.01,0.01,-5.17
+PHN2766/3,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,41.0,4.1,939.0,True,0.01,0.01,-5.36
+PHN2768/1,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,27.3,2.73,730.0,False,0.01,0.01,-3.79
+PHN2768/2,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,37.1,3.71,915.0,True,0.01,0.01,-4.85
+PHN2770,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,33.1,3.31,856.0,False,0.017,0.017,-3.55
+KBBF-11,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,41.0,4.1,932.0,True,0.01,0.01,-5.31
+FRB347,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,37.4,3.74,956.0,True,0.01,0.01,-4.99
+FRB348,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,37.8,3.78,906.0,True,0.01,0.01,-5.06
+FRB350,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,27.1,2.71,716.0,False,0.01,0.01,-3.65
+FRB351,Kby_Bultfontein_Floors,Kaapvaal Craton,LHZ,Ref83,42.1,4.21,954.0,True,0.01,0.01,-5.41
+EJ8601,Kby_Floors,Kaapvaal Craton,LHZ,Ref51,37.4,3.74,869.0,False,0.01,0.01,-4.91
+DB-2,Kby_mines_DeBeers,Kaapvaal Craton,LHZ,Ref83,40.7,4.07,959.0,True,0.01,0.01,-5.35
+AB0929,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,34.3,3.43,808.0,False,0.01,0.01,-4.51
+AB0975,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,38.0,3.8,904.0,True,0.01,0.01,-5.06
+AB0991,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,37.7,3.77,925.0,True,0.01,0.01,-5.06
+AB1004,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,40.2,4.02,974.0,True,0.01,0.01,-5.24
+AB1006,Kby_mines_Wesselton,Kaapvaal Craton,LHZ,Ref23,40.5,4.05,972.0,True,0.018,0.018,-4.29
+XM32,Koffiefontein,Kaapvaal Craton,LHZ,Ref108,38.1,3.81,885.0,False,0.01,0.01,-5.16
+XM38,Koffiefontein,Kaapvaal Craton,LHZ,Ref108,25.2,2.52,706.0,False,0.01,0.01,-3.46
+XM56,Koffiefontein,Kaapvaal Craton,LHZ,Ref108,58.8,5.88,1306.0,True,0.025,0.059,-3.64
+81-002-007,Koffiefontein,Kaapvaal Craton,MEG,Ref222,41.5,4.15,844.0,False,,,
+PHN4803,Lekkerfontein,Kaapvaal Craton,LHZ,Ref179orRef132,31.6,3.16,836.0,False,,,
+RAJ-41,Lekkerfontein,Kaapvaal Craton,LHZ,FBPN_LEKKER.PDT,52.1,5.21,1341.0,True,0.098,0.145,-1.47
+PHN4803,Lekkerfontein,Kaapvaal Craton,LHZ,Ref132orRef179,31.8,3.18,841.0,False,,,
+8053,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,35.4,3.54,848.0,False,,,
+8063,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,37.9,3.79,881.0,False,,,
+8073,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,41.0,4.1,1026.0,False,,,
+8083,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,40.8,4.08,959.0,False,,,
+8113,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,37.3,3.73,853.0,False,,,
+8123,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,40.3,4.03,922.0,False,,,
+PHN4905,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,43.7,4.37,990.0,True,0.01,0.01,-5.47
+PHN4906,Melton_Wold,Kaapvaal Craton,LHZ,FBPN_MELWOLD.PHN,39.7,3.97,894.0,False,0.01,0.01,-5.15
+FRB1,Monastery,Kaapvaal Craton,LHZ,Ref4,56.6,5.66,1257.0,True,0.055,0.07,-3.03
+FRB1,Monastery,Kaapvaal Craton,LHZ,Ref178,54.4,5.44,1248.0,True,0.099,0.111,-2.04
+rom194,Monastery,Kaapvaal Craton,LHZ,Ref467,31.6,3.16,839.0,False,0.01,0.01,-4.52
+ROM-30,Monastery,Kaapvaal Craton,LHZ,Ref506,35.9,3.59,909.0,True,0.01,0.01,-4.86
+ROM-198,Monastery,Kaapvaal Craton,LHZ,Ref506,30.7,3.07,828.0,False,0.01,0.01,-4.17
+ROM-03,Monastery,Kaapvaal Craton,LHZ,Ref506,36.7,3.67,933.0,True,0.01,0.01,-5.01
+ROM-210,Monastery,Kaapvaal Craton,LHZ,Ref506,36.6,3.66,936.0,True,0.032,0.032,-2.91
+ROM-377 LH-108,Monastery,Kaapvaal Craton,LHZ,Ref506,40.3,4.03,981.0,True,0.098,0.098,-1.37
+ROM-68,Monastery,Kaapvaal Craton,LHZ,Ref506,40.4,4.04,986.0,True,0.034,0.034,-3.15
+ROM-69,Monastery,Kaapvaal Craton,LHZ,Ref506,26.3,2.63,734.0,False,0.01,0.01,-3.68
+ROM-302,Monastery,Kaapvaal Craton,LHZ,Ref506,35.3,3.53,900.0,False,0.01,0.01,-5.02
+ROM-377 LH-83,Monastery,Kaapvaal Craton,LHZ,Ref506,24.9,2.49,703.0,False,0.01,0.01,-3.51
+BD-2264,Monastery,Kaapvaal Craton,LHZ,Ref506,23.8,2.38,705.0,False,0.01,0.01,-3.32
+BD-2234,Monastery,Kaapvaal Craton,LHZ,Ref506,24.7,2.47,724.0,False,0.01,0.01,-3.33
+ROM-377 DP-01,Monastery,Kaapvaal Craton,LHZ,Ref506,55.3,5.53,1264.0,True,0.093,0.111,-2.28
+JJG-1975,Monastery,Kaapvaal Craton,PRX,Ref506,27.0,2.7,772.0,False,,,
+ROM-108,Monastery,Kaapvaal Craton,LHZ,Ref506,25.6,2.56,734.0,False,,,
+ROM-318 PY-07,Monastery,Kaapvaal Craton,LHZ,Ref506,29.4,2.94,802.0,False,0.047,0.047,-1.33
+ROM-10,Monastery,Kaapvaal Craton,PRX,Ref506,30.3,3.03,812.0,False,0.079,0.079,-0.75
+RVD100,Premier,Kaapvaal Craton,LHZ,Ref79,65.5,6.55,1372.0,True,0.045,0.104,-2.88
+RVD101,Premier,Kaapvaal Craton,LHZ,Ref80+Ref79,61.8,6.18,1337.0,True,0.086,0.132,-2.22
+RVD132,Premier,Kaapvaal Craton,LHZ,Ref79,63.1,6.31,1336.0,True,0.078,0.123,-2.31
+RVD155,Premier,Kaapvaal Craton,LHZ,Ref80+Ref79,36.0,3.6,960.0,True,0.01,0.01,-4.88
+RVD159,Premier,Kaapvaal Craton,LHZ,Ref79,64.1,6.41,1371.0,True,0.099,0.158,-1.93
+RVD174,Premier,Kaapvaal Craton,LHZ,Ref79,57.8,5.78,1322.0,True,0.111,0.151,-1.74
+PHN5246,Premier,Kaapvaal Craton,LHZ,FRB_SPGAPE.MIN,23.0,2.3,787.0,False,0.01,0.01,-3.5
+JJG1289,Premier,Kaapvaal Craton,LHZ,Ref178,39.7,3.97,952.0,True,0.01,0.01,-5.25
+FRB921,Premier,Kaapvaal Craton,LHZ,Ref251,35.5,3.55,964.0,True,0.014,0.014,-4.22
+JJG-2693,Premier,Kaapvaal Craton,PRX,Ref479,26.9,2.69,795.0,False,,,
+PC_5.2/1,Rietfontein,Kaapvaal Craton,PRX,Ref499,32.8,3.28,786.0,False,,,
+Rtfn_56.1,Rietfontein,Kaapvaal Craton,PRX,Ref499,41.3,4.13,943.0,False,,,
+CMA_3,Rietfontein,Kaapvaal Craton,PRX,Ref499,38.4,3.84,893.0,False,,,
+CMA_11,Rietfontein,Kaapvaal Craton,PRX,Ref499,29.0,2.9,723.0,False,,,
+CMA_13,Rietfontein,Kaapvaal Craton,PRX,Ref499,26.0,2.6,711.0,False,,,
+Ven_4,Venetia,Kaapvaal Craton,PRX,Ref156,39.5,3.95,918.0,False,,,
+Ven_8,Venetia,Kaapvaal Craton,PRX,Ref156,42.7,4.27,965.0,False,,,
+Ven_9,Venetia,Kaapvaal Craton,PRX,Ref156,40.2,4.02,927.0,False,,,
+Ven_10,Venetia,Kaapvaal Craton,PRX,Ref156,41.2,4.12,941.0,False,,,
+Ven_41,Venetia,Kaapvaal Craton,LHZ,Ref156,55.7,5.57,1319.0,True,0.079,0.118,-2.1
+Ven_60,Venetia,Kaapvaal Craton,LHZ,Ref156,56.6,5.66,1339.0,True,0.081,0.127,-2.16
+Ven_63,Venetia,Kaapvaal Craton,LHZ,Ref156,51.4,5.14,1131.0,True,0.128,0.095,-2.04
+Ven_64,Venetia,Kaapvaal Craton,LHZ,Ref156,55.1,5.51,1102.0,True,0.089,0.089,-2.49
+Ven_65,Venetia,Kaapvaal Craton,LHZ,Ref156,54.6,5.46,1283.0,True,0.085,0.11,-2.3
+Ven_72,Venetia,Kaapvaal Craton,LHZ,Ref156,58.4,5.84,1390.0,False,0.051,0.117,-2.47
+Ven_73,Venetia,Kaapvaal Craton,LHZ,Ref156,22.3,2.23,809.0,False,0.01,0.01,-3.39
+Ven_75,Venetia,Kaapvaal Craton,LHZ,Ref156,28.9,2.89,884.0,False,0.068,0.068,-0.71
+Ven_91,Venetia,Kaapvaal Craton,PRX,Ref156,29.0,2.9,816.0,False,,,
+Ven_92,Venetia,Kaapvaal Craton,LHZ,Ref156,25.0,2.5,783.0,False,,,
+Ven_96,Venetia,Kaapvaal Craton,PRX,Ref156,41.4,4.14,957.0,False,,,
+Ven_97,Venetia,Kaapvaal Craton,PRX,Ref156,41.0,4.1,909.0,False,,,
+PHN5073,West_End,Kaapvaal Craton,LHZ,FRB_WEST.END,51.2,5.12,1149.0,False,,,
+DdB/WPG-1,Witberg,,LHZ,Ref482,39.7,3.97,1007.0,False,,,
+DdB/WPG-3,Witberg,,LHZ,Ref482,40.6,4.06,1007.0,False,,,
+275,Zero,,LHZ,Ref102,29.8,2.98,831.0,False,0.023,0.023,-2.71
+312,Zero,,LHZ,Ref102,39.8,3.98,1004.0,True,0.054,0.054,-2.42
+316,Zero,,LHZ,Ref102,38.9,3.89,993.0,True,0.01,0.01,-5.32
+348,Zero,,LHZ,Ref102,47.8,4.78,1318.0,True,0.107,0.145,-1.33
+363,Zero,,LHZ,Ref102,39.0,3.9,992.0,False,0.01,0.01,-5.56
+399,Zero,,LHZ,Ref102,44.9,4.49,1231.0,True,0.108,0.113,-1.53
+BD4202/GL4202,Labait_Tanzania,Tanzania Craton,LHZ,Ref343,46.3,4.63,1253.0,True,0.04,0.053,-3.17
+H93-X1/GL-X1,Labait_Tanzania,Tanzania Craton,LHZ,Ref343,47.9,4.79,1294.0,False,0.059,0.088,-2.57
+H93-X9/GL-X9,Labait_Tanzania,Tanzania Craton,LHZ,Ref343,44.6,4.46,1212.0,False,0.048,0.046,-3.17
+BD776,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref157,35.2,3.52,989.0,False,0.01,0.01,-5.29
+BD730,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref58+Ref60+Ref61,36.6,3.66,1049.0,True,0.01,0.01,-5.39
+BD740,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref58+Ref61,42.9,4.29,1066.0,False,0.01,0.01,-5.77
+BD776A,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref58+Ref61,34.4,3.44,1037.0,True,0.042,0.042,-2.59
+BD794,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref58+Ref61,40.1,4.01,1069.0,True,0.01,0.01,-5.58
+89-719,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref62+Ref251,43.0,4.3,1083.0,False,0.01,0.01,-5.68
+TZ2-13,Lashaine_Tanzania,Tanzania Craton,LHZ,Ref62,42.2,4.22,1024.0,True,0.01,0.01,-5.65
+12-90-19,Hamilton_Branch,,LHZ,Ref139,42.0,4.2,915.0,False,,,
+12-90-44,Hamilton_Branch,,LHZ,Ref139,41.6,4.16,1019.0,False,,,
+12-91-49,Hamilton_Branch,,LHZ,Ref139,51.9,5.19,1264.0,False,,,
+12-91-9,Hamilton_Branch,,LHZ,Ref139,45.0,4.5,1051.0,False,,,
+12-91-45,Hamilton_Branch,,LHZ,Ref139,49.2,4.92,1260.0,True,0.04,0.056,-3.22
+12-94-108,Hamilton_Branch,,LHZ,Ref139,51.7,5.17,1276.0,True,0.039,0.061,-3.23
+12-94-109,Hamilton_Branch,,LHZ,Ref139,50.2,5.02,1277.0,True,0.06,0.083,-2.47
+12-94-111,Hamilton_Branch,,LHZ,Ref139,53.4,5.34,1276.0,True,0.063,0.085,-2.69
+IM26-P64,Iron_Mtn_Grp,,PRX,Ref68,27.4,2.74,756.0,False,,,
+S2L102,Sloan_02,,LHZ,Ref46,48.6,4.86,1072.0,True,0.039,0.039,-3.59
+SD2-L69,Sloan_Grp,,LHZ,Ref68,53.6,5.36,1238.0,True,0.147,0.155,-1.51
+SD2-L98,Sloan_Grp,,LHZ,Ref68,57.6,5.76,1240.0,False,0.163,0.171,-1.45
+SD2-L101,Sloan_Grp,,LHZ,Ref68,58.9,5.89,1278.0,False,0.165,0.188,-1.53
+SD2-L102,Sloan_Grp,,LHZ,Ref87orRef68,47.8,4.78,1067.0,True,0.035,0.035,-3.73
+SD2-L80,Sloan_Grp,,PRX,Ref87orRef68,24.1,2.41,719.0,False,,,
+SD2-L85,Sloan_Grp,,PRX,Ref68,29.4,2.94,755.0,False,,,
+SD2-L117,Sloan_Grp,,PRX,Ref68,27.7,2.77,744.0,False,,,
+SD2-L8,Sloan_Grp,,LHZ,Ref68,22.8,2.28,749.0,False,0.07,0.07,0.25
+SD2-L68,Sloan_Grp,,PRX,Ref68,30.4,3.04,809.0,False,,,
+SD2-L72,Sloan_Grp,,PRX,Ref68,23.3,2.33,756.0,False,0.088,0.088,0.57
+SD2-L124,Sloan_Grp,,PRX,Ref68,21.8,2.18,730.0,False,0.052,0.052,-0.24
+SD2-L67,Sloan_Grp,,LHZ,Ref118,28.2,2.82,764.0,False,0.026,0.026,-1.76
+H68-17D2,Williams,,LHZ,FRB_MONTAN.BCH,42.9,4.29,1255.0,True,0.052,0.066,-2.56
+T3-4,Williams,,LHZ,FRB_MONTAN.BCH,37.0,3.7,888.0,False,0.01,0.01,-5.65
+T3-7,Williams,,LHZ,FRB_MONTAN.BCH,47.8,4.78,1279.0,False,0.027,0.05,-3.52
+H67-28K-1,Williams,,LHZ,Ref53,44.3,4.43,1245.0,False,0.056,0.066,-2.78
+H67-28I-2,Williams,,LHZ,Ref53,45.3,4.53,1264.0,True,0.058,0.075,-2.52
+H69-15F,Williams,,LHZ,Ref53,46.5,4.65,1285.0,True,0.091,0.117,-1.71
+GSL1,Williams,,LHZ,Ref67,37.5,3.75,910.0,True,0.01,0.01,-5.13
+12F2,Williams,,MEG,Ref52,48.2,4.82,1142.0,False,,,
