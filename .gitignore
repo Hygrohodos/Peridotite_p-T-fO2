@@ -1,6 +1,22 @@
-.venv/
+# Python
 __pycache__/
-*.pyc
-.DS_Store
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+.env
 *.egg-info/
-.ipynb_checkpoints/
+dist/
+build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Result tables in data/derived/ are part of this release and should be tracked.
