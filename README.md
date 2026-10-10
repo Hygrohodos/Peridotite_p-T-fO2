@@ -24,18 +24,27 @@ How Eq. 5 and ΔT are derived (`calculations/pt_fo2/calibration.py`, run by `scr
    smallest mean bias).
 
 Results (Table 1; `data/derived/Table1_calibration_stats.csv`). 1σ is the residual
-standard deviation of estimated − measured Fe3+/ΣFe. Log units use 0.44 log units
-ΔFMQ per 0.02 Fe3+/ΣFe.
+standard deviation of estimated − measured Fe3+/ΣFe. The log-unit 1σ is the
+standard deviation of ΔFMQ(estimated) − ΔFMQ(measured), with ΔFMQ calculated
+(Stagno et al. 2013) from the estimated and from the measured garnet Fe3+/ΣFe at
+the same P, T and mineral chemistry (`calibration.fo2_residuals`).
 
-| Dataset | n | ±0.02 | ±0.05 | 1σ | ≈ log units |
+| Dataset | n | ±0.02 | ±0.05 | 1σ Fe3+/ΣFe | 1σ log units |
 |---|---|---|---|---|---|
-| Slave calibration | 31 | 65 % | 81 % | 0.045 | 0.99 |
-| Slave, error groups excluded | 25 | 80 % | 100 % | 0.017 | 0.37 |
-| Siberian + Kaapvaal validation | 27 | 63 % | 85 % | 0.035 | 0.77 |
-| Calibration + validation | 58 | 64 % | 83 % | 0.040 | 0.88 |
-| Combined, error groups excluded | 52 | 71 % | 92 % | 0.028 | 0.62 |
+| Slave calibration | 31 | 65 % | 81 % | 0.045 | 0.69 |
+| Slave, error groups excluded | 25 | 80 % | 100 % | 0.017 | 0.34 |
+| Siberian + Kaapvaal validation | 27 | 63 % | 85 % | 0.035 | 1.16 |
+| Calibration + validation | 58 | 64 % | 83 % | 0.040 | 0.94 |
+| Combined, error groups excluded | 52 | 71 % | 92 % | 0.028 | 0.87 |
 
-The Fig. 10 bars are computed from the last two rows.
+fO2 uncertainty (`python scripts/fo2_uncertainty.py`; `data/derived/fO2_uncertainty.json`,
+`data/derived/fO2_residuals.csv`, `Figures/diagnostics/fO2_residual_vs_Fe3.png`):
+the 58 calibration + validation samples (error groups retained) are split at their
+median estimated ΔFMQ (−2.77). The 1σ is 0.95 log units for the reduced half
+(n = 29) and 0.76 for the oxidised half (n = 29), 0.94 overall. The uncertainty is
+larger at low Fe3+/ΣFe because ΔFMQ depends on log Fe3+, and it is dominated by
+samples whose estimates approach the 0.01 starting value. These are the two
+Fig. 10 bars, computed from the data in `make_figures.py`.
 
 ## Run
 
@@ -44,6 +53,7 @@ pip install -r requirements.txt
 python run_pipeline.py
 python scripts/fit_calibration.py     # checks params.py; add --update-params to rewrite it
 python scripts/make_figures.py
+python scripts/fo2_uncertainty.py    # fO2 residual 1σ (Table 1 log column, Fig. 10 bars)
 ```
 
 If `fit_calibration.py --update-params` changes `params.py`, run the pipeline and figures again.

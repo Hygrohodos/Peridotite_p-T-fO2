@@ -26,6 +26,13 @@ Workflow (``python scripts/fit_calibration.py`` runs all of it):
    (0–75 °C) and score only the regression samples.  The locked ΔT is
    the value with the highest ±0.02 success rate; ties are broken by the
    smallest |mean(estimated − measured)|.
+7. fO2 uncertainty (Table 1 log column, Fig. 10 bars): for each sample
+   with measured Fe3+/ΣFe, ΔFMQ is calculated (Stagno et al. 2013, same
+   P, T and chemistry as the pipeline) from the estimated and from the
+   measured garnet Fe3+/ΣFe; 1σ is the standard deviation of
+   ΔFMQ(estimated) − ΔFMQ(measured).  For Fig. 10 the 58 calibration +
+   validation samples are split at their median estimated ΔFMQ into a
+   reduced and an oxidised half (``fo2_uncertainty``).
 """
 
 from __future__ import annotations
@@ -173,13 +180,78 @@ def _row(name, d, notes=""):
     )
 
 
-def calibration_stats(df, est=None, params=None, fo2_per_002=None):
+def fo2_from_xfe3(df, xfe3):
+    """Stagno et al. (2013) ΔFMQ for ``df`` with garnet Fe3+/ΣFe = ``xfe3``.
+
+    Total garnet Fe, P, T and all other inputs are those of the pipeline;
+    only the Fe3+/Fe2+ split is replaced.
+    """
+    from .fo2 import calculate_fo2
+
+    tmp = df.copy()
+    fe_tot = _num(tmp.get("garnet_Fe"))
+    if "Fe3_gt_corr" in tmp.columns and "Fe2_gt_corr" in tmp.columns:
+        fe_tot = fe_tot.fillna(_num(tmp["Fe3_gt_corr"]) + _num(tmp["Fe2_gt_corr"]))
+    x = _num(pd.Series(np.asarray(xfe3, dtype=float), index=tmp.index))
+    tmp["Fe3_gt_corr"] = x * fe_tot
+    tmp["Fe2_gt_corr"] = (1.0 - x) * fe_tot
+    return _num(calculate_fo2(tmp, verbose=False)["delta_logfO2_FMQ"])
+
+
+def fo2_residuals(df, est=None, params=None):
+    """Per-sample fO2 residuals for the calibration + validation samples.
+
+    Returns a DataFrame (index = df index) with measured and estimated
+    Fe3+/ΣFe, ΔFMQ from each, ``res_log`` = ΔFMQ(est) − ΔFMQ(meas), the
+    local sensitivity (log units per 0.02 Fe3+/ΣFe at the measured value),
+    and flags for the dataset and the Fig. 5 error groups.
+    """
+    p = params or PARAMS
+    base, meas, blue, red, _, _ = error_groups(df, p)
+    val = validation_mask(df)
+    pool = base | val
+    if est is None:
+        est = _num(df["XFe3_gt_corr"])
+    u = df[pool]
+    m, e = meas[pool], _num(est)[pool]
+    f_m, f_e = fo2_from_xfe3(u, m), fo2_from_xfe3(u, e)
+    h = 0.005
+    sens = (fo2_from_xfe3(u, m + h) - fo2_from_xfe3(u, (m - h).clip(lower=1e-4))) / (2 * h) * 0.02
+    return pd.DataFrame({
+        "SampleID": u["SampleID"], "Craton": u["Craton"],
+        "dataset": np.where(base[pool], "Slave calibration", "Validation"),
+        "error_group": (blue | red)[pool],
+        "XFe3_meas": m, "XFe3_est": e,
+        "dFMQ_meas": f_m, "dFMQ_est": f_e, "res_log": f_e - f_m,
+        "sens_per_002": sens,
+    })
+
+
+def fo2_uncertainty(res, split=None):
+    """fO2 1σ (log units) overall and for reduced / oxidised halves.
+
+    ``res`` is the output of ``fo2_residuals``.  All samples are used
+    (error groups retained, the conservative case).  The split defaults
+    to the median estimated ΔFMQ; reduced = ΔFMQ(est) < split.
+    """
+    r = res.dropna(subset=["res_log", "dFMQ_est"])
+    cut = float(r["dFMQ_est"].median()) if split is None else float(split)
+    lo = r["dFMQ_est"] < cut
+    def _s(d):
+        return dict(n=int(len(d)), sigma_log=float(d.std(ddof=1)),
+                    rms_log=float(np.sqrt((d ** 2).mean())), bias_log=float(d.mean()))
+    return dict(split=cut, all=_s(r["res_log"]),
+                reduced=_s(r.loc[lo, "res_log"]), oxidised=_s(r.loc[~lo, "res_log"]))
+
+
+def calibration_stats(df, est=None, params=None, fo2=True):
     """Table 1 rows.  ``est`` defaults to the pipeline XFe3_gt_corr column.
 
     Residual 1σ is the sample standard deviation (ddof = 1) of
-    estimated − measured.  ``sigma_log`` converts 1σ (rounded to 3 dp)
-    to log units with ``fo2_per_002`` log units per 0.02 Fe3+/ΣFe
-    (0.44 in the manuscript).  Rates count |est − meas| ≤ 0.02 / 0.05.
+    estimated − measured Fe3+/ΣFe.  With ``fo2=True``, ``sigma_log`` is
+    the 1σ of ΔFMQ(estimated) − ΔFMQ(measured) for the same samples
+    (``fo2_residuals``); it is left blank for the stoichiometric rows.
+    Rates count |est − meas| ≤ 0.02 / 0.05.
     """
     p = params or PARAMS
     meas = measured_fe3(df)
@@ -188,14 +260,20 @@ def calibration_stats(df, est=None, params=None, fo2_per_002=None):
     base, _, blue, red, rem, reg = error_groups(df, p)
     val = validation_mask(df)
     groups = blue | red
-    rows = [
-        _row("Slave calibration", (est - meas)[base]),
-        _row("Slave, error groups excluded", (est - meas)[base & ~groups]),
-        _row("Siberia + Kaapvaal validation", (est - meas)[val]),
-        _row("Calibration + validation", (est - meas)[base | val]),
-        _row("Combined, error groups excluded", (est - meas)[(base | val) & ~groups]),
-        _row("Eq. 5 regression samples", (est - meas)[reg]),
+    sets = [
+        ("Slave calibration", base),
+        ("Slave, error groups excluded", base & ~groups),
+        ("Siberia + Kaapvaal validation", val),
+        ("Calibration + validation", base | val),
+        ("Combined, error groups excluded", (base | val) & ~groups),
+        ("Eq. 5 regression samples", reg),
     ]
+    rows = [_row(nm, (est - meas)[m]) for nm, m in sets]
+    if fo2:
+        res = fo2_residuals(df, est, p)["res_log"]
+        for row, (_, m) in zip(rows, sets):
+            d = res.reindex(df.index[m]).dropna()
+            row["sigma_log"] = float(d.std(ddof=1)) if len(d) > 1 else np.nan
     all_slave = calibration_mask(df, screened=False)
     for col, nm in (("XFe3_quinn", "Quinn et al. (2016) stoichiometry"),
                     ("XFe3_droop", "Droop (1987) stoichiometry")):
@@ -203,9 +281,4 @@ def calibration_stats(df, est=None, params=None, fo2_per_002=None):
             s = _num(df[col])
             rows.append(_row(nm, (s - meas)[all_slave]))
             rows.append(_row(nm + ", screened", (s - meas)[base]))
-    out = pd.DataFrame(rows)
-    if fo2_per_002 is not None:
-        # Converted from 1σ rounded to 3 dp (as reported), so quoted
-        # pairs such as "0.028 (0.62 log units)" are reproducible.
-        out["sigma_log"] = (out["sigma"].round(3) * fo2_per_002 / 0.02).round(2)
-    return out
+    return pd.DataFrame(rows)

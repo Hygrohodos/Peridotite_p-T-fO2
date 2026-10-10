@@ -53,27 +53,6 @@ OTHER = dict(marker="o", color="#8c8c8c", label="Other", facecolors="none")
 
 GREEN_OUTER = "#b7dfb7"   # ±0.05 Fe3+
 GREEN_INNER = "#3d9a4a"   # ±0.02 Fe3+ (darker)
-# ΔlogfO2(FMQ) equivalent of a 0.02 / 0.05 change in garnet Fe3+/ΣFe, as
-# quoted in the manuscript (0.44 log units per 0.02).  These constants are
-# used for every Fe3+ → log-unit conversion (Fig. 10 bars, Table 1 notes).
-# main() prints fo2_equivalents(df), the median shift for +0.02 / +0.05 on
-# the current screened samples, as a check; it is not substituted.
-FO2_EQ_02 = 0.44
-FO2_EQ_05 = 0.95
-
-
-def fo2_equivalents(df):
-    """Median ΔFMQ change for +0.02 and +0.05 garnet Fe3+/ΣFe (screened)."""
-    use = df[df["screen_pass"] == True]
-    x = pd.to_numeric(use["XFe3_gt_corr"], errors="coerce")
-    f0 = _fo2_from_xfe3(use, x)
-    out = []
-    for d in (0.02, 0.05):
-        f1 = _fo2_from_xfe3(use, x + d)
-        out.append(float(np.nanmedian((f1 - f0).to_numpy(dtype=float))))
-    return out[0], out[1]
-
-
 def _gpa_axis(ax, which="y"):
     """Label a pressure axis held in kbar internally as GPa (1 GPa = 10 kbar)."""
     from matplotlib.ticker import FuncFormatter, MultipleLocator
@@ -195,19 +174,6 @@ def _fe3_match_band(ax, kind="1to1"):
         ax.axhspan(-0.05, 0.05, color=GREEN_OUTER, lw=0, zorder=0, label=r"$\pm$0.05")
         ax.axhspan(-0.02, 0.02, color=GREEN_INNER, lw=0, zorder=0, label=r"$\pm$0.02")
 
-
-def _fo2_equiv_scale(ax, x0=-0.2, p=24.0):
-    """Horizontal scale: fO2 width equivalent to Fe3+ ±0.02 and ±0.05."""
-    ax.plot([x0 - FO2_EQ_05, x0 + FO2_EQ_05], [p + 2.2, p + 2.2],
-            color=GREEN_OUTER, lw=7, solid_capstyle="butt", zorder=5)
-    ax.plot([x0 - FO2_EQ_02, x0 + FO2_EQ_02], [p, p],
-            color=GREEN_INNER, lw=7, solid_capstyle="butt", zorder=5)
-    ax.text(x0 + FO2_EQ_05 + 0.08, p + 2.2,
-            rf"$\Delta$Fe$^{{3+}}$ $\pm$0.05 $\approx$ {FO2_EQ_05:.2f} log",
-            fontsize=6, va="center", color="0.2")
-    ax.text(x0 + FO2_EQ_02 + 0.08, p,
-            rf"$\Delta$Fe$^{{3+}}$ $\pm$0.02 $\approx$ {FO2_EQ_02:.2f} log",
-            fontsize=6, va="center", color="0.2")
 
 
 def _scatter_by_craton(ax, df, x, y, screened_only=False, legend_loc="lower left"):
@@ -716,80 +682,8 @@ def fig05_dt_set(df):
 
 
 def _fo2_from_xfe3(df, xfe3):
-    """Stagno ΔFMQ using a supplied garnet XFe3 (cation Fe split from garnet_Fe)."""
-    from calculations.pt_fo2.fo2 import calculate_fo2
-    tmp = df.copy()
-    Fe_tot = pd.to_numeric(tmp.get("garnet_Fe"), errors="coerce")
-    if "Fe3_gt_corr" in tmp.columns and "Fe2_gt_corr" in tmp.columns:
-        Fe_tot = Fe_tot.fillna(
-            pd.to_numeric(tmp["Fe3_gt_corr"], errors="coerce")
-            + pd.to_numeric(tmp["Fe2_gt_corr"], errors="coerce")
-        )
-    x = pd.to_numeric(xfe3, errors="coerce")
-    tmp["Fe3_gt_corr"] = x * Fe_tot
-    tmp["Fe2_gt_corr"] = (1.0 - x) * Fe_tot
-    return calculate_fo2(tmp, verbose=False)["delta_logfO2_FMQ"]
-
-
-def fig10_fo2(df):
-    """Estimated vs measured ΔQFM, Grapher-style (Slave / Siberian / Kaapvaal)."""
-    if "garnet_Fe3+" not in df.columns or "delta_logfO2_FMQ" not in df.columns:
-        print("  skip Fig10")
-        return
-    use = df.copy()
-    if "screen_pass" in use.columns:
-        use = use[use["screen_pass"] == True].copy()
-    meas_x = pd.to_numeric(use["garnet_Fe3+"], errors="coerce")
-    fo2_est = pd.to_numeric(use["delta_logfO2_FMQ"], errors="coerce")
-    fo2_meas = _fo2_from_xfe3(use, meas_x)
-    ok = meas_x.notna() & (meas_x > 0) & fo2_est.notna() & fo2_meas.notna()
-    if not ok.any():
-        print("  skip Fig10 (no measured vs estimated fO2 pairs)")
-        return
-
-    fig, ax = plt.subplots(figsize=(4.6, 4.4))
-    ax.fill_between([-6, 1], [-6 - FO2_EQ_05, 1 - FO2_EQ_05],
-                    [-6 + FO2_EQ_05, 1 + FO2_EQ_05],
-                    color=GREEN_OUTER, lw=0, zorder=0)
-    ax.fill_between([-6, 1], [-6 - FO2_EQ_02, 1 - FO2_EQ_02],
-                    [-6 + FO2_EQ_02, 1 + FO2_EQ_02],
-                    color=GREEN_INNER, lw=0, zorder=0)
-    ax.plot([-6, 1], [-6, 1], color="0.25", lw=1.0, zorder=1)
-
-    cr = use["Craton"].fillna("").astype(str)
-    plotted = pd.Series(False, index=use.index)
-    for name, sty in CRATON_STYLE.items():
-        sel = ok & (cr == name)
-        plotted = plotted | sel
-        if sel.any():
-            ax.scatter(fo2_meas[sel], fo2_est[sel], marker=sty["marker"],
-                       c=sty["color"], s=28, edgecolors="k", linewidths=0.4,
-                       zorder=3, label=sty["label"])
-    other = ok & ~plotted
-    if other.any():
-        ax.scatter(fo2_meas[other], fo2_est[other], marker=OTHER["marker"],
-                   facecolors="none", edgecolors=OTHER["color"], s=22,
-                   linewidths=0.6, zorder=2, label=OTHER["label"])
-
-    _, _, blue, red, _ = _error_groups(use)
-    if (ok & blue).any():
-        ax.scatter(fo2_meas[ok & blue], fo2_est[ok & blue], s=90,
-                   facecolors="none", edgecolors="#1f9ad6", linewidths=1.6, zorder=4)
-    if (ok & red).any():
-        ax.scatter(fo2_meas[ok & red], fo2_est[ok & red], s=90,
-                   facecolors="none", edgecolors="#e31a1c", linewidths=1.6, zorder=4)
-
-    ax.set_xlim(-4.5, -0.5)
-    ax.set_ylim(-4.2, -0.6)
-    ax.legend(frameon=True, facecolor="white", edgecolor="0.55", framealpha=0.92, fontsize=7, loc="lower right")
-    _style_ax(ax,
-              r"log $f$O$_2$ ($\Delta$QFM; measured)",
-              r"log $f$O$_2$ ($\Delta$QFM; estimated)")
-    n = int(ok.sum())
-    d = (fo2_est[ok] - fo2_meas[ok]).abs()
-    print(f"  Fig10 n={n}  ±{FO2_EQ_02:.2f}: {(d<=FO2_EQ_02).mean()*100:.0f}%  "
-          f"±{FO2_EQ_05:.2f}: {(d<=FO2_EQ_05).mean()*100:.0f}%")
-    _save(fig, "Fig10_fO2_estimated")
+    """Stagno ΔFMQ using a supplied garnet XFe3 (calibration.fo2_from_xfe3)."""
+    return calib.fo2_from_xfe3(df, xfe3)
 
 
 def fig11_p_fo2_measured(df):
@@ -1005,21 +899,25 @@ def fig12_p_fo2(df, mark_cpx_opx=False, stem="Fig10_P_fO2_estimated"):
     if len(p_ma):
         ax.plot(f_ma, p_ma, color="#333333", lw=1.8, zorder=6, label="Depth mean")
         _label_on_curve(ax, f_ma, p_ma, "mean", "#333333", 40)
-    # visual lower-left: pressure axis is inverted, so high P is the bottom
-    # Combined residual 1σ, with and without the calibration error groups.
-    # Same 1σ values as Table 1 / text (calibration.calibration_stats),
-    # rounded to 3 dp as reported, converted with FO2_EQ_02 per 0.02.
-    st = calib.calibration_stats(df, fo2_per_002=FO2_EQ_02).set_index("dataset")
-    s_in, w_in = st.loc["Calibration + validation", ["sigma", "sigma_log"]]
-    s_ex, w_ex = st.loc["Combined, error groups excluded", ["sigma", "sigma_log"]]
-    print(f"  Fig10 bars: 1σ {s_in:.3f} → {w_in:.2f} log; {s_ex:.3f} → {w_ex:.2f} log")
-    x0, p_in, p_ex = -6.85, 68.4, 65.6
-    ax.plot([x0, x0 + w_in], [p_in, p_in], color="#6b4c9a", lw=3.0, solid_capstyle="butt", zorder=7)
-    ax.plot([x0, x0 + w_ex], [p_ex, p_ex], color="#1b7f3a", lw=3.0, solid_capstyle="butt", zorder=7)
-    ax.text(x0 + w_in + 0.08, p_in, f"{w_in:.2f} log",
-            ha="left", va="center", fontsize=8, color="#6b4c9a", clip_on=True, zorder=8)
-    ax.text(x0 + w_ex + 0.08, p_ex, f"{w_ex:.2f} log",
-            ha="left", va="center", fontsize=8, color="#1b7f3a", clip_on=True, zorder=8)
+    # fO2 1σ bars: residual ΔFMQ(estimated) − ΔFMQ(measured) for the 58
+    # calibration + validation samples (error groups retained), split at
+    # their median estimated ΔFMQ (calibration.fo2_uncertainty).  Reduced
+    # bar bottom left, oxidised bar bottom right (P axis inverted, so high
+    # P is at the bottom).
+    unc = calib.fo2_uncertainty(calib.fo2_residuals(df))
+    cut, w_lo, w_hi = unc["split"], unc["reduced"]["sigma_log"], unc["oxidised"]["sigma_log"]
+    print(f"  Fig10 bars: split ΔFMQ {cut:.2f}; reduced 1σ {w_lo:.2f} "
+          f"(n={unc['reduced']['n']}), oxidised 1σ {w_hi:.2f} (n={unc['oxidised']['n']}); "
+          f"all {unc['all']['sigma_log']:.2f} (n={unc['all']['n']})")
+    bar_col, p_bar, p_lab = "#6b4c9a", 67.6, 65.6
+    for x0, w, side, lab in ((-6.85, w_lo, "left", rf"1$\sigma$, $\Delta$FMQ < {cut:.1f}"),
+                             (-0.15, w_hi, "right", rf"1$\sigma$, $\Delta$FMQ ≥ {cut:.1f}")):
+        xs = (x0, x0 + w) if side == "left" else (x0 - w, x0)
+        ax.plot(xs, [p_bar, p_bar], color=bar_col, lw=3.0, solid_capstyle="butt", zorder=7)
+        ax.text(xs[1] + 0.08 if side == "left" else xs[0] - 0.08, p_bar, f"{w:.2f} log",
+                ha="left" if side == "left" else "right", va="center", fontsize=8,
+                color=bar_col, clip_on=True, zorder=8)
+        ax.text(x0, p_lab, lab, ha=side, va="center", fontsize=7, color="0.25", zorder=8)
     if mark_cpx_opx:
         na = pd.to_numeric(use["cpx_Na"], errors="coerce")
         ti = pd.to_numeric(use["cpx_TiO2"], errors="coerce")
@@ -1037,8 +935,8 @@ def fig12_p_fo2(df, mark_cpx_opx=False, stem="Fig10_P_fO2_estimated"):
         use["delta_logfO2_FMQ"].between(-7, 0)
         & use["P_CA91"].between(30, 70)
     )
-    ax.text(0.98, 0.03, f"n = {int(plotted.sum())}", transform=ax.transAxes,
-            ha="right", va="bottom", fontsize=8)
+    ax.text(0.98, 0.985, f"n = {int(plotted.sum())}", transform=ax.transAxes,
+            ha="right", va="top", fontsize=8)
     print(f"  Fig12 stars: calibration n={int(cal.sum())}  validation n={int(val.sum())}")
     ax.invert_yaxis()
     _style_ax(ax, r"log $f$O$_2$ ($\Delta$FMQ)", "P (kbar)")
@@ -1459,12 +1357,9 @@ def main():
     df = pd.read_csv(FULL, encoding="utf-8-sig", low_memory=False)
     df = df.rename(columns={df.columns[0]: "SampleID"})
     print(f"Loaded {len(df)} rows from {FULL.name}")
-    tab = calib.calibration_stats(df, fo2_per_002=FO2_EQ_02)
+    tab = calib.calibration_stats(df)
     tab.to_csv(ROOT / "data" / "derived" / "Table1_calibration_stats.csv", index=False)
     print(tab.drop(columns="notes").round(4).to_string(index=False))
-    e02, e05 = fo2_equivalents(df)
-    print(f"  fO2 equivalents used: 0.02 → {FO2_EQ_02:.2f} log, 0.05 → {FO2_EQ_05:.2f} log"
-          f"  (median on current screened samples: {e02:.3f}, {e05:.3f})")
     print(f"Writing figures to {OUT}")
     _apply_journal_style()
     fig01_map()

@@ -1,0 +1,41 @@
+{
+  "split": -2.7652,
+  "all": {
+    "n": 58,
+    "sigma_log": 0.9417,
+    "rms_log": 0.9507,
+    "bias_log": -0.1797
+  },
+  "reduced": {
+    "n": 29,
+    "sigma_log": 0.948,
+    "rms_log": 1.0946,
+    "bias_log": -0.5748
+  },
+  "oxidised": {
+    "n": 29,
+    "sigma_log": 0.7637,
+    "rms_log": 0.7807,
+    "bias_log": 0.2154
+  },
+  "error_groups_removed": {
+    "all": {
+      "n": 52,
+      "sigma_log": 0.8728,
+      "rms_log": 0.8878,
+      "bias_log": -0.2025
+    },
+    "reduced": {
+      "n": 28,
+      "sigma_log": 0.9377,
+      "rms_log": 1.0639,
+      "bias_log": -0.5329
+    },
+    "oxidised": {
+      "n": 24,
+      "sigma_log": 0.6077,
+      "rms_log": 0.6224,
+      "bias_log": 0.1829
+    }
+  }
+}
