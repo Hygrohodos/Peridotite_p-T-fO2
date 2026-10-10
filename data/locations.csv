@@ -3,7 +3,7 @@ Panda,64.71361,-110.61944,Canada,Slave Craton,provisional,Ekati mine Wikipedia,"
 Udachnaya,66.43417,112.3175,Russia,Siberian Craton,provisional,Wikipedia Udachnaya pipe,Sakha Republic,73,38
 Jericho,65.99722,-111.475,Canada,Slave Craton,verified,Mindat loc-31135,"Nunavut, Contwoyto Lake / Carat Lake, northern Slave Province",64,33
 Diavik,64.49611,-110.27111,Canada,Slave Craton,provisional,PorterGeo Diavik,"Lac de Gras, NWT",49,27
-Finsch,-28.375,23.446,South Africa,,provisional,Finsch mine Lime Acres,Kaapvaal,42,37
+Finsch,-28.375,23.446,South Africa,Kaapvaal Craton,provisional,Finsch mine Lime Acres (includes former Finch spelling variant),Kaapvaal,53,47
 Vitim_area,54.5,113.0,Russia,,provisional,Vitim plateau,Transbaikalia,39,12
 Sable,64.72,-110.5,Canada,Slave Craton,provisional,Ekati cluster,"Ekati, Lac de Gras",34,0
 A154N/S A418 A841,64.49611,-110.273,Canada,Slave Craton,provisional,Diavik pipes,Diavik A154/A418/A841,29,15
@@ -30,7 +30,6 @@ Premier,-25.671,28.517,South Africa,Kaapvaal Craton,provisional,Cullinan / Premi
 Kby_Bultfontein_Floors,-28.758,24.821,South Africa,,provisional,Kimberley floors,Northern Cape,14,7
 Lethlakane_DK1,-21.42,25.59,Botswana,,provisional,Letlhakane,Botswana,13,2
 Sloan_Grp,40.8433,-105.4533,USA,,provisional,Mindat Sloan kimberlite,Colorado State Line,12,3
-Finch,-28.375,23.446,South Africa,Kaapvaal Craton,provisional,likely Finsch spelling variant,Kaapvaal,11,10
 Bultfontein,-28.758,24.821,South Africa,Kaapvaal Craton,provisional,Kimberley Bultfontein,Northern Cape,11,3
 Somacuanza,-9.5,20.4,Angola,,provisional,"Lunda kimberlite fields, uncertain name match",Angola,9,6
 Qilin_SE_China,23.35,114.15,China,,provisional,"Qilin, Guangdong",SE China,8,0
