@@ -1,0 +1,114 @@
+Location,Craton,Lithology,Reference,Latitude,Longitude,Coord_source,Coord_quality,GEOROC_LOCATION,GEOROC_LOCATION_COMMENT,Match_notes
+Jericho,Slave Craton,Sp-gt peridotite,Kopylova et al. 1999,65.9972,-111.475,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_MESOZOIC / NORTHERN SLAVE JURASSIC KIMBERLITE CLUSTER / JERICHO KIMBERLITE,,"Mindat/Kopylova; 65.9972,-111.475; GEOROC also 65.9865,-111.4817"
+Muskox,Slave Craton,Peridotite,Veglio et al. 2022,65.9,-111.71,published_literature,moderate,,,Estimated 15 km SW of Jericho (Hayman et al. 2011)
+Voyageur,Slave Craton,Peridotite,Veglio et al. 2022,66.0625,-111.875,published_literature,high,,,"Verigeanu 2006: 66°03'45""N, 111°52'30""W"
+DO-18 DO-27 or A154S,Slave Craton,Gt lherzolite,Pearson et al. 1999,64.4961,-110.2733,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / DO 27 KIMBERLITE,,"Diavik A154 cluster (GEOROC/Mindat); GEOROC also 64.0000,-110.0000"
+Arnie,Slave Craton,,Menzies et al. 2004,64.7136,-110.6194,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / AARNIE KIMBERLITE,EKATI DIAMOND MINE,"Ekati mine cluster (GEOROC Ekati); GEOROC also 64.7136,-110.6194"
+Grizzly,Slave Craton,,Menzies et al. 2004,64.7136,-110.6194,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / GRIZZLY KIMBERLITE,EKATI DIAMOND MINE,"Ekati Grizzly (GEOROC); GEOROC also 64.7136,-110.6194"
+Leslie,Slave Craton,,Menzies et al. 2004,64.7136,-110.6194,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / LESLIE KIMBERLITE,EKATI DIAMOND MINE,"Ekati Leslie; GEOROC also 64.7136,-110.6194"
+Mark,Slave Craton,,Menzies et al. 2004,64.7219,-110.6164,published_literature,high,SIBERIAN TRAPS / YAKUTIAN KIMBERLITE FIELDS / YUBILEINAYA KIMBERLITE PIPE,ALAKIT-MARKHA FIELD,"Mindat Mark kimberlite, Ekati; GEOROC also 66.1300,110.6300"
+Panda,Slave Craton,,Menzies et al. 2004,64.7247,-110.5881,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / PANDA KIMBERLITE,EKATI DIAMOND MINE,"Mindat Panda pit, Ekati; GEOROC also 64.7136,-110.6194"
+Pigeon,Slave Craton,,Menzies et al. 2004,64.7569,-110.6531,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / PIGEON KIMBERLITE,"BOREHOLE 97-55, PIGEON PIPE, EKATI DIAMOND MINE","Mindat Pidgeon/Pigeon pit, Ekati; GEOROC also 64.7136,-110.6194"
+Sable,Slave Craton,,Menzies et al. 2004,64.8567,-110.52,published_literature,high,,,Sable pipe 64°51.4'N 110°31.2'W (DDEC)
+A154N/S A418 A841,Slave Craton,Sp lherz,Aulbach et al. 2007,64.4961,-110.2733,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / DIAVIK KIMBERLITE,DIAVIK DIAMOND MINE (A154N),"Diavik mine cluster; GEOROC also 64.4961,-110.2733"
+A154N/S,Slave Craton,,Creighton et al. 2010,64.4961,-110.2733,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / DIAVIK KIMBERLITE,DIAVIK DIAMOND MINE (A154N),"Diavik A154; GEOROC also 64.4961,-110.2733"
+Diavik,Slave Craton,,Yaxley et al. 2017,64.4961,-110.2733,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / DIAVIK KIMBERLITE,DIAVIK DIAMOND MINE (A154N),"Diavik Diamond Mine; GEOROC also 64.4961,-110.2733"
+Udachnaya,Siberian Craton,Coarse SGP,Goncharov et al. 2012,66.43485,112.31798,published_literature,high,SIBERIAN TRAPS / YAKUTIAN KIMBERLITE FIELDS / UDACHNAYA KIMBERLITE,"UDACHNAYA-EAST PIPE, NW DALDYN FIELD","GEOROC Udachnaya-East; GEOROC also 66.4348,112.3180"
+Finch,Kaapvaal Craton,,Lazarov et al. 2009,-28.375,23.446,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / FINSCH KIMBERLITE,FINSCH MINE,"Finsch Mine alias Finch; GEOROC also -28.3850,23.4450"
+Bultfontein,Kaapvaal Craton,,Creighton et al. 2009,-28.76,24.808,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / BULTFONTEIN KIMBERLITE,BULTFONTEIN MINE,"Kimberley Bultfontein; GEOROC also -28.7689,24.7917"
+Wesselton,Kaapvaal Craton,,Hanger et al. 2015,-28.766,24.83,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / KIMBERLEY KIMBERLITE,WESSELTON,"GEOROC Wesselton Pipe; GEOROC also -28.6500,24.6400"
+Premier,Kaapvaal Craton,sheared,Tappe et al. 2021,-25.671,28.517,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / PREMIER KIMBERLITE CLUSTER / PREMIER KIMBERLITE,"PIEBALD PLUG, CULLINAN DIAMOND MINE","Cullinan/Premier mine; GEOROC also -25.6740,28.1500"
+Somacuanza,,LHZ,Ref113,-9.421,20.295,GEOROC,moderate,CONGO CRATON / CONGO CRATON_MESOZOIC / ANGOLA / LUNDA-SOUTH KIMBERLITE FIELD - CATOCA KIMBERLITE,BOREHOLE 535,score=50 substr
+Jetty_Peninsula,,LHZ,Ref507,-70.85,68.5,literature_approx,moderate,,,"Jetty Peninsula alkaline dykes, Lambert-Amery rift, East Antarctica (~70.85S, 68.5E)"
+Lethlakane_DK1,,LHZ,Ref181,-21.416,25.7,published_literature,high,,,Letlhakane mine
+Orapa,,PRX,Ref217,-21.307,25.376,published_literature,high,KAAPVAAL CRATON / BOTSWANA / ORAPA KIMBERLITE FIELD,,"Orapa mine, Botswana; GEOROC also -21.3130,25.5370"
+5034,,LHZ,Ref383,63.4347,-109.2006,published_literature,high,,,Gahcho Kué 5034 pipe
+Amayersuk_Somerset_Islnd,,LHZ,Ref116,73,-93,GEOROC,moderate,CANADIAN SHIELD / CHURCHILL PROVINCE_MESOZOIC / SOMERSET ISLAND KIMBERLITE PROVINCE / AMAYERSUK KIMBERLITE,,score=70 substr+path
+Batty_Bay_Somerset_Island,,LHZ,Ref138+Ref244,73,-93,GEOROC,moderate,CANADIAN SHIELD / CHURCHILL PROVINCE_MESOZOIC / SOMERSET ISLAND KIMBERLITE PROVINCE / BATTY KIMBERLITE,,score=50 substr
+Cross_BC_Canada,,LHZ,Ref295,50.092,-114.969,GEOROC,moderate,NORTH AMERICAN CORDILLERA - MESOZOIC / CANADIAN CORDILLERA / BRITISH COLUMBIA / CROSS (CROSSING CREEK) KIMBERLITE,ROCKY MOUNTAINS,score=50 substr
+Ekati_Arnie,,LHZ,Ref480,64.7136,-110.6194,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / AARNIE KIMBERLITE,EKATI DIAMOND MINE,"Ekati mine cluster; GEOROC also 64.7136,-110.6194"
+Ekati_Grizzly,,PRX,Ref480,64.7136,-110.6194,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / GRIZZLY KIMBERLITE,EKATI DIAMOND MINE,"Ekati Grizzly; GEOROC also 64.7136,-110.6194"
+Elwin_Bay_Somerset_Islnd,,LHZ,Ref115,73.5,-91.125,published_literature,high,CANADIAN SHIELD / CHURCHILL PROVINCE_MESOZOIC / SOMERSET ISLAND KIMBERLITE PROVINCE / ELWIN KIMBERLITE,,"Mindat Elwin Bay; GEOROC also 73.5119,-91.0032"
+Gahcho_Kué,,LHZ,Ref513,63.4347,-109.2006,published_literature,high,,,Gahcho Kué / Kennady Lake mine
+Ham_Somerset_Islnd,,LHZ,Ref114,73.6525,-91.9433,published_literature,high,CANADIAN SHIELD / CHURCHILL PROVINCE_MESOZOIC / SOMERSET ISLAND KIMBERLITE PROVINCE / HAM KIMBERLITE,,"Mindat Ham 73°39'9""N 91°56'36""W; GEOROC also 72.5603,-92.1833"
+JP_Somerset_Islnd,,LHZ,Ref107,73.3339,-92.9269,published_literature,moderate,CANADIAN SHIELD / CHURCHILL PROVINCE_MESOZOIC / SOMERSET ISLAND KIMBERLITE PROVINCE / NIKOS KIMBERLITE,,"Mindat Jos/JP kimberlite Somerset 73°20'2""N 92°55'37""W"
+K14,,LHZ,Ref502,57.42,-115.92,GEOROC,moderate,CANADIAN SHIELD / NORTH ALBERTA KIMBERLITE PROVINCE / BUFFALO HEAD HILLS KIMBERLITE FIELD / K14 PIPE,,score=50 substr
+Kirkland_Lake_A1,,LHZ,Ref310,47.47415,-79.70608,GEOROC,moderate,GREAT METEOR (NEW ENGLAND) HOTSPOT TRACK (CONT.) / ONTARIO / KIRKLAND LAKE KIMBERLITE FIELD,"GRAVEL, MUNROE TOWNSHIP, ESKER",score=50 substr
+Kirkland_Lake_A4,,LHZ,Ref310,47.47415,-79.70608,GEOROC,moderate,GREAT METEOR (NEW ENGLAND) HOTSPOT TRACK (CONT.) / ONTARIO / KIRKLAND LAKE KIMBERLITE FIELD,"GRAVEL, MUNROE TOWNSHIP, ESKER",score=50 substr
+Kirkland_Lake_C14,,LHZ,Ref16,47.47415,-79.70608,GEOROC,moderate,GREAT METEOR (NEW ENGLAND) HOTSPOT TRACK (CONT.) / ONTARIO / KIRKLAND LAKE KIMBERLITE FIELD,"GRAVEL, MUNROE TOWNSHIP, ESKER",score=50 substr
+Nanorluk_Somerset_Island,,LHZ,Ref116,73.3,-93.1,literature_approx,moderate,,,Somerset Island cluster field centre (no pipe-specific published coord found)
+Nikos_Somerset_Islnd,,LHZ,Ref386+Ref387,73.4747,-90.965,published_literature,high,CANADIAN SHIELD / CHURCHILL PROVINCE_MESOZOIC / SOMERSET ISLAND KIMBERLITE PROVINCE / NIKOS KIMBERLITE,,"Mindat Nikos 73°28'29""N 90°57'54""W; GEOROC also 73.4700,-90.9700"
+Torrie,,LHZ,Ref184,65,-110.98,GEOROC,moderate,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / TORRIE KIMBERLITE,,score=50 substr
+Pale_Aike_Chile,,LHZ,Ref333+Ref334,-52.082,-69.698,published_literature,high,,,Pali-Aike alias
+Pali_Aike,,LHZ,Ref462,-52.082,-69.698,published_literature,high,,,Pali-Aike volcanic field
+Pali_Aike_Chile,,LHZ,Ref122,-52.082,-69.698,published_literature,high,,,Pali-Aike volcanic field
+Qilin_SE_China,,PRX,Ref99,23.32,116.17,published_literature,moderate,,,"Qilin xenolith locality, Puning/SE China (approx)"
+Kuopio_Kaavi_Pipe_14,,LHZ,Ref197+Ref485,62.9,27.7,GEOROC,high,BALTIC SHIELD / KOLA-LAPLAND PROVINCE / KAAVI-KUOPIO KIMBERLITE PROVINCE,PIPE 14,score=180 substr+substr+exact
+Kuopio_Kaavi_Pipe_9,,LHZ,Ref197+Ref485,62.9,27.7,GEOROC,high,BALTIC SHIELD / KOLA-LAPLAND PROVINCE / KAAVI-KUOPIO KIMBERLITE PROVINCE,"PIPE 1, VICINITY OF LUIKONLAHTI CU MINE",score=100 substr+substr
+Lahtojoki_Pipe_7,,LHZ,Ref197,63.031,28.578,GEOROC,high,BALTIC SHIELD / KOLA-LAPLAND PROVINCE / KAAVI-KUOPIO KIMBERLITE PROVINCE / LAHTOJOKI KIMBERLITE PIPE,LAHTOJOKI,score=80 exact
+Kao,,LHZ,Ref7,-29,28.55,published_literature,moderate,KAAPVAAL CRATON / SOUTH AFRICA / NE LESOTHO KIMBERLITE CLUSTER / KAO KIMBERLITE,KAO SATELLITE,"Kao, Lesotho (approx field); GEOROC also -29.0200,28.6240"
+Lemphane,,LHZ,Ref34+Ref277,-29.05,28.55,published_literature,moderate,KAAPVAAL CRATON / LESOTHO / LEMPHANE KIMBERLITE FIELD,,"Lemphane, Lesotho (approx); GEOROC also -29.0000,28.5000"
+Letseng_la_Terae,,LHZ,Ref1+Ref277,-29,28.867,published_literature,high,KAAPVAAL CRATON / LESOTHO / LETSENG-LA TERAI KIMBERLITE PROVINCE / LETSENG KIMBERLITE,SATELLITE PIPE,"Letseng-la-Terae, Lesotho; GEOROC also -29.0060,28.8670"
+Liqhobong,,LHZ,Ref8+Ref205+Ref277,-29,28.6,published_literature,moderate,KAAPVAAL CRATON / LESOTHO / LETSENG-LA TERAI KIMBERLITE PROVINCE / LIQHOBONG KIMBERLITE,,"Liqhobong, Lesotho (approx); GEOROC also -28.9891,28.6111"
+Matsoku,,LHZ,Ref6,-29.08,28.4,published_literature,moderate,,,"Matsoku, Lesotho (approx)"
+Mothae,,LHZ,Ref3+Ref205+Ref249+Ref277,-28.98,28.75,published_literature,moderate,KAAPVAAL CRATON / LESOTHO / MOTHAE KIMBERLITE,,"Mothae, Lesotho (approx); GEOROC also -28.9700,28.7000"
+Ngopetsoeu,,MEG,Ref246,-29.2,27.9,published_literature,moderate,,,Ngopetsoeu/Ngopetsou Lesotho (approx)
+Pipe_200,,LHZ,Ref85,-29,28.8,GEOROC,moderate,KAAPVAAL CRATON / LESOTHO / LETSENG-LA TERAI KIMBERLITE PROVINCE / PIPE 200 KIMBERLITE,,score=50 substr
+Ramatseliso,,LHZ,Ref109+Ref205,-30.05,28.3,published_literature,moderate,,,"Ramatseliso, Lesotho (approx)"
+Thaba_Putsoa,,LHZ,Ref3+Ref277,-29.35,28.25,published_literature,moderate,KAAPVAAL CRATON / LESOTHO / NE LESOTHO KIMBERLITE CLUSTER / THABA PUTSOA KIMBERLITE,,"Thaba Putsoa, Lesotho (approx); GEOROC also -28.9200,28.6500"
+Dsun-Bussular_SE_Mongolia,,LHZ,Ref332,45.5,114,literature_approx,low,,,SE Mongolia / Dariganga field approximate only
+Mongolia,,LHZ,Ref411,48.04,99.99,literature_approx,low,,,Defaulted to Tariat/Shavaryn-Tsaram field; original label is generic
+Shavaryn_Tsaram_Tariat_Mongolia,,LHZ,Ref319,48.0436,99.9892,published_literature,high,,,"Wikimapia/Mindat Shavaryn-Tsaram 48°2'37""N 99°59'21""E"
+Anis_Kubub,,LHZ,Ref37,-24.9931,17.8011,GEOROC,moderate,NAMAQUALAND NATAL BELT / NAMIBIA / GIBEON KIMBERLITE FIELD,,score=50 substr
+Gibeon_Townlands,,LHZ,Ref36,-24.9931,17.8011,GEOROC,moderate,NAMAQUALAND NATAL BELT / NAMIBIA / GIBEON KIMBERLITE FIELD,,score=50 substr
+Hanaus,,LHZ,Ref37,-25.2411,17.7083,GEOROC,moderate,NAMAQUALAND NATAL BELT / NAMIBIA / GIBEON KIMBERLITE FIELD / HANAUS KIMBERLITE,,score=50 substr
+Louwrencia,,LHZ,Ref31,-25.3,17.75,literature_approx,moderate,,,"Louwrencia pipe, Gibeon cluster, Namibia (field-level)"
+Mir,,LHZ,Ref444,62.53,113.99,published_literature,high,SIBERIAN TRAPS / YAKUTIAN KIMBERLITE FIELDS / MIR KIMBERLITE PIPE,MALAYA BOTUOBA (MIRNINSKOE) FIELD,"Mir pipe; GEOROC also 63.08,113.52 for field; GEOROC also 63.0800,113.5200"
+Mir?,,LHZ,Ref297,62.53,113.99,published_literature,high,SIBERIAN TRAPS / YAKUTIAN KIMBERLITE FIELDS / MIR KIMBERLITE PIPE,MALAYA BOTUOBA (MIRNINSKOE) FIELD,"Treated as Mir pipe; GEOROC also 63.0800,113.5200"
+Obnazhennaya,,MEG,Ref297,70.51611,120.50833,published_literature,high,SIBERIAN TRAPS / YAKUTIAN KIMBERLITE FIELDS / OBNAZHENNAYA KIMBERLITE PIPE,"KUOIKA FIELD, BIREKTE TERRANE","Mindat Obnazhennaya, Kuoika field; GEOROC also 70.2500,121.5800"
+Vitim,,PRX,Ref458,54,113.4,literature_approx,moderate,,,"Vitim volcanic field, Transbaikalia (field centre)"
+Vitim_area,,LHZ,Ref21,54,113.4,literature_approx,moderate,,,"Vitim volcanic field, Transbaikalia"
+Vitim_Bereya,,LHZ,Ref410,54,113.4,literature_approx,moderate,,,Bereya locality within Vitim field (field centre)
+Malaita,,PRX,Ref492,-8.9,160.75,literature_approx,moderate,,,"Northern Malaita alnöite pipes, Solomon Islands"
+Malaita_Babaruu,,LHZ,Ref128,-8.9,160.75,published_literature,moderate,,,"Babaru'u alnöite, northern Malaita"
+Abrahamskraal,,LHZ,Ref136,-29.05,24.35,literature_approx,low,,,"Abrahamskraal farm/kimberlite, Kaapvaal (approximate)"
+Bellsbank,,PRX,Ref222,-28.08,24.03,GEOROC,moderate,KAAPVAAL CRATON / SOUTH AFRICA / BARKLY WEST KIMBERLITE PROVINCE / BELLSBANK KIMBERLITE,,score=50 substr
+Bellsbank_Main,,PRX,Ref399+Ref400,-28.08,24.03,GEOROC,moderate,KAAPVAAL CRATON / SOUTH AFRICA / BARKLY WEST KIMBERLITE PROVINCE / BELLSBANK KIMBERLITE,,score=50 substr
+Finsch,,LHZ,Ref14,-28.375,23.446,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / FINSCH KIMBERLITE,FINSCH MINE,"Finsch Mine, Kaapvaal; GEOROC also -28.3850,23.4450"
+Frank_Smith,,LHZ,FRB_FSMITH.PDT,-28.2457,24.5151,GEOROC,moderate,KAAPVAAL CRATON / SOUTH AFRICA / BARKLY WEST KIMBERLITE PROVINCE / FRANK SMITH KIMBERLITE,,score=50 substr
+Hebron,,LHZ,Ref110,-31.28,22.57,GEOROC,moderate,NAMAQUALAND NATAL BELT / SOUTH AFRICA / PRIESKA KIMBERLITE PROVINCE / HEBRON (HARTEBEESFONTEIN) KIMBERLITE,,score=50 substr
+Jagersfontein,,LHZ,Ref178,-29.769,25.427,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / JAGERSFONTEIN KIMBERLITE,,"Jagersfontein; GEOROC also -29.7639,25.4194"
+Kby_Boshof_dump,,LHZ,Ref505,-28.55,25.23,GEOROC,moderate,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / ZOUT EN ZUUR DIKE,BOSHOF DISTRICT,score=70 substr+path
+Kby_Boshof_Rd_dump,,LHZ,Ref514,-28.55,25.23,GEOROC,moderate,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / ZOUT EN ZUUR DIKE,BOSHOF DISTRICT,score=70 substr+path
+Kby_Bultfontein,,LHZ,Ref157,-28.76,24.808,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / BULTFONTEIN KIMBERLITE,BULTFONTEIN MINE,"Kimberley Bultfontein; GEOROC also -28.7689,24.7917"
+Kby_Bultfontein_Floors,,LHZ,Ref83,-28.76,24.808,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / BULTFONTEIN KIMBERLITE,BULTFONTEIN MINE,"Kimberley Bultfontein floors; GEOROC also -28.7689,24.7917"
+Kby_Floors,,LHZ,Ref51,-28.741,24.764,GEOROC,moderate,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / KIMBERLEY KIMBERLITE,KIMBERLEY PIPE,score=50 substr
+Kby_mines_DeBeers,,LHZ,Ref83,-28.741,24.764,GEOROC,moderate,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / KIMBERLEY KIMBERLITE,KIMBERLEY PIPE,score=50 substr
+Kby_mines_Wesselton,,LHZ,Ref23,-28.766,24.83,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / KIMBERLEY KIMBERLITE,WESSELTON,"Wesselton; GEOROC also -28.6500,24.6400"
+Koffiefontein,,LHZ,Ref108,-29.427,24.993,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / KOFFIEFONTEIN KIMBERLITE,,"GEOROC Koffiefontein; GEOROC also -29.4268,24.9925"
+Lekkerfontein,,LHZ,Ref179orRef132,-30.33,24.63,GEOROC,moderate,KAAPVAAL CRATON / SOUTH AFRICA / HANOVER-PHILLIPSTOWN KIMBERLITE PROVINCE / LEKKERFONTEIN KIMBERLITE,,score=50 substr
+Melton_Wold,,LHZ,FBPN_MELWOLD.PHN,-31.49735,22.74579,GEOROC,moderate,NAMAQUALAND NATAL BELT / SOUTH AFRICA / PRIESKA KIMBERLITE PROVINCE / MELTON WOLD KIMBERLITE,EASTERN NAMAQUALAND,score=50 substr
+Monastery,,LHZ,Ref4,-28.811,27.422,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / MONASTERY KIMBERLITE,,"GEOROC Monastery; GEOROC also -28.8108,27.4219"
+Rietfontein,,PRX,Ref499,-26.74332,20.03709,GEOROC,moderate,KAAPVAAL CRATON / SOUTH AFRICA / KALAHARI SALIENT / RIETFONTEIN KIMBERLITE,,score=50 substr
+Venetia,,PRX,Ref156,-22.451,29.319,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / VENETIA KIMBERLITE CLUSTER,K1 PIPE,"Venetia mine; GEOROC also -22.4340,29.3210"
+West_End,,LHZ,FRB_WEST.END,-28.745,24.755,literature_approx,moderate,,,"West End, Kimberley cluster (near Kimberley pipes)"
+Witberg,,LHZ,Ref482,-29.5,22.3,GEOROC,moderate,NAMAQUALAND NATAL BELT / SOUTH AFRICA / PRIESKA KIMBERLITE PROVINCE / WITBERG KIMBERLITE,WITBER EAST (DIKE),score=50 substr
+Zero,,LHZ,Ref102,-27.2817,23.7219,GEOROC,moderate,NAMAQUALAND NATAL BELT / SOUTH AFRICA / KURUMAN KIMBERLITE PROVINCE / ZERO KIMBERLITE,,score=50 substr
+Labait_Tanzania,,LHZ,Ref343,-4.57018,35.43471,published_literature,high,TANZANIA CRATON / TANZANIA,ITANANA,"Mindat Labait volcano; GEOROC also -4.1837,32.9037"
+Lashaine_Tanzania,,LHZ,Ref157,-3.37,36.43,published_literature,high,TANZANIA CRATON / TANZANIA,ITANANA,"Lashaine tuff cone near Arusha (Dawson locality); GEOROC also -4.1837,32.9037"
+Hamilton_Branch,,LHZ,Ref139,38.18,-83.13,literature_approx,moderate,,,"Hamilton Branch kimberlite, Elliott Co., Kentucky (district)"
+Iron_Mtn_Grp,,PRX,Ref68,41.64056,-105.25109,published_literature,high,,,"Mindat Iron Mountain Kimberlite District, WY"
+Sloan_02,,LHZ,Ref46,40.869,-105.386,published_literature,high,TANZANIA CRATON / TANZANIA / MWADUI-SHINYANGA KIMBERLITE FIELD / MWADUI (WILLIAMSON) KIMBERLITE,DRILL HOLE DDH02,"GEOROC Sloan, Colorado-Wyoming; GEOROC also -3.5300,33.6000"
+Sloan_Grp,,LHZ,Ref68,40.869,-105.386,published_literature,high,WYOMING CRATON / COLORADO / STATE LINE KIMBERLITE FIELD / SLOAN KIMBERLITE,,"Sloan group, State Line; GEOROC also 40.8690,-105.3860"
+Williams,,LHZ,FRB_MONTAN.BCH,47.8,-109.3,published_literature,high,TANZANIA CRATON / TANZANIA / MWADUI-SHINYANGA KIMBERLITE FIELD / MWADUI (WILLIAMSON) KIMBERLITE,DRILL HOLE DDH02,"GEOROC Williams, Montana; GEOROC also -3.5300,33.6000"
+Renard,Superior Craton,Olivine xenocrysts,Patterson et al. 2009,52.8181,-72.2025,published_literature,high,,,"Mindat Renard kimberlite 52.8181,-72.2025"
+Majuagaa,North Atlantic Craton,Olivine xenocrysts,Nielsen and Sand 2008,65.2167,-52.0,published_literature,high,,,"Nielsen and Sand 2008: 65°13′N, 52°00′W"
+Colossus,Zimbabwe Craton,Olivine xenocrysts,Moore and Costin 2016,-19.525,28.68,literature_approx,moderate,,,"Mindat Colossus Mine, Bubi District estimate"
+Kangamiut,North Atlantic Craton,Olivine xenocrysts,Arndt et al. 2010,65.825,-53.3375,literature_approx,moderate,,,"Kangamiut region; Kangaamiut settlement 65.8250,-53.3375"
+Aaron,Slave Craton,Olivine xenocrysts,Fedortchouk and Canil 2004,64.7135,-110.3456,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD,EKATI DIAMOND MINE,"NI 43-101 2013 UTM NAD83 z12N 531190 E, 7176690 N"
+Karowe,Kalahari Craton,Olivine xenocrysts,Arndt et al. 2010,-21.49972,25.47111,published_literature,high,,,"Karowe (AK6), Orapa field; Wikipedia/PorterGeo 21°29′59″S 25°28′16″E"
+Benfontein,Kalahari Craton,Olivine xenocrysts,Howarth and Taylor 2016,-28.806,24.833,published_literature,moderate,,,Benfontein sill ~11 km SE of Kimberley
+De_Beers_dyke,Kalahari Craton,Olivine xenocrysts,Soltys et al.,-28.7389,24.775,published_literature,high,KAAPVAAL CRATON / SOUTH AFRICA / KIMBERLEY KIMBERLITE PROVINCE / KIMBERLEY KIMBERLITE,,"PorterGeo De Beers 28°44′20″S, 24°46′30″E"
+A154N,Slave Craton,Olivine xenocrysts,Brett et al. 2009,64.4985,-110.2733,published_literature,moderate,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / DIAVIK KIMBERLITE,DIAVIK A154N,"Diavik A154 North; offset from Diavik mine 64.4961,-110.2733"
+A154S,Slave Craton,Olivine xenocrysts,Brett et al. 2009,64.4938,-110.2733,published_literature,moderate,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / DIAVIK KIMBERLITE,DIAVIK A154S,"Diavik A154 South; offset from Diavik mine 64.4961,-110.2733"
+A21,Slave Craton,Olivine xenocrysts,Brett et al. 2009,64.4698,-110.2925,published_literature,high,CANADIAN SHIELD / SLAVE PROVINCE_CENOZOIC / LAC DE GRAS KIMBERLITE FIELD / DIAVIK KIMBERLITE,DIAVIK A21,"A21 drill collars NAD83 UTM z12N ~534080 E, 7149520 N"

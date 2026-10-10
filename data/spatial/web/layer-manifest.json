@@ -1,0 +1,33 @@
+{
+  "attribution": {
+    "provinces": "Hasterok et al. (2022) Earth-Science Reviews 231:104069. https://doi.org/10.1016/j.earscirev.2022.104069 Data: https://github.com/dhasterok/global_tectonics",
+    "lips": "Johansson, Zahirovic & M\u00fcller (2018) EarthByte LIPs v2, bundled with Hasterok global_tectonics polygon_data.",
+    "license_note": "Hasterok repository is GPL-3.0. Cite the paper if used on Hygrohodos."
+  },
+  "broad_classes": {
+    "craton": "Craton / shield",
+    "sedimentary_basin": "Sedimentary basin",
+    "volcanic_province": "Volcanic / magmatic province",
+    "orogen": "Orogen / accretionary belt",
+    "oceanic": "Oceanic crust",
+    "other": "Other"
+  },
+  "colors": {
+    "craton": "#c4a574",
+    "sedimentary_basin": "#8fb9b0",
+    "volcanic_province": "#c47a62",
+    "orogen": "#9aa0c4",
+    "oceanic": "#d5e4ee",
+    "other": "#cfc8bc",
+    "cratons_outline": "#6b4f2a",
+    "lips": "#b1533a",
+    "kimberlite": "#1f1a17"
+  },
+  "recommended_stack": [
+    "geology_broad.geojson \u2014 filled background by craton / basin / volcanic / orogen",
+    "geology_provinces.geojson \u2014 named polygons for hover (optional, denser)",
+    "geology_cratons.geojson \u2014 Archean basement emphasis",
+    "geology_lips.geojson \u2014 large igneous provinces overlay",
+    "kimberlite_localities.geojson \u2014 pipe locations from SD1"
+  ]
+}

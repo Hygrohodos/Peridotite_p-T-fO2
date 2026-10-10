@@ -1,0 +1,103 @@
+Location,Latitude,Longitude,Country,Craton,CoordStatus,Source,Notes,N_samples,N_screen_pass
+Panda,64.71361,-110.61944,Canada,Slave Craton,provisional,Ekati mine Wikipedia,"Ekati, Lac de Gras, NWT",113,2
+Udachnaya,66.43417,112.3175,Russia,Siberian Craton,provisional,Wikipedia Udachnaya pipe,Sakha Republic,73,38
+Jericho,65.99722,-111.475,Canada,Slave Craton,verified,Mindat loc-31135,"Nunavut, Contwoyto Lake / Carat Lake, northern Slave Province",64,33
+Diavik,64.49611,-110.27111,Canada,Slave Craton,provisional,PorterGeo Diavik,"Lac de Gras, NWT",49,27
+Finsch,-28.375,23.446,South Africa,,provisional,Finsch mine Lime Acres,Kaapvaal,42,37
+Vitim_area,54.5,113.0,Russia,,provisional,Vitim plateau,Transbaikalia,39,12
+Sable,64.72,-110.5,Canada,Slave Craton,provisional,Ekati cluster,"Ekati, Lac de Gras",34,0
+A154N/S A418 A841,64.49611,-110.273,Canada,Slave Craton,provisional,Diavik pipes,Diavik A154/A418/A841,29,15
+A154N/S,64.49611,-110.27111,Canada,Slave Craton,provisional,Diavik A154,Diavik pipes,29,19
+Pigeon,64.73,-110.65,Canada,Slave Craton,provisional,Ekati cluster,"Ekati, Lac de Gras",27,5
+Gibeon_Townlands,-25.13,17.78,Namibia,,provisional,Gibeon kimberlite field,Namibia,26,24
+Malaita,-8.95,161.0,Solomon Islands,,provisional,Malaita island,Pacific,26,0
+Thaba_Putsoa,-29.32,28.48,Lesotho,,provisional,Thaba Putsoa,Lesotho,25,9
+Nikos_Somerset_Islnd,73.15,-93.5,Canada,,provisional,Somerset Island kimberlite field,Nunavut,24,10
+Letseng_la_Terae,-29.001,28.864,Lesotho,,provisional,Letseng mine,Maloti,24,21
+Matsoku,-29.08,28.68,Lesotho,,provisional,Matsoku pipe,Lesotho,24,16
+Louwrencia,-25.2,17.9,Namibia,,provisional,Gibeon field,Namibia,22,7
+Jagersfontein,-29.769,25.427,South Africa,,provisional,Jagersfontein mine,Free State,22,12
+Monastery,-28.817,27.417,South Africa,,provisional,Monastery mine,Free State,19,8
+DO-18 DO-27 or A154S,64.49,-110.27,Canada,Slave Craton,provisional,Diavik cluster,Diavik,18,6
+Leslie,64.7,-110.61,Canada,Slave Craton,provisional,Ekati cluster,"Ekati, Lac de Gras",18,0
+Kirkland_Lake_C14,48.15,-80.03,Canada,,provisional,Kirkland Lake kimberlite field,Ontario,18,9
+Frank_Smith,-28.25,24.77,South Africa,,provisional,Frank Smith mine,Northern Cape,18,8
+Kby_Bultfontein,-28.758,24.821,South Africa,,provisional,Kimberley Bultfontein,Northern Cape,18,10
+Mothae,-28.98,28.76,Lesotho,,provisional,Mothae mine,Lesotho,17,10
+Venetia,-22.448,29.319,South Africa,,provisional,Venetia mine,Limpopo,16,5
+Arnie,64.71,-110.62,Canada,Slave Craton,provisional,Ekati cluster,"Ekati, Lac de Gras",15,3
+Premier,-25.671,28.517,South Africa,Kaapvaal Craton,provisional,Cullinan / Premier,Gauteng,15,8
+Kby_Bultfontein_Floors,-28.758,24.821,South Africa,,provisional,Kimberley floors,Northern Cape,14,7
+Lethlakane_DK1,-21.42,25.59,Botswana,,provisional,Letlhakane,Botswana,13,2
+Sloan_Grp,40.8433,-105.4533,USA,,provisional,Mindat Sloan kimberlite,Colorado State Line,12,3
+Finch,-28.375,23.446,South Africa,Kaapvaal Craton,provisional,likely Finsch spelling variant,Kaapvaal,11,10
+Bultfontein,-28.758,24.821,South Africa,Kaapvaal Craton,provisional,Kimberley Bultfontein,Northern Cape,11,3
+Somacuanza,-9.5,20.4,Angola,,provisional,"Lunda kimberlite fields, uncertain name match",Angola,9,6
+Qilin_SE_China,23.35,114.15,China,,provisional,"Qilin, Guangdong",SE China,8,0
+Hanaus,-25.3,17.9,Namibia,,provisional,Gibeon field,Namibia,8,1
+Kby_Boshof_dump,-28.74,24.76,South Africa,,provisional,Kimberley Boshof road,Northern Cape,8,5
+Melton_Wold,-31.5,22.7,South Africa,,provisional,Victoria West area,Karoo,8,1
+Hamilton_Branch,38.12,-83.12,USA,,provisional,Elliott County KY kimberlite,Kentucky,8,4
+Williams,40.9,-105.5,USA,,provisional,State Line district uncertain,Colorado/Wyoming,8,4
+Lahtojoki_Pipe_7,62.91,28.35,Finland,,provisional,Kaavi-Kuopio kimberlite field,Finland,7,0
+Vitim,54.5,113.0,Russia,,provisional,Vitim plateau volcanic field,Transbaikalia,7,1
+Lashaine_Tanzania,-3.37,36.8,Tanzania,,provisional,"Lashaine volcano, Monduli",Tanzania,7,4
+Mark,64.71,-110.6,Canada,Slave Craton,provisional,Ekati cluster,"Ekati, Lac de Gras",6,0
+Jetty_Peninsula,-70.53,68.45,Antarctica,,provisional,"Jetty Peninsula, Prince Charles Mountains",East Antarctica,6,3
+Batty_Bay_Somerset_Island,73.23,-91.0,Canada,,provisional,Somerset Island,Nunavut,6,5
+Kirkland_Lake_A4,48.15,-80.05,Canada,,provisional,Kirkland Lake field,Ontario,6,2
+Nanorluk_Somerset_Island,73.1,-93.4,Canada,,provisional,Somerset Island,Nunavut,6,0
+Hebron,58.2,-62.62,Canada,,provisional,"Hebron, Labrador",May be incorrect locality match,6,0
+Zero,-25.2,17.7,Namibia,,provisional,Gibeon field Zero pipe,Namibia,6,2
+Grizzly,64.72,-110.58,Canada,Slave Craton,provisional,Ekati cluster,"Ekati, Lac de Gras",5,1
+Ekati_Grizzly,64.72,-110.58,Canada,,provisional,Ekati cluster,"Ekati, Lac de Gras",5,1
+Ham_Somerset_Islnd,73.05,-93.5,Canada,,provisional,Somerset Island,Nunavut,5,2
+Liqhobong,-28.99,28.61,Lesotho,,provisional,Liqhobong mine,Lesotho,5,4
+Kby_mines_Wesselton,-28.738,24.807,South Africa,,provisional,Wesselton Kimberley,Northern Cape,5,4
+Rietfontein,-26.8,20.0,South Africa,,provisional,uncertain Namaqualand/Kalahari,Uncertain,5,0
+Muskox,65.99,-111.52,Canada,Slave Craton,provisional,near Jericho field,"Jericho cluster, Nunavut",4,3
+5034,63.434,-109.201,Canada,,provisional,Gahcho Kué 5034 pipe,NWT,4,3
+Pali_Aike_Chile,-52.05,-69.7,Chile,,provisional,Pali Aike volcanic field,Magallanes,4,0
+Pipe_200,-22.4,25.5,Botswana,,provisional,Orapa/Letlhakane cluster uncertain,Botswana,4,4
+Ramatseliso,-30.05,28.75,Lesotho,,provisional,Ramatseliso,Lesotho,4,3
+Shavaryn_Tsaram_Tariat_Mongolia,48.17,99.95,Mongolia,,provisional,Tariat / Shavaryn Tsaram,Khangai,4,0
+Anis_Kubub,-25.35,17.85,Namibia,,provisional,Gibeon field,Namibia,4,4
+Malaita_Babaruu,-8.9,161.0,Solomon Islands,,provisional,Malaita,Pacific,4,0
+Kby_Boshof_Rd_dump,-28.74,24.76,South Africa,,provisional,Kimberley Boshof road,Northern Cape,4,1
+Koffiefontein,-29.42,25.0,South Africa,,provisional,Koffiefontein mine,Free State,4,0
+Voyageur,64.74,-110.55,Canada,Slave Craton,provisional,Ekati cluster,"Ekati, Lac de Gras",3,1
+Amayersuk_Somerset_Islnd,73.2,-93.3,Canada,,provisional,Somerset Island,Nunavut,3,0
+Elwin_Bay_Somerset_Islnd,73.53,-90.9,Canada,,provisional,Somerset Island,Nunavut,3,0
+JP_Somerset_Islnd,73.1,-93.2,Canada,,provisional,Somerset Island,Nunavut,3,3
+Kirkland_Lake_A1,48.16,-80.04,Canada,,provisional,Kirkland Lake field,Ontario,3,0
+Obnazhennaya,70.75,127.75,Russia,,provisional,"Kuoyka field, Olenek",Yakutia,3,0
+Lekkerfontein,-30.9,25.1,South Africa,,provisional,uncertain,Uncertain,3,1
+Labait_Tanzania,-4.25,35.43,Tanzania,,provisional,Labait volcano,Tanzania,3,2
+Cross_BC_Canada,54.5,-124.0,Canada,,provisional,northern BC kimberlite occurrences,Very approximate,2,1
+Gahcho_Kué,63.434,-109.201,Canada,,provisional,Gahcho Kué mine,NWT,2,1
+Vitim_Bereya,54.6,113.1,Russia,,provisional,Vitim plateau,Transbaikalia,2,1
+Witberg,-25.4,16.3,Namibia,,provisional,"Witberg, Namibia",Namibia,2,0
+Wesselton,-28.738,24.807,South Africa,Kaapvaal Craton,provisional,Wesselton,Northern Cape,1,0
+Orapa,-21.31,25.37,Botswana,,provisional,Orapa mine,Botswana,1,0
+Ekati_Arnie,64.71,-110.62,Canada,,provisional,Ekati cluster,"Ekati, Lac de Gras",1,1
+K14,64.71,-110.62,Canada,,provisional,Ekati cluster,"Ekati, Lac de Gras",1,1
+Torrie,64.71,-110.63,Canada,,provisional,Ekati cluster,"Ekati, Lac de Gras",1,1
+Pale_Aike_Chile,-52.05,-69.7,Chile,,provisional,Pali Aike spelling variant,Magallanes,1,0
+Pali_Aike,-52.05,-69.7,Chile,,provisional,Pali Aike volcanic field,Magallanes,1,1
+Kuopio_Kaavi_Pipe_14,62.9,28.4,Finland,,provisional,Kaavi-Kuopio field,Finland,1,1
+Kuopio_Kaavi_Pipe_9,62.9,28.38,Finland,,provisional,Kaavi-Kuopio field,Finland,1,0
+Kao,-29.02,28.62,Lesotho,,provisional,Kao pipe,Lesotho,1,1
+Lemphane,-29.05,28.55,Lesotho,,provisional,Lemphane,Lesotho,1,0
+Ngopetsoeu,-29.2,28.4,Lesotho,,provisional,Lesotho field,Lesotho,1,0
+Dsun-Bussular_SE_Mongolia,44.5,110.0,Mongolia,,provisional,"SE Mongolia, uncertain",Uncertain,1,0
+Mongolia,47.0,103.0,Mongolia,,provisional,unspecified Mongolian locality,Uncertain,1,0
+Mir,62.529,113.993,Russia,,provisional,Mirny pipe,Sakha Republic,1,0
+Mir?,62.529,113.993,Russia,,provisional,Mirny pipe,Sakha Republic,1,0
+Abrahamskraal,-32.2,22.5,South Africa,,provisional,"Karoo name match, uncertain",Uncertain,1,0
+Bellsbank,-28.28,24.4,South Africa,,provisional,"Bellsbank, Barkly West",Northern Cape,1,0
+Bellsbank_Main,-28.28,24.4,South Africa,,provisional,Bellsbank,Northern Cape,1,0
+Kby_Floors,-28.74,24.78,South Africa,,provisional,Kimberley floors,Northern Cape,1,0
+Kby_mines_DeBeers,-28.738,24.771,South Africa,,provisional,De Beers mine Kimberley,Northern Cape,1,0
+West_End,-28.74,24.75,South Africa,,provisional,Kimberley West End,Northern Cape,1,0
+Iron_Mtn_Grp,42.86,-105.45,USA,,provisional,"Iron Mountain, Wyoming State Line",Wyoming,1,0
+Sloan_02,40.8433,-105.4533,USA,,provisional,Sloan pipe,Colorado,1,1
