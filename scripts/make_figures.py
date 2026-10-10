@@ -32,6 +32,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from calculations.pt_fo2.params import PARAMS
+from calculations.pt_fo2 import calibration as calib
 
 FULL = ROOT / "data" / "derived" / "screened_PT.csv"
 OUT = ROOT / "Figures"
@@ -52,9 +53,34 @@ OTHER = dict(marker="o", color="#8c8c8c", label="Other", facecolors="none")
 
 GREEN_OUTER = "#b7dfb7"   # ±0.05 Fe3+
 GREEN_INNER = "#3d9a4a"   # ±0.02 Fe3+ (darker)
-# Median ΔlogfO2(FMQ) for a +0.02 / +0.05 shift in XFe3 on screened samples
+# ΔlogfO2(FMQ) equivalent of a 0.02 / 0.05 change in garnet Fe3+/ΣFe, as
+# quoted in the manuscript (0.44 log units per 0.02).  These constants are
+# used for every Fe3+ → log-unit conversion (Fig. 10 bars, Table 1 notes).
+# main() prints fo2_equivalents(df), the median shift for +0.02 / +0.05 on
+# the current screened samples, as a check; it is not substituted.
 FO2_EQ_02 = 0.44
 FO2_EQ_05 = 0.95
+
+
+def fo2_equivalents(df):
+    """Median ΔFMQ change for +0.02 and +0.05 garnet Fe3+/ΣFe (screened)."""
+    use = df[df["screen_pass"] == True]
+    x = pd.to_numeric(use["XFe3_gt_corr"], errors="coerce")
+    f0 = _fo2_from_xfe3(use, x)
+    out = []
+    for d in (0.02, 0.05):
+        f1 = _fo2_from_xfe3(use, x + d)
+        out.append(float(np.nanmedian((f1 - f0).to_numpy(dtype=float))))
+    return out[0], out[1]
+
+
+def _gpa_axis(ax, which="y"):
+    """Label a pressure axis held in kbar internally as GPa (1 GPa = 10 kbar)."""
+    from matplotlib.ticker import FuncFormatter, MultipleLocator
+    axis = ax.yaxis if which == "y" else ax.xaxis
+    axis.set_major_locator(MultipleLocator(5.0))
+    axis.set_major_formatter(FuncFormatter(lambda v, _: f"{v / 10:.1f}"))
+    (ax.set_ylabel if which == "y" else ax.set_xlabel)("P (GPa)")
 
 
 _GEOTHERM = None
@@ -502,31 +528,9 @@ def _apply_emp(est, T, slope=None, intercept=None):
 
 
 def _error_groups(df):
-    """Fig. 5 blue / red groups and the remainder used for calibration."""
-    base, meas = _slave_fe3_mask(df)
-    est25 = _fe3_at_dt(df, 25)
-    blue = base & ((meas - est25) > 0.05)
-    sid = df["SampleID"].astype(str).str.strip()
-    red = base & sid.isin(RED_IDS)
-    rem = base & ~blue & ~red
+    """Fig. 5 blue / red groups and the remainder (calibration.error_groups)."""
+    base, meas, blue, red, rem, _ = calib.error_groups(df)
     return base, meas, blue, red, rem
-
-
-def _level_offset(meas, est, T, rem):
-    """Return (slope, intercept) so high-T residuals are flat at R_low."""
-    tcut = PARAMS.fe3.t_emp_min_c
-    m = rem & pd.to_numeric(est, errors="coerce").notna() & T.notna()
-    low = m & (T < tcut)
-    high = m & (T >= tcut)
-    rlow = (meas - est)[low].mean()
-    if (not high.any()) or pd.isna(rlow) or int(high.sum()) < 3:
-        return 0.0, 0.0
-    a, b = np.polyfit(
-        T[high].to_numpy(dtype=float),
-        (meas[high] - est[high]).to_numpy(dtype=float),
-        1,
-    )
-    return float(a), float(b - rlow)
 
 
 REF_STYLE = {
@@ -534,30 +538,21 @@ REF_STYLE = {
     "Creighton et al. 2010": dict(marker="D", label="CR10"),
     "Yaxley et al. 2017": dict(marker="^", label="YA17"),
 }
-RED_IDS = {"14-78", "MX5011", "8-1", "MX104", "MX5000", "40-38"}
+RED_IDS = set(PARAMS.fe3.emp_red_ids)
 
 
 def _slave_fe3_mask(df):
-    meas = pd.to_numeric(df["garnet_Fe3+"], errors="coerce")
-    slave = df["Craton"].fillna("").astype(str).str.contains("Slave")
-    base = (
-        (df.get("screen_pass") == True)
-        & meas.notna() & (meas > 0) & (meas < 0.5)
-        & slave
-    )
-    if int(base.sum()) < 5:
-        base = (
-            (df.get("screen_pass") == True)
-            & meas.notna() & (meas > 0) & (meas < 0.5)
-        )
-    return base, meas
+    return calib.calibration_mask(df), calib.measured_fe3(df)
 
 
 def _norm_sid(s):
+    # Sample IDs are stored un-mangled (e.g. 21-6, not Excel's 21-Jun);
+    # the replacement keeps older external tables joinable.
     return (
         s.astype(str).str.strip()
-        .str.replace(r"-Jun$", "-6", regex=True)
-        .str.replace(r"-Jun", "-6", regex=True)
+        .str.replace(r"^(\d+)-Jun$", r"\1-6", regex=True)
+        .str.replace(r"^(\d+)-Mar$", r"\1-3", regex=True)
+        .str.replace(r"^(\d+)-Aug$", r"\1-8", regex=True)
     )
 
 
@@ -683,22 +678,20 @@ def fig05_dt_set(df):
     dts = (50, 25, 10)
     estimates = {dt: _fe3_at_dt(df, dt) for dt in dts}
 
-    est25 = estimates[25]
-    resid25 = meas - est25
-    blue = base & (resid25 > 0.05)
-    sid = df["SampleID"].astype(str).str.strip()
-    red = base & sid.isin(RED_IDS)
-    rem = base & (~blue) & (~red) & T.notna() & (T >= PARAMS.fe3.t_emp_min_c)
-    slope, intercept = PARAMS.fe3.emp_slope, PARAMS.fe3.emp_intercept
-    if int(rem.sum()) >= 3:
-        slope, intercept = np.polyfit(
-            T[rem].to_numpy(dtype=float), resid25[rem].to_numpy(dtype=float), 1
-        )
-        print(
-            f"  Fig05 empirical fit (ΔT=25, remainder T≥{PARAMS.fe3.t_emp_min_c:.0f} °C, n={int(rem.sum())}):"
-            f"  meas−est = {slope:.6e}*T + ({intercept:.6f})"
-        )
-        print(f"    blue: {int(blue.sum())}   red: {int(red.sum())}")
+    fit = calib.fit_empirical_correction(df)
+    assert int(PARAMS.fe3.emp_fit_dt_c) in dts
+    blue, red = fit["masks"]["blue"], fit["masks"]["red"]
+    rem = fit["masks"]["reg"]          # dashed envelope = Eq. 5 regression set
+    slope, intercept = fit["slope"], fit["intercept"]
+    print(
+        f"  Fig05 Eq. 5 fit (ΔT={fit['fit_dt_c']:.0f}, T≥{fit['t_min_c']:.0f} °C, "
+        f"n={fit['n_regression']}): meas−est = {slope:.4e}*T + ({intercept:.5f})"
+        f"   blue {fit['n_blue']}  red {fit['n_red']}"
+    )
+    if (abs(slope - PARAMS.fe3.emp_slope) > 5e-8
+            or abs(intercept - PARAMS.fe3.emp_intercept) > 5e-5):
+        print("  WARNING: params.py Eq. 5 coefficients differ from the Fig. 5 fit; "
+              "run scripts/fit_calibration.py --update-params")
 
     fig, axes = plt.subplots(3, 2, figsize=(174 / 25.4, 210 / 25.4))
     letters = "abc"
@@ -708,11 +701,11 @@ def fig05_dt_set(df):
         _plot_fe3_row(
             axes[i, 0], axes[i, 1], df, meas, T, est, ok,
             title=f"{letters[i]}. $\\Delta$T = {dt:.0f} °C",
-            blue=blue if dt == 25 else None,
-            red=red if dt == 25 else None,
-            fit=(slope, intercept) if dt == 25 else None,
+            blue=blue if dt == PARAMS.fe3.emp_fit_dt_c else None,
+            red=red if dt == PARAMS.fe3.emp_fit_dt_c else None,
+            fit=(slope, intercept) if dt == PARAMS.fe3.emp_fit_dt_c else None,
             legend=(i == 0),
-            hull=rem if dt == 25 else None,
+            hull=rem if dt == PARAMS.fe3.emp_fit_dt_c else None,
         )
         if i < 2:
             axes[i, 0].set_xlabel("")
@@ -918,6 +911,7 @@ def fig11_p_fo2_measured(df):
     _style_ax(ax, r"log $f$O$_2$ ($\Delta$FMQ)", "P (kbar)")
     ax.set_xlim(-6, 0)
     ax.set_ylim(70, 30)
+    _gpa_axis(ax)
     _add_depth_axis(ax, km_interval=50)
     print(f"  Fig11 measured Fe3+ fO2 n={len(use)}  "
           f"blue={int(blue_u.sum())} red={int(red_u.sum())}  unscreened included")
@@ -1013,8 +1007,12 @@ def fig12_p_fo2(df, mark_cpx_opx=False, stem="Fig10_P_fO2_estimated"):
         _label_on_curve(ax, f_ma, p_ma, "mean", "#333333", 40)
     # visual lower-left: pressure axis is inverted, so high P is the bottom
     # Combined residual 1σ, with and without the calibration error groups.
-    w_ex = 0.027 * FO2_EQ_02 / 0.02
-    w_in = 0.039 * FO2_EQ_02 / 0.02
+    # Same 1σ values as Table 1 / text (calibration.calibration_stats),
+    # rounded to 3 dp as reported, converted with FO2_EQ_02 per 0.02.
+    st = calib.calibration_stats(df, fo2_per_002=FO2_EQ_02).set_index("dataset")
+    s_in, w_in = st.loc["Calibration + validation", ["sigma", "sigma_log"]]
+    s_ex, w_ex = st.loc["Combined, error groups excluded", ["sigma", "sigma_log"]]
+    print(f"  Fig10 bars: 1σ {s_in:.3f} → {w_in:.2f} log; {s_ex:.3f} → {w_ex:.2f} log")
     x0, p_in, p_ex = -6.85, 68.4, 65.6
     ax.plot([x0, x0 + w_in], [p_in, p_in], color="#6b4c9a", lw=3.0, solid_capstyle="butt", zorder=7)
     ax.plot([x0, x0 + w_ex], [p_ex, p_ex], color="#1b7f3a", lw=3.0, solid_capstyle="butt", zorder=7)
@@ -1045,6 +1043,7 @@ def fig12_p_fo2(df, mark_cpx_opx=False, stem="Fig10_P_fO2_estimated"):
     ax.invert_yaxis()
     _style_ax(ax, r"log $f$O$_2$ ($\Delta$FMQ)", "P (kbar)")
     ax.set_ylim(70, 30)
+    _gpa_axis(ax)
     _add_depth_axis(ax, km_interval=50)
     ax.set_xlim(-7, 0)
     _save(fig, stem)
@@ -1053,31 +1052,13 @@ def fig12_p_fo2(df, mark_cpx_opx=False, stem="Fig10_P_fO2_estimated"):
 
 
 def _dt_sweep_corrected(df, force=True):
-    """ΔT sweep on all Slave calibration samples after the high-T correction."""
+    """Fig. 6 sweep: locked Eq. 5 held fixed, Eq. 5 regression samples only."""
     path = ROOT / "data" / "derived" / "dt_match_sweep_corr.csv"
     if path.exists() and not force:
         return pd.read_csv(path)
-    print("  Recomputing ΔT sweep (all Slave calibration; fit on remainder)…")
-    base, meas, blue, red, rem = _error_groups(df)
-    T = pd.to_numeric(df["T_TA98"], errors="coerce")
-    rows = []
-    for dt in range(0, 76, 1):
-        raw = _fe3_at_dt(df, dt)
-        sl, ic = _level_offset(meas, raw, T, rem)
-        est = _apply_emp(raw, T, slope=sl, intercept=ic)
-        m = base & est.notna()
-        diff = est[m] - meas[m]
-        rows.append(dict(
-            dt=dt,
-            n=int(m.sum()),
-            slope=sl,
-            intercept=ic,
-            mean=float(diff.mean()) if m.any() else float("nan"),
-            absmean=float(diff.abs().mean()) if m.any() else float("nan"),
-            p02=float((diff.abs() <= 0.02).mean()) if m.any() else float("nan"),
-            p05=float((diff.abs() <= 0.05).mean()) if m.any() else float("nan"),
-        ))
-    s = pd.DataFrame(rows)
+    print("  Recomputing ΔT sweep (Eq. 5 fixed; regression samples only)…")
+    reg = calib.error_groups(df)[5]
+    s = calib.dt_sweep(df, PARAMS.fe3.emp_slope, PARAMS.fe3.emp_intercept, mask=reg)
     path.parent.mkdir(parents=True, exist_ok=True)
     s.to_csv(path, index=False)
     print(f"  wrote {path}")
@@ -1085,18 +1066,15 @@ def _dt_sweep_corrected(df, force=True):
 
 
 def fig06_dt_sweep(df):
-    """Fig. 6 — choose ΔT on all Slave calibration samples after correction."""
-    s = _dt_sweep_corrected(df, force=False)
-    # Prefer highest ±0.02 rate; break ties by |mean| then ±0.05
-    s2 = s.copy()
-    s2["_rank"] = (
-        -s2["p02"]
-        + 0.01 * s2["mean"].abs()
-        - 0.001 * s2["p05"]
-    )
-    opt = int(s2.loc[s2["_rank"].idxmin(), "dt"])
-    print(f"  Fig06 selected ΔT (remainder, level-shifted): {opt} °C")
+    """Fig. 6 — choose ΔT on the Eq. 5 regression samples, Eq. 5 fixed."""
+    s = _dt_sweep_corrected(df, force=True)
+    # Highest ±0.02 rate; ties broken by smallest |mean|, then ±0.05
+    opt = calib.select_dt(s)
+    print(f"  Fig06 selected ΔT (Eq. 5 regression samples, n={int(s['n'].max())}): {opt} °C")
     print(s.loc[s["dt"] == opt].to_string(index=False))
+    if opt != PARAMS.fe3.dt_match_c:
+        print(f"  WARNING: params.py dt_match_c = {PARAMS.fe3.dt_match_c} differs; "
+              "run scripts/fit_calibration.py --update-params")
 
     fig, ax1 = plt.subplots(figsize=(119 / 25.4, 78 / 25.4))
     ax1.plot(s["dt"], s["mean"], color="k", lw=1.15, label=r"$\mu$ (est − meas)")
@@ -1128,7 +1106,7 @@ def fig07_optimal_dt(df, opt_dt):
     base, meas, blue, red, rem = _error_groups(df)
     T = pd.to_numeric(df["T_TA98"], errors="coerce")
     raw = _fe3_at_dt(df, opt_dt)
-    sl, ic = _level_offset(meas, raw, T, rem)
+    sl, ic = PARAMS.fe3.emp_slope, PARAMS.fe3.emp_intercept   # locked Eq. 5
     est = _apply_emp(raw, T, slope=sl, intercept=ic)
     ok = base & est.notna() & T.notna()
     fig, axes = plt.subplots(1, 2, figsize=(174 / 25.4, 72 / 25.4))
@@ -1150,7 +1128,7 @@ def fig07_optimal_dt(df, opt_dt):
         f"±0.05: {(diff_rem<=0.05).mean()*100:.0f}%",
         transform=axes[0].transAxes, fontsize=7.5, ha="right", va="bottom",
     )
-    print(f"  Fig07 high-T adj = {sl:.4e}*T + ({ic:.4f})  "
+    print(f"  Fig07 ΔT={opt_dt:g}  Eq. 5 = {sl:.4e}*T + ({ic:.5f})  "
           f"remainder ±0.02={(diff_rem<=0.02).mean()*100:.0f}%")
     fig.tight_layout()
     _save(fig, "Fig07_corrected_Fe3")
@@ -1476,8 +1454,15 @@ def main():
     if not FULL.exists():
         print(f"Missing {FULL} — run: python scripts/run_pipeline.py")
         sys.exit(1)
-    df = pd.read_csv(FULL, encoding="utf-8-sig")
+    df = pd.read_csv(FULL, encoding="utf-8-sig", low_memory=False)
+    df = df.rename(columns={df.columns[0]: "SampleID"})
     print(f"Loaded {len(df)} rows from {FULL.name}")
+    tab = calib.calibration_stats(df, fo2_per_002=FO2_EQ_02)
+    tab.to_csv(ROOT / "data" / "derived" / "Table1_calibration_stats.csv", index=False)
+    print(tab.drop(columns="notes").round(4).to_string(index=False))
+    e02, e05 = fo2_equivalents(df)
+    print(f"  fO2 equivalents used: 0.02 → {FO2_EQ_02:.2f} log, 0.05 → {FO2_EQ_05:.2f} log"
+          f"  (median on current screened samples: {e02:.3f}, {e05:.3f})")
     print(f"Writing figures to {OUT}")
     _apply_journal_style()
     fig01_map()
@@ -1489,8 +1474,8 @@ def main():
     except Exception as exc:
         print(f"  Fig03 experiment plot skipped: {exc}")
     fig05_dt_set(df)
-    opt = fig06_dt_sweep(df)
-    fig07_optimal_dt(df, opt if opt else PARAMS.fe3.dt_match_c)
+    fig06_dt_sweep(df)
+    fig07_optimal_dt(df, PARAMS.fe3.dt_match_c)
     fig09_nonslave_fe3(df)
     fig11_p_fo2_measured(df)
     fig12_p_fo2(df)

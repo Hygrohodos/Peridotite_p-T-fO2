@@ -7,16 +7,22 @@ the "Comparative Geothermometry" sheet of SD1 - P-T-fO2.xlsm.
 Procedure
 ---------
 1. Assume olivine is entirely Fe²⁺.
-2. Start with garnet XFe²⁺ = 0.99 (XFe³⁺ = 0.01).
+2. Start with garnet XFe³⁺ = params.fe3.xfe3_start (0.01; XFe²⁺ = 0.99).
 3. Recalculate the Wu & Zhao (2007) olivine–garnet thermometer using
-   only Fe²⁺ in both phases (this is the "WZ07corr" version that ends
-   with an extra −114 °C).
-4. While (T_TA98 − T_WZ07corr) > 25 °C, decrease XFe²⁺ by 0.001 and
-   recompute.
-5. Once converged, apply the empirical temperature-dependent correction:
-       if T < 1130 °C:  XFe³⁺_corr = XFe³⁺_iterated
-       else:            XFe³⁺_corr = XFe³⁺_iterated + (3.087e-4·T − 0.3726)
+   only Fe²⁺ in both phases and subtract the flat calibration offset
+   (WZ07corr = WZ07raw − wz07_offset_c, 118 °C from experiment F1300o).
+4. While (T_TA98 − T_WZ07corr) > dt_match_c (29 °C), increase XFe³⁺ by
+   dxfe3 (0.001) and recompute.
+5. Once converged, apply the empirical high-temperature correction
+   (manuscript Eq. 5):
+       if T < t_emp_min_c (1130 °C):  XFe³⁺_corr = XFe³⁺_iterated
+       else:  XFe³⁺_corr = XFe³⁺_iterated + emp_slope·T + emp_intercept
+   with emp_slope / emp_intercept from params.py (3.8319e-4, −0.46673),
+   derived by calibration.fit_empirical_correction (Fig. 5b regression at
+   ΔT = 25 °C); clipped to 0–1.
 6. Convert the corrected fraction back to cation units.
+
+All numbers above are defaults; params.py is authoritative.
 
 Only samples that possess the necessary cation columns and a valid
 TA98/CA91 solution are iterated.  Final corrected values are reported
@@ -35,8 +41,8 @@ from .params import PARAMS
 # ---------------------------------------------------------------------------
 def _wz07corr_fe2only(Mg_ol, Fe2_ol, Mg_gt, Fe2_gt, Ca_gt, Mn_gt, P_kbar, offset_c=None):
     """
-    Wu & Zhao (2007) thermometer evaluated with Fe²⁺ only, plus the
-    extra −114 °C that appears on the Comparative Geothermometry sheet.
+    Wu & Zhao (2007) thermometer evaluated with Fe²⁺ only, minus the
+    flat calibration offset (params.fe3.wz07_offset_c, 118 °C).
 
     All arguments are 1-D numpy arrays of the same length.
     Returns T in °C.
@@ -314,17 +320,17 @@ def iterate_garnet_fe3(
 
 def apply_empirical_fe3_correction(df, verbose=True, params=None):
     """
-    Apply the temperature-dependent empirical correction from the
-    Comparative Geothermometry sheet (column BW).
+    Apply the temperature-dependent empirical correction (manuscript Eq. 5).
 
         if T_TA98 < t_emp_min_c:
             XFe3_corr = XFe3_iterated
         else:
             XFe3_corr = XFe3_iterated + emp_slope * T + emp_intercept
 
-    The slope is fitted on the Slave remainder at T ≥ t_emp_min_c.
-    The intercept is set so the flattened high-T mean residual equals
-    the T < t_emp_min_c mean residual (not zero).
+    emp_slope and emp_intercept are the least-squares line of
+    (measured − estimated) on T for the Fig. 5b regression samples
+    (Slave, error groups removed, T ≥ t_emp_min_c) at ΔT = emp_fit_dt_c;
+    see calibration.fit_empirical_correction.  No level shift is applied.
 
     Then convert to cation units using total garnet Fe.
 
