@@ -4,7 +4,7 @@ Standalone calculator for the calibrations considered and not used in Greene et 
 
 Use it to support the choice of TA98, WZ07, HA84 and CA91. Preferred peridotite pair is `-t TA98 -b CA91`. KR00, NA09, LG88, NG09, OW79 and the other codes are comparisons. SS81 and NB84 are not verified. Sudholz et al. (2022) is not in this file.
 
-`NOTES_FOR_SUPPLEMENT.md` describes an older screen (KR00 versus HA84, ΔT = 22 °C). The manuscript uses the TA98–HA84 quadratic screen and ΔT = 26 °C. Do not take the screen or the Fe³⁺ iteration from that note.
+`NOTES_FOR_SUPPLEMENT.md` describes the screen (TA98–HA84 quadratic) and the Fe³⁺ iteration (ΔT = 29 °C, Eq. 5 fitted at ΔT = 25 °C) used in the manuscript. `calculations/pt_fo2/params.py` in the main repository is authoritative if they ever differ.
 
 # P–T calculator
 
