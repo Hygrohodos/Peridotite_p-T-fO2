@@ -88,9 +88,12 @@ def main():
                        linewidths=0.5, marker="o", label="Other", zorder=2)
 
     ax.set_xlabel(r"log $f$O$_2$ ($\Delta$FMQ)")
-    ax.set_ylabel("P (kbar)")
     ax.set_xlim(-6, 1)
     ax.set_ylim(80, 20)
+    # Data are in kbar; label the axis in GPa (SI).
+    from matplotlib.ticker import FuncFormatter
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v / 10:g}"))
+    ax.set_ylabel("P (GPa)")
     ax.tick_params(direction="in", top=True, right=True)
     ax.legend(frameon=False, fontsize=7, loc="lower left")
     ax.set_title("Fig. 12  P–fO₂ with buffers", loc="left", fontsize=10)

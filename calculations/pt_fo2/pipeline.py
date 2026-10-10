@@ -295,6 +295,11 @@ def run_full_pipeline(csv_path_or_df, verbose=True, write_csv=None, write_full_c
 
         # Rounding for publication-ready output
         if "P_CA91" in slim.columns:
+            # SI copy of pressure (GPa); P_CA91 is kept in kbar for
+            # backward compatibility with existing consumers.
+            slim.insert(slim.columns.get_loc("P_CA91") + 1, "P_GPa",
+                        (pd.to_numeric(slim["P_CA91"], errors="coerce") / 10.0)
+                        .round(ep.p_decimals + 1))
             slim["P_CA91"] = slim["P_CA91"].round(ep.p_decimals)
         if "T_TA98" in slim.columns:
             slim["T_TA98"] = slim["T_TA98"].round(ep.t_decimals)

@@ -2,17 +2,21 @@
 
 Sources
 -------
-* Matjuschkin et al. 2014 — full mineral analyses from
-  data/incoming/melt_experiments.xlsx (the 2026-09-13 compilation is
-  missing MgO/CaO for this study).
-* Rzehak et al. 2020 — data/incoming/experiments_20260913.csv.
+* Matjuschkin et al. 2014 and Rzehak et al. 2020 — mineral analyses and
+  measured garnet Fe3+/ΣFe from data/incoming/experiments_20260913.csv.
 
 WZ07 is the olivine–garnet Fe–Mg thermometer.  "Including measured
 garnet Fe3+" uses Fe2+ = Fe_tot × (1 − XFe3+) on the garnet site.
 "Not including" treats all garnet Fe as Fe2+.  TA98 is two-pyroxene
 and does not use garnet Fe3+.  Both thermometers are evaluated at the
-experimental pressure.  The pipeline's flat +114 °C WZ07 offset is
-NOT applied.
+experimental pressure.  The pipeline's flat −118 °C WZ07 offset
+(params.wz07_offset_c, taken from F1300o) is NOT applied here.
+
+Pyroxene–garnet screening uses dT_pyx_gt (HA84 − quadratic in TA98),
+which replaced the former KR00−HA84 test (dT_KR00).
+
+Writes Figures/Fig04_TA98_WZ07_measured_Fe3.{png,pdf} and
+data/derived/exp_TA98_WZ07_Fe3.csv.
 
 MaLm2 (Rzehak) has no olivine and no cpx, so it cannot be plotted.
 """
@@ -30,6 +34,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent if (HERE.parent / "calculations").is_dir() else HERE
 sys.path.insert(0, str(ROOT))
 
+from calculations.pt_fo2.params import PARAMS
 from calculations.pt_fo2.cations import convert_oxides_to_cations
 from calculations.pt_fo2.screening import apply_equilibrium_screening
 from calculations.pt_fo2.thermobarometry import (
@@ -39,7 +44,7 @@ from calculations.pt_fo2.thermobarometry import (
 )
 
 IN_COMP = ROOT / "data" / "incoming" / "experiments_20260913.csv"
-OUT = ROOT / "docs" / "figures"
+OUT = ROOT / "Figures"
 OUT.mkdir(parents=True, exist_ok=True)
 
 
@@ -250,10 +255,10 @@ def main() -> None:
     use = df[df["usable"]]
     cols = ["SampleID", "Reference", "T_exp", "P_kbar", "XFe3",
             "T_TA98", "T_WZ07_allFe", "T_WZ07_Fe2", "dT_allFe", "dT_Fe2",
-            "screen_pass", "fail_reason", "dT_opx_cpx", "dT_KR00", "dT_gt_ol"]
+            "screen_pass", "fail_reason", "dT_opx_cpx", "dT_pyx_gt", "dT_gt_ol"]
     show = use[cols].copy()
     for c in ["T_exp", "P_kbar", "XFe3", "T_TA98", "T_WZ07_allFe", "T_WZ07_Fe2",
-              "dT_allFe", "dT_Fe2", "dT_opx_cpx", "dT_KR00", "dT_gt_ol"]:
+              "dT_allFe", "dT_Fe2", "dT_opx_cpx", "dT_pyx_gt", "dT_gt_ol"]:
         show[c] = pd.to_numeric(show[c], errors="coerce").round(2)
     print(show.to_string(index=False))
     table = ROOT / "data" / "derived" / "exp_TA98_WZ07_Fe3.csv"
@@ -262,9 +267,9 @@ def main() -> None:
     print(f"  table {table}")
 
     f13 = use[use["SampleID"].astype(str).str.replace(" ", "") == "F1300o"]
-    href = float(f13["dT_Fe2"].iloc[0]) if len(f13) else -114.0
+    href = float(f13["dT_Fe2"].iloc[0]) if len(f13) else -PARAMS.fe3.wz07_offset_c
     print(f"F1300o TA98−WZ07 (Fe2+ only) = {href:.2f} °C  "
-          f"(flat offset locked at {118} °C)")
+          f"(flat offset locked at {PARAMS.fe3.wz07_offset_c:.0f} °C)")
     _plot(df, "dT_Fe2",
           r"$T_{\mathrm{TA98}}-T_{\mathrm{WZ07}}$ (°C), Fe$^{2+}$ only",
           "",
