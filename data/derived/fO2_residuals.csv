@@ -1,13 +1,13 @@
 SampleID,Craton,dataset,error_group,XFe3_meas,XFe3_est,dFMQ_meas,dFMQ_est,res_log,sens_per_002
 21-6,Slave Craton,Slave calibration,False,0.06,0.0797,-3.4681,-2.9721,0.496,0.5837
- 21-4,Slave Craton,Slave calibration,False,0.054,0.063,-3.2044,-2.935,0.2693,0.6487
+21-4,Slave Craton,Slave calibration,False,0.054,0.063,-3.2044,-2.935,0.2693,0.6487
 14-107,Slave Craton,Slave calibration,True,0.157,0.058,-1.1274,-2.8763,-1.7489,0.2255
 40-11,Slave Craton,Slave calibration,False,0.06,0.048,-3.0753,-3.4649,-0.3896,0.5837
- 22-7,Slave Craton,Slave calibration,False,0.085,0.08,-2.7065,-2.8126,-0.1061,0.4123
+22-7,Slave Craton,Slave calibration,False,0.085,0.08,-2.7065,-2.8126,-0.1061,0.4123
 41-1,Slave Craton,Slave calibration,False,0.143,0.1322,-1.7937,-1.9325,-0.1388,0.2464
- 23-5,Slave Craton,Slave calibration,False,0.107,0.1258,-2.3393,-2.0555,0.2838,0.3281
+23-5,Slave Craton,Slave calibration,False,0.107,0.1258,-2.3393,-2.0555,0.2838,0.3281
 14-124,Slave Craton,Slave calibration,False,0.09,0.1092,-2.8361,-2.4964,0.3397,0.3898
- 9-10,Slave Craton,Slave calibration,False,0.1,0.0911,-2.4704,-2.633,-0.1626,0.3512
+9-10,Slave Craton,Slave calibration,False,0.1,0.0911,-2.4704,-2.633,-0.1626,0.3512
 41-3,Slave Craton,Slave calibration,False,0.12,0.1016,-2.1665,-2.4586,-0.2921,0.2928
 A154-09CR,Slave Craton,Slave calibration,False,0.1,0.08,-2.1614,-2.5523,-0.3909,0.351
 MX001,Slave Craton,Slave calibration,False,0.16,0.1438,-1.7558,-1.9437,-0.1879,0.22

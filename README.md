@@ -46,6 +46,8 @@ larger at low Fe3+/ΣFe because ΔFMQ depends on log Fe3+, and it is dominated b
 samples whose estimates approach the 0.01 starting value. These are the two
 Fig. 10 bars, computed from the data in `make_figures.py`.
 
+Screening (1101 samples): four phases 748 → TA98 > 900 °C 608 → opx–cpx 585 → pyx–gt 501 → gt–ol 457 fully screened. Calibration (Slave, measured Fe3+) 57 → 31; validation (Siberian + Kaapvaal) 52 → 27; neither set was affected by the de-duplication.
+
 ## Run
 
 ```bash
@@ -58,7 +60,7 @@ python scripts/fo2_uncertainty.py    # fO2 residual 1σ (Table 1 log column, Fig
 
 If `fit_calibration.py --update-params` changes `params.py`, run the pipeline and figures again.
 
-Input: `data/master/xenolith_geochem.csv` (craton filled from `data/locations.csv` and `data/master/kimberlite_locations.csv`).
+Input: `data/master/xenolith_geochem.csv` (1101 rows after the 2026-10-10 de-duplication, see `data/master/DATA_DICTIONARY.md` and `data/master/qc/`; craton filled from `data/locations.csv` and `data/master/kimberlite_locations.csv`).
 Outputs: `data/derived/p-T-fO2.csv` (publication table; `P_CA91` in kbar with an SI copy in `P_GPa`), `data/derived/screened_PT.csv` (full working table, pressures in kbar), `data/derived/emp_correction_fit.json`, `data/derived/dt_match_sweep_corr.csv`, `data/derived/Table1_calibration_stats.csv`, `data/derived/exp_TA98_WZ07_Fe3.csv`.
 Figures: `Figures/Fig01`–`Fig10` (pressure axes in GPa). Fig. 4 is written by `scripts/plot_exp_ta98_wz07.py`, which `make_figures.py` calls.
 
