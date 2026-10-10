@@ -1,7 +1,6 @@
 line_a,id_a,loc_a,ref_a,line_b,id_b,loc_b,ref_b,n_common,maxdiff,flag
 97,JJG 5054-31,Leslie,Menzies et al. 2004,98,JJG 5054-32,Leslie,Menzies et al. 2004,19,0.1499999999999994,"different IDs, partial overlap, similar analyses"
 243,JJG 5047-45,Pigeon,Menzies et al. 2004,247,JJG 5047-49,Pigeon,Menzies et al. 2004,19,0.1099999999999994,"different IDs, partial overlap, similar analyses"
-440,38-Mx1,5034,Ref383,501,38-1,Gahcho_Kué,Ref513,37,0.1100000000000012,"probable duplicate, 2 oxides differ by 0.11 wt% (transcription?)"
 468,vr40336a,Diavik,Ref388,469,vr40336a,Diavik,Ref388,27,1.4199999999999982,"same ID, genuinely different analysis: different grain/sample or study"
 547,198.2,Kirkland_Lake_C14,Ref16,724,198/2,Mongolia,Ref411,31,6.32,"same ID, genuinely different analysis: different grain/sample or study"
 550,C-P7,Kirkland_Lake_C14,Ref310,598,CP7,Pali_Aike_Chile,Ref333+Ref334,27,3.729999999999997,"same ID, genuinely different analysis: different grain/sample or study"
