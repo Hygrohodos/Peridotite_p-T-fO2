@@ -250,7 +250,7 @@ def calibration_stats(df, est=None, params=None, fo2=True):
     Residual 1σ is the sample standard deviation (ddof = 1) of
     estimated − measured Fe3+/ΣFe.  With ``fo2=True``, ``sigma_log`` is
     the 1σ of ΔFMQ(estimated) − ΔFMQ(measured) for the same samples
-    (``fo2_residuals``); it is left blank for the stoichiometric rows.
+    (``fo2_residuals``); it is left blank for the charge-balance rows.
     Rates count |est − meas| ≤ 0.02 / 0.05.
     """
     p = params or PARAMS
@@ -274,11 +274,22 @@ def calibration_stats(df, est=None, params=None, fo2=True):
         for row, (_, m) in zip(rows, sets):
             d = res.reindex(df.index[m]).dropna()
             row["sigma_log"] = float(d.std(ddof=1)) if len(d) > 1 else np.nan
-    all_slave = calibration_mask(df, screened=False)
-    for col, nm in (("XFe3_quinn", "Quinn et al. (2016) stoichiometry"),
-                    ("XFe3_droop", "Droop (1987) stoichiometry")):
-        if col in df.columns:
-            s = _num(df[col])
-            rows.append(_row(nm, (s - meas)[all_slave]))
-            rows.append(_row(nm + ", screened", (s - meas)[base]))
+    # Charge-balance stoichiometry (Droop 1987 = Quinn et al. 2016; see
+    # stoichiometry.py).  The two columns are identical to rounding, so one
+    # row per sample set is reported: screened 31 first, then all 57 Slave
+    # samples with measured Fe3+/ΣFe before screening.
+    if "XFe3_quinn" in df.columns:
+        cb = _num(df["XFe3_quinn"])
+        if "XFe3_droop" in df.columns:
+            dr = _num(df["XFe3_droop"])
+            both = cb.notna() & dr.notna()
+            if not np.allclose(cb[both], dr[both], rtol=0, atol=1e-9):
+                raise ValueError("XFe3_droop and XFe3_quinn differ; "
+                                 "check stoichiometry.py")
+        all_slave = calibration_mask(df, screened=False)
+        nm = "Charge balance (Droop 1987; Quinn et al. 2016)"
+        rows.append(_row(nm + ", screened Slave", (cb - meas)[base],
+                         "Same 31 screened Slave samples as the calibration row"))
+        rows.append(_row(nm + ", all Slave", (cb - meas)[all_slave],
+                         "All 57 Slave samples with measured Fe3+/ΣFe, before screening"))
     return pd.DataFrame(rows)

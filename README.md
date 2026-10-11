@@ -36,6 +36,17 @@ the same P, T and mineral chemistry (`calibration.fo2_residuals`).
 | Siberian + Kaapvaal validation | 27 | 63 % | 85 % | 0.035 | 1.16 |
 | Calibration + validation | 58 | 64 % | 83 % | 0.040 | 0.94 |
 | Combined, error groups excluded | 52 | 71 % | 92 % | 0.028 | 0.87 |
+| Charge balance (Droop 1987; Quinn et al. 2016), screened Slave | 31 | 26 % | 61 % | 0.084 | – |
+| Charge balance (Droop 1987; Quinn et al. 2016), all Slave before screening | 57 | 25 % | 53 % | 0.087 | – |
+
+Charge-balance stoichiometry (`calculations/pt_fo2/stoichiometry.py`) implements
+Droop (1987) and Quinn et al. (2016) separately (`XFe3_droop`, `XFe3_quinn` in
+`screened_PT.csv`). For anhydrous garnet the two procedures are algebraically
+identical (Fe3+ = 24(1 − 8/S) per 8-cation formula), so the columns agree to
+rounding and Table 1 reports one charge-balance row per sample set. Mean bias
+(estimated − measured) is +0.017 for the 31 screened Slave samples, against
+−0.005 for comparative geothermometry. `tests/test_stoichiometry.py` reproduces
+the Droop (1987) Table 3 garnet (Fe3+ 0.779, Fe2+ 0.013 per 12 O).
 
 fO2 uncertainty (`python scripts/fo2_uncertainty.py`; `data/derived/fO2_uncertainty.json`,
 `data/derived/fO2_residuals.csv`, `Figures/diagnostics/fO2_residual_vs_Fe3.png`):
@@ -56,6 +67,7 @@ python run_pipeline.py
 python scripts/fit_calibration.py     # checks params.py; add --update-params to rewrite it
 python scripts/make_figures.py
 python scripts/fo2_uncertainty.py    # fO2 residual 1σ (Table 1 log column, Fig. 10 bars)
+python tests/test_stoichiometry.py   # or: python -m pytest tests
 ```
 
 If `fit_calibration.py --update-params` changes `params.py`, run the pipeline and figures again.
@@ -80,6 +92,7 @@ This bundle is the P–T–fO2 calculation only. Olivine FC/DFC, garnet diffusio
 | `data/spatial/web/` | GeoJSON layers for the locality map |
 | `Figures/` | Paper figures (PNG and PDF) |
 | `supplement/thermometer_choice/` | Standalone thermometer comparison calculator |
+| `tests/` | Unit tests (charge-balance garnet Fe3+ against Droop 1987 Table 3) |
 
 To get everything at once, use **Code → Download ZIP** at the top of this page, or clone:
 
