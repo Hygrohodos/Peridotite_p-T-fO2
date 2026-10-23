@@ -310,7 +310,7 @@ def ng_family_pressure(x_al: float, opx: Dict[str, float], gt: Dict[str, float],
     ):
         return float("nan")
     x_mg_m1 = (opx["mg"] / (opx["mg"] + opx["fe"])) * x_mgfe_m1
-    x_fe_m1 = x_mgfe_m2 - x_mg_m1
+    x_fe_m1 = (opx["fe"] / (opx["mg"] + opx["fe"])) * x_mgfe_m1  # NG85 p. 161 (was an M2 quantity)
     sum_g = gt["ca"] + gt["mg"] + gt["fe"] + gt["mn"]
     sum_al = gt["al"] + gt["cr"]
     if not (sum_g > 0 and sum_al > 0):
@@ -979,7 +979,7 @@ def t_bu17(row: Row, p_kbar: float) -> float:
 # ---------------------------------------------------------------------------
 
 def p_ca91(row: Row, t_c: float) -> float:
-    """Carswell (1991) Al-in-opx, the Nickel & Green (1985) recast. Clipped to 0–80 kbar."""
+    """Nickel & Green (1985) eq. 5, with Carswell's (1991) E9 X(M1,Al) only for sodic opx (Na > Cr + Ti). Clipped to 0–80 kbar."""
     if not finite(t_c):
         return float("nan")
     tk = t_c + T0
@@ -1001,8 +1001,9 @@ def p_ca91(row: Row, t_c: float) -> float:
     bb = 1 - ba - cr - ti
     bc = 1 - ca - na - mn
     bd = (mg / (mg + fe + 1e-16)) * bb
-    be = bc - bd
+    be = (fe / (mg + fe + 1e-16)) * bb  # X(M1, Fe), NG85 p. 161 (was bc - bd, an M2 quantity)
     bf = cr
+    # NG85 X(M1,Al) unless Carswell (1991, p. 24) sodic: Na > Cr + Fe3+ + Ti, Fe3+ = 0 (p. 25); then E9.
     raw_cj = (al - (na - cr)) / 2 if na > cr + ti else ba
     cj = clip(raw_cj, 1e-12)
     sum_div = ca_gt + mg_gt + fe_gt + mn_gt + 1e-16
@@ -1735,14 +1736,14 @@ def self_check() -> int:
         else:
             print("ok  ", name, got)
     temp_gold = {
-        "T_TA98": (t, 794.1390116862908),
-        "P_CA91": (p, 37.157514567054065),
-        "T_BK90": (t_bk90_ca(row, p), 830.7960811926337),
-        "T_NG10": (t_ng10(row, p), 777.546467765717),
-        "T_HA84": (t_ha84(row, p), 806.8593371807335),
-        "T_KR00": (t_kr00(row, p), 815.7227988053044),
-        "T_NA09": (t_na09(row, p), 831.5849965450154),
-        "T_WZ07": (t_wz07(row, p), 866.0329903377851),
+        "T_TA98": (t, 794.1626212342048),
+        "P_CA91": (p, 37.166428003038455),
+        "T_BK90": (t_bk90_ca(row, p), 830.8311528796787),
+        "T_NG10": (t_ng10(row, p), 777.5926320263499),
+        "T_HA84": (t_ha84(row, p), 806.9048600019728),
+        "T_KR00": (t_kr00(row, p), 815.7794977584856),
+        "T_NA09": (t_na09(row, p), 831.6235230236971),
+        "T_WZ07": (t_wz07(row, p), 866.0707404951233),
     }
     for name, (got, gold) in temp_gold.items():
         if abs(got - gold) > 0.05:

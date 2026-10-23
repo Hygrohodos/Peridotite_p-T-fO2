@@ -58,14 +58,41 @@ def ta98_temperature(df, P_kbar):
     return T_C
 
 
+def ca91_sodic(df):
+    """
+    Carswell (1991, Mineral. Mag. 55, p. 24) switch from the Nickel & Green
+    (1985) X(M1,Al) to the modified one: orthopyroxene Na > (Cr + Fe3+ + Ti),
+    cations per 6 O, with Fe3+ = 0 (Carswell 1991, p. 25). At Na = Cr + Ti
+    the two expressions give the same value.
+    """
+    Na = df["opx_Na"].fillna(0).to_numpy(dtype=float)
+    Cr = df["opx_Cr"].fillna(0).to_numpy(dtype=float)
+    Ti = df["opx_Ti"].fillna(0).to_numpy(dtype=float)
+    return Na > (Cr + Ti)
+
+
+def pressure_barometer_label(df):
+    """'CA91' where Carswell's sodic criterion holds, otherwise 'NG85'."""
+    return np.where(ca91_sodic(df), "CA91", "NG85")
+
+
 def ca91_pressure(df, T_C):
     """
-    Carswell & Al-in-opx (CA91) barometer from the Al-in-opx sheet, column CL.
+    Nickel & Green (1985) eq. 5 garnet–opx barometer with the Carswell
+    (1991) modification of X(M1,Al) for sodic orthopyroxene ("CA91").
 
-    Site fractions BB/BC/BD/BE follow the NG85 (BA) definition of X(M1,Al);
-    the pressure equation itself uses the modified CA91 X(M1,Al) = CJ:
-        CJ = (Al - (Na - Cr))/2   if Na > Cr + Ti
-        CJ = (Al - Cr - 2·Ti + Na)/2   otherwise
+    NG85 applies as written for every sample. The CA91 modification is
+    switched on only by Carswell's (1991, p. 24) criterion
+    Na > (Cr + Fe3+ + Ti) in orthopyroxene, with Fe3+ = 0 as Carswell
+    assumes for all X(M1,Al) calculations (p. 25); see ``ca91_sodic``.
+
+        not sodic: X(M1,Al) = (Al - Cr - 2·Ti + Na)/2   NG85 = Carswell E6
+        sodic:     X(M1,Al) = (Al - (Na - Cr))/2        Carswell E9
+
+    Site fractions BB/BC/BD/BE follow NG85 (pp. 160–161) with the NG85
+    X(M1,Al) (BA). For the E9 allocation the total Al on M1 (Tschermak +
+    NaAlSi2O6) equals BA, so X(M1,Mg+Fe) = BB is the same in both branches.
+    X(M1,Fe) = Fe/(Mg+Fe)·X(M1,Mg+Fe), as NG85 defines it (p. 161).
     Temperature in the workbook formulas is T(°C)+273 (not 273.15).
     """
     T_K = np.asarray(T_C, dtype=float) + 273.0
@@ -91,12 +118,12 @@ def ca91_pressure(df, T_C):
     BB = 1.0 - BA - Cr - Ti          # X(M1, Mg+Fe)
     BC = 1.0 - Ca - Na - Mn          # X(M2, Mg+Fe)
     BD = (Mg / (Mg + Fe + 1e-16)) * BB  # X(M1, Mg)
-    BE = BC - BD                     # X(M1, Fe)
+    BE = (Fe / (Mg + Fe + 1e-16)) * BB  # X(M1, Fe), NG85 p. 161 (was BC - BD, an M2 quantity)
     BF = Cr                          # X(M1, Cr)
 
-    # CA91 X(M1,Al) = CJ  (used in denom and ln term only)
-    CE = BA
-    CJ = np.where(Na > (Cr + Ti), (Al - (Na - Cr)) / 2.0, CE)
+    # X(M1,Al) in the ln and denominator terms: NG85 (BA) unless the opx is
+    # sodic by Carswell's criterion, then Carswell E9.
+    CJ = np.where(ca91_sodic(df), (Al - (Na - Cr)) / 2.0, BA)
     CJ = np.clip(CJ, 1e-12, None)
 
     sum_div = Ca_gt + Mg_gt + Fe_gt + Mn_gt + 1e-16

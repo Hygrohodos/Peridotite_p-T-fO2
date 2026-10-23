@@ -289,7 +289,7 @@ def calibration_stats(df, est=None, params=None, fo2=True):
         all_slave = calibration_mask(df, screened=False)
         nm = "Charge balance (Droop 1987; Quinn et al. 2016)"
         rows.append(_row(nm + ", screened Slave", (cb - meas)[base],
-                         "Same 31 screened Slave samples as the calibration row"))
+                         f"Same {int(base.sum())} screened Slave samples as the calibration row"))
         rows.append(_row(nm + ", all Slave", (cb - meas)[all_slave],
-                         "All 57 Slave samples with measured Fe3+/ΣFe, before screening"))
+                         f"All {int(all_slave.sum())} Slave samples with measured Fe3+/ΣFe, before screening"))
     return pd.DataFrame(rows)
