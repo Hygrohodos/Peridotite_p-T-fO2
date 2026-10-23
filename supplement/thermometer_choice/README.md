@@ -24,7 +24,7 @@ python pt_calculator.py chemistry.csv --interactive
 python pt_calculator.py chemistry.csv -t TA98 -b CA91 --also-all -o all_at_that_pt.csv
 ```
 
-`--self-check` must print Jericho 22-4 at about 794.1 °C and 37.16 kbar. That is the numerical anchor for the whole file.
+`--self-check` must print Jericho 22-4 at about 794.2 °C and 37.17 kbar. That is the numerical anchor for the whole file.
 
 ## CSV
 
