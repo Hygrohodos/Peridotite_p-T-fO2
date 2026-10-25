@@ -1,41 +1,41 @@
 {
-  "split": -2.711,
+  "split": -2.7167,
   "all": {
     "n": 57,
-    "sigma_log": 0.9119,
-    "rms_log": 0.9254,
-    "bias_log": -0.1984
+    "sigma_log": 0.9123,
+    "rms_log": 0.9268,
+    "bias_log": -0.2032
   },
   "reduced": {
     "n": 28,
-    "sigma_log": 0.9432,
-    "rms_log": 1.0956,
-    "bias_log": -0.5852
+    "sigma_log": 0.9425,
+    "rms_log": 1.0983,
+    "bias_log": -0.5913
   },
   "oxidised": {
     "n": 29,
-    "sigma_log": 0.715,
-    "rms_log": 0.7241,
-    "bias_log": 0.1752
+    "sigma_log": 0.7154,
+    "rms_log": 0.7236,
+    "bias_log": 0.1715
   },
   "error_groups_removed": {
     "all": {
       "n": 52,
-      "sigma_log": 0.8662,
-      "rms_log": 0.8783,
-      "bias_log": -0.1886
+      "sigma_log": 0.8667,
+      "rms_log": 0.8799,
+      "bias_log": -0.1936
     },
     "reduced": {
       "n": 27,
-      "sigma_log": 0.9341,
-      "rms_log": 1.0655,
-      "bias_log": -0.5432
+      "sigma_log": 0.9337,
+      "rms_log": 1.0684,
+      "bias_log": -0.5496
     },
     "oxidised": {
       "n": 25,
-      "sigma_log": 0.5956,
-      "rms_log": 0.6152,
-      "bias_log": 0.1945
+      "sigma_log": 0.5959,
+      "rms_log": 0.6143,
+      "bias_log": 0.1908
     }
   }
 }

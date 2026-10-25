@@ -17,7 +17,7 @@ Procedure
    (manuscript Eq. 5):
        if T < t_emp_min_c (1130 °C):  XFe³⁺_corr = XFe³⁺_iterated
        else:  XFe³⁺_corr = XFe³⁺_iterated + emp_slope·T + emp_intercept
-   with emp_slope / emp_intercept from params.py (3.8319e-4, −0.46673),
+   with emp_slope / emp_intercept from params.py (3.8345e-4, −0.46732),
    derived by calibration.fit_empirical_correction (Fig. 5b regression at
    ΔT = 25 °C); clipped to 0–1.
 6. Convert the corrected fraction back to cation units.
