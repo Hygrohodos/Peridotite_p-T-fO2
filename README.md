@@ -4,6 +4,17 @@ Oxygen fugacity of peridotite xenoliths in kimberlite, estimated by matching
 two-pyroxene (TA98) and olivine–garnet (WZ07) temperatures while iterating
 garnet Fe3+/ΣFe, then applying the Stagno et al. (2013) oxybarometer.
 
+## Citing this version
+
+The paper snapshot is the Git tag [`paper-v1`](https://github.com/Hygrohodos/Peridotite_p-T-fO2/tree/paper-v1)
+(commit `87024f0`, the merge of PR #1). Cite this tag, not `main`. It freezes:
+
+- the 1,100-row master table, of which 450 rows are fully screened (n = 103);
+- the Eq. 5 constants 3.8345×10⁻⁴·T − 0.46732 (T in °C);
+- ΔT = 29 °C.
+
+Later data updates will be released under later tags and do not change `paper-v1`.
+
 Locked parameters (2026-10-10; `calculations/pt_fo2/params.py` is authoritative):
 
 - starting garnet Fe3+/ΣFe = 0.01 (`xfe3_start`)
