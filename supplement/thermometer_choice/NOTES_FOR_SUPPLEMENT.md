@@ -6,12 +6,12 @@ Units: the script works in kbar internally; the manuscript reports pressure in G
 
 The script matches the website. `python pt_calculator.py --self-check` checks that. Anchor analysis: Jericho 22-4 (Kopylova et al. 1999), in `example_jericho_22-4.csv`.
 
-- Taylor (1998) × Carswell (1991): **794 °C, 3.72 GPa** (37.2 kbar; unrounded 794.14 °C, 37.16 kbar).
-- Nakamura (2009) at that pressure: **832 °C** (unrounded 831.58 °C). This is the published thermometer. An earlier workbook had `2·Xprp + Xalm` instead of `2·Xprp·Xalm` and gave 596 °C. Do not use 596 °C, and do not say Nakamura is 300 °C cold.
+- Taylor (1998) × Carswell (1991): **794 °C, 3.72 GPa** (37.2 kbar; unrounded 794.16 °C, 37.17 kbar).
+- Nakamura (2009) at that pressure: **832 °C** (unrounded 831.62 °C). This is the published thermometer. An earlier workbook had `2·Xprp + Xalm` instead of `2·Xprp·Xalm` and gave 596 °C. Do not use 596 °C, and do not say Nakamura is 300 °C cold.
 
 ## What to call the preferred P–T
 
-**Peridotite.** Temperature is Taylor (1998) two-pyroxene. Pressure is Carswell (1991) Al-in-orthopyroxene, the Nickel & Green (1985) formulation. They are solved together, starting at 40 kbar and 1000 °C, stopping when both have changed by less than 0.1, or after 25 cycles. Carswell pressure is limited to 0–80 kbar.
+**Peridotite.** Temperature is Taylor (1998) two-pyroxene. Pressure is the Nickel & Green (1985) Al-in-orthopyroxene barometer (eq. 5) as written, with X(M1,Fe) = Fe/(Mg+Fe)·X(M1,Mg+Fe) on M1. Only where the orthopyroxene is sodic by Carswell’s (1991, p. 24) criterion, Na > Cr + Fe³⁺ + Ti with Fe³⁺ taken as zero (p. 25), is X(M1,Al) replaced by Carswell’s E9, ½[Al − (Na − Cr)]; otherwise it is the NG85 value ½(Al − Cr − 2Ti + Na), Carswell’s E6. They are solved together, starting at 40 kbar and 1000 °C, stopping when both have changed by less than 0.1, or after 25 cycles. Carswell pressure is limited to 0–80 kbar.
 
 **Eclogite.** Temperature is the published Nakamura (2009) garnet–clinopyroxene thermometer. Pressure is the published Beyer et al. (2015) garnet–clinopyroxene barometer. Solved together from 50 kbar, tolerance 0.001, up to 1000 cycles. This is not the Beyer workbook. That sheet substituted raw XFe, XMg and XCa for Nakamura’s A, B and C terms, omitted −273, and put Ca in the clinopyroxene denominator. It also did not use the published Beyer activities. Neither error is in this script.
 
@@ -87,7 +87,7 @@ Do not recommend, and do not quietly “correct”:
 
 ## What this script does not do
 
-**Garnet Fe³⁺.** For peridotite fO₂, Fe³⁺/ΣFe in garnet is increased from 0.01 in steps of 0.001 until Taylor (1998) minus the corrected Wu & Zhao temperature is 29 °C or less. The correction is a flat −118 °C: T_WZ07,corr = T_WZ07,raw − 118. At T ≥ 1130 °C the empirical correction (manuscript Eq. 5) is added: ΔXFe³⁺ = 3.8319×10⁻⁴·T − 0.46673 (T in °C), clipped so Fe³⁺/ΣFe stays within 0–1. Eq. 5 is the regression at ΔT = 25 °C through the Slave samples inside the dashed envelope of Fig. 5b (n = 21); ΔT = 29 °C is the Fig. 6 optimum on those samples. Both are derived by `scripts/fit_calibration.py` in the main repository; `calculations/pt_fo2/params.py` is authoritative. Measured garnet Fe³⁺ is not required. This iteration is not in the script. `WZ07` here is the raw thermometer.
+**Garnet Fe³⁺.** For peridotite fO₂, Fe³⁺/ΣFe in garnet is increased from 0.01 in steps of 0.001 until Taylor (1998) minus the corrected Wu & Zhao temperature is 29 °C or less. The correction is a flat −118 °C: T_WZ07,corr = T_WZ07,raw − 118. At T ≥ 1130 °C the empirical correction (manuscript Eq. 5) is added: ΔXFe³⁺ = 3.8345×10⁻⁴·T − 0.46732 (T in °C), clipped so Fe³⁺/ΣFe stays within 0–1. Eq. 5 is the regression at ΔT = 25 °C through the Slave samples inside the dashed envelope of Fig. 5b (n = 21); ΔT = 29 °C is the Fig. 6 optimum on those samples. Both are derived by `scripts/fit_calibration.py` in the main repository; `calculations/pt_fo2/params.py` is authoritative. Measured garnet Fe³⁺ is not required. This iteration is not in the script. `WZ07` here is the raw thermometer.
 
 **Peridotite fO₂.** Stagno et al. (2013) garnet–olivine–orthopyroxene oxybarometer at the Taylor–Carswell P–T, using that iterated Fe³⁺. FMQ is the O’Neill (1987) expression used by Stagno, T in kelvin and P in kbar:
 

@@ -7,12 +7,12 @@ parameters (manuscript Eq. 5, Fig. 5, Fig. 6 and Table 1).
 Workflow (``python scripts/fit_calibration.py`` runs all of it):
 
 1. Calibration set: Slave craton samples that pass every screen and have
-   measured garnet Fe3+/ΣFe with 0 < Fe3+/ΣFe < 0.5 (n = 31).
+   measured garnet Fe3+/ΣFe with 0 < Fe3+/ΣFe < 0.5 (n = 30).
 2. Uncorrected estimates at ΔT = ``emp_fit_dt_c`` (25 °C; Fig. 5b).
 3. Error groups at that ΔT (Fig. 5b):
      blue  measured − estimated > ``emp_blue_threshold`` (0.05)
      red   sample IDs in ``emp_red_ids``: the samples at T > 1250 °C with
-           estimated > measured by > 0.05 (21-6, +0.054 at 1136 °C, meets
+           estimated > measured by > 0.05 (21-6, +0.055 at 1135 °C, meets
            the 0.05 criterion but lies on the high-T trend and is kept in
            the regression set)
 4. Regression samples = calibration set minus blue and red, with
@@ -30,7 +30,7 @@ Workflow (``python scripts/fit_calibration.py`` runs all of it):
    with measured Fe3+/ΣFe, ΔFMQ is calculated (Stagno et al. 2013, same
    P, T and chemistry as the pipeline) from the estimated and from the
    measured garnet Fe3+/ΣFe; 1σ is the standard deviation of
-   ΔFMQ(estimated) − ΔFMQ(measured).  For Fig. 10 the 58 calibration +
+   ΔFMQ(estimated) − ΔFMQ(measured).  For Fig. 10 the 57 calibration +
    validation samples are split at their median estimated ΔFMQ into a
    reduced and an oxidised half (``fo2_uncertainty``).
 """
@@ -276,7 +276,7 @@ def calibration_stats(df, est=None, params=None, fo2=True):
             row["sigma_log"] = float(d.std(ddof=1)) if len(d) > 1 else np.nan
     # Charge-balance stoichiometry (Droop 1987 = Quinn et al. 2016; see
     # stoichiometry.py).  The two columns are identical to rounding, so one
-    # row per sample set is reported: screened 31 first, then all 57 Slave
+    # row per sample set is reported: screened 30 first, then all 57 Slave
     # samples with measured Fe3+/ΣFe before screening.
     if "XFe3_quinn" in df.columns:
         cb = _num(df["XFe3_quinn"])
@@ -289,7 +289,7 @@ def calibration_stats(df, est=None, params=None, fo2=True):
         all_slave = calibration_mask(df, screened=False)
         nm = "Charge balance (Droop 1987; Quinn et al. 2016)"
         rows.append(_row(nm + ", screened Slave", (cb - meas)[base],
-                         "Same 31 screened Slave samples as the calibration row"))
+                         f"Same {int(base.sum())} screened Slave samples as the calibration row"))
         rows.append(_row(nm + ", all Slave", (cb - meas)[all_slave],
-                         "All 57 Slave samples with measured Fe3+/ΣFe, before screening"))
+                         f"All {int(all_slave.sum())} Slave samples with measured Fe3+/ΣFe, before screening"))
     return pd.DataFrame(rows)

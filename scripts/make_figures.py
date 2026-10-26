@@ -899,7 +899,7 @@ def fig12_p_fo2(df, mark_cpx_opx=False, stem="Fig10_P_fO2_estimated"):
     if len(p_ma):
         ax.plot(f_ma, p_ma, color="#333333", lw=1.8, zorder=6, label="Depth mean")
         _label_on_curve(ax, f_ma, p_ma, "mean", "#333333", 40)
-    # fO2 1σ bars: residual ΔFMQ(estimated) − ΔFMQ(measured) for the 58
+    # fO2 1σ bars: residual ΔFMQ(estimated) − ΔFMQ(measured) for the 57
     # calibration + validation samples (error groups retained), split at
     # their median estimated ΔFMQ (calibration.fo2_uncertainty).  Reduced
     # bar bottom left, oxidised bar bottom right (P axis inverted, so high
@@ -910,8 +910,8 @@ def fig12_p_fo2(df, mark_cpx_opx=False, stem="Fig10_P_fO2_estimated"):
           f"(n={unc['reduced']['n']}), oxidised 1σ {w_hi:.2f} (n={unc['oxidised']['n']}); "
           f"all {unc['all']['sigma_log']:.2f} (n={unc['all']['n']})")
     bar_col, p_bar, p_lab = "#6b4c9a", 67.6, 65.6
-    for x0, w, side, lab in ((-6.85, w_lo, "left", rf"1$\sigma$, $\Delta$FMQ < {cut:.1f}"),
-                             (-0.15, w_hi, "right", rf"1$\sigma$, $\Delta$FMQ ≥ {cut:.1f}")):
+    for x0, w, side, lab in ((-6.85, w_lo, "left", rf"1$\sigma$, $\Delta$FMQ < {cut:.2f}"),
+                             (-0.15, w_hi, "right", rf"1$\sigma$, $\Delta$FMQ ≥ {cut:.2f}")):
         xs = (x0, x0 + w) if side == "left" else (x0 - w, x0)
         ax.plot(xs, [p_bar, p_bar], color=bar_col, lw=3.0, solid_capstyle="butt", zorder=7)
         ax.text(xs[1] + 0.08 if side == "left" else xs[0] - 0.08, p_bar, f"{w:.2f} log",

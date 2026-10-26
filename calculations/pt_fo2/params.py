@@ -85,8 +85,8 @@ class Fe3Params:
     emp_blue_threshold: float = 0.05
     emp_red_ids: tuple = ("14-78", "MX5011", "8-1", "MX104", "MX5000", "40-38")
     emp_offset: float = 0.0   # unused; kept for backward compatibility
-    emp_slope: float = 3.8319e-04
-    emp_intercept: float = -0.46673
+    emp_slope: float = 3.8345e-04
+    emp_intercept: float = -0.46732
 
 
 @dataclass

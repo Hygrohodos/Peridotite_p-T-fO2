@@ -24,7 +24,7 @@ import pandas as pd
 import numpy as np
 
 from .cations import convert_oxides_to_cations
-from .thermobarometry import iterate_PT, calculate_all_temperatures
+from .thermobarometry import iterate_PT, calculate_all_temperatures, pressure_barometer_label
 from .screening import apply_equilibrium_screening
 from .fe3_correction import iterate_garnet_fe3, apply_empirical_fe3_correction
 from .fo2 import calculate_fo2
@@ -253,6 +253,11 @@ def run_full_pipeline(csv_path_or_df, verbose=True, write_csv=None, write_full_c
     T_TA98, P_CA91 = iterate_PT(result, verbose=verbose)
     result["T_TA98"] = T_TA98
     result["P_CA91"] = P_CA91
+    # Which X(M1,Al) the pressure used: NG85 as written, or the Carswell (1991)
+    # modification for sodic opx. P_CA91 keeps its name for existing consumers.
+    result["P_barometer"] = np.where(
+        np.isfinite(P_CA91), pressure_barometer_label(result), ""
+    )
     result = calculate_all_temperatures(result, P_CA91, verbose=verbose)
 
     # 3. Equilibrium screening

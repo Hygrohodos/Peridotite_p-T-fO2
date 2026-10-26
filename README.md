@@ -11,14 +11,20 @@ Locked parameters (2026-10-10; `calculations/pt_fo2/params.py` is authoritative)
 - thermometer agreement ΔT = 29 °C (`dt_match_c`), chosen in Fig. 6
 - pyroxene–garnet screen = |HA84 − quadratic in TA98| < 60 °C
 - high-T empirical correction (Eq. 5), applied at T ≥ 1130 °C:
-  XFe3,corr = XFe3,iter + 3.8319×10⁻⁴·T − 0.46673 (T in °C, clipped to 0–1)
+  XFe3,corr = XFe3,iter + 3.8345×10⁻⁴·T − 0.46732 (T in °C, clipped to 0–1)
+
+Pressure: Nickel & Green (1985) eq. 5 as written, with X(M1,Fe) on M1; Carswell's (1991, p. 24)
+E9 X(M1,Al) replaces the NG85 value only where opx Na > Cr + Fe3+ + Ti (Fe3+ = 0, p. 25).
+`P_CA91` keeps its column name; `P_barometer` in `screened_PT.csv` says which applied.
+With this barometer the screened Slave set is 30 (blue 3, red 2), and Eq. 5 was refit to
+3.8345×10⁻⁴·T − 0.46732 (n = 21); these are the locked values in `params.py`.
 
 How Eq. 5 and ΔT are derived (`calculations/pt_fo2/calibration.py`, run by `scripts/fit_calibration.py`):
 
 1. Eq. 5 is the least-squares line of (measured − estimated) Fe3+/ΣFe on TA98
    temperature at ΔT = 25 °C, through the Slave samples inside the dashed
-   envelope of Fig. 5b: the 31 screened Slave samples less the blue (3) and
-   red (3) error groups, T ≥ 1130 °C (n = 21). No level shift is applied.
+   envelope of Fig. 5b: the 30 screened Slave samples less the blue (3) and
+   red (2) error groups, T ≥ 1130 °C (n = 21). No level shift is applied.
 2. Fig. 6 holds Eq. 5 fixed, sweeps ΔT from 0 to 75 °C and scores only those
    21 samples. ΔT = 29 °C has the highest ±0.02 rate (76 %; ties broken by the
    smallest mean bias).
@@ -31,12 +37,12 @@ the same P, T and mineral chemistry (`calibration.fo2_residuals`).
 
 | Dataset | n | ±0.02 | ±0.05 | 1σ Fe3+/ΣFe | 1σ log units |
 |---|---|---|---|---|---|
-| Slave calibration | 31 | 65 % | 81 % | 0.045 | 0.69 |
+| Slave calibration | 30 | 67 % | 83 % | 0.041 | 0.62 |
 | Slave, error groups excluded | 25 | 80 % | 100 % | 0.017 | 0.34 |
-| Siberian + Kaapvaal validation | 27 | 63 % | 85 % | 0.035 | 1.16 |
-| Calibration + validation | 58 | 64 % | 83 % | 0.040 | 0.94 |
-| Combined, error groups excluded | 52 | 71 % | 92 % | 0.028 | 0.87 |
-| Charge balance (Droop 1987; Quinn et al. 2016), screened Slave | 31 | 26 % | 61 % | 0.084 | – |
+| Siberian + Kaapvaal validation | 27 | 67 % | 85 % | 0.035 | 1.16 |
+| Calibration + validation | 57 | 67 % | 84 % | 0.038 | 0.91 |
+| Combined, error groups excluded | 52 | 73 % | 92 % | 0.028 | 0.87 |
+| Charge balance (Droop 1987; Quinn et al. 2016), screened Slave | 30 | 23 % | 60 % | 0.085 | – |
 | Charge balance (Droop 1987; Quinn et al. 2016), all Slave before screening | 57 | 25 % | 53 % | 0.087 | – |
 
 Charge-balance stoichiometry (`calculations/pt_fo2/stoichiometry.py`) implements
@@ -44,20 +50,20 @@ Droop (1987) and Quinn et al. (2016) separately (`XFe3_droop`, `XFe3_quinn` in
 `screened_PT.csv`). For anhydrous garnet the two procedures are algebraically
 identical (Fe3+ = 24(1 − 8/S) per 8-cation formula), so the columns agree to
 rounding and Table 1 reports one charge-balance row per sample set. Mean bias
-(estimated − measured) is +0.017 for the 31 screened Slave samples, against
-−0.005 for comparative geothermometry. `tests/test_stoichiometry.py` reproduces
+(estimated − measured) is +0.017 for the 30 screened Slave samples, against
+−0.008 for comparative geothermometry. `tests/test_stoichiometry.py` reproduces
 the Droop (1987) Table 3 garnet (Fe3+ 0.779, Fe2+ 0.013 per 12 O).
 
 fO2 uncertainty (`python scripts/fo2_uncertainty.py`; `data/derived/fO2_uncertainty.json`,
 `data/derived/fO2_residuals.csv`, `Figures/diagnostics/fO2_residual_vs_Fe3.png`):
-the 58 calibration + validation samples (error groups retained) are split at their
-median estimated ΔFMQ (−2.77). The 1σ is 0.95 log units for the reduced half
-(n = 29) and 0.76 for the oxidised half (n = 29), 0.94 overall. The uncertainty is
+the 57 calibration + validation samples (error groups retained) are split at their
+median estimated ΔFMQ (−2.72). The 1σ is 0.94 log units for the reduced half
+(n = 28) and 0.72 for the oxidised half (n = 29), 0.91 overall. The uncertainty is
 larger at low Fe3+/ΣFe because ΔFMQ depends on log Fe3+, and it is dominated by
 samples whose estimates approach the 0.01 starting value. These are the two
 Fig. 10 bars, computed from the data in `make_figures.py`.
 
-Screening (1100 samples): four phases 747 → TA98 > 900 °C 607 → opx–cpx 584 → pyx–gt 500 → gt–ol 456 fully screened. Calibration (Slave, measured Fe3+) 57 → 31; validation (Siberian + Kaapvaal) 52 → 27; neither set was affected by the de-duplication.
+Screening (1100 samples): four phases 747 → TA98 > 900 °C 607 → opx–cpx 583 → pyx–gt 495 → gt–ol 450 fully screened. Calibration (Slave, measured Fe3+) 57 → 30; validation (Siberian + Kaapvaal) 52 → 27; neither set was affected by the de-duplication.
 
 ## Run
 
