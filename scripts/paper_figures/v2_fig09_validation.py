@@ -25,7 +25,7 @@ def fig8():
     aL.set_xlim(0,x_max); aL.set_ylim(0,x_max); aR.set_xlim(t_min,t_max); aR.set_ylim(r_min,r_max)
     aL.set_xlabel(XM); aL.set_ylabel(YE); aR.set_xlabel('Temperature (\u00b0C)'); aR.set_ylabel(YR)
     fmt(aL,np.arange(0,x_max,0.05),np.arange(0,x_max,0.02),'%.2f','%.2f'); fmt(aR,np.arange(1000,1401,100),np.arange(-0.125,0.0751,0.025),'%d','%.3f')
-    letter(aL,'a.'); letter(aR,'b.',x=0.03)
+    letter(aL,'a.'); letter(aR,'b.',x=0.92)
     diff=(est[ok]-meas[ok]).abs()
     aL.text(0.98,0.04,f"n = {int(ok.sum())}\n\u00b10.02: {(diff<=0.02).mean()*100:.0f}%\n\u00b10.05: {(diff<=0.05).mean()*100:.0f}%",transform=aL.transAxes,fontsize=FS_ANNOT,ha='right',va='bottom',zorder=20,path_effects=halo(2.0))
     print('Fig8 n',int(ok.sum()),(diff<=0.02).mean(),(diff<=0.05).mean(),'other',int(other.sum()),'x_max',x_max,'T',t_min,t_max,'r',r_min,r_max)
