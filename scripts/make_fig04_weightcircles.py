@@ -2,9 +2,17 @@
 figure with background circles whose AREA is proportional to each run's
 normalised weight, a size key, n_eff, and a side table of the weights.
 
-Weights come straight from exp_calibration.weights(e, "invvar", 50) -- the
-primary item-1 weighting used by the fit (w = 1/(sigma0^2 + excess^2)).
-Local, unpushed.
+Weights and fit come from scripts/weighted_thermometer_regression.py (the
+stand-alone module; w = 1/(sigma0^2 + excess^2), WLS centred at 1350 C).
+They are cross-checked here against calculations.pt_fo2.exp_calibration
+(the pipeline's item-1 fit) so the figure and the pipeline cannot drift.
+
+Colour (11 Nov, t1615u): palette taken from the paper's other figures,
+scripts/make_figures.py -- no new colours:
+  Matjuschkin 2014  #5e3c99 purple  (accent of Figs 2 and 6)
+  Rzehak 2020       #4c72b0 blue    (plot_exp_ta98_wz07.STYLE; Fig. 3a)
+  fit / 95 % band   black / grey 0.85 (identical to Fig. X b, same fit)
+Fonts/line weights: make_figures._apply_journal_style (Arial 8 pt).
 """
 from __future__ import annotations
 import sys
@@ -18,7 +26,13 @@ sys.path.insert(0, str(HERE)); sys.path.insert(0, str(HERE.parent))
 import make_figures_rev1 as r1
 import make_figures as mf
 import plot_exp_ta98_wz07 as pe
+import weighted_thermometer_regression as wtr
 from calculations.pt_fo2 import exp_calibration as xc
+
+EXP_STYLE = {  # colours from make_figures.py / plot_exp_ta98_wz07.py
+    "Matjuschkin et al. 2014": dict(marker="o", color="#5e3c99", label="Matjuschkin 2014"),
+    "Rzehak et al. 2020": dict(marker="s", color="#4c72b0", label="Rzehak 2020"),
+}
 
 AREA_PER_PCT = 25.0   # pt^2 of circle area per 1 % of total weight
 MARK_S = 16           # fixed marker size (pt^2)
@@ -32,18 +46,22 @@ LABEL_OFF = {  # manual label offsets (points) to avoid overlaps
 
 def main():
     mf._apply_journal_style()
-    e, w, f = r1.exp_fit()
-    e = e.reset_index(drop=True)
-    w = np.asarray(w, float)
-    wn = w / w.sum()
-    pct = 100 * wn
-    n_eff = w.sum() ** 2 / (w ** 2).sum()
-    excess = xc.screen_excess(e)
-    sigma = np.sqrt(50.0 ** 2 + excess ** 2)
-    # sanity: matches the stored item-1 output
+    runs = wtr.load_runs()                       # data/derived/exp_TA98_WZ07_Fe3.csv
+    wt, fr = wtr.fit(runs)                       # module = single source of the method
+    ex, w_x, f = r1.exp_fit()                    # pipeline fit, for the cross-check only
+    ex = ex.set_index("SampleID").loc[runs["SampleID"]].reset_index()
+    assert np.allclose(xc.weights(ex, "invvar", 50.0), wt["w_raw_per_C2"], rtol=1e-12)
+    assert np.allclose(f["beta"], [fr.b0, fr.b1], rtol=1e-10)
+    assert np.allclose(np.sqrt(np.diag(f["cov"])), [fr.se_b0, fr.se_b1], rtol=1e-10)
+    e = runs.assign(dT_Fe2=runs["y_TA98_minus_WZ07_C"])
+    w = wt["w_raw_per_C2"].to_numpy(float)
+    pct = wt["weight_pct"].to_numpy(float)
+    n_eff = fr.n_eff
+    excess = wt["screen_excess_C"].to_numpy(float)
+    sigma = wt["sigma_i_C"].to_numpy(float)
     ref = pd.read_csv(r1.HERE.parent.parent / "item1_weighted_calibration/results/experiment_weights.csv")
     ref = ref.set_index("SampleID").loc[e["SampleID"]]
-    assert np.allclose(ref["w_rel_primary"].to_numpy(), wn, atol=6e-5)
+    assert np.allclose(ref["w_rel_primary"].to_numpy(), wt["weight_frac"], atol=6e-5)
 
     fig = plt.figure(figsize=(174 / 25.4, 95 / 25.4))
     ax = fig.add_axes([0.085, 0.115, 0.575, 0.80])
@@ -51,18 +69,18 @@ def main():
 
     ax.axhline(0, color="0.6", lw=0.7, zorder=0)
     tt = np.linspace(r1.TLO, r1.THI, 100)
-    lo, hi = xc.band_cov(f, tt)
-    ax.fill_between(tt, lo, hi, color="0.88", lw=0, zorder=1, label="95 % confidence band")
-    ax.plot(tt, xc.predict(f, tt), color="k", lw=1.4, zorder=4, label="Weighted fit (13 experiments)")
-    for ref_, sty in pe.STYLE.items():
+    lo, hi = fr.band(tt)
+    ax.fill_between(tt, lo, hi, color="0.85", lw=0, zorder=1, label="95 % confidence band")
+    ax.plot(tt, fr.predict(tt), color="k", lw=1.4, zorder=4, label=f"Weighted fit ({fr.n} experiments)")
+    for ref_, sty in EXP_STYLE.items():
         s = (e["Reference"] == ref_).to_numpy()
         if not s.any():
             continue
         col = sty["color"]
         ax.scatter(e.loc[s, "T_TA98"], e.loc[s, "dT_Fe2"], s=AREA_PER_PCT * pct[s],
-                   marker="o", facecolors=col, alpha=0.22, edgecolors="none", zorder=2)
+                   marker="o", facecolors=col, alpha=0.20, edgecolors="none", zorder=2)
         ax.scatter(e.loc[s, "T_TA98"], e.loc[s, "dT_Fe2"], s=AREA_PER_PCT * pct[s],
-                   marker="o", facecolors="none", edgecolors=col, linewidths=0.6, alpha=0.7, zorder=2)
+                   marker="o", facecolors="none", edgecolors=col, linewidths=0.7, alpha=0.85, zorder=2)
         ax.scatter(e.loc[s, "T_TA98"], e.loc[s, "dT_Fe2"], s=MARK_S, marker=sty["marker"],
                    color=col, edgecolors="k", linewidths=0.4, zorder=5, label=sty["label"])
     for i, r in e.iterrows():
@@ -70,7 +88,7 @@ def main():
         ax.annotate(r["SampleID"], (r["T_TA98"], r["dT_Fe2"]), fontsize=6,
                     xytext=LABEL_OFF.get(r["SampleID"], (5, 4)), textcoords="offset points", zorder=6,
                     arrowprops=dict(arrowstyle="-", lw=0.5, color="0.25", shrinkA=0.5, shrinkB=2.5) if lead else None)
-    b0, b1 = f["beta"]; se = np.sqrt(np.diag(f["cov"]))
+    b0, b1 = fr.b0, fr.b1; se = (fr.se_b0, fr.se_b1)
     ax.set_title(rf"$T_{{\mathrm{{TA98}}}}-T_{{\mathrm{{WZ07}}}}$ = {b0:.0f} ($\pm${se[0]:.0f}) "
                  rf"{b1:+.3f} ($\pm${se[1]:.3f})($T_{{\mathrm{{TA98}}}}$ − 1350)", fontsize=7.5)
     ax.set_xlim(1120, 1660); ax.set_ylim(-330, 230)
@@ -95,7 +113,7 @@ def main():
         r_ax = np.sqrt(AREA_PER_PCT * k / np.pi) / AXW_PT
         ax.text(xk + r_ax + 0.012, 0.10, f"{k} %", transform=ax.transAxes, fontsize=6.3,
                 va="center", ha="left", zorder=8)
-    ax.text(0.02, 0.97, rf"$n_{{\mathrm{{eff}}}}$ = ($\Sigma w$)$^2$/$\Sigma w^2$ = {n_eff:.1f} of 13",
+    ax.text(0.02, 0.97, rf"$n_{{\mathrm{{eff}}}}$ = ($\Sigma w$)$^2$/$\Sigma w^2$ = {n_eff:.1f} of {fr.n}",
             transform=ax.transAxes, fontsize=6.5, va="top", ha="left",
             bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="0.55", lw=0.6))
 
@@ -114,7 +132,8 @@ def main():
             cell.set_facecolor("white")
             if cc == 0:
                 refn = e.loc[order[rr - 1], "Reference"]
-                cell.get_text().set_color(pe.STYLE[refn]["color"] if refn.startswith("Rz") else "k")
+                cell.get_text().set_color(EXP_STYLE[refn]["color"])
+                cell.get_text().set_fontweight("bold")
     tx.text(0.0, 0.155,
             "Excess = quadrature sum of the amounts by which\n"
             "the equilibrium screens are exceeded (opx–cpx 80,\n"

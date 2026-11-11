@@ -86,6 +86,48 @@ Figures: `Figures/Fig01`–`Fig10` (pressure axes in GPa). Fig. 4 is written by 
 
 This bundle is the P–T–fO2 calculation only. Olivine FC/DFC, garnet diffusion, and geophysical inversion are not included.
 
+## Weighted TA98 − WZ07 regression on experiments (Fig. 4; revision v1)
+
+`scripts/weighted_thermometer_regression.py` is a stand-alone module and CLI
+(numpy + pandas only; no other repository imports). It weights each
+experiment by its apparent disequilibrium and fits
+TA98 − WZ07(Fe2+ only) = b0 + b1 (T_TA98 − 1350) by weighted least squares:
+
+- excess_i = quadrature sum of max(0, |ΔT_j| − t_j) over the three screens
+  (opx–cpx 80, pyx–gt 60, gt–ol 50 °C; `SCREEN_THRESHOLDS_C`)
+- σ_i² = σ_analytical,i² + excess_i², with σ_analytical defaulting to
+  `SIGMA0_C` = 50 °C (a placeholder until analytical quality is assessed)
+- w_i = 1/σ_i²; n_eff = (Σw)²/Σw²
+- parameter covariance = (XᵀWX)⁻¹ × max(1, χ²_red) (σ_i treated as absolute)
+
+```bash
+python scripts/weighted_thermometer_regression.py               # current 13 runs
+python scripts/weighted_thermometer_regression.py --robustness  # + OLS, leave-one-out, bootstrap
+python -m pytest tests/test_weighted_regression.py               # or: python tests/test_weighted_regression.py
+python scripts/make_fig04_weightcircles.py                       # Fig. 4 (uses the module)
+```
+
+Outputs (default `data/derived/weighted_regression/`): `weighted_regression_weights.csv`,
+`weighted_regression_fit.json`, `weighted_regression_fit.txt` (and `weighted_regression_loo.csv`
+with `--robustness`). Options: `--input`, `--outdir`, `--t-ref`, `--sigma0`,
+`--thr-opx-cpx`, `--thr-pyx-gt`, `--thr-gt-ol`, `--col NAME=CSVCOLUMN`.
+
+### Adding experiments
+
+The input CSV has one row per run with columns `SampleID`, `T_TA98`, `T_WZ07_Fe2`
+(WZ07 with the measured garnet Fe3+ removed), `dT_opx_cpx`, `dT_pyx_gt`, `dT_gt_ol`
+(all °C, computed exactly as for the xenoliths in Section 3.2), and optionally
+`Reference`, `sigma_analytical_C` (blank = 50 °C default) and `include` (1/0).
+
+1. Preferred: add the new run's mineral analyses to the experimental input read by
+   `scripts/plot_exp_ta98_wz07.py` and rerun it; it rewrites
+   `data/derived/exp_TA98_WZ07_Fe3.csv` with the thermometers and screens computed
+   the same way as for every other run.
+2. Or copy that CSV, append rows with the columns above, and pass `--input your.csv`.
+3. Rerun the CLI and `make_fig04_weightcircles.py`. The test pins the published
+   13-run result (−14 ± 27, −0.555 ± 0.216, n_eff 8.4); when the data set is
+   deliberately changed, update those numbers in the test together with the paper.
+
 ## Repository layout
 
 | Path | Contents |
@@ -98,7 +140,7 @@ This bundle is the P–T–fO2 calculation only. Olivine FC/DFC, garnet diffusio
 | `data/spatial/web/` | GeoJSON layers for the locality map |
 | `Figures/` | Paper figures (PNG and PDF) |
 | `supplement/thermometer_choice/` | Standalone thermometer comparison calculator |
-| `tests/` | Unit tests (charge-balance garnet Fe3+ against Droop 1987 Table 3) |
+| `tests/` | Unit tests (charge-balance garnet Fe3+ against Droop 1987 Table 3; weighted regression reproduces the Fig. 4 fit) |
 
 To get everything at once, use **Code → Download ZIP** at the top of this page, or clone:
 
