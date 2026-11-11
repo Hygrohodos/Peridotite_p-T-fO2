@@ -25,7 +25,7 @@ MARK_S = 16           # fixed marker size (pt^2)
 LABEL_OFF = {  # manual label offsets (points) to avoid overlaps
     "F1100o": (5, -9), "F1100r": (6, 4), "F1200o": (7, 5), "F1200r": (7, -3),
     "F1300o": (9, -3), "F1300r": (-31, 4), "F14002o": (7, -8), "F14002r": (6, 4),
-    "MaLm6": (6, 4), "MaLm11": (-36, -22), "MaLm1": (5, 5), "MaLm9": (-30, -3),
+    "MaLm6": (6, 4), "MaLm11": (-40, 9), "MaLm1": (9, 7), "MaLm9": (-30, -3),
     "MaLm12": (7, -3),
 }
 
@@ -66,8 +66,10 @@ def main():
         ax.scatter(e.loc[s, "T_TA98"], e.loc[s, "dT_Fe2"], s=MARK_S, marker=sty["marker"],
                    color=col, edgecolors="k", linewidths=0.4, zorder=5, label=sty["label"])
     for i, r in e.iterrows():
+        lead = r["SampleID"] in ("MaLm11", "MaLm1")  # close pair: short leader lines
         ax.annotate(r["SampleID"], (r["T_TA98"], r["dT_Fe2"]), fontsize=6,
-                    xytext=LABEL_OFF.get(r["SampleID"], (5, 4)), textcoords="offset points", zorder=6)
+                    xytext=LABEL_OFF.get(r["SampleID"], (5, 4)), textcoords="offset points", zorder=6,
+                    arrowprops=dict(arrowstyle="-", lw=0.5, color="0.25", shrinkA=0.5, shrinkB=2.5) if lead else None)
     b0, b1 = f["beta"]; se = np.sqrt(np.diag(f["cov"]))
     ax.set_title(rf"$T_{{\mathrm{{TA98}}}}-T_{{\mathrm{{WZ07}}}}$ = {b0:.0f} ($\pm${se[0]:.0f}) "
                  rf"{b1:+.3f} ($\pm${se[1]:.3f})($T_{{\mathrm{{TA98}}}}$ − 1350)", fontsize=7.5)
@@ -80,16 +82,18 @@ def main():
     # size key (drawn in axes coordinates): circle area proportional to weight
     from matplotlib.patches import FancyBboxPatch
     keys = (5, 10, 20)
-    ax.add_patch(FancyBboxPatch((0.02, 0.025), 0.40, 0.20, boxstyle="round,pad=0.005,rounding_size=0.01",
+    ax.add_patch(FancyBboxPatch((0.02, 0.025), 0.42, 0.20, boxstyle="round,pad=0.005,rounding_size=0.01",
                                 transform=ax.transAxes, fc="white", ec="0.55", lw=0.6, alpha=0.92, zorder=7))
-    ax.text(0.22, 0.205, "Weight (circle area, % of total)", transform=ax.transAxes, fontsize=6.3,
+    ax.text(0.23, 0.205, "Weight (circle area, % of total)", transform=ax.transAxes, fontsize=6.3,
             ha="center", va="top", zorder=8)
-    for k, xk in zip(keys, (0.07, 0.17, 0.30)):
+    AXW_PT = 0.575 * 174 / 25.4 * 72  # axes width in points
+    for k, xk in zip(keys, (0.065, 0.19, 0.335)):
         ax.scatter([xk], [0.10], s=AREA_PER_PCT * k, transform=ax.transAxes, facecolors="0.5",
                    alpha=0.25, edgecolors="none", zorder=8, clip_on=False)
         ax.scatter([xk], [0.10], s=AREA_PER_PCT * k, transform=ax.transAxes, facecolors="none",
                    edgecolors="0.3", linewidths=0.6, zorder=8, clip_on=False)
-        ax.text(xk + (0.035 if k < 20 else 0.06), 0.10, f"{k} %", transform=ax.transAxes, fontsize=6.3,
+        r_ax = np.sqrt(AREA_PER_PCT * k / np.pi) / AXW_PT
+        ax.text(xk + r_ax + 0.012, 0.10, f"{k} %", transform=ax.transAxes, fontsize=6.3,
                 va="center", ha="left", zorder=8)
     ax.text(0.02, 0.97, rf"$n_{{\mathrm{{eff}}}}$ = ($\Sigma w$)$^2$/$\Sigma w^2$ = {n_eff:.1f} of 13",
             transform=ax.transAxes, fontsize=6.5, va="top", ha="left",
