@@ -12,6 +12,8 @@ You do not need to edit the calculation modules themselves.
 Values below match the published chapter defaults (Greene, in prep.).
 """
 
+from __future__ import annotations
+
 from dataclasses import dataclass, asdict
 
 
@@ -67,6 +69,13 @@ class Fe3Params:
     # experimental calibration (TA98−WZ07 = a·T + b  ⇒  offset = −a·T − b).
     wz07_offset_c: float = 118.0
     wz07_offset_slope: float = 0.0
+    # Optional TA98 range (°C) over which the T-sensitive offset is
+    # evaluated; outside it the offset is held at its end value instead of
+    # being extrapolated linearly (None = no limit, the original behaviour).
+    # Set to the TA98 range of the calibrating experiments when the offset
+    # comes from calculations/pt_fo2/exp_calibration.py.
+    wz07_offset_tmin_c: float | None = None
+    wz07_offset_tmax_c: float | None = None
 
     # Safety cap on iteration steps
     max_steps: int = 200

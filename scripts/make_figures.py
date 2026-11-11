@@ -466,14 +466,9 @@ def fig04_screens(df):
 def _fe3_at_dt(df, dt):
     from calculations.pt_fo2.fe3_correction import iterate_garnet_fe3
     from calculations.pt_fo2.params import Fe3Params, CalculationParams
-    fp = Fe3Params(
-        xfe3_start=PARAMS.fe3.xfe3_start,
-        dxfe3=PARAMS.fe3.dxfe3,
-        dt_match_c=float(dt),
-        wz07_offset_c=PARAMS.fe3.wz07_offset_c,
-        max_steps=PARAMS.fe3.max_steps,
-        apply_empirical_correction=False,
-    )
+    from dataclasses import replace
+    # Keep every offset field (slope and T limits too), not only the flat value.
+    fp = replace(PARAMS.fe3, dt_match_c=float(dt), apply_empirical_correction=False)
     out = iterate_garnet_fe3(
         df, verbose=False,
         params=CalculationParams(

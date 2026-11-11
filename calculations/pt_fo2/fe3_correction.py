@@ -155,6 +155,23 @@ def _wz07corr_fe2only(Mg_ol, Fe2_ol, Mg_gt, Fe2_gt, Ca_gt, Mn_gt, P_kbar, offset
     return T_C
 
 
+def wz07_offset(fp, T_ta98):
+    """Calibration offset (°C) subtracted from raw WZ07 at TA98 = ``T_ta98``.
+
+    offset = wz07_offset_c + wz07_offset_slope · T, with T limited to
+    [wz07_offset_tmin_c, wz07_offset_tmax_c] when those are set (the offset
+    is then held constant beyond the calibrated range rather than
+    extrapolated).  With the defaults (slope 0, no limits) this is the flat
+    118 °C F1300o offset.
+    """
+    T = np.asarray(T_ta98, dtype=float)
+    lo = getattr(fp, "wz07_offset_tmin_c", None)
+    hi = getattr(fp, "wz07_offset_tmax_c", None)
+    if lo is not None or hi is not None:
+        T = np.clip(T, -np.inf if lo is None else lo, np.inf if hi is None else hi)
+    return fp.wz07_offset_c + fp.wz07_offset_slope * T
+
+
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
@@ -276,7 +293,7 @@ def iterate_garnet_fe3(
 
         Fe2_gt = Fe_gt_v * XFe2
         fp_off = params.fe3 if params is not None else PARAMS.fe3
-        offset_v = fp_off.wz07_offset_c + fp_off.wz07_offset_slope * T_act_v
+        offset_v = wz07_offset(fp_off, T_act_v)
         T_wz = _wz07corr_fe2only(
             Mg_ol_v, Fe_ol_v, Mg_gt_v, Fe2_gt, Ca_gt_v, Mn_gt_v, P_v,
             offset_c=offset_v,
@@ -295,7 +312,7 @@ def iterate_garnet_fe3(
     # Final evaluation at the converged XFe2
     Fe2_gt = Fe_gt_v * XFe2
     fp_off = params.fe3 if params is not None else PARAMS.fe3
-    offset_v = fp_off.wz07_offset_c + fp_off.wz07_offset_slope * T_act_v
+    offset_v = wz07_offset(fp_off, T_act_v)
     T_wz = _wz07corr_fe2only(
         Mg_ol_v, Fe_ol_v, Mg_gt_v, Fe2_gt, Ca_gt_v, Mn_gt_v, P_v,
         offset_c=offset_v,
@@ -342,6 +359,12 @@ def apply_empirical_fe3_correction(df, verbose=True, params=None):
         result = df.copy()
         if "XFe3_gt_corr" not in result.columns and "XFe3_gt_iter" in result.columns:
             result["XFe3_gt_corr"] = result["XFe3_gt_iter"]
+        # Cation split as in the corrected path, so fO2 is still calculated.
+        if "XFe3_gt_corr" in result.columns and "garnet_Fe" in result.columns:
+            fe = pd.to_numeric(result["garnet_Fe"], errors="coerce")
+            x = pd.to_numeric(result["XFe3_gt_corr"], errors="coerce")
+            result["Fe3_gt_corr"] = x * fe
+            result["Fe2_gt_corr"] = fe - result["Fe3_gt_corr"]
         if verbose:
             print("[fe3_correction] Empirical correction disabled.")
         return result
