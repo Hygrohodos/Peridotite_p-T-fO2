@@ -61,7 +61,12 @@ class Fe3Params:
     # fixed, scored on the Eq. 5 regression samples only; highest ±0.02
     # rate, ties broken by smallest |mean bias|.
     # Re-derive with:  python scripts/fit_calibration.py
-    dt_match_c: float = -164.0   # revision v1: level re-tuned on 25 Slave samples (was 29.0)
+    # Revision v2 (option B): the level is ANCHORED, not tuned: mean of
+    #   [TA98 - WZ07(measured Fe3+)] - c(T) over the 25 Slave calibration
+    #   samples outside the error groups (calculations/pt_fo2/level_anchor.py;
+    #   scripts/anchor_level.py; mean raw discrepancy -91.9 C at TA98 1187 C).
+    #   Exact value -157.62 C (s.e. 4.7). Was 29.0 (main) and -164.0 (rev. v1, tuned).
+    dt_match_c: float = -157.6
 
     # Calibration offset applied to raw WZ07 (°C):
     #   T_WZ07corr = T_WZ07raw − (wz07_offset_c + wz07_offset_slope * T_TA98)
@@ -90,7 +95,7 @@ class Fe3Params:
     #   no level shift.  Re-derive with:  python scripts/fit_calibration.py
     apply_empirical_correction: bool = False   # revision v1: Eq. 5 dropped
     t_emp_min_c: float = 1130.0
-    emp_fit_dt_c: float = -164.0   # revision v1: error groups defined at the adopted ΔT (was 25.0)
+    emp_fit_dt_c: float = -157.6   # revision v2: error groups evaluated at the adopted level (was 25.0); same 5 IDs
     emp_blue_threshold: float = 0.05
     emp_red_ids: tuple = ("14-78", "MX5011", "8-1", "MX104", "MX5000", "40-38")
     emp_offset: float = 0.0   # unused; kept for backward compatibility
