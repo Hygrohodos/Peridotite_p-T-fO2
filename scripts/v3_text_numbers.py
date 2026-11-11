@@ -9,8 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
 ap = argparse.ArgumentParser(); ap.add_argument("--out"); a_ = ap.parse_args()
 D = ROOT / "data" / "derived"
-p = pd.read_csv(D / "p-T-fO2.csv"); s = p[p.Screen_pass == True].copy()
-F = s["logfO2(ΔFMQ)"]; X = s["XGtFe3+_corr"]; fl = X <= 0.0105
+# full-precision working table (Geology round 2, N9: no binning on the rounded publication columns)
+s = pd.read_csv(D / "screened_PT.csv", low_memory=False); s = s.rename(columns={s.columns[0]: "SampleID"})
+s = s[s["screen_pass"] == True].copy()
+s["P_GPa"] = pd.to_numeric(s["P_CA91"], errors="coerce") / 10.0
+F = pd.to_numeric(s["delta_logfO2_FMQ"], errors="coerce"); X = pd.to_numeric(s["XFe3_gt_corr"], errors="coerce"); fl = X <= 0.0105
 out = {}
 out["n_screened"] = int(len(s)); out["n_floor"] = int(fl.sum()); out["floor_share"] = float(fl.mean())
 out["median_dFMQ_all"] = float(F.median()); out["median_dFMQ_nonfloor"] = float(F[~fl].median()); out["median_dFMQ_floor"] = float(F[fl].median())
@@ -28,6 +31,22 @@ out["floor_P_ge_4.5"] = int((fl & (P >= 4.5)).sum())
 # deep reduced (BSE-relative check is done in the figure; here dFMQ < -3.5 at P >= 5 GPa as a simple count)
 deep = P >= 5.0
 out["deep_P_ge_5"] = int(deep.sum()); out["deep_dFMQ_lt_m3.5"] = [int((deep & (F < -3.5)).sum()), int((deep & (F < -3.5) & fl).sum())]
+# deep (>= 5 GPa) samples vs BSE, and a simple scatter test (Geology round 2, N2):
+# if every off-floor deep sample sat at the deep median and differed only by the reduced-half fO2 1sigma,
+# how many would fall below BSE by chance?
+from calculations.pt_fo2.buffers import buffer_table
+from scipy.stats import norm
+bse = np.asarray(buffer_table(s["P_CA91"].to_numpy(float), df=s)["dBSE"]); Fv = F.to_numpy(float)
+deep5 = (s["P_GPa"] >= 5.0).to_numpy(); flv = fl.to_numpy(); sig = json.load(open(D / "fO2_uncertainty.json"))["reduced"]["sigma_log"]
+m = deep5 & ~flv; med = float(np.median(Fv[m])); marg = bse - Fv
+out["deep_vs_BSE"] = dict(n_deep=int(deep5.sum()), n_below=int((deep5 & (marg > 0)).sum()), n_below_floor=int((deep5 & (marg > 0) & flv).sum()),
+    n_offfloor=int(m.sum()), offfloor_below=int((m & (marg > 0)).sum()), deep_median_offfloor=med, sigma_log=float(sig),
+    expected_below_from_scatter=float(norm.cdf((bse[m] - med) / sig).sum()),
+    below_within_1sigma=int((deep5 & (marg > 0) & (marg <= sig)).sum()), below_more_than_2sigma=int((deep5 & (marg > 2 * sig)).sum()),
+    below_more_than_2sigma_offfloor=int((m & (marg > 2 * sig)).sum()),
+    ids_below=s.loc[deep5 & (marg > 0), "SampleID"].astype(str).tolist())
+plotted = (F.between(-7, 0) & s["P_CA91"].between(30, 70)).to_numpy()
+out["fig11_floor_plotted"] = [int((plotted & flv).sum()), int(flv.sum())]
 # residual trend with T on the 52 / 57
 r = pd.read_csv(D / "fO2_residuals.csv"); scr = pd.read_csv(D / "screened_PT.csv", low_memory=False)
 scr = scr.rename(columns={scr.columns[0]: "SampleID"})

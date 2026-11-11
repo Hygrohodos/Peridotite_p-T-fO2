@@ -16,3 +16,4 @@ python3 v2_fig09_validation.py; python3 v2_fig10_fo2_measured.py; python3 v2_fig
 python3 ../v3_text_numbers.py --out "$PAPER_FIG_OUT/v3_text_numbers.json"
 python3 ../v3_level_sensitivity.py --out "$PAPER_FIG_OUT/v3_level_sensitivity.csv"
 python3 ../table1_three_way.py --out "$PAPER_FIG_OUT/Table1_three_way.md"
+python3 ../v2_withdrawn_diagnostics.py --out "$PAPER_FIG_OUT/v2_withdrawn_diagnostics.json"
