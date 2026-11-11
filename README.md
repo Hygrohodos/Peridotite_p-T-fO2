@@ -69,11 +69,11 @@ Screening (1100 samples): four phases 747 → TA98 > 900 °C 607 → opx–cpx 5
 
 ```bash
 pip install -r requirements.txt
-python run_pipeline.py
-python scripts/fit_calibration.py     # checks params.py; add --update-params to rewrite it
-python scripts/make_figures.py
-python scripts/fo2_uncertainty.py    # fO2 residual 1σ (Table 1 log column, Fig. 10 bars)
-python tests/test_stoichiometry.py   # or: python -m pytest tests
+python3 run_pipeline.py
+python3 scripts/fit_calibration.py     # checks params.py; add --update-params to rewrite it
+python3 scripts/make_figures.py
+python3 scripts/fo2_uncertainty.py    # fO2 residual 1σ (Table 1 log column, Fig. 10 bars)
+python3 tests/test_stoichiometry.py   # or: python3 -m pytest tests
 ```
 
 If `fit_calibration.py --update-params` changes `params.py`, run the pipeline and figures again.
@@ -89,42 +89,74 @@ This bundle is the P–T–fO2 calculation only. Olivine FC/DFC, garnet diffusio
 ## Weighted TA98 − WZ07 regression on experiments (Fig. 4; revision v1)
 
 `scripts/weighted_thermometer_regression.py` is a stand-alone module and CLI
-(numpy + pandas only; no other repository imports). It weights each
-experiment by its apparent disequilibrium and fits
+(Python ≥ 3.9, numpy, pandas; no other repository imports; all temperatures in °C).
+It weights each experiment by its apparent disequilibrium and fits
 TA98 − WZ07(Fe2+ only) = b0 + b1 (T_TA98 − 1350) by weighted least squares:
 
 - excess_i = quadrature sum of max(0, |ΔT_j| − t_j) over the three screens
-  (opx–cpx 80, pyx–gt 60, gt–ol 50 °C; `SCREEN_THRESHOLDS_C`)
+  (opx–cpx 80, pyx–gt 60, gt–ol 50 °C; `SCREEN_THRESHOLDS_C`). A run fails
+  screen j when |ΔT_j| > t_j, i.e. exactly when that term is non-zero.
 - σ_i² = σ_analytical,i² + excess_i², with σ_analytical defaulting to
-  `SIGMA0_C` = 50 °C (a placeholder until analytical quality is assessed)
+  `SIGMA0_C` = 50 °C
 - w_i = 1/σ_i²; n_eff = (Σw)²/Σw²
-- parameter covariance = (XᵀWX)⁻¹ × max(1, χ²_red) (σ_i treated as absolute)
+- parameter covariance = (XᵀWX)⁻¹ × max(1, χ²_red)
+
+**Methods notes.**
+- σ_i is treated as an absolute 1σ uncertainty on y. But σ0 = 50 °C is a
+  placeholder (the gt–ol acceptance width, pending the analytical-quality
+  assessment) and the excess term is heuristic, so the absolute scale is an
+  assumption, not a measurement.
+- The covariance is scaled by max(1, χ²_red): inflated if the scatter
+  exceeds the σ_i, never shrunk. For the 13 current runs χ²_red = 0.84
+  (p = 0.60), so the SEs are unscaled; always scaling would give ±24.5 and
+  ±0.198 instead of ±26.8 and ±0.216.
+- The weights come from the same thermometers as y: ΔT_opx–cpx contains
+  TA98 and correlates with y (r = −0.48 for the 13 runs); ΔT_gt–ol contains
+  WZ07 (r = 0.05). The weights are therefore not independent of the
+  response. The case-resampling bootstrap carries each run's weight with it.
 
 ```bash
-python scripts/weighted_thermometer_regression.py               # current 13 runs
-python scripts/weighted_thermometer_regression.py --robustness  # + OLS, leave-one-out, bootstrap
-python -m pytest tests/test_weighted_regression.py               # or: python tests/test_weighted_regression.py
-python scripts/make_fig04_weightcircles.py                       # Fig. 4 (uses the module)
+python3 scripts/weighted_thermometer_regression.py               # current 13 runs
+python3 scripts/weighted_thermometer_regression.py --robustness  # + OLS, leave-one-out, bootstrap
+python3 -m pytest tests/test_weighted_regression.py               # or: python3 tests/test_weighted_regression.py
+python3 scripts/make_fig04_weightcircles.py                       # Fig. 4 (uses the module)
+python3 scripts/make_fig04_weightcircles.py --input my_runs.csv --outdir out/
 ```
 
 Outputs (default `data/derived/weighted_regression/`): `weighted_regression_weights.csv`,
 `weighted_regression_fit.json`, `weighted_regression_fit.txt` (and `weighted_regression_loo.csv`
 with `--robustness`). Options: `--input`, `--outdir`, `--t-ref`, `--sigma0`,
 `--thr-opx-cpx`, `--thr-pyx-gt`, `--thr-gt-ol`, `--col NAME=CSVCOLUMN`.
+Invalid input stops with a message naming the rows and exit status 2. The
+checks cover blank, NaN or non-numeric T or ΔT; bad `include` or
+`sigma_analytical_C` values; fewer than 3 included runs; and bad or clashing
+`--col`. Suspicious input gives a warning but is still fitted: a median
+temperature above 1600 (Kelvin?), T outside 0–2000 °C, or near-duplicate runs.
+
+The Fig. 4 script runs from a clean checkout (needs numpy, pandas,
+matplotlib and this repository). Its two cross-checks are optional and are
+skipped with a notice when they cannot apply (`--no-crosscheck` skips both):
+the raw-data pipeline (`calculations/pt_fo2/exp_calibration`, only when the
+input runs equal the pipeline's 13), and the item-1 results file outside the
+repository (`../item1_weighted_calibration/results/experiment_weights.csv`,
+which also supplies the sensitivity-only quality-factor column). New
+references are styled from a fallback cycle of the paper palette. New runs
+get a default label offset; hand-tune `LABEL_OFF` if labels collide.
 
 ### Adding experiments
 
 The input CSV has one row per run with columns `SampleID`, `T_TA98`, `T_WZ07_Fe2`
 (WZ07 with the measured garnet Fe3+ removed), `dT_opx_cpx`, `dT_pyx_gt`, `dT_gt_ol`
 (all °C, computed exactly as for the xenoliths in Section 3.2), and optionally
-`Reference`, `sigma_analytical_C` (blank = 50 °C default) and `include` (1/0).
+`Reference`, `sigma_analytical_C` (blank = 50 °C default; otherwise finite and > 0)
+and `include` (blank or 1/true/yes = used; 0/false/no = excluded; anything else is an error).
 
 1. Preferred: add the new run's mineral analyses to the experimental input read by
    `scripts/plot_exp_ta98_wz07.py` and rerun it; it rewrites
    `data/derived/exp_TA98_WZ07_Fe3.csv` with the thermometers and screens computed
    the same way as for every other run.
 2. Or copy that CSV, append rows with the columns above, and pass `--input your.csv`.
-3. Rerun the CLI and `make_fig04_weightcircles.py`. The test pins the published
+3. Rerun the CLI and `make_fig04_weightcircles.py` (with the same `--input`). The test pins the published
    13-run result (−14 ± 27, −0.555 ± 0.216, n_eff 8.4); when the data set is
    deliberately changed, update those numbers in the test together with the paper.
 
