@@ -14,7 +14,7 @@ def fig5():
         e=fe3_at(df,dt); ok=base&e.notna()&T.notna(); mid=(dt==opt)
         row(aL,aR,df,meas,T,e,ok,blue=blue if mid else None,red=red if mid else None)
         aL.set_ylim(0,0.225); fmt(aL,np.arange(0,0.351,0.05),np.arange(0,0.2251,0.025),'%.2f','%.3f')
-        letter(aL,'abc'[i]+'.',x=0.03,y=0.97); aL.text(0.12,0.965,M(f'\u0394T = {dt:.0f} \u00b0C'),transform=aL.transAxes,fontsize=FS_ANNOT,va='top',ha='left',zorder=20)
+        letter(aL,'abc'[i]+'.',x=0.03,y=0.97); aL.text(0.12,0.965,M(f'\u0394T = {dt+MEANC:.0f} \u00b0C'),transform=aL.transAxes,fontsize=FS_ANNOT,va='top',ha='left',zorder=20)
         d=(e[ok]-meas[ok]); r=ok&~blue&~red; dr=(e[r]-meas[r])
         aL.text(0.98,0.04,f"all n = {int(ok.sum())}\n\u00b10.02: {pct(d,0.02)*100:.0f}%\n\u00b10.05: {pct(d,0.05)*100:.0f}%",transform=aL.transAxes,fontsize=FS_ANNOT,ha='right',va='bottom',zorder=20,path_effects=halo(2.0))
         res=(meas-e)[ok]; Tl=T[ok]

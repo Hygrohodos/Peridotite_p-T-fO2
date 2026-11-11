@@ -37,3 +37,8 @@ def fe3_at(df, dt):
 
 def pct(d, tol):
     return float((d.abs() <= tol + 1e-9).mean())
+
+# Display convention (revision v2): the match level is reported as the Slave calibration mean of the stopping
+# target, i.e. params.dt_match_c + mean curve over the 25 anchor samples (-157.6 + 65.7 = -91.9 C).
+import json as _json
+MEANC=_json.load(open(os.path.join(REPO,'data','derived','level_anchor.json')))['mean_curve_C']
