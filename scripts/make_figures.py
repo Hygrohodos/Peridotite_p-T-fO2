@@ -1355,6 +1355,12 @@ def main():
     tab = calib.calibration_stats(df)
     tab.to_csv(ROOT / "data" / "derived" / "Table1_calibration_stats.csv", index=False)
     print(tab.drop(columns="notes").round(4).to_string(index=False))
+    if not PARAMS.fe3.apply_empirical_correction:
+        # Revision v2/v3: the legacy figure functions below draw the ORIGINAL calibration
+        # (Eq. 5, Delta T sweep 0-75 C) and no longer apply. Paper figures are built by
+        # scripts/paper_figures/make_all.sh; Table 1 alone by scripts/table1_stats.py.
+        print("Legacy figures skipped (Eq. 5 is off); run: bash scripts/paper_figures/make_all.sh")
+        return
     print(f"Writing figures to {OUT}")
     _apply_journal_style()
     fig01_map()

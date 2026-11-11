@@ -4,30 +4,26 @@ Oxygen fugacity of peridotite xenoliths in kimberlite, estimated by matching
 two-pyroxene (TA98) and olivine–garnet (WZ07) temperatures while iterating
 garnet Fe3+/ΣFe, then applying the Stagno et al. (2013) oxybarometer.
 
-Locked parameters (2026-10-10; `calculations/pt_fo2/params.py` is authoritative):
+Locked parameters (revision v3, 2026-11-11; `calculations/pt_fo2/params.py` is authoritative):
 
-- starting garnet Fe3+/ΣFe = 0.01 (`xfe3_start`)
-- WZ07 offset = flat −118 °C (`wz07_offset_c = 118`, slope = 0), from experiment F1300o
-- thermometer agreement ΔT = 29 °C (`dt_match_c`), chosen in Fig. 6
+- starting garnet Fe3+/ΣFe = 0.01 (`xfe3_start`), step 0.001
+- no WZ07 correction (`wz07_offset_c = 0`, `wz07_offset_slope = 0`); Eq. 5 off (`apply_empirical_correction = False`)
+- stopping rule: iterate until TA98 − WZ07(Fe2+) ≤ −96 °C (`dt_match_c`)
 - pyroxene–garnet screen = |HA84 − quadratic in TA98| < 60 °C
-- high-T empirical correction (Eq. 5), applied at T ≥ 1130 °C:
-  XFe3,corr = XFe3,iter + 3.8345×10⁻⁴·T − 0.46732 (T in °C, clipped to 0–1)
 
-Pressure: Nickel & Green (1985) eq. 5 as written, with X(M1,Fe) on M1; Carswell's (1991, p. 24)
-E9 X(M1,Al) replaces the NG85 value only where opx Na > Cr + Fe3+ + Ti (Fe3+ = 0, p. 25).
-`P_CA91` keeps its column name; `P_barometer` in `screened_PT.csv` says which applied.
-With this barometer the screened Slave set is 30 (blue 3, red 2), and Eq. 5 was refit to
-3.8345×10⁻⁴·T − 0.46732 (n = 21); these are the locked values in `params.py`.
+How the −96 °C level is set (`calculations/pt_fo2/level_anchor.py`, `scripts/anchor_level.py`):
+it is the median of TA98 − WZ07 at the measured garnet Fe3+/ΣFe over all 30 screened Slave
+calibration samples (bootstrap 95 % CI −108 to −81 °C). It uses no validation sample and no
+outcome-based exclusion, and was fixed before any scoring. For reference, the 52 calibration +
+validation xenoliths outside the error groups give −96 ± 32 °C (Fig. 4b). The 13 experiments
+show a different level and a slope (−0.55 ± 0.22 per °C, Fig. 5); the natural samples do not
+(−0.06 ± 0.05 over the 52), so the experimental fit is shown but not applied.
+`python3 scripts/anchor_level.py --check` fails if `params.py` and the anchor disagree.
 
-How Eq. 5 and ΔT are derived (`calculations/pt_fo2/calibration.py`, run by `scripts/fit_calibration.py`):
-
-1. Eq. 5 is the least-squares line of (measured − estimated) Fe3+/ΣFe on TA98
-   temperature at ΔT = 25 °C, through the Slave samples inside the dashed
-   envelope of Fig. 5b: the 30 screened Slave samples less the blue (3) and
-   red (2) error groups, T ≥ 1130 °C (n = 21). No level shift is applied.
-2. Fig. 6 holds Eq. 5 fixed, sweeps ΔT from 0 to 75 °C and scores only those
-   21 samples. ΔT = 29 °C has the highest ±0.02 rate (76 %; ties broken by the
-   smallest mean bias).
+History: the original paper used a flat −118 °C offset (experiment F1300o), ΔT = 29 °C and the
+high-T Eq. 5 (kept in `params.py` for reproducing it, and in `data/derived/legacy_original/`).
+Revision v2 used the weighted experimental slope; it was withdrawn because it biased the
+residuals with temperature (+0.023 Fe3+/ΣFe per 100 °C) and put 35 % of samples at the floor.
 
 Results (Table 1; `data/derived/Table1_calibration_stats.csv`). 1σ is the residual
 standard deviation of estimated − measured Fe3+/ΣFe. The log-unit 1σ is the
@@ -37,13 +33,20 @@ the same P, T and mineral chemistry (`calibration.fo2_residuals`).
 
 | Dataset | n | ±0.02 | ±0.05 | 1σ Fe3+/ΣFe | 1σ log units |
 |---|---|---|---|---|---|
-| Slave calibration | 30 | 67 % | 83 % | 0.041 | 0.62 |
-| Slave, error groups excluded | 25 | 80 % | 100 % | 0.017 | 0.34 |
-| Siberian + Kaapvaal validation | 27 | 67 % | 85 % | 0.035 | 1.16 |
-| Calibration + validation | 57 | 67 % | 84 % | 0.038 | 0.91 |
-| Combined, error groups excluded | 52 | 73 % | 92 % | 0.028 | 0.87 |
+| Slave calibration | 30 | 50 % | 80 % | 0.044 | 0.63 |
+| Slave, error groups excluded | 25 | 60 % | 96 % | 0.024 | 0.42 |
+| Siberian + Kaapvaal validation | 27 | 56 % | 93 % | 0.032 | 0.98 |
+| Calibration + validation | 57 | 53 % | 86 % | 0.039 | 0.81 |
+| Combined, error groups excluded | 52 | 58 % | 94 % | 0.029 | 0.76 |
 | Charge balance (Droop 1987; Quinn et al. 2016), screened Slave | 30 | 23 % | 60 % | 0.085 | – |
 | Charge balance (Droop 1987; Quinn et al. 2016), all Slave before screening | 57 | 25 % | 53 % | 0.087 | – |
+
+The residuals show no trend with temperature (−0.004 ± 0.005 per 100 °C, p = 0.46, n = 52).
+Of the 450 fully screened xenoliths, 89 (19.8 %) stay at the 0.01 starting value (the "floor");
+86 of them are below 1100 °C, where only 8 of the 57 calibration/validation samples lie, and
+none of the 57 is at the floor. `scripts/v3_text_numbers.py` and `scripts/v3_level_sensitivity.py`
+write these and the other numbers quoted in the text; `scripts/table1_three_way.py` compares
+original / v2 / v3 using the reference outputs in `data/reference/`.
 
 Charge-balance stoichiometry (`calculations/pt_fo2/stoichiometry.py`) implements
 Droop (1987) and Quinn et al. (2016) separately (`XFe3_droop`, `XFe3_quinn` in
@@ -57,11 +60,9 @@ the Droop (1987) Table 3 garnet (Fe3+ 0.779, Fe2+ 0.013 per 12 O).
 fO2 uncertainty (`python scripts/fo2_uncertainty.py`; `data/derived/fO2_uncertainty.json`,
 `data/derived/fO2_residuals.csv`, `Figures/diagnostics/fO2_residual_vs_Fe3.png`):
 the 57 calibration + validation samples (error groups retained) are split at their
-median estimated ΔFMQ (−2.72). The 1σ is 0.94 log units for the reduced half
-(n = 28) and 0.72 for the oxidised half (n = 29), 0.91 overall. The uncertainty is
-larger at low Fe3+/ΣFe because ΔFMQ depends on log Fe3+, and it is dominated by
-samples whose estimates approach the 0.01 starting value. These are the two
-Fig. 10 bars, computed from the data in `make_figures.py`.
+median estimated ΔFMQ (−2.45). The 1σ is 0.83 log units for the reduced half
+(n = 28) and 0.71 for the oxidised half (n = 29), 0.81 overall. These are the two
+Fig. 11 bars. They do not apply to floor samples, whose estimates are censored at 0.01.
 
 Screening (1100 samples): four phases 747 → TA98 > 900 °C 607 → opx–cpx 583 → pyx–gt 495 → gt–ol 450 fully screened. Calibration (Slave, measured Fe3+) 57 → 30; validation (Siberian + Kaapvaal) 52 → 27; neither set was affected by the de-duplication.
 
@@ -69,24 +70,27 @@ Screening (1100 samples): four phases 747 → TA98 > 900 °C 607 → opx–cpx 5
 
 ```bash
 pip install -r requirements.txt
-python3 run_pipeline.py
-python3 scripts/fit_calibration.py     # checks params.py; add --update-params to rewrite it
-python3 scripts/make_figures.py
-python3 scripts/fo2_uncertainty.py    # fO2 residual 1σ (Table 1 log column, Fig. 10 bars)
-python3 tests/test_stoichiometry.py   # or: python3 -m pytest tests
+python3 run_pipeline.py                 # data/derived/p-T-fO2.csv, screened_PT.csv
+python3 scripts/anchor_level.py --check # level check (writes data/derived/level_anchor.json)
+python3 scripts/table1_stats.py         # Table 1
+python3 scripts/fo2_uncertainty.py      # log-unit column of Table 1, Fig. 11 bars
+PAPER_FIG_OUT=/some/dir bash scripts/paper_figures/make_all.sh   # Figs 1-11 + text numbers
+python3 -m pytest tests
 ```
 
-If `fit_calibration.py --update-params` changes `params.py`, run the pipeline and figures again.
+`scripts/make_figures.py` now writes Table 1 only (its legacy figure functions draw the original
+Eq. 5 calibration and run only if `apply_empirical_correction` is switched back on).
+`scripts/fit_calibration.py` belongs to the original calibration and is not used.
 
 Input: `data/master/xenolith_geochem.csv` (1100 rows after the 2026-10-10 de-duplication, see `data/master/DATA_DICTIONARY.md` and `data/master/qc/`; craton filled from `data/locations.csv` and `data/master/kimberlite_locations.csv`).
-Outputs: `data/derived/p-T-fO2.csv` (publication table; `P_CA91` in kbar with an SI copy in `P_GPa`), `data/derived/screened_PT.csv` (full working table, pressures in kbar), `data/derived/emp_correction_fit.json`, `data/derived/dt_match_sweep_corr.csv`, `data/derived/Table1_calibration_stats.csv`, `data/derived/exp_TA98_WZ07_Fe3.csv`.
-Figures: `Figures/Fig01`–`Fig10` (pressure axes in GPa). Fig. 4 is written by `scripts/plot_exp_ta98_wz07.py`, which `make_figures.py` calls.
+Outputs: `data/derived/p-T-fO2.csv` (publication table; `P_CA91` in kbar with an SI copy in `P_GPa`), `data/derived/screened_PT.csv` (full working table, pressures in kbar), `data/derived/level_anchor.json`, `data/derived/Table1_calibration_stats.csv`, `data/derived/exp_TA98_WZ07_Fe3.csv`. `data/derived/legacy_original/` holds the stale Eq. 5 outputs for reference.
+Figures: `make_all.sh` writes Fig1–Fig11 (`FigN_final.png`), `level_anchor.json`, `figure_stats_v3.json`, `v3_text_numbers.json`, `v3_level_sensitivity.csv` and `Table1_three_way.md` to `$PAPER_FIG_OUT` (default `scripts/paper_figures/out`, git-ignored); it writes nothing into `data/`.
 
 `supplement/thermometer_choice/` is a standalone comparison calculator for the calibrations not used in the paper. It is not imported by the pipeline.
 
 This bundle is the P–T–fO2 calculation only. Olivine FC/DFC, garnet diffusion, and geophysical inversion are not included.
 
-## Weighted TA98 − WZ07 regression on experiments (Fig. 4; revision v1)
+## Weighted TA98 − WZ07 regression on experiments (Fig. 5; shown, not applied in revision v3)
 
 `scripts/weighted_thermometer_regression.py` is a stand-alone module and CLI
 (Python ≥ 3.9, numpy, pandas; no other repository imports; all temperatures in °C).
@@ -119,7 +123,7 @@ TA98 − WZ07(Fe2+ only) = b0 + b1 (T_TA98 − 1350) by weighted least squares:
 python3 scripts/weighted_thermometer_regression.py               # current 13 runs
 python3 scripts/weighted_thermometer_regression.py --robustness  # + OLS, leave-one-out, bootstrap
 python3 -m pytest tests/test_weighted_regression.py               # or: python3 tests/test_weighted_regression.py
-python3 scripts/make_fig04_weightcircles.py                       # Fig. 4 (uses the module)
+python3 scripts/make_fig04_weightcircles.py                       # Fig. 5 (uses the module)
 python3 scripts/make_fig04_weightcircles.py --input my_runs.csv --outdir out/
 ```
 
@@ -133,13 +137,13 @@ checks cover blank, NaN or non-numeric T or ΔT; bad `include` or
 `--col`. Suspicious input gives a warning but is still fitted: a median
 temperature above 1600 (Kelvin?), T outside 0–2000 °C, or near-duplicate runs.
 
-The Fig. 4 script runs from a clean checkout (needs numpy, pandas,
+The Fig. 5 script runs from a clean checkout (needs numpy, pandas,
 matplotlib and this repository). Its two cross-checks are optional and are
 skipped with a notice when they cannot apply (`--no-crosscheck` skips both):
 the raw-data pipeline (`calculations/pt_fo2/exp_calibration`, only when the
-input runs equal the pipeline's 13), and the item-1 results file outside the
-repository (`../item1_weighted_calibration/results/experiment_weights.csv`,
-which also supplies the sensitivity-only quality-factor column). New
+input runs equal the pipeline's 13), and the item-1 results file (in-repo copy
+`data/reference/item1_experiment_weights.csv`, which also supplies the sensitivity-only
+quality-factor column). New
 references are styled from a fallback cycle of the paper palette. New runs
 get a default label offset; hand-tune `LABEL_OFF` if labels collide.
 
@@ -166,13 +170,13 @@ and `include` (blank or 1/true/yes = used; 0/false/no = excluded; anything else 
 |---|---|
 | `run_pipeline.py` | Runs the full P–T–fO2 calculation |
 | `calculations/pt_fo2/` | Calculation modules (stoichiometry, Fe3+ correction, thermobarometry, screening, fO2, buffers, locked parameters in `params.py`) |
-| `scripts/` | Figure scripts and `fit_calibration.py` (derives Eq. 5 and ΔT) |
+| `scripts/` | Level anchor, Table 1, text-number and figure scripts (`paper_figures/make_all.sh`); legacy `fit_calibration.py` |
 | `data/master/` | Input xenolith geochemistry and kimberlite locations (see `DATA_DICTIONARY.md`) |
 | `data/derived/` | Calculated P–T–fO2 results |
 | `data/spatial/web/` | GeoJSON layers for the locality map |
 | `Figures/` | Paper figures (PNG and PDF) |
 | `supplement/thermometer_choice/` | Standalone thermometer comparison calculator |
-| `tests/` | Unit tests (charge-balance garnet Fe3+ against Droop 1987 Table 3; weighted regression reproduces the Fig. 4 fit) |
+| `tests/` | Unit tests (charge-balance garnet Fe3+ against Droop 1987 Table 3; weighted regression reproduces the Fig. 5 fit; level anchor = params) |
 
 To get everything at once, use **Code → Download ZIP** at the top of this page, or clone:
 

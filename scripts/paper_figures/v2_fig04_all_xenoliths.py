@@ -1,11 +1,12 @@
 """Fig. X (new; Paolo Nimis, line 255): TA98 vs WZ07 for all 57 xenoliths with measured garnet Fe3+.
 (a) WZ07 vs TA98 with Fe3+ = 0 (open) and measured Fe3+ (filled); (b) TA98 - WZ07 (measured Fe3+) vs TA98,
-with the 13 experiments, the weighted regression (stand-alone module) and its 95 % band, and the
-xenolith mean +- 1 sigma (error groups excluded). Per-sample WZ07 values are recomputed here from the
+with the 13 experiments and their weighted regression (shown for contrast, not applied), the
+xenolith mean +- 1 sigma (error groups excluded) and the adopted flat level (revision v3: median of the
+30 Slave calibration samples, level_anchor.py). Per-sample WZ07 values are recomputed here from the
 pipeline output, not read from a side file."""
 from v2common import *
 from calculations.pt_fo2.fe3_correction import _wz07corr_fe2only
-EXP_M='#5e3c99'; EXP_R='#4c72b0'; XMEAN='#b35806'; XBAND='#fde0c5'
+LEVEL='#000000'; EXP_M='#5e3c99'; EXP_R='#4c72b0'; XMEAN='#b35806'; XBAND='#fde0c5'
 def per_sample(df):
     base,meas,blue,red,rem=mf._error_groups(df)
     val=calib.validation_mask(df) & meas.notna()
@@ -39,7 +40,8 @@ def figX():
     # panel b
     b.axhline(0,color='0.55',lw=LW_THIN,zorder=1)
     tt=np.linspace(TLO,THI,200); lo,hi=FIT.band(tt)
-    b.fill_between(tt,lo,hi,color='0.85',lw=0,zorder=0.5); b.plot(tt,FIT.predict(tt),color='k',lw=LW_MAIN,zorder=3)
+    b.fill_between(tt,lo,hi,color='0.85',lw=0,zorder=0.5); b.plot(tt,FIT.predict(tt),color='0.35',lw=LW_MAIN,ls=(0,(1.2,1.2)),zorder=3)
+    A=anchor(); lev=A['dt_level_C']; b.axhline(lev,color=LEVEL,lw=LW_MAIN,zorder=2.5)
     for refn,mk,c in (('Matjuschkin','o',EXP_M),('Rzehak','s',EXP_R)):
         s=RUNS.Reference.str.startswith(refn)
         b.scatter(RUNS.T_TA98[s],RUNS.y_TA98_minus_WZ07_C[s],marker=mk,s=S_STD,facecolors='white',edgecolors=c,linewidths=1.1,zorder=4)
@@ -47,14 +49,15 @@ def figX():
     b.axhspan(mu-sd,mu+sd,color=XBAND,lw=0,zorder=0.3); b.axhline(mu,color=XMEAN,lw=LW_REF,ls=(0,(5,2)),zorder=2)
     b.set_xlim(900,1650); b.set_ylim(-330,230); b.set_xticks(range(900,1651,100)); minor(b)
     b.set_xlabel('TA98 temperature (\u00b0C)'); b.set_ylabel('$T_\\mathrm{TA98}-T_\\mathrm{WZ07}$ (\u00b0C), measured Fe$^{3+}$'); letter(b,'b.')
-    kb=[Line2D([],[],color='k',lw=LW_MAIN,label='Experiments: fit, 95 % band'),
+    kb=[Line2D([],[],color=LEVEL,lw=LW_MAIN,label=M(f'Adopted level {lev:.0f} \u00b0C (Slave median, n = {A["n"]})')),
+        Line2D([],[],color='0.35',lw=LW_MAIN,ls=(0,(1.2,1.2)),label='Experiments: fit, 95 % band (not applied)'),
         Line2D([],[],marker='o',ls='',mfc='white',mec=EXP_M,mew=1.1,ms=MS_KEY,label='Matjuschkin et al. (2014)'),
         Line2D([],[],marker='s',ls='',mfc='white',mec=EXP_R,mew=1.1,ms=MS_KEY,label='Rzehak et al. (2020)'),
-        Line2D([],[],color=XMEAN,lw=LW_REF,ls=(0,(5,2)),label=M(f'Xenoliths: {mu:.0f} \u00b1 {sd:.0f} \u00b0C (n = {n_ex})')),
+        Line2D([],[],color=XMEAN,lw=LW_REF,ls=(0,(5,2)),label=M(f'Xenoliths {mu:.0f} \u00b1 {sd:.0f} \u00b0C (n = {n_ex})')),
         Line2D([],[],marker='o',ls='',mfc='none',mec=BLUE_RING,mew=LW_RING,ms=6,label='Blue / red error groups')]
-    b.legend(handles=kb,loc='lower center',bbox_to_anchor=(0.5,1.0),ncol=2,columnspacing=0.8,handlelength=1.6,frameon=False,fontsize=FS_SMALL,handletextpad=0.4,labelspacing=0.25,borderaxespad=0.2)
+    fig.legend(handles=kb,loc='lower center',bbox_to_anchor=(92.5/W,(11.5+62+0.6)/H),ncol=3,columnspacing=1.2,handlelength=1.6,frameon=False,fontsize=FS_SMALL,handletextpad=0.4,labelspacing=0.25,borderaxespad=0)
     st=dict(n=int(len(u)),n_excl=n_ex,mean_excl=mu,sd_excl=sd,n_WZ07_gt_TA98=int((u.dTm<0).sum()),
-            slave25_mean=float(u.dTm[ex&(u['Craton']=='Slave Craton').to_numpy()].mean()),
+            adopted_level=float(lev),slave25_mean=float(u.dTm[ex&(u['Craton']=='Slave Craton').to_numpy()].mean()),
             fit=dict(b0=FIT.b0,b1=FIT.b1,se_b0=FIT.se_b0,se_b1=FIT.se_b1,n_eff=FIT.n_eff,chi2_red=FIT.chi2_red))
     log('fig04_all57',st); print('FigX',st)
     u[['SampleID','Craton','T_TA98','WZ0','WZm','dTm','grp']].to_csv(os.path.join(OUTD,'Fig4_per_sample.csv'),index=False)

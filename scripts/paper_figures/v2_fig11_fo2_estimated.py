@@ -1,3 +1,6 @@
+"""Fig. 11 (revision v3): estimated fO2 vs P for the 450 fully screened xenoliths. Samples whose garnet Fe3+/SumFe
+stayed at the 0.01 starting value (the floor) carry a small white dot; their fO2 is an upper bound on how reduced
+the method can report, not a measurement. Depth means with (solid) and without (dashed) the floor samples."""
 from unified import *
 def depth_axis(ax):
     axr=mf._add_depth_axis(ax,km_interval=50); axr.set_ylabel('Depth (km)',fontsize=FS_LABEL)
@@ -30,8 +33,16 @@ def fig10():
     iso=mf._fo2_from_xfe3(rows,np.full(len(p_iso),0.01)).to_numpy(dtype=float)
     vis=np.isfinite(iso)&(iso>=-6.85)&(iso<=-0.15)
     ax.plot(iso[vis],p_iso[vis],color=ISO,lw=LW_REF,ls='--',zorder=2)
+    xf=pd.to_numeric(use[xcol],errors='coerce'); fl=(xf<=0.0105)
+    ax.scatter(use.loc[fl,'delta_logfO2_FMQ'],use.loc[fl,'P_CA91'],marker='o',s=4.5,c='white',edgecolors='none',zorder=4.5)
     p_ma,f_ma=mf._fo2_depth_mean(use['P_CA91'],use['delta_logfO2_FMQ'])
     ax.plot(f_ma,p_ma,color=MEANC,lw=LW_MAIN,zorder=6)
+    p_mb,f_mb=mf._fo2_depth_mean(use.loc[~fl,'P_CA91'],use.loc[~fl,'delta_logfO2_FMQ'])
+    ax.plot(f_mb,p_mb,color=MEANC,lw=LW_MAIN,ls=(0,(3,1.5)),zorder=6)
+    import json as _j
+    _o=os.path.join(OUTD,'figure_stats_v3.json'); _s=_j.load(open(_o)) if os.path.exists(_o) else {}
+    _s['fig11']=dict(n_floor=int(fl.sum()),n=int(len(use)),mean_all=dict(zip(map(float,p_ma),map(float,f_ma))),mean_nonfloor=dict(zip(map(float,p_mb),map(float,f_mb))))
+    _j.dump(_s,open(_o,'w'),indent=1)
     unc=calib.fo2_uncertainty(calib.fo2_residuals(df)); cut,w_lo,w_hi=unc['split'],unc['reduced']['sigma_log'],unc['oxidised']['sigma_log']
     p_bar,p_lab=67.6,65.55
     for x0,w,side,lab in ((-6.85,w_lo,'left',f'1\u03c3, \u0394FMQ < {M(f"{cut:.2f}")}'),(-0.15,w_hi,'right',f'1\u03c3, \u0394FMQ \u2265 {M(f"{cut:.2f}")}')):
@@ -50,7 +61,8 @@ def fig10():
     ax.text(-4.35,68.3,'BSE',color='k',fontsize=FS_ANNOT,ha='right',va='center',path_effects=halo(2.4,'0.87'),zorder=9)
     ax.text(-4.33,31.0,'Fe$^{3+}$/\u03a3Fe = 0.01',color=ISO,fontsize=FS_ANNOT,ha='left',va='center',path_effects=halo(),zorder=9)
     key_rows(fig,[[kh('slave','Slave'),kh('sib','Siberian'),kh('kaa','Kaapvaal'),kh('oth','Other')],
-                  [kh('cal','Calibration'),kh('val','Validation'),kh('mean','Depth Mean')]],W,H,cx_mm=14.5+144.5/2,top_mm=0.6)
+                  [kh('cal','Calibration'),kh('val','Validation'),kh('mean','Depth mean'),kh('mean','Mean, floor excluded',ls=(0,(3,1.5)))],
+                  [Line2D([],[],marker='o',ls='',mfc='white',mec='0.45',mew=0.5,ms=3.2,label='Fe$^{3+}$/\u03a3Fe at 0.01 start (floor)')]],W,H,cx_mm=14.5+144.5/2,top_mm=0.6)
     print('Fig10 n',nplot,'cal',int(cal.sum()),'val',int(val.sum()),'sig',round(w_lo,2),round(w_hi,2),'cut',cut)
     return fig,(4110,4488)
 if __name__=='__main__':

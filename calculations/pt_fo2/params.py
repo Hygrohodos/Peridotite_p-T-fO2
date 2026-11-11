@@ -55,32 +55,37 @@ class Fe3Params:
     # Increment in Fe3+/ΣFe (equivalently decrement in XFe2) per step
     dxfe3: float = 0.001
 
-    # Temperature agreement tolerance (°C): stop when
+    # Temperature agreement level (°C): stop when
     #   TA98 − WZ07corr  ≤  dt_match_c
-    # Chosen in Fig. 6 (calibration.dt_sweep / select_dt): Eq. 5 held
-    # fixed, scored on the Eq. 5 regression samples only; highest ±0.02
-    # rate, ties broken by smallest |mean bias|.
-    # Re-derive with:  python scripts/fit_calibration.py
-    # Revision v2 (option B): the level is ANCHORED, not tuned: mean of
-    #   [TA98 - WZ07(measured Fe3+)] - c(T) over the 25 Slave calibration
-    #   samples outside the error groups (calculations/pt_fo2/level_anchor.py;
-    #   scripts/anchor_level.py; mean raw discrepancy -91.9 C at TA98 1187 C).
-    #   Exact value -157.62 C (s.e. 4.7). Was 29.0 (main) and -164.0 (rev. v1, tuned).
-    dt_match_c: float = -157.6
+    # Revision v3 (option C): a FLAT level with no temperature slope, ANCHORED
+    # (not tuned) to the natural calibration data: the median of
+    #   D = TA98 − WZ07(measured garnet Fe3+)
+    # over all 30 screened Slave calibration samples (no exclusions; the
+    # validation samples are not used).  Exact value −95.97 °C; see
+    # calculations/pt_fo2/level_anchor.py and scripts/anchor_level.py.
+    # History: 29.0 with the −118 °C offset and Eq. 5 (original); −164.0 with
+    # the experimental curve, tuned (rev. v1); −157.6 with the experimental
+    # curve, anchored to the Slave-25 mean (rev. v2).
+    dt_match_c: float = -96.0
 
     # Calibration offset applied to raw WZ07 (°C):
     #   T_WZ07corr = T_WZ07raw − (wz07_offset_c + wz07_offset_slope * T_TA98)
     # Slope = 0 is a flat offset. Non-zero slope is a T-sensitive
     # experimental calibration (TA98−WZ07 = a·T + b  ⇒  offset = −a·T − b).
-    wz07_offset_c: float = -734.5397   # revision v1: weighted 13-experiment fit (item 1); was 118.0 (F1300o)
-    wz07_offset_slope: float = 0.554746   # was 0.0
+    # Revision v3: no offset and no slope (the level is carried by dt_match_c).
+    # The weighted 13-experiment fit (scripts/weighted_thermometer_regression.py;
+    # rev. v1/v2: wz07_offset_c −734.5397, slope 0.554746, held flat outside
+    # 1162.03–1619.80 °C) is shown in the paper (Fig. 5) but is not applied,
+    # because the natural samples do not reproduce its level or slope (Fig. 4).
+    wz07_offset_c: float = 0.0   # was 118.0 (original), −734.5397 (rev. v1/v2)
+    wz07_offset_slope: float = 0.0   # was 0.554746 (rev. v1/v2)
     # Optional TA98 range (°C) over which the T-sensitive offset is
     # evaluated; outside it the offset is held at its end value instead of
     # being extrapolated linearly (None = no limit, the original behaviour).
     # Set to the TA98 range of the calibrating experiments when the offset
     # comes from calculations/pt_fo2/exp_calibration.py.
-    wz07_offset_tmin_c: float | None = 1162.03
-    wz07_offset_tmax_c: float | None = 1619.80
+    wz07_offset_tmin_c: float | None = None   # rev. v1/v2: 1162.03 (irrelevant with slope 0)
+    wz07_offset_tmax_c: float | None = None   # rev. v1/v2: 1619.80
 
     # Safety cap on iteration steps
     max_steps: int = 200
@@ -95,7 +100,7 @@ class Fe3Params:
     #   no level shift.  Re-derive with:  python scripts/fit_calibration.py
     apply_empirical_correction: bool = False   # revision v1: Eq. 5 dropped
     t_emp_min_c: float = 1130.0
-    emp_fit_dt_c: float = -157.6   # revision v2: error groups evaluated at the adopted level (was 25.0); same 5 IDs
+    emp_fit_dt_c: float = -96.0   # revision v3: error groups evaluated at the adopted level (was 25.0)
     emp_blue_threshold: float = 0.05
     emp_red_ids: tuple = ("14-78", "MX5011", "8-1", "MX104", "MX5000", "40-38")
     emp_offset: float = 0.0   # unused; kept for backward compatibility

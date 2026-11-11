@@ -9,17 +9,18 @@ Procedure
 1. Assume olivine is entirely Fe²⁺.
 2. Start with garnet XFe³⁺ = params.fe3.xfe3_start (0.01; XFe²⁺ = 0.99).
 3. Recalculate the Wu & Zhao (2007) olivine–garnet thermometer using
-   only Fe²⁺ in both phases and subtract the flat calibration offset
-   (WZ07corr = WZ07raw − wz07_offset_c, 118 °C from experiment F1300o).
-4. While (T_TA98 − T_WZ07corr) > dt_match_c (29 °C), increase XFe³⁺ by
-   dxfe3 (0.001) and recompute.
-5. Once converged, apply the empirical high-temperature correction
-   (manuscript Eq. 5):
-       if T < t_emp_min_c (1130 °C):  XFe³⁺_corr = XFe³⁺_iterated
-       else:  XFe³⁺_corr = XFe³⁺_iterated + emp_slope·T + emp_intercept
-   with emp_slope / emp_intercept from params.py (3.8345e-4, −0.46732),
-   derived by calibration.fit_empirical_correction (Fig. 5b regression at
-   ΔT = 25 °C); clipped to 0–1.
+   only Fe²⁺ in both phases and subtract the calibration offset
+   WZ07corr = WZ07raw − (wz07_offset_c + wz07_offset_slope·clip(T_TA98)).
+   Revision v3: offset and slope are both 0 (no experimental correction).
+4. While (T_TA98 − T_WZ07corr) > dt_match_c, increase XFe³⁺ by dxfe3
+   (0.001) and recompute.  Revision v3: dt_match_c = −96 °C, the median
+   TA98 − WZ07 of the 30 Slave calibration samples at their measured
+   garnet Fe³⁺ (calculations/pt_fo2/level_anchor.py).  Samples already
+   meeting the criterion at the starting value stay at 0.01 (the "floor").
+5. The empirical high-temperature correction (original manuscript Eq. 5) is
+   applied only if params.fe3.apply_empirical_correction is True; it is
+   False since revision v2 and the Eq. 5 coefficients are kept for
+   reproducing the original results only.
 6. Convert the corrected fraction back to cation units.
 
 All numbers above are defaults; params.py is authoritative.

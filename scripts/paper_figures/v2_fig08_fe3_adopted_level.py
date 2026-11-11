@@ -1,4 +1,4 @@
-"""Fig. 7 (revision v2): estimated vs measured at the adopted level, weighted experimental correction, no Eq. 5."""
+"""Fig. 8 (revision v3): estimated vs measured at the adopted flat level (-96 deg C), no WZ07 correction, no Eq. 5."""
 from fe3rows import *
 from v2common import *
 def fig7():

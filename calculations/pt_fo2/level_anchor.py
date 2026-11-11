@@ -1,32 +1,34 @@
 """
 level_anchor.py
 ---------------
-Revision v2 (option B, Stephanie Greene 11 Nov 2026): the level of the WZ07
-calibration correction is ANCHORED to the natural Slave calibration samples,
-not tuned on the Fe3+ success score.
+Revision v3 (option C): the WZ07 calibration correction is a FLAT level with
+no temperature slope, ANCHORED to natural xenoliths (not tuned on the Fe3+
+success score).
 
-Two parts make up the correction applied to raw WZ07 (Eq. 4 of the revision):
+For each sample with measured garnet Fe3+/SumFe, the measured Fe3+ is removed
+from the olivine-garnet calculation and the remaining two-pyroxene minus
+olivine-garnet difference is
 
-1. Temperature dependence (slope) from the experiments: the weighted
-   13-experiment regression of scripts/weighted_thermometer_regression.py,
-       c(T) = b0 + b1 (T - 1350),  held flat outside 1162-1620 deg C
-   (pipeline: params.Fe3Params.wz07_offset_c / wz07_offset_slope / T limits).
+    D_i = T_TA98,i - T_WZ07,i(measured Fe3+)
 
-2. Level from the natural samples: the 25 Slave calibration samples outside
-   the blue and red error groups, with their MEASURED garnet Fe3+ removed
-   from the olivine-garnet calculation, give
-       D_i = T_TA98,i - T_WZ07,i(measured Fe3+)    (mean -91.9 deg C)
-   The match level is the mean residual of D about the experimental curve,
-       dT_level = mean_i [ D_i - c(T_i) ]
-   so that, on average, the iteration stops at the measured Fe3+ of the
-   anchor set. Nothing is optimised against the +-0.02 / +-0.05 scores, and
-   the Siberia + Kaapvaal validation samples are not used.
+The adopted match level is the MEDIAN of D over all 30 screened Slave
+calibration samples:
 
-Equivalently: subtract the natural mean discrepancy (-91.9 deg C at the
-anchor set's mean TA98) and let the experimental slope carry the
-temperature dependence.
+* calibration samples only, so the Siberia + Kaapvaal validation samples play
+  no part in setting it;
+* no exclusions: the five "error-group" samples were identified from Fe3+
+  residuals, so excluding them would make the anchor depend on the outcome;
+* the median rather than the mean, because three of those five samples are
+  thermometric outliers (D = -188 to -304 deg C) that would pull a mean.
 
-    python scripts/anchor_level.py      # prints and writes data/derived/level_anchor.json
+Sensitivity values (not used) are reported alongside: the Slave-25 mean
+(error groups excluded, the rev. v2 anchor), the Slave-30 mean, and the
+validation median.
+
+The iteration then stops when TA98 - WZ07(Fe2+) <= level (params
+dt_match_c), with no offset and no slope applied to WZ07.
+
+    python scripts/anchor_level.py [--out PATH]
 """
 from __future__ import annotations
 
@@ -37,9 +39,8 @@ from .params import PARAMS
 from . import calibration as calib
 from .fe3_correction import _wz07corr_fe2only
 
-# Error-group membership is fixed by sample ID (the five samples of the
-# published Fig. 5b / Section 3.7), so the anchor set does not depend on the
-# level being computed.
+# The five error-group samples of Section 3.7 (fixed by ID; reported only for
+# the sensitivity statistics, NOT excluded from the anchor).
 BLUE_IDS = ("14-107", "MX044", "MX088")
 RED_IDS = ("MX104", "MX5000")
 
@@ -49,7 +50,7 @@ def _num(s):
 
 
 def curve(T, p=None):
-    """Experimental TA98 - WZ07 curve c(T) (deg C) as applied by the pipeline."""
+    """TA98 - WZ07 correction c(T) applied by the pipeline (zero in rev. v3)."""
     fp = (p or PARAMS).fe3
     T = np.asarray(T, float)
     lo = -np.inf if fp.wz07_offset_tmin_c is None else fp.wz07_offset_tmin_c
@@ -59,10 +60,8 @@ def curve(T, p=None):
 
 
 def anchor_set(df):
-    """Boolean mask of the 25 Slave calibration samples outside the error groups."""
-    base = calib.calibration_mask(df)
-    sid = df["SampleID"].astype(str).str.strip()
-    return base & ~sid.isin(BLUE_IDS + RED_IDS)
+    """Boolean mask of the anchor samples: all 30 screened Slave calibration samples."""
+    return calib.calibration_mask(df) & calib.measured_fe3(df).notna()
 
 
 def discrepancy_measured(df):
@@ -79,19 +78,37 @@ def discrepancy_measured(df):
     return pd.Series(np.where(meas.notna(), D, np.nan), index=df.index)
 
 
+def _boot_median_ci(x, n=4000, seed=0):
+    rng = np.random.default_rng(seed)
+    x = np.asarray(x, float)
+    b = np.median(rng.choice(x, size=(n, len(x)), replace=True), axis=1)
+    return float(np.percentile(b, 2.5)), float(np.percentile(b, 97.5))
+
+
 def anchor_level(df, p=None):
-    """Return a dict with the anchored match level and its ingredients."""
+    """Return a dict with the anchored flat match level and sensitivity values."""
     m = anchor_set(df)
-    D = discrepancy_measured(df)[m]
-    T = _num(df["T_TA98"])[m]
-    c = pd.Series(curve(T, p), index=T.index)
-    r = D - c
+    D = discrepancy_measured(df)
+    T = _num(df["T_TA98"])
+    sid = df["SampleID"].astype(str).str.strip()
+    eg = sid.isin(BLUE_IDS + RED_IDS)
+    val = calib.validation_mask(df) & D.notna()
+    d = D[m]
+    c = pd.Series(curve(T[m], p), index=d.index)
+    r = d - c
+    lo, hi = _boot_median_ci(r)
     return dict(
+        rule="median of TA98 - WZ07(measured Fe3+) over all screened Slave calibration samples",
         n=int(m.sum()),
-        mean_D_C=float(D.mean()), sd_D_C=float(D.std(ddof=1)),
-        mean_T_TA98_C=float(T.mean()),
+        dt_level_C=float(r.median()), ci95_bootstrap_C=[lo, hi],
         mean_curve_C=float(c.mean()),
-        dt_level_C=float(r.mean()), se_dt_level_C=float(r.std(ddof=1) / np.sqrt(len(r))),
-        median_residual_C=float(r.median()),
+        mean_D_C=float(d.mean()), sd_D_C=float(d.std(ddof=1)), median_D_C=float(d.median()),
+        mean_T_TA98_C=float(T[m].mean()),
+        sensitivity=dict(
+            slave25_mean_excl_error_groups_C=float(D[m & ~eg].mean()),
+            slave30_mean_C=float(d.mean()),
+            validation27_median_C=float(D[val].median()),
+            all52_mean_excl_error_groups_C=float(D[(m | val) & ~eg].mean()),
+        ),
         sample_ids=df.loc[m, "SampleID"].astype(str).tolist(),
     )

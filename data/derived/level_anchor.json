@@ -1,15 +1,26 @@
 {
- "n": 25,
- "mean_D_C": -91.88691474997464,
- "sd_D_C": 27.430737719380723,
- "mean_T_TA98_C": 1187.3005645781586,
- "mean_curve_C": 65.73068795621235,
- "dt_level_C": -157.617602706187,
- "se_dt_level_C": 4.697754733101059,
- "median_residual_C": -162.31916639502163,
+ "rule": "median of TA98 - WZ07(measured Fe3+) over all screened Slave calibration samples",
+ "n": 30,
+ "dt_level_C": -96.04034579427491,
+ "ci95_bootstrap_C": [
+  -107.6363365436149,
+  -81.0907924193836
+ ],
+ "mean_curve_C": 0.0,
+ "mean_D_C": -101.5009949647853,
+ "sd_D_C": 57.566901150136715,
+ "median_D_C": -96.04034579427491,
+ "mean_T_TA98_C": 1189.4853891751452,
+ "sensitivity": {
+  "slave25_mean_excl_error_groups_C": -91.88691474997464,
+  "slave30_mean_C": -101.5009949647853,
+  "validation27_median_C": -94.6284782174389,
+  "all52_mean_excl_error_groups_C": -95.73117539659717
+ },
  "sample_ids": [
   "21-6",
   "21-4",
+  "14-107",
   "40-11",
   "22-7",
   "41-1",
@@ -19,9 +30,13 @@
   "41-3",
   "A154-09CR",
   "MX001",
+  "MX044",
+  "MX088",
+  "MX104",
   "MX131",
   "MX144",
   "MX162",
+  "MX5000",
   "MX5001",
   "MX5004",
   "MX5006",
@@ -34,5 +49,5 @@
   "605051108",
   "507151714"
  ],
- "params_dt_match_c": -157.6
+ "params_dt_match_c": -96.0
 }

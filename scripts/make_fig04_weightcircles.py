@@ -17,8 +17,8 @@ skipped with a notice when it cannot apply (--no-crosscheck skips both):
     calculations.pt_fo2.exp_calibration and compares weights, coefficients
     and the SAME-convention covariance (both scaled by max(1, chi2_red)).
     Only when the input's SampleIDs equal the pipeline's usable runs.
-  * item 1: ../item1_weighted_calibration/results/experiment_weights.csv
-    (outside the repo; also supplies the sensitivity-only quality_factor
+  * item 1: data/reference/item1_experiment_weights.csv (in-repo copy of
+    ../item1_weighted_calibration/results/experiment_weights.csv; also supplies the sensitivity-only quality_factor
     column of the weights CSV, else NaN).
 
 Output (--outdir; default $REV1_OUT, else ../figures_revision_v1 next to the
@@ -70,7 +70,7 @@ LABEL_OFF = {  # manual label offsets (points) to avoid overlaps; others default
 }
 LEADER = ("MaLm11", "MaLm1")   # close pair: short leader lines
 XLIM, YLIM = (1120, 1660), (-330, 230)   # expanded automatically if data fall outside
-ITEM1 = REPO.parent / "item1_weighted_calibration" / "results" / "experiment_weights.csv"
+ITEM1 = REPO / "data" / "reference" / "item1_experiment_weights.csv"   # in-repo copy of ../item1_weighted_calibration/results/experiment_weights.csv (rev. v3)
 STEM = "Fig04_TA98_WZ07_measured_Fe3"
 
 
