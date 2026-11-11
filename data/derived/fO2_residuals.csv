@@ -1,58 +1,58 @@
 SampleID,Craton,dataset,error_group,XFe3_meas,XFe3_est,dFMQ_meas,dFMQ_est,res_log,sens_per_002
-21-6,Slave Craton,Slave calibration,False,0.06,0.0799,-3.4437,-2.9435,0.5002,0.5837
-21-4,Slave Craton,Slave calibration,False,0.054,0.064,-3.1825,-2.8856,0.2969,0.6487
-14-107,Slave Craton,Slave calibration,True,0.157,0.059,-1.108,-2.8271,-1.7191,0.2255
-40-11,Slave Craton,Slave calibration,False,0.06,0.049,-3.0517,-3.4053,-0.3536,0.5837
-22-7,Slave Craton,Slave calibration,False,0.085,0.081,-2.6887,-2.7731,-0.0844,0.4123
-41-1,Slave Craton,Slave calibration,False,0.143,0.132,-1.7554,-1.8967,-0.1412,0.2464
-23-5,Slave Craton,Slave calibration,False,0.107,0.1255,-2.2977,-2.0175,0.2802,0.3281
-14-124,Slave Craton,Slave calibration,False,0.09,0.1093,-2.8066,-2.4659,0.3407,0.3898
-9-10,Slave Craton,Slave calibration,False,0.1,0.0912,-2.4405,-2.6017,-0.1612,0.3512
-41-3,Slave Craton,Slave calibration,False,0.12,0.1015,-2.1315,-2.4256,-0.294,0.2928
-A154-09CR,Slave Craton,Slave calibration,False,0.1,0.081,-2.1367,-2.5058,-0.3692,0.351
-MX001,Slave Craton,Slave calibration,False,0.16,0.1433,-1.7083,-1.9021,-0.1939,0.22
-MX044,Slave Craton,Slave calibration,True,0.27,0.1778,-1.0889,-1.8296,-0.7407,0.1321
-MX088,Slave Craton,Slave calibration,True,0.21,0.09,-1.1663,-2.6582,-1.4919,0.1689
-MX104,Slave Craton,Slave calibration,True,0.08,0.1654,-3.1721,-1.8977,1.2743,0.4376
-MX131,Slave Craton,Slave calibration,False,0.08,0.1125,-3.1157,-2.5187,0.597,0.4375
-MX144,Slave Craton,Slave calibration,False,0.1,0.0879,-2.8606,-3.0863,-0.2257,0.3506
-MX162,Slave Craton,Slave calibration,False,0.09,0.0866,-2.6501,-2.7167,-0.0665,0.3892
-MX5000,Slave Craton,Slave calibration,True,0.07,0.136,-3.3789,-2.2164,1.1625,0.4998
-MX5001,Slave Craton,Slave calibration,False,0.15,0.1261,-2.001,-2.3066,-0.3056,0.2347
-MX5004,Slave Craton,Slave calibration,False,0.13,0.1125,-2.1067,-2.3604,-0.2537,0.2705
-MX5006,Slave Craton,Slave calibration,False,0.12,0.1243,-2.2642,-2.2023,0.0619,0.2928
-MX5008,Slave Craton,Slave calibration,False,0.17,0.1483,-1.8433,-2.0837,-0.2404,0.2075
-MX5009,Slave Craton,Slave calibration,False,0.15,0.1674,-1.9019,-1.7089,0.193,0.2345
-MX5012,Slave Craton,Slave calibration,False,0.07,0.0802,-3.0153,-2.7769,0.2384,0.4998
-507141455,Slave Craton,Slave calibration,False,0.105,0.0916,-2.5474,-2.7858,-0.2384,0.3341
-507101450,Slave Craton,Slave calibration,False,0.101,0.0664,-2.0869,-2.8217,-0.7347,0.3474
-605301147,Slave Craton,Slave calibration,False,0.066,0.0433,-3.2294,-3.9642,-0.7348,0.5299
-605051108,Slave Craton,Slave calibration,False,0.06,0.0696,-3.2103,-2.9509,0.2594,0.5829
-507151714,Slave Craton,Slave calibration,False,0.105,0.1055,-2.672,-2.6633,0.0088,0.3336
-87/70,Siberian Craton,Validation,False,0.119,0.114,-2.1582,-2.234,-0.0758,0.2952
-Y-10,Siberian Craton,Validation,False,0.081,0.0635,-2.5885,-3.0132,-0.4247,0.4325
-Y-16,Siberian Craton,Validation,False,0.103,0.0847,-2.772,-3.1138,-0.3419,0.3403
-Y-19,Siberian Craton,Validation,False,0.087,0.0715,-2.4131,-2.7562,-0.3432,0.4026
-Y-4,Siberian Craton,Validation,False,0.133,0.1277,-1.8713,-1.943,-0.0718,0.2642
-Uv-4-05,Siberian Craton,Validation,False,0.115,0.1495,-2.5502,-2.0898,0.4604,0.3049
-Uv-26-04,Siberian Craton,Validation,False,0.079,0.021,-2.6615,-4.9741,-2.3126,0.4443
-Uv-50-04,Siberian Craton,Validation,False,0.037,0.1596,-4.4312,-1.8768,2.5545,0.9469
-Uv-87-03,Siberian Craton,Validation,False,0.132,0.1571,-2.38,-2.0742,0.3058,0.2662
-Uv-68-03,Siberian Craton,Validation,False,0.086,0.0688,-3.2178,-3.6083,-0.3905,0.407
-Uv-34-03,Siberian Craton,Validation,False,0.139,0.1437,-2.1428,-2.084,0.0588,0.2527
-F-1,Kaapvaal Craton,Validation,False,0.074,0.0547,-2.8727,-3.3994,-0.5267,0.4728
-F-3,Kaapvaal Craton,Validation,False,0.059,0.059,-2.9379,-2.9379,0.0,0.5927
-F-5,Kaapvaal Craton,Validation,False,0.058,0.0386,-3.2179,-3.9275,-0.7096,0.6031
-F-6,Kaapvaal Craton,Validation,False,0.066,0.0694,-3.0304,-2.9431,0.0873,0.53
-F-8,Kaapvaal Craton,Validation,False,0.062,0.0517,-3.1169,-3.4329,-0.316,0.5641
-F-11,Kaapvaal Craton,Validation,False,0.067,0.0849,-2.9666,-2.5539,0.4127,0.5221
-F-12,Kaapvaal Craton,Validation,False,0.06,0.0222,-3.2385,-4.9725,-1.734,0.5829
-F-14,Kaapvaal Craton,Validation,False,0.078,0.0817,-3.0378,-2.9559,0.0819,0.4488
-F-15,Kaapvaal Craton,Validation,False,0.056,0.0459,-3.2362,-3.5849,-0.3486,0.6246
-F-16,Kaapvaal Craton,Validation,False,0.052,0.0388,-3.5168,-4.0271,-0.5103,0.6728
-Bo-08,Kaapvaal Craton,Validation,False,0.071,0.015,-2.4145,-5.1233,-2.7089,0.4932
-Bo-18,Kaapvaal Craton,Validation,False,0.034,0.062,-3.2316,-2.184,1.0476,1.0321
-CIM15-003,Kaapvaal Craton,Validation,False,0.085,0.0977,-2.8861,-2.6424,0.2436,0.4114
-CIM15-016,Kaapvaal Craton,Validation,False,0.088,0.1093,-3.0838,-2.7049,0.3789,0.3973
-CIM15-021,Kaapvaal Craton,Validation,False,0.08,0.0859,-3.0691,-2.944,0.125,0.437
+21-6,Slave Craton,Slave calibration,False,0.06,0.098,-3.4437,-2.585,0.8587,0.5837
+21-4,Slave Craton,Slave calibration,False,0.054,0.048,-3.1825,-3.3881,-0.2056,0.6487
+14-107,Slave Craton,Slave calibration,True,0.157,0.042,-1.108,-3.4205,-2.3125,0.2255
+40-11,Slave Craton,Slave calibration,False,0.06,0.032,-3.0517,-4.1482,-1.0965,0.5837
+22-7,Slave Craton,Slave calibration,False,0.085,0.065,-2.6887,-3.1578,-0.4691,0.4123
+41-1,Slave Craton,Slave calibration,False,0.143,0.145,-1.7554,-1.731,0.0245,0.2464
+23-5,Slave Craton,Slave calibration,False,0.107,0.138,-2.2977,-1.8507,0.447,0.3281
+14-124,Slave Craton,Slave calibration,False,0.09,0.12,-2.8066,-2.3016,0.505,0.3898
+9-10,Slave Craton,Slave calibration,False,0.1,0.111,-2.4405,-2.2573,0.1832,0.3512
+41-3,Slave Craton,Slave calibration,False,0.12,0.115,-2.1315,-2.2063,-0.0747,0.2928
+A154-09CR,Slave Craton,Slave calibration,False,0.1,0.066,-2.1367,-2.864,-0.7273,0.351
+MX001,Slave Craton,Slave calibration,False,0.16,0.159,-1.7083,-1.7193,-0.011,0.22
+MX044,Slave Craton,Slave calibration,True,0.27,0.189,-1.0889,-1.7215,-0.6326,0.1321
+MX088,Slave Craton,Slave calibration,True,0.21,0.1,-1.1663,-2.4728,-1.3065,0.1689
+MX104,Slave Craton,Slave calibration,True,0.08,0.18,-3.1721,-1.7483,1.4238,0.4376
+MX131,Slave Craton,Slave calibration,False,0.08,0.128,-3.1157,-2.2927,0.823,0.4375
+MX144,Slave Craton,Slave calibration,False,0.1,0.104,-2.8606,-2.7919,0.0687,0.3506
+MX162,Slave Craton,Slave calibration,False,0.09,0.099,-2.6501,-2.4833,0.1668,0.3892
+MX5000,Slave Craton,Slave calibration,True,0.07,0.152,-3.3789,-2.0206,1.3583,0.4998
+MX5001,Slave Craton,Slave calibration,False,0.15,0.141,-2.001,-2.1098,-0.1088,0.2347
+MX5004,Slave Craton,Slave calibration,False,0.13,0.127,-2.1067,-2.1477,-0.041,0.2705
+MX5006,Slave Craton,Slave calibration,False,0.12,0.137,-2.2642,-2.0314,0.2328,0.2928
+MX5008,Slave Craton,Slave calibration,False,0.17,0.162,-1.8433,-1.9282,-0.0849,0.2075
+MX5009,Slave Craton,Slave calibration,False,0.15,0.182,-1.9019,-1.5614,0.3405,0.2345
+MX5012,Slave Craton,Slave calibration,False,0.07,0.092,-3.0153,-2.5376,0.4776,0.4998
+507141455,Slave Craton,Slave calibration,False,0.105,0.105,-2.5474,-2.5474,0.0,0.3341
+507101450,Slave Craton,Slave calibration,False,0.101,0.083,-2.0869,-2.4307,-0.3438,0.3474
+605301147,Slave Craton,Slave calibration,False,0.066,0.053,-3.2294,-3.6121,-0.3827,0.5299
+605051108,Slave Craton,Slave calibration,False,0.06,0.078,-3.2103,-2.7522,0.4581,0.5829
+507151714,Slave Craton,Slave calibration,False,0.105,0.122,-2.672,-2.4092,0.2628,0.3336
+87/70,Siberian Craton,Validation,False,0.119,0.129,-2.1582,-2.0165,0.1417,0.2952
+Y-10,Siberian Craton,Validation,False,0.081,0.072,-2.5885,-2.7945,-0.206,0.4325
+Y-16,Siberian Craton,Validation,False,0.103,0.099,-2.772,-2.8413,-0.0694,0.3403
+Y-19,Siberian Craton,Validation,False,0.087,0.084,-2.4131,-2.4744,-0.0614,0.4026
+Y-4,Siberian Craton,Validation,False,0.133,0.141,-1.8713,-1.7686,0.1026,0.2642
+Uv-4-05,Siberian Craton,Validation,False,0.115,0.165,-2.5502,-1.9162,0.634,0.3049
+Uv-26-04,Siberian Craton,Validation,False,0.079,0.01,-2.6615,-6.265,-3.6035,0.4443
+Uv-50-04,Siberian Craton,Validation,False,0.037,0.172,-4.4312,-1.745,2.6862,0.9469
+Uv-87-03,Siberian Craton,Validation,False,0.132,0.172,-2.38,-1.9142,0.4657,0.2662
+Uv-68-03,Siberian Craton,Validation,False,0.086,0.086,-3.2178,-3.2178,0.0,0.407
+Uv-34-03,Siberian Craton,Validation,False,0.139,0.159,-2.1428,-1.9066,0.2362,0.2527
+F-1,Kaapvaal Craton,Validation,False,0.074,0.064,-2.8727,-3.1262,-0.2535,0.4728
+F-3,Kaapvaal Craton,Validation,False,0.059,0.044,-2.9379,-3.4492,-0.5114,0.5927
+F-5,Kaapvaal Craton,Validation,False,0.058,0.05,-3.2179,-3.4767,-0.2589,0.6031
+F-6,Kaapvaal Craton,Validation,False,0.066,0.08,-3.0304,-2.6944,0.336,0.53
+F-8,Kaapvaal Craton,Validation,False,0.062,0.06,-3.1169,-3.1741,-0.0572,0.5641
+F-11,Kaapvaal Craton,Validation,False,0.067,0.096,-2.9666,-2.3379,0.6286,0.5221
+F-12,Kaapvaal Craton,Validation,False,0.06,0.039,-3.2385,-3.9895,-0.751,0.5829
+F-14,Kaapvaal Craton,Validation,False,0.078,0.095,-3.0378,-2.693,0.3449,0.4488
+F-15,Kaapvaal Craton,Validation,False,0.056,0.054,-3.2362,-3.2997,-0.0634,0.6246
+F-16,Kaapvaal Craton,Validation,False,0.052,0.049,-3.5168,-3.6204,-0.1036,0.6728
+Bo-08,Kaapvaal Craton,Validation,False,0.071,0.01,-2.4145,-5.8284,-3.4139,0.4932
+Bo-18,Kaapvaal Craton,Validation,False,0.034,0.045,-3.2316,-2.7431,0.4885,1.0321
+CIM15-003,Kaapvaal Craton,Validation,False,0.085,0.113,-2.8861,-2.3883,0.4978,0.4114
+CIM15-016,Kaapvaal Craton,Validation,False,0.088,0.122,-3.0838,-2.5127,0.5711,0.3973
+CIM15-021,Kaapvaal Craton,Validation,False,0.08,0.103,-3.0691,-2.6276,0.4415,0.437
 CIM15-035,Kaapvaal Craton,Validation,False,0.07,0.01,-2.6356,-6.0248,-3.3892,0.5002

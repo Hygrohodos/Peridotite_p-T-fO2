@@ -61,21 +61,21 @@ class Fe3Params:
     # fixed, scored on the Eq. 5 regression samples only; highest ±0.02
     # rate, ties broken by smallest |mean bias|.
     # Re-derive with:  python scripts/fit_calibration.py
-    dt_match_c: float = 29.0
+    dt_match_c: float = -164.0   # revision v1: level re-tuned on 25 Slave samples (was 29.0)
 
     # Calibration offset applied to raw WZ07 (°C):
     #   T_WZ07corr = T_WZ07raw − (wz07_offset_c + wz07_offset_slope * T_TA98)
     # Slope = 0 is a flat offset. Non-zero slope is a T-sensitive
     # experimental calibration (TA98−WZ07 = a·T + b  ⇒  offset = −a·T − b).
-    wz07_offset_c: float = 118.0
-    wz07_offset_slope: float = 0.0
+    wz07_offset_c: float = -734.5397   # revision v1: weighted 13-experiment fit (item 1); was 118.0 (F1300o)
+    wz07_offset_slope: float = 0.554746   # was 0.0
     # Optional TA98 range (°C) over which the T-sensitive offset is
     # evaluated; outside it the offset is held at its end value instead of
     # being extrapolated linearly (None = no limit, the original behaviour).
     # Set to the TA98 range of the calibrating experiments when the offset
     # comes from calculations/pt_fo2/exp_calibration.py.
-    wz07_offset_tmin_c: float | None = None
-    wz07_offset_tmax_c: float | None = None
+    wz07_offset_tmin_c: float | None = 1162.03
+    wz07_offset_tmax_c: float | None = 1619.80
 
     # Safety cap on iteration steps
     max_steps: int = 200
@@ -88,9 +88,9 @@ class Fe3Params:
     #   (emp_red_ids) error groups; T_TA98 ≥ t_emp_min_c (the dashed
     #   envelope, n = 21); ordinary least squares of (meas − est) on T,
     #   no level shift.  Re-derive with:  python scripts/fit_calibration.py
-    apply_empirical_correction: bool = True
+    apply_empirical_correction: bool = False   # revision v1: Eq. 5 dropped
     t_emp_min_c: float = 1130.0
-    emp_fit_dt_c: float = 25.0
+    emp_fit_dt_c: float = -164.0   # revision v1: error groups defined at the adopted ΔT (was 25.0)
     emp_blue_threshold: float = 0.05
     emp_red_ids: tuple = ("14-78", "MX5011", "8-1", "MX104", "MX5000", "40-38")
     emp_offset: float = 0.0   # unused; kept for backward compatibility

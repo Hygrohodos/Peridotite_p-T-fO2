@@ -1076,13 +1076,13 @@ def fig08_stoichiometry(df):
     diff = (est[ok] - meas[ok]).abs()
     ax.text(
         0.97, 0.04,
-        f"n = {int(ok.sum())}\n±0.02: {(diff<=0.02).mean()*100:.0f}%\n"
-        f"±0.05: {(diff<=0.05).mean()*100:.0f}%",
+        f"n = {int(ok.sum())}\n±0.02: {(diff<=0.02+1e-9).mean()*100:.0f}%\n"
+        f"±0.05: {(diff<=0.05+1e-9).mean()*100:.0f}%",
         transform=ax.transAxes, fontsize=8, ha="right", va="bottom",
     )
     print(f"  Fig08 Quinn: n={int(ok.sum())}  "
-          f"±0.02={(diff<=0.02).mean()*100:.0f}%  "
-          f"±0.05={(diff<=0.05).mean()*100:.0f}%")
+          f"±0.02={(diff<=0.02+1e-9).mean()*100:.0f}%  "
+          f"±0.05={(diff<=0.05+1e-9).mean()*100:.0f}%")
     _save(fig, "Fig08_stoichiometric_Fe3")
 
 
@@ -1161,8 +1161,8 @@ def fig09_nonslave_fe3(df):
     diff = (est[ok] - meas[ok]).abs()
     axL.text(
         0.98, 0.04,
-        f"n = {int(ok.sum())}\n±0.02: {(diff<=0.02).mean()*100:.0f}%\n"
-        f"±0.05: {(diff<=0.05).mean()*100:.0f}%",
+        f"n = {int(ok.sum())}\n±0.02: {(diff<=0.02+1e-9).mean()*100:.0f}%\n"
+        f"±0.05: {(diff<=0.05+1e-9).mean()*100:.0f}%",
         transform=axL.transAxes, fontsize=8, ha="right", va="bottom",
     )
 
@@ -1171,8 +1171,8 @@ def fig09_nonslave_fe3(df):
     _style_ax(axR, "Temperature (°C)",
               r"Fe$^{3+}$/$\Sigma$Fe (measured−estimated)")
     print(f"  Fig09 non-Slave: n={int(ok.sum())}  "
-          f"±0.02={(diff<=0.02).mean()*100:.0f}%  "
-          f"±0.05={(diff<=0.05).mean()*100:.0f}%")
+          f"±0.02={(diff<=0.02+1e-9).mean()*100:.0f}%  "
+          f"±0.05={(diff<=0.05+1e-9).mean()*100:.0f}%")
     fig.tight_layout()
     _save(fig, "Fig08_nonslave_Fe3")
 
