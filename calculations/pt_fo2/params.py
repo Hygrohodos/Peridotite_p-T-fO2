@@ -41,6 +41,15 @@ class ScreeningParams:
     # Oxide wt% SiO2 above which a phase is considered present
     sio2_present_wt: float = 1.0
 
+    # Analytical quality (Nimis and Grütter 2010, p. 413): opx, cpx and garnet
+    # oxide totals within 98.5–101.5 wt%; opx and cpx cation sums ≥ 3.990 apfu
+    # on 6 O; garnet Cr2O3 > 1 wt% or Mg/(Mg + Fe) > 0.6.
+    oxide_total_min_wt: float = 98.5
+    oxide_total_max_wt: float = 101.5
+    pyx_cation_sum_min: float = 3.990
+    garnet_cr2o3_min_wt: float = 1.0
+    garnet_mg_number_min: float = 0.6
+
 
 @dataclass
 class Fe3Params:

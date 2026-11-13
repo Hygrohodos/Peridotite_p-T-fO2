@@ -9,7 +9,7 @@ should call.  It chains:
   1. Load & clean
   2. Oxide → cation conversion
   3. Iterative CA91 P + TA98 T  (+ supporting thermometers)
-  4. Equilibrium screening
+  4. Screening: analytical quality, then equilibrium
   5. Garnet Fe³⁺ iteration + empirical correction
   6. (Future) Oxygen fugacity
 
@@ -260,7 +260,7 @@ def run_full_pipeline(csv_path_or_df, verbose=True, write_csv=None, write_full_c
     )
     result = calculate_all_temperatures(result, P_CA91, verbose=verbose)
 
-    # 3. Equilibrium screening
+    # 3. Screening: analytical quality, then equilibrium
     result, stats = apply_equilibrium_screening(result, verbose=verbose, params=params)
 
     # 4. Garnet Fe³⁺ iteration & empirical correction

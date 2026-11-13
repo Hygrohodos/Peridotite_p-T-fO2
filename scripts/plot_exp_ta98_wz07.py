@@ -103,6 +103,8 @@ def temperatures(df: pd.DataFrame) -> pd.DataFrame:
         bits = []
         if not r.get("screen_4phases"):
             bits.append("4-phase")
+        elif not r.get("screen_quality"):
+            bits.append("quality")
         elif not r.get("screen_T900"):
             bits.append("T<900")
         elif not r.get("screen_opx_cpx"):

@@ -1,5 +1,5 @@
 """Fig. 7: sensitivity of the Fe3+ agreement to the match level (at the pivot, with the experimental slope)
-on the 25 Slave samples outside the error groups. The adopted level (make_paper_figures.py) is marked; it is not chosen from this sweep;
+on the screened Slave samples outside the error groups. The adopted level (make_paper_figures.py) is marked; it is not chosen from this sweep;
 the +-0.02 optimum of the sweep is marked for comparison only."""
 from common import *
 def draw_fig7(df):

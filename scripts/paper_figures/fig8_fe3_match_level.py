@@ -1,5 +1,5 @@
-"""Fig. 8: estimated against measured garnet Fe3+/SumFe for the 30 Slave calibration samples at the match level,
-and the residuals against temperature, with the statistics for all samples and for the 25 outside the error groups."""
+"""Fig. 8: estimated against measured garnet Fe3+/SumFe for the screened Slave calibration samples at the match level,
+and the residuals against temperature, with the statistics for all samples and for those outside the error groups."""
 from fe3rows import *
 from common import *
 

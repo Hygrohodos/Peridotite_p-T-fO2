@@ -49,21 +49,21 @@ out["deep_vs_BSE"] = dict(n_deep=int(deep5.sum()), n_below=int((deep5 & (marg > 
     ids_below=s.loc[deep5 & (marg > 0), "SampleID"].astype(str).tolist())
 plotted = (F.between(-7, 0) & s["P_CA91"].between(30, 70)).to_numpy()
 out["fig11_floor_plotted"] = [int((plotted & flv).sum()), int(flv.sum())]
-# residual trend with T on the 52 / 57
+# residual trend with T on the calibration + validation samples, all and with the error groups excluded
 r = pd.read_csv(D / "fO2_residuals.csv"); scr = pd.read_csv(D / "screened_PT.csv", low_memory=False)
 scr = scr.rename(columns={scr.columns[0]: "SampleID"})
 tt = scr.drop_duplicates("SampleID").set_index("SampleID")["T_TA98"]
 r["T"] = r.SampleID.map(tt); r["d"] = r.XFe3_est - r.XFe3_meas
-slave25 = (r.dataset == "Slave calibration") & ~r.error_group
-for lab, m in [("all57", r.d.notna()), ("excl52", ~r.error_group), ("slave25", slave25), ("slave25_T_ge_1130", slave25 & (r["T"] >= 1130))]:
+slave_eg = (r.dataset == "Slave calibration") & ~r.error_group
+for lab, m in [("all", r.d.notna()), ("excl_eg", ~r.error_group), ("slave_excl_eg", slave_eg), ("slave_excl_eg_T_ge_1130", slave_eg & (r["T"] >= 1130))]:
     q = r[m]; lr = stats.linregress(q["T"], q.d)
     out[f"resid_vs_T_{lab}"] = dict(n=int(len(q)), slope_per_100C=float(100 * lr.slope), se_per_100C=float(100 * lr.stderr), p=float(lr.pvalue))
-out["resid_by_T_excl52"] = {lab: [float(r[~r.error_group & m].d.mean()), int((~r.error_group & m).sum())] for lab, m in
+out["resid_by_T_excl_eg"] = {lab: [float(r[~r.error_group & m].d.mean()), int((~r.error_group & m).sum())] for lab, m in
     [("<1100", r["T"] < 1100), ("1100-1200", (r["T"] >= 1100) & (r["T"] < 1200)), ("1200-1300", (r["T"] >= 1200) & (r["T"] < 1300)), (">=1300", r["T"] >= 1300)]}
 out["cal_val_T_coverage"] = dict(below_1000=int((r["T"] < 1000).sum()), below_1100=int((r["T"] < 1100).sum()), min=float(r["T"].min()), max=float(r["T"].max()))
-fl57 = r.XFe3_est <= 0.0105
-out["cal_val_floor"] = r.loc[fl57, ["SampleID", "dataset", "XFe3_meas", "res_log"]].to_dict("records")
-out["fo2_sigma_nonfloor57"] = [float(r.loc[~fl57, "res_log"].std(ddof=1)), int((~fl57).sum())]
+fl_cv = r.XFe3_est <= 0.0105
+out["cal_val_floor"] = r.loc[fl_cv, ["SampleID", "dataset", "XFe3_meas", "res_log"]].to_dict("records")
+out["fo2_sigma_nonfloor"] = [float(r.loc[~fl_cv, "res_log"].std(ddof=1)), int((~fl_cv).sum())]
 ou = r[r.dataset != "Slave calibration"]; out["outside_005_validation"] = ou.loc[(ou.d.abs() > 0.05 + 1e-9), ["SampleID", "XFe3_meas", "XFe3_est", "d"]].to_dict("records")
 c = r[r.dataset == "Slave calibration"]; out["outside_005_calibration"] = c.loc[(c.d.abs() > 0.05 + 1e-9), ["SampleID", "error_group", "d"]].to_dict("records")
 eg = r[r.error_group]; out["error_groups"] = eg[["SampleID", "XFe3_meas", "XFe3_est", "d", "dFMQ_est"]].to_dict("records")

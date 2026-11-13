@@ -1,14 +1,16 @@
 """
 screening.py
 ------------
-Equilibrium screening filters translated from the Screening sheet of SD1.
+Sample screening: analytical quality, then the equilibrium filters translated
+from the Screening sheet of SD1.
 
 Samples must pass successive tests:
   1. Four required phases present (cpx, opx, olivine, garnet)
-  2. TA98 temperature > 900 °C
-  3. Opx–Cpx equilibrium (|TA98 – NG10| < 80 °C)
-  4. Pyroxene–Garnet equilibrium (|HA84 − quadratic in TA98| < 60 °C)
-  5. Garnet–Olivine equilibrium (ΔT < 50 °C after linear correction)
+  2. Analytical quality (Nimis and Grütter 2010, p. 413; see analytical_quality)
+  3. TA98 temperature > 900 °C
+  4. Opx–Cpx equilibrium (|TA98 – NG10| < 80 °C)
+  5. Pyroxene–Garnet equilibrium (|HA84 − quadratic in TA98| < 60 °C)
+  6. Garnet–Olivine equilibrium (ΔT < 50 °C after linear correction)
 
 Note: measured garnet Fe³⁺ is NOT required for the calculation path.
 
@@ -19,11 +21,42 @@ import pandas as pd
 import numpy as np
 
 from .params import PARAMS
+from .cations import MINERAL_SETTINGS, oxides_to_apfu
+
+
+def oxide_total(df, phase):
+    """Oxide total (wt%) of one phase: the reported total, or the sum of the oxides (all Fe as FeO) where
+    no total is reported. Reported values outside 50–150 wt% are not oxide totals (the 0 and ~500 wt%
+    entries in the compilation) and are replaced by the oxide sum."""
+    cols = [c for c in MINERAL_SETTINGS[phase]["oxide_cols"] if c in df.columns]
+    oxide_sum = df[cols].apply(pd.to_numeric, errors="coerce").sum(axis=1, min_count=1)
+    if f"{phase}_Total" not in df.columns:
+        return oxide_sum
+    reported = pd.to_numeric(df[f"{phase}_Total"], errors="coerce")
+    return reported.where(reported.between(50.0, 150.0), oxide_sum)
+
+
+def analytical_quality(df, params=None):
+    """True where the opx, cpx and garnet analyses meet the quality criteria of Nimis and Grütter (2010, p. 413):
+    oxide totals within 98.5–101.5 wt% (oxide_total); opx and cpx cation sums ≥ 3.990 apfu on 6 O (unrounded,
+    all Fe as Fe2+); garnet Cr2O3 > 1 wt% or Mg/(Mg + Fe) > 0.6. Thresholds are in params.screening."""
+    sp = params.screening if params is not None else PARAMS.screening
+    ok = pd.Series(True, index=df.index)
+    for phase in ("opx", "cpx", "garnet"):
+        ok &= oxide_total(df, phase).between(sp.oxide_total_min_wt, sp.oxide_total_max_wt)
+    for phase in ("opx", "cpx"):
+        cfg = MINERAL_SETTINGS[phase]
+        cations = oxides_to_apfu(df, cfg["oxide_cols"], ideal_oxygens=cfg["ideal_oxygens"], round_digits=None)
+        ok &= cations["Sum_Cations"] >= sp.pyx_cation_sum_min
+    cr2o3 = pd.to_numeric(df["garnet_Cr2O3"], errors="coerce")
+    mg, fe = (pd.to_numeric(df[f"garnet_{c}"], errors="coerce") for c in ("Mg", "Fe"))
+    ok &= (cr2o3 > sp.garnet_cr2o3_min_wt) | (mg / (mg + fe) > sp.garnet_mg_number_min)
+    return ok
 
 
 def apply_equilibrium_screening(df, verbose=True, params=None):
     """
-    Apply the full sequence of equilibrium screens.
+    Apply the full sequence of screens (analytical quality, then equilibrium).
 
     Parameters
     ----------
@@ -71,16 +104,24 @@ def apply_equilibrium_screening(df, verbose=True, params=None):
         print(f"Four required phases are present in {n_4ph} of {n_total} samples.")
 
     # ------------------------------------------------------------------
-    # Screen 2: TA98 temperature > 900 °C
+    # Screen 2: analytical quality of the opx, cpx and garnet analyses
     # ------------------------------------------------------------------
-    T_threshold = sp.t_min_c
-    result["screen_T900"] = result["screen_4phases"] & (result["T_TA98"] > T_threshold)
-    n_T900 = int(result["screen_T900"].sum())
+    result["screen_quality"] = result["screen_4phases"] & analytical_quality(result, params)
+    n_quality = int(result["screen_quality"].sum())
     if verbose:
-        print(f"Temperature > {T_threshold:.0f} °C in {n_T900} of {n_4ph} samples.")
+        print(f"Analyses meet the quality criteria in {n_quality} of {n_4ph} samples.")
 
     # ------------------------------------------------------------------
-    # Screen 3: Opx–Cpx equilibrium (|TA98 – NG10| < 80 °C)
+    # Screen 3: TA98 temperature > 900 °C
+    # ------------------------------------------------------------------
+    T_threshold = sp.t_min_c
+    result["screen_T900"] = result["screen_quality"] & (result["T_TA98"] > T_threshold)
+    n_T900 = int(result["screen_T900"].sum())
+    if verbose:
+        print(f"Temperature > {T_threshold:.0f} °C in {n_T900} of {n_quality} samples.")
+
+    # ------------------------------------------------------------------
+    # Screen 4: Opx–Cpx equilibrium (|TA98 – NG10| < 80 °C)
     # ------------------------------------------------------------------
     dT_opx_cpx = np.abs(result["T_TA98"] - result["T_NG10"])
     result["dT_opx_cpx"] = dT_opx_cpx
@@ -89,7 +130,7 @@ def apply_equilibrium_screening(df, verbose=True, params=None):
     if verbose:
         print(f"Cpx and opx in equilibrium for {n_opx_cpx} of {n_T900} samples.")
 
-    # Screen 4: Pyroxene–garnet equilibrium
+    # Screen 5: Pyroxene–garnet equilibrium
     # |HA84 − quadratic in TA98| < 60 °C. The curve is the median HA84
     # in 50 °C TA98 bins for samples that passed the opx–cpx screen.
     TA = result["T_TA98"]
@@ -102,7 +143,7 @@ def apply_equilibrium_screening(df, verbose=True, params=None):
         print(f"Pyroxene and garnet in equilibrium for {n_pyx_gt} of {n_opx_cpx} samples.")
 
     # ------------------------------------------------------------------
-    # Screen 5: Garnet–Olivine equilibrium
+    # Screen 6: Garnet–Olivine equilibrium
     # ------------------------------------------------------------------
     WZ_pred = 88.99741613 + 0.9864930064 * result["T_HA84"]
     dT_gt_ol = np.abs(WZ_pred - result["T_WZ07"])
@@ -116,11 +157,12 @@ def apply_equilibrium_screening(df, verbose=True, params=None):
     result["screen_pass"] = result["screen_gt_ol"]
     n_pass = int(result["screen_pass"].sum())
     if verbose:
-        print(f"\n>>> Fully screened (all equilibrium filters passed): {n_pass} of {n_total} samples.")
+        print(f"\n>>> Fully screened (all filters passed): {n_pass} of {n_total} samples.")
 
     stats = {
         "n_total": n_total,
         "n_4phases": n_4ph,
+        "n_quality": n_quality,
         "n_T900": n_T900,
         "n_opx_cpx": n_opx_cpx,
         "n_pyx_gt": n_pyx_gt,

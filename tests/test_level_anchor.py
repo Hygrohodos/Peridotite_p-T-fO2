@@ -38,13 +38,15 @@ def test_anchor_uses_all_calibration_and_no_validation_samples(df):
     m = la.anchor_set(df)
     assert not (m & calib.validation_mask(df)).any()
     assert (m == (calib.calibration_mask(df) & calib.measured_fe3(df).notna())).all()
-    assert df.loc[m, "SampleID"].astype(str).isin(la.BLUE_IDS + la.RED_IDS).sum() == 5   # not excluded
+    _, _, blue, red, _, _ = calib.error_groups(df)
+    assert (m & (blue | red)).sum() == len(la.anchor_level(df)["error_groups"]) > 0   # reported, not excluded
 
 
-def test_error_groups_unchanged_at_adopted_level(df):
-    _, _, blue, red, rem, _ = calib.error_groups(df)
-    assert sorted(df.SampleID[blue].astype(str)) == sorted(la.BLUE_IDS)
-    assert sorted(df.SampleID[red].astype(str)) == sorted(la.RED_IDS)
+def test_match_level_is_slave_median_at_pivot(df):
+    level, pivot = la.match_level(df)
+    a = la.anchor_level(df)
+    assert pivot == pytest.approx(a["median_T_TA98_C"])
+    assert level == pytest.approx(a["median_r_C"] + float(la.curve(pivot)))
 
 
 def test_anchor_is_median_of_calibration_discrepancy(df):

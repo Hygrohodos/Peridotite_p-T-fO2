@@ -1,4 +1,4 @@
-"""Fig. 11: estimated fO2 vs P for the 450 fully screened xenoliths. Samples whose garnet Fe3+/SumFe
+"""Fig. 11: estimated fO2 vs P for the fully screened xenoliths. Samples whose garnet Fe3+/SumFe
 stayed at the 0.01 starting value (the floor) carry a small white dot; their fO2 is an upper bound on how reduced
 the method can report, not a measurement. Depth means with (solid) and without (dashed) the floor samples. The estimates are the pipeline columns
 XFe3_gt_corr and delta_logfO2_FMQ, i.e. at the adopted match level (make_paper_figures.py)."""

@@ -7,7 +7,7 @@ parameters (manuscript Eq. 5, Fig. 5, Fig. 6 and Table 1).
 Workflow (``python scripts/fit_calibration.py`` runs all of it):
 
 1. Calibration set: Slave craton samples that pass every screen and have
-   measured garnet Fe3+/ΣFe with 0 < Fe3+/ΣFe < 0.5 (n = 30).
+   measured garnet Fe3+/ΣFe with 0 < Fe3+/ΣFe < 0.5.
 2. Uncorrected estimates at ΔT = ``emp_fit_dt_c`` (25 °C; Fig. 5b).
 3. Error groups at that ΔT (Fig. 5b):
      blue  measured − estimated > ``emp_blue_threshold`` (0.05)
@@ -30,7 +30,7 @@ Workflow (``python scripts/fit_calibration.py`` runs all of it):
    with measured Fe3+/ΣFe, ΔFMQ is calculated (Stagno et al. 2013, same
    P, T and chemistry as the pipeline) from the estimated and from the
    measured garnet Fe3+/ΣFe; 1σ is the standard deviation of
-   ΔFMQ(estimated) − ΔFMQ(measured).  For Fig. 10 the 57 calibration +
+   ΔFMQ(estimated) − ΔFMQ(measured).  For Fig. 10 the calibration +
    validation samples are split at their median estimated ΔFMQ into a
    reduced and an oxidised half (``fo2_uncertainty``).
 """

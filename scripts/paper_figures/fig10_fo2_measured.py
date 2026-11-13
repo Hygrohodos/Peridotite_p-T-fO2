@@ -1,5 +1,6 @@
 """Fig. 10: pressure vs fO2 calculated from MEASURED garnet Fe3+/SumFe (n = 103). Independent of the match level."""
 from unified import *
+from common import log
 from fig11_fo2_estimated import depth_axis, gpa
 from matplotlib.legend_handler import HandlerBase
 class HandlerXOnCircle(HandlerBase):
@@ -29,7 +30,9 @@ def draw_fig10(df):
     d_px=pd.to_numeric(use.get("dT_opx_cpx"),errors="coerce"); d_gt=pd.to_numeric(use.get("dT_pyx_gt"),errors="coerce")
     if not isinstance(d_gt,pd.Series) or d_gt.isna().all(): d_gt=pd.to_numeric(use.get("dT_KR00"),errors="coerce")
     d_ol=pd.to_numeric(use.get("dT_gt_ol"),errors="coerce")
-    eq_ok=(d_px.notna()&(d_px<sp.dt_opx_cpx_c)&d_gt.notna()&(d_gt<sp.dt_pyx_gt_c)&d_ol.notna()&(d_ol<sp.dt_gt_ol_c)); fail=~eq_ok
+    eq_ok=(d_px.notna()&(d_px<sp.dt_opx_cpx_c)&d_gt.notna()&(d_gt<sp.dt_pyx_gt_c)&d_ol.notna()&(d_ol<sp.dt_gt_ol_c))
+    q_fail=(use['screen_4phases']==True)&(use['screen_quality']!=True)   # analytical quality (screening.py)
+    fail=~eq_ok|q_fail
     ax.scatter(use.loc[fail,"fo2_meas"],use.loc[fail,"P_CA91"],marker="o",s=40,c="0.62",edgecolors="0.25",linewidths=EW_STD,zorder=4)
     ax.scatter(use.loc[fail,"fo2_meas"],use.loc[fail,"P_CA91"],marker="x",s=22,c="w",linewidths=LW_THIN+0.1,zorder=5)
     _,_,blue,red,_=mf._error_groups(df); blue_u=use.index.isin(df.index[blue]); red_u=use.index.isin(df.index[red])
@@ -51,11 +54,12 @@ def draw_fig10(df):
     rd=Line2D([],[],marker='o',ls='',mfc='none',mec=RED_RING,mew=LW_RING,ms=7,label='Red error group')
     handles=[];labels=[]
     cells=[[kh('slave','Slave'),bl],[kh('sib','Siberian'),rd],[kh('kaa','Kaapvaal'),kh('mean','Depth Mean')],[failh,kh('blank')]]
-    names=[['Slave','Blue error group'],['Siberian','Red error group'],['Kaapvaal','Depth Mean'],['Equilibrium fail',' ']]
+    names=[['Slave','Blue error group'],['Siberian','Red error group'],['Kaapvaal','Depth Mean'],['Quality or equilibrium fail',' ']]
     for c in range(4):
         for r in range(2): handles.append(cells[c][r]); labels.append(names[c][r])
     fig.legend(handles=handles,labels=labels,handler_map={FAILH:HandlerXOnCircle()},loc='upper center',bbox_to_anchor=((L+AW/2)/W,1-0.6/H),ncol=4,frameon=False,fontsize=FS_KEY,handletextpad=0.4,columnspacing=2.2,labelspacing=0.5,handlelength=1.6,borderaxespad=0)
     print('Fig10 n',len(use),'blue',int(blue_u.sum()),'red',int(red_u.sum()),'fail',int(fail.sum()),'other',has_other)
+    log('fig10',dict(n=int(len(use)),fail=int(fail.sum()),quality_fail=int(q_fail.sum()),equilibrium_fail=int((~eq_ok).sum())))
     assert len(use)==103
     return fig,(4110,2834)
 if __name__=='__main__':

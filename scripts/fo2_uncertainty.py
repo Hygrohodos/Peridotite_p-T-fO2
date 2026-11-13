@@ -6,9 +6,8 @@ Usage (from the project root, after ``python run_pipeline.py``):
 
     python scripts/fo2_uncertainty.py
 
-For the 57 calibration + validation samples (30 screened Slave and 27
-screened Siberian + Kaapvaal samples with non-zero measured garnet
-Fe3+/ΣFe), ΔFMQ is calculated (Stagno et al. 2013, same P, T and mineral
+For the calibration + validation samples (screened Slave and screened
+Siberian + Kaapvaal samples with non-zero measured garnet Fe3+/ΣFe), ΔFMQ is calculated (Stagno et al. 2013, same P, T and mineral
 chemistry as the pipeline) from the estimated and from the measured
 garnet Fe3+/ΣFe.  The fO2 1σ is the standard deviation of
 ΔFMQ(estimated) − ΔFMQ(measured).  Error groups are retained (the

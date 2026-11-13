@@ -12,13 +12,15 @@ src = {"Original": (R/"data/reference/Table1_original.csv", R/"data/reference/p-
        "Rev. v2 (Slave-25 mean + slope)": (R/"data/reference/Table1_v2.csv", R/"data/reference/p-T-fO2_v2.csv"),
        "This revision": (D/"Table1_calibration_stats.csv", D/"p-T-fO2.csv")}
 rows = ["Slave calibration", "Slave, error groups excluded", "Siberia + Kaapvaal validation", "Calibration + validation", "Combined, error groups excluded"]
-L = ["| Dataset | n | " + " | ".join(src) + " |", "|---|---|" + "---|" * len(src)]
+L = ["| Dataset | " + " | ".join(src) + " |", "|---|" + "---|" * len(src)]
 T = {k: pd.read_csv(v[0]).set_index("dataset") for k, v in src.items()}
 for r in rows:
-    cells = [f"{T[k].loc[r,'p02']*100:.0f} / {T[k].loc[r,'p05']*100:.0f} %, 1σ {T[k].loc[r,'sigma']:.3f}, {T[k].loc[r,'sigma_log']:.2f} log" for k in src]
-    L.append(f"| {r} | {int(T['Original'].loc[r,'n'])} | " + " | ".join(cells) + " |")
-L += ["", "Cells: within ±0.02 / ±0.05 Fe3+/ΣFe; 1σ Fe3+/ΣFe; 1σ ΔFMQ (log units). Charge-balance rows are unchanged (23/60 %, 0.085; 25/53 %, 0.087).", "",
-      "| Fully screened xenoliths (n = 450) | " + " | ".join(src) + " |", "|---|" + "---|" * len(src)]
+    cells = [f"n {int(T[k].loc[r,'n'])}: {T[k].loc[r,'p02']*100:.0f} / {T[k].loc[r,'p05']*100:.0f} %, 1σ {T[k].loc[r,'sigma']:.3f}, {T[k].loc[r,'sigma_log']:.2f} log" for k in src]
+    L.append(f"| {r} | " + " | ".join(cells) + " |")
+cb = T["This revision"]; cb = cb[cb.index.str.startswith("Charge balance")]
+L += ["", "Cells: n; within ±0.02 / ±0.05 Fe3+/ΣFe; 1σ Fe3+/ΣFe; 1σ ΔFMQ (log units). Charge-balance rows, this revision: "
+      + "; ".join(f"{i.split(', ')[-1]} n {int(x.n)}, {x.p02*100:.0f}/{x.p05*100:.0f} %, {x.sigma:.3f}" for i, x in cb.iterrows()) + ".", "",
+      "| Fully screened xenoliths | " + " | ".join(src) + " |", "|---|" + "---|" * len(src)]
 P = {k: pd.read_csv(v[1]) for k, v in src.items()}
 def m(k):
     s = P[k][P[k].Screen_pass == True]; fl = s["XGtFe3+_corr"] <= 0.0105; F = s["logfO2(ΔFMQ)"]
@@ -26,7 +28,7 @@ def m(k):
     return dict(n=len(s), floor=f"{fl.sum()} ({fl.mean()*100:.1f} %)", med=f"{F.median():.2f}", mednf=f"{F[~fl].median():.2f}",
                 sh=f"{(sh&fl).sum()} of {sh.sum()}")
 M = {k: m(k) for k in src}
-for lab, key in [("At the 0.01 starting value (floor)", "floor"), ("Median ΔFMQ, all", "med"), ("Median ΔFMQ, floor excluded", "mednf"),
+for lab, key in [("n", "n"), ("At the 0.01 starting value (floor)", "floor"), ("Median ΔFMQ, all", "med"), ("Median ΔFMQ, floor excluded", "mednf"),
                  ("Shallow (< 4.5 GPa) and ΔFMQ ≤ −4.5: at floor / total", "sh")]:
     L.append(f"| {lab} | " + " | ".join(str(M[k][key]) for k in src) + " |")
 txt = "\n".join(L) + "\n"

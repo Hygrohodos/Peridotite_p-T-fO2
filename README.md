@@ -64,7 +64,7 @@ median estimated ΔFMQ (−2.45). The 1σ is 0.83 log units for the reduced half
 (n = 28) and 0.71 for the oxidised half (n = 29), 0.81 overall. These are the two
 Fig. 11 bars. They do not apply to floor samples, whose estimates are censored at 0.01.
 
-Screening (1100 samples): four phases 747 → TA98 > 900 °C 607 → opx–cpx 583 → pyx–gt 495 → gt–ol 450 fully screened. Calibration (Slave, measured Fe3+) 57 → 30; validation (Siberian + Kaapvaal) 52 → 27; neither set was affected by the de-duplication.
+Screening (1100 samples): four phases 747 → analytical quality (Nimis and Grütter 2010: oxide totals 98.5–101.5 wt%, pyroxene cation sums ≥ 3.990 on 6 O, garnet Cr2O3 > 1 wt% or Mg# > 0.6) 695 → TA98 > 900 °C 565 → opx–cpx 545 → pyx–gt 467 → gt–ol 424 fully screened. Calibration (Slave, measured Fe3+) 57 → 23; validation (Siberian + Kaapvaal) 52 → 26; neither set was affected by the de-duplication.
 
 ## Run
 

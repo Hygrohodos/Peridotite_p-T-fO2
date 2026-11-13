@@ -1,4 +1,4 @@
-"""Fig. 5: TA98 - WZ07 against TA98 for the 30 screened Slave calibration samples, with WZ07 calculated with
+"""Fig. 5: TA98 - WZ07 against TA98 for the screened Slave calibration samples, with WZ07 calculated with
 the measured garnet Fe3+/SumFe. Open: as calculated; filled: after removing the experimental slope of Fig. 4
 about the pivot, c(T) - c(pivot). The bold line is the match level dT_match (Eq. 4) at the pivot
 (calculations/pt_fo2/level_anchor.py). Per-sample values are recomputed from the pipeline table.
@@ -9,7 +9,7 @@ from calculations.pt_fo2.level_anchor import anchor_level
 
 
 def per_sample(df):
-    """TA98, WZ07 at measured Fe3+, and TA98 - WZ07 before and after removing the slope, for the 30 Slave samples."""
+    """TA98, WZ07 at measured Fe3+, and TA98 - WZ07 before and after removing the slope, for the screened Slave samples."""
     base, meas = mf._error_groups(df)[:2]
     use = base & meas.notna()
     u = df[use].copy(); m = meas[use].to_numpy(float)

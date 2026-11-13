@@ -74,8 +74,8 @@ def oxides_to_apfu(df, oxide_cols, ideal_oxygens=None, round_digits=4):
         Column names of the oxides for one mineral.
     ideal_oxygens : float or None
         Number of oxygens to normalise to (6 for pyroxenes, 12 for garnet, 4 for olivine).
-    round_digits : int
-        Decimal places for the final cation values.
+    round_digits : int or None
+        Decimal places for the final cation values (None: unrounded).
 
     Returns
     -------
@@ -110,9 +110,10 @@ def oxides_to_apfu(df, oxide_cols, ideal_oxygens=None, round_digits=4):
     else:
         scale = pd.Series(1.0, index=df.index)
 
+    rnd = (lambda x: x) if round_digits is None else (lambda x: x.round(round_digits))
     for cat_name, moles in cat_moles.items():
-        cat_df[cat_name] = (moles * scale).round(round_digits)
-    cat_df["Sum_Cations"] = cat_df.sum(axis=1).round(round_digits)
+        cat_df[cat_name] = rnd(moles * scale)
+    cat_df["Sum_Cations"] = rnd(cat_df.sum(axis=1))
     if ideal_oxygens is not None:
         cat_df["Norm_O"] = ideal_oxygens
     return cat_df
