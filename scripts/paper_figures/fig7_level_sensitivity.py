@@ -1,15 +1,14 @@
-"""Fig. 7 (revision v3): sensitivity of the Fe3+ agreement to the flat match level on the 25 Slave samples
-outside the error groups (no WZ07 correction, no Eq. 5). The adopted level is ANCHORED to the median
-natural discrepancy of all 30 Slave calibration samples (level_anchor.py), not chosen from this sweep;
+"""Fig. 7: sensitivity of the Fe3+ agreement to the match level (at the pivot, with the experimental slope)
+on the 25 Slave samples outside the error groups. The adopted level (make_paper_figures.py) is marked; it is not chosen from this sweep;
 the +-0.02 optimum of the sweep is marked for comparison only."""
-from v2common import *
-import json
-def fig6():
-    df=load(); base,meas,blue,red,rem=mf._error_groups(df)
-    s=calib.dt_sweep(df,0.0,0.0,dts=np.arange(-250,0.5,1.0),mask=rem)
-    a=anchor()
-    lev=FP.dt_match_c; assert abs(lev-a['dt_level_C'])<0.05
-    sa=calib.dt_sweep(df,0.0,0.0,dts=[lev],mask=rem).iloc[0]
+from common import *
+def draw_fig7(df):
+    """Fig. 7 from the pipeline table df: sweep of the match level, adopted level marked."""
+    base,meas,blue,red,rem=mf._error_groups(df)
+    s=calib.dt_sweep(df,0.0,0.0,dts=[to_pipeline(v) for v in np.arange(-250,0.5,1.0)],mask=rem)
+    s['dt']=(s.dt-to_pipeline(0.0)).round(0)   # level at the pivot
+    lev=match_level()
+    sa=calib.dt_sweep(df,0.0,0.0,dts=[to_pipeline(lev)],mask=rem).iloc[0]
     opt=calib.select_dt(s); ro=s[s.dt==opt].iloc[0]; ties=s.loc[s.p02==s.p02.max(),'dt']
     s.to_csv(os.path.join(OUTD,'Fig7_level_sweep.csv'),index=False)
     W,H=119,84; fig=newfig(W,H)
@@ -20,7 +19,7 @@ def fig6():
     ax.axvline(opt,color='0.45',lw=LW_THIN,ls=(0,(1.5,1.5)),zorder=1)
     ax.plot(s.dt,s['mean'],color='k',lw=LW_MAIN,zorder=5)
     ax.set_xlim(-250,0); ax.set_ylim(-0.10,0.10)
-    ax.set_xlabel('\u0394T match level, T$_\\mathrm{TA98}$ \u2212 T$_\\mathrm{WZ07}$ (\u00b0C)'); ax.set_ylabel('mean Fe$^{3+}$/\u03a3Fe (est \u2212 meas)',labelpad=3)
+    ax.set_xlabel(M(f'\u0394T$_\\mathrm{{match}}$ at {pivot_t():.0f} \u00b0C (\u00b0C)')); ax.set_ylabel('mean Fe$^{3+}$/\u03a3Fe (est \u2212 meas)',labelpad=3)
     yt=[-0.10,-0.05,0,0.05,0.10]; ax.set_yticks(yt); ax.set_yticklabels([M(f'{v:.2f}') for v in yt])
     ax.xaxis.set_major_locator(MultipleLocator(50)); ax.xaxis.set_minor_locator(MultipleLocator(25)); ax.yaxis.set_minor_locator(MultipleLocator(0.025))
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v,_:M(f'{v:.0f}')))
@@ -41,7 +40,7 @@ def fig6():
     ax.legend(handles=hs,loc='lower center',bbox_to_anchor=(0.5,1.01),ncol=3,frameon=False,fontsize=FS_SMALL,handletextpad=0.4,labelspacing=0.3,columnspacing=0.8,handlelength=1.8)
     st=dict(level=float(lev),opt=float(opt),n=int(sa.n),p02=float(sa.p02),p05=float(sa.p05),mean=float(sa['mean']),
             tuned_opt=int(opt),tuned_p02=float(ro.p02),tuned_p05=float(ro.p05),p02_max_range=[float(ties.min()),float(ties.max())])
-    log('fig07_sweep',st); print('Fig7(sweep)',st)
+    log('fig7',st); print('Fig7(sweep)',st)
     return fig,(2811,1984)
 if __name__=='__main__':
-    f,px=fig6(); save(f,'Fig7_final.png',px)
+    f,px=draw_fig7(load()); save(f,'Fig7_final.png',px)

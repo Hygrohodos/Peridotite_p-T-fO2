@@ -24,7 +24,7 @@ LW_RING=1.6       # highlight rings
 # ---------------- markers ----------------
 S_STD=28; EW_STD=0.4          # standard scatter symbols (black edge)
 S_DENSE=12; EW_DENSE=0.3      # dense clouds (Fig 3, map)
-S_LARGE=55; EW_LARGE=0.8      # few, individually labelled points (Fig 4)
+S_LARGE=55; EW_LARGE=0.8      # few, individually labelled points (Fig. 4)
 S_OTHER=18; EW_OTHER=0.6      # 'Other' = open circle
 S_RING=100                    # highlight ring size
 S_STAR=100                    # calibration / validation stars

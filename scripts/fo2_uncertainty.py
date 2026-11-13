@@ -14,7 +14,7 @@ garnet Fe3+/ΣFe.  The fO2 1σ is the standard deviation of
 ΔFMQ(estimated) − ΔFMQ(measured).  Error groups are retained (the
 conservative case).  The samples are split at their median estimated
 ΔFMQ into reduced and oxidised halves; these two 1σ values are the
-Fig. 10 bars, and the per-dataset values are the Table 1 log column.
+Fig. 11 bars, and the per-dataset values are the Table 1 log column.
 
 Outputs:
   data/derived/fO2_residuals.csv      per-sample values
@@ -53,7 +53,7 @@ def _plot(res, unc, path):
         a.scatter(x[~g & slave], y[~g & slave], c="k", marker="*", s=60, label="Slave calibration")
         a.scatter(x[~g & ~slave], y[~g & ~slave], facecolors="none", edgecolors="k",
                   marker="*", s=60, label="Validation")
-        a.scatter(x[g], y[g], c="#c0392b", s=30, label="Error groups (Fig. 5)")
+        a.scatter(x[g], y[g], c="#c0392b", s=30, label="Error groups (Figs 6 and 8)")
 
     sc(ax[0], res["XFe3_meas"], res["res_log"].abs())
     ax[0].set_xlabel(r"Measured garnet Fe$^{3+}$/$\Sigma$Fe")
@@ -79,18 +79,24 @@ def _plot(res, unc, path):
     plt.close(fig)
 
 
-def main():
-    df = pd.read_csv(DERIVED / "screened_PT.csv", encoding="utf-8-sig", low_memory=False)
-    df = df.rename(columns={df.columns[0]: "SampleID"})
+def write_uncertainty(df, derived):
+    """Write fO2_residuals.csv and fO2_uncertainty.json for pipeline table df into folder derived."""
     res = cal.fo2_residuals(df)
     unc = cal.fo2_uncertainty(res)
     no_g = cal.fo2_uncertainty(res[~res["error_group"].astype(bool)], split=unc["split"])
-    res.round(4).to_csv(DERIVED / "fO2_residuals.csv", index=False)
+    res.round(4).to_csv(Path(derived) / "fO2_residuals.csv", index=False)
     out = dict(unc, error_groups_removed=dict(all=no_g["all"], reduced=no_g["reduced"],
                                               oxidised=no_g["oxidised"]))
     rnd = lambda d: {k: (round(v, 4) if isinstance(v, float) else rnd(v) if isinstance(v, dict) else v)
                      for k, v in d.items()}
-    (DERIVED / "fO2_uncertainty.json").write_text(json.dumps(rnd(out), indent=2) + "\n")
+    (Path(derived) / "fO2_uncertainty.json").write_text(json.dumps(rnd(out), indent=2) + "\n")
+    return res, unc, no_g
+
+
+def main():
+    df = pd.read_csv(DERIVED / "screened_PT.csv", encoding="utf-8-sig", low_memory=False)
+    df = df.rename(columns={df.columns[0]: "SampleID"})
+    res, unc, no_g = write_uncertainty(df, DERIVED)
     _plot(res, unc, DIAG / "fO2_residual_vs_Fe3.png")
     print(f"n = {unc['all']['n']}: 1σ {unc['all']['sigma_log']:.2f}, "
           f"RMS {unc['all']['rms_log']:.2f}, bias {unc['all']['bias_log']:+.2f} log units")

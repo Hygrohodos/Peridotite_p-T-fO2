@@ -1,34 +1,20 @@
 """
 level_anchor.py
 ---------------
-Revision v3 (option C): the WZ07 calibration correction is a FLAT level with
-no temperature slope, ANCHORED to natural xenoliths (not tuned on the Fe3+
-success score).
+Match level of Eq. 4, anchored to natural xenoliths (not tuned on the Fe3+ success score).
 
-For each sample with measured garnet Fe3+/SumFe, the measured Fe3+ is removed
-from the olivine-garnet calculation and the remaining two-pyroxene minus
-olivine-garnet difference is
+For each sample with measured garnet Fe3+/SumFe, the measured Fe3+ is removed from the olivine-garnet
+calculation and D_i = T_TA98,i - T_WZ07,i(measured Fe3+). The weighted experimental slope of c(T)
+(Fig. 4; params wz07_offset_*) is removed about a pivot, r_i = D_i - [c(T_TA98,i) - c(pivot)]. Over all
+30 screened Slave calibration samples
 
-    D_i = T_TA98,i - T_WZ07,i(measured Fe3+)
+* the pivot is the MEDIAN of T_TA98 (1208.5 deg C), and
+* the match level is the MEDIAN of r (-99.1 deg C),
 
-The adopted match level is the MEDIAN of D over all 30 screened Slave
-calibration samples:
-
-* calibration samples only, so the Siberia + Kaapvaal validation samples play
-  no part in setting it;
-* no exclusions: the five "error-group" samples were identified from Fe3+
-  residuals, so excluding them would make the anchor depend on the outcome;
-* the median rather than the mean, because three of those five samples are
-  thermometric outliers (D = -188 to -304 deg C) that would pull a mean.
-
-Sensitivity values (not used) are reported alongside: the Slave-25 mean
-(error groups excluded, the rev. v2 anchor), the Slave-30 mean, and the
-validation median.
-
-The iteration then stops when TA98 - WZ07(Fe2+) <= level (params
-dt_match_c), with no offset and no slope applied to WZ07.
-
-    python scripts/anchor_level.py [--out PATH]
+so the iteration stops at T_TA98 - T_WZ07 - [c(T_TA98) - c(pivot)] <= level. Calibration samples only, no
+exclusions (the five error-group samples were identified from Fe3+ residuals), and medians because three
+of those five are thermometric outliers. median_r_C and the sensitivity values are on D - c(T); add
+c(pivot) to express them at the pivot.
 """
 from __future__ import annotations
 
@@ -50,7 +36,7 @@ def _num(s):
 
 
 def curve(T, p=None):
-    """TA98 - WZ07 correction c(T) applied by the pipeline (zero in rev. v3)."""
+    """TA98 - WZ07 correction c(T) applied by the pipeline (the weighted experimental fit)."""
     fp = (p or PARAMS).fe3
     T = np.asarray(T, float)
     lo = -np.inf if fp.wz07_offset_tmin_c is None else fp.wz07_offset_tmin_c
@@ -86,29 +72,31 @@ def _boot_median_ci(x, n=4000, seed=0):
 
 
 def anchor_level(df, p=None):
-    """Return a dict with the anchored flat match level and sensitivity values."""
+    """Return the medians of D, of D - c(T) and of T_TA98 over the 30 Slave samples, with sensitivity values
+    on D - c(T) (add c(pivot) to express them at the pivot)."""
     m = anchor_set(df)
     D = discrepancy_measured(df)
     T = _num(df["T_TA98"])
     sid = df["SampleID"].astype(str).str.strip()
     eg = sid.isin(BLUE_IDS + RED_IDS)
     val = calib.validation_mask(df) & D.notna()
+    R = D - pd.Series(curve(T, p), index=D.index)
     d = D[m]
     c = pd.Series(curve(T[m], p), index=d.index)
-    r = d - c
+    r = R[m]
     lo, hi = _boot_median_ci(r)
     return dict(
-        rule="median of TA98 - WZ07(measured Fe3+) over all screened Slave calibration samples",
+        rule="pivot: median TA98; level: median of TA98 - WZ07(measured Fe3+) with the slope removed; all screened Slave calibration samples",
         n=int(m.sum()),
-        dt_level_C=float(r.median()), ci95_bootstrap_C=[lo, hi],
+        median_r_C=float(r.median()), ci95_bootstrap_r_C=[lo, hi], ci95_bootstrap_D_C=list(_boot_median_ci(d)),
         mean_curve_C=float(c.mean()),
         mean_D_C=float(d.mean()), sd_D_C=float(d.std(ddof=1)), median_D_C=float(d.median()),
-        mean_T_TA98_C=float(T[m].mean()),
+        mean_T_TA98_C=float(T[m].mean()), median_T_TA98_C=float(T[m].median()),
         sensitivity=dict(
-            slave25_mean_excl_error_groups_C=float(D[m & ~eg].mean()),
-            slave30_mean_C=float(d.mean()),
-            validation27_median_C=float(D[val].median()),
-            all52_mean_excl_error_groups_C=float(D[(m | val) & ~eg].mean()),
+            slave25_mean_excl_error_groups_C=float(R[m & ~eg].mean()),
+            slave30_mean_C=float(r.mean()),
+            validation27_median_C=float(R[val].median()),
+            all52_mean_excl_error_groups_C=float(R[(m | val) & ~eg].mean()),
         ),
         sample_ids=df.loc[m, "SampleID"].astype(str).tolist(),
     )

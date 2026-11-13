@@ -1,5 +1,6 @@
+"""Fig. 10: pressure vs fO2 calculated from MEASURED garnet Fe3+/SumFe (n = 103). Independent of the match level."""
 from unified import *
-from fig10 import depth_axis, gpa
+from fig11_fo2_estimated import depth_axis, gpa
 from matplotlib.legend_handler import HandlerBase
 class HandlerXOnCircle(HandlerBase):
     def create_artists(self,legend,orig,xd,yd,width,height,fontsize,trans):
@@ -8,8 +9,8 @@ class HandlerXOnCircle(HandlerBase):
         b=Line2D([cx],[cy],marker='x',ls='none',mec='w',mew=LW_THIN+0.1,ms=4.2)
         a.set_transform(trans); b.set_transform(trans); return [a,b]
 FAILH=Line2D([0],[0],ls='none')
-def fig9():
-    df=load()
+def draw_fig10(df):
+    """Fig. 10 from the pipeline table df (measured Fe3+ only)."""
     from calculations.pt_fo2.buffers import buffer_table, nimis2015_band
     meas=pd.to_numeric(df["garnet_Fe3+"],errors="coerce")
     use=df.loc[meas.notna()&(meas>0)&(meas<0.5)].copy()
@@ -54,8 +55,8 @@ def fig9():
     for c in range(4):
         for r in range(2): handles.append(cells[c][r]); labels.append(names[c][r])
     fig.legend(handles=handles,labels=labels,handler_map={FAILH:HandlerXOnCircle()},loc='upper center',bbox_to_anchor=((L+AW/2)/W,1-0.6/H),ncol=4,frameon=False,fontsize=FS_KEY,handletextpad=0.4,columnspacing=2.2,labelspacing=0.5,handlelength=1.6,borderaxespad=0)
-    print('Fig9 n',len(use),'blue',int(blue_u.sum()),'red',int(red_u.sum()),'fail',int(fail.sum()),'other',has_other)
+    print('Fig10 n',len(use),'blue',int(blue_u.sum()),'red',int(red_u.sum()),'fail',int(fail.sum()),'other',has_other)
     assert len(use)==103
     return fig,(4110,2834)
 if __name__=='__main__':
-    f,px=fig9(); save(f,'Fig10_final.png',px)
+    f,px=draw_fig10(load()); save(f,'Fig10_final.png',px)

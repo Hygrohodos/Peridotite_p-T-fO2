@@ -1,7 +1,11 @@
+"""Fig. 9: estimated vs measured garnet Fe3+/SumFe for the screened Siberian and Kaapvaal validation
+samples. The estimates are the pipeline column XFe3_gt_corr, i.e. at the adopted match level (make_paper_figures.py)."""
 from fe3rows import *
-def fig8():
-    df=load(); meas=pd.to_numeric(df["garnet_Fe3+"],errors="coerce")
-    est=pd.to_numeric(df["XFe3_gt_corr"],errors="coerce") if "XFe3_gt_corr" in df.columns else mf._apply_emp(mf._fe3_at_dt(df,PARAMS.fe3.dt_match_c),pd.to_numeric(df["T_TA98"],errors="coerce"))
+from common import log
+def draw_fig9(df):
+    """Fig. 9 from the pipeline table df."""
+    meas=pd.to_numeric(df["garnet_Fe3+"],errors="coerce")
+    est=pd.to_numeric(df["XFe3_gt_corr"],errors="coerce")
     T=pd.to_numeric(df["T_TA98"],errors="coerce"); cr=df["Craton"].fillna("").astype(str); slave=cr.str.contains("Slave")
     passed=df["screen_pass"]==True
     ok=(~slave)&passed&meas.notna()&(meas>0)&(meas<0.5)&est.notna(); resid=meas-est
@@ -28,9 +32,10 @@ def fig8():
     letter(aL,'a.'); letter(aR,'b.',x=0.92)
     diff=(est[ok]-meas[ok]).abs()
     aL.text(0.98,0.04,f"n = {int(ok.sum())}\n\u00b10.02: {(diff<=0.02).mean()*100:.0f}%\n\u00b10.05: {(diff<=0.05).mean()*100:.0f}%",transform=aL.transAxes,fontsize=FS_ANNOT,ha='right',va='bottom',zorder=20,path_effects=halo(2.0))
-    print('Fig8 n',int(ok.sum()),(diff<=0.02).mean(),(diff<=0.05).mean(),'other',int(other.sum()),'x_max',x_max,'T',t_min,t_max,'r',r_min,r_max)
+    log('fig9_validation',dict(n=int(ok.sum()),p02=float((diff<=0.02).mean()),p05=float((diff<=0.05).mean())))
+    print('Fig9 n',int(ok.sum()),(diff<=0.02).mean(),(diff<=0.05).mean())
     h=[kh('sib','Siberian'),kh('kaa','Kaapvaal')]+([kh('oth','Other')] if other.any() else [])+[Patch(fc=GREEN_INNER,ec='none',label=r'$\pm$0.02'),Patch(fc=GREEN_OUTER,ec='none',label=r'$\pm$0.05')]
     fig.legend(handles=h,loc='upper center',bbox_to_anchor=(0.5,1-0.8/H),ncol=len(h),frameon=False,fontsize=FS_KEY,handletextpad=0.4,columnspacing=2.2,handlelength=1.6,borderaxespad=0)
     return fig,(4110,1700)
 if __name__=='__main__':
-    f,px=fig8(); save(f,'Fig9_final.png',px)
+    f,px=draw_fig9(load()); save(f,'Fig9_final.png',px)

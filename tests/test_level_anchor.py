@@ -22,9 +22,9 @@ def df():
 def test_params_level_is_the_anchor(df):
     a = la.anchor_level(df)
     assert a["n"] == 30
-    assert PARAMS.fe3.dt_match_c == pytest.approx(a["dt_level_C"], abs=0.05)
-    assert a["dt_level_C"] == pytest.approx(a["median_D_C"])        # no curve: level = median D
-    assert a["ci95_bootstrap_C"][0] < a["dt_level_C"] < a["ci95_bootstrap_C"][1]
+    assert PARAMS.fe3.dt_match_c == pytest.approx(a["median_D_C"], abs=0.05)
+    assert a["median_r_C"] == pytest.approx(a["median_D_C"])        # no curve: r = D
+    assert a["ci95_bootstrap_D_C"][0] < a["median_D_C"] < a["ci95_bootstrap_D_C"][1]
 
 
 def test_no_slope_no_offset():

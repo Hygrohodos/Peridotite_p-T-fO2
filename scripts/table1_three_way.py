@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""Table 1 and headline numbers: original (main 87024f0) / rev. v2 (0f43eb7, anchored + slope) / rev. v3 (flat level).
+"""Table 1 and headline numbers: original (main 87024f0) / rev. v2 (0f43eb7, Slave-25 mean + slope) / this revision.
 Reads data/reference/{Table1,p-T-fO2}_{original,v2}.csv and the current data/derived outputs; writes Markdown to --out or stdout."""
 import argparse
 from pathlib import Path
 import pandas as pd
 R = Path(__file__).resolve().parents[1]
-ap = argparse.ArgumentParser(); ap.add_argument("--out"); a = ap.parse_args()
+ap = argparse.ArgumentParser(); ap.add_argument("--out")
+ap.add_argument("--derived", default=str(R / "data" / "derived"), help="folder with Table1_calibration_stats.csv and p-T-fO2.csv")
+a = ap.parse_args(); D = Path(a.derived)
 src = {"Original": (R/"data/reference/Table1_original.csv", R/"data/reference/p-T-fO2_original.csv"),
-       "Rev. v2 (anchored + slope)": (R/"data/reference/Table1_v2.csv", R/"data/reference/p-T-fO2_v2.csv"),
-       "Rev. v3 (flat level)": (R/"data/derived/Table1_calibration_stats.csv", R/"data/derived/p-T-fO2.csv")}
+       "Rev. v2 (Slave-25 mean + slope)": (R/"data/reference/Table1_v2.csv", R/"data/reference/p-T-fO2_v2.csv"),
+       "This revision": (D/"Table1_calibration_stats.csv", D/"p-T-fO2.csv")}
 rows = ["Slave calibration", "Slave, error groups excluded", "Siberia + Kaapvaal validation", "Calibration + validation", "Combined, error groups excluded"]
 L = ["| Dataset | n | " + " | ".join(src) + " |", "|---|---|" + "---|" * len(src)]
 T = {k: pd.read_csv(v[0]).set_index("dataset") for k, v in src.items()}

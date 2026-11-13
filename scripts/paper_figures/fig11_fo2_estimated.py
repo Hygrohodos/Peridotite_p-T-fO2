@@ -1,13 +1,20 @@
+"""Fig. 11: estimated fO2 vs P for the 450 fully screened xenoliths. Samples whose garnet Fe3+/SumFe
+stayed at the 0.01 starting value (the floor) carry a small white dot; their fO2 is an upper bound on how reduced
+the method can report, not a measurement. Depth means with (solid) and without (dashed) the floor samples. The estimates are the pipeline columns
+XFe3_gt_corr and delta_logfO2_FMQ, i.e. at the adopted match level (make_paper_figures.py)."""
 from unified import *
+from common import log
 def depth_axis(ax):
+    """Depth (km) axis on the right of a pressure axis."""
     axr=mf._add_depth_axis(ax,km_interval=50); axr.set_ylabel('Depth (km)',fontsize=FS_LABEL)
     axr.tick_params(which='major',length=3,width=LW_TICK,direction='in'); axr.tick_params(which='minor',length=1.6,width=0.5,direction='in')
     return axr
 def gpa(ax):
+    """Pressure axis in GPa (data in kbar)."""
     ax.yaxis.set_major_locator(MultipleLocator(5)); ax.yaxis.set_major_formatter(FuncFormatter(lambda v,_:f'{v/10:.1f}')); ax.set_ylabel('P (GPa)')
     ax.yaxis.set_minor_locator(MultipleLocator(1))
-def fig10():
-    df=load()
+def draw_fig11(df):
+    """Fig. 11 from the pipeline table df."""
     from calculations.pt_fo2.buffers import buffer_table, nimis2015_band, xenolith_geotherm_C
     use=df[df["screen_pass"]==True].copy()
     W,H=174,190; fig=newfig(W,H); ax=axmm(fig,W,H,14.5,12,144.5,163)
@@ -24,14 +31,19 @@ def fig10():
     has=meas.notna()&(meas>0)&(meas<0.5)&use['delta_logfO2_FMQ'].notna(); cal=has&slave; val=has&(sib|kaa)
     ax.scatter(use.loc[cal,'delta_logfO2_FMQ'],use.loc[cal,'P_CA91'],marker='*',s=S_STAR,c='k',edgecolors='white',linewidths=0.35,zorder=5)
     ax.scatter(use.loc[val,'delta_logfO2_FMQ'],use.loc[val,'P_CA91'],marker='*',s=S_STAR,facecolors='none',edgecolors='k',linewidths=LW_THIN,zorder=5)
-    p_iso=np.linspace(30,70,81); xcol='XFe3_gt_corr' if 'XFe3_gt_corr' in use.columns else 'XGtFe3+_corr'
+    p_iso=np.linspace(30,70,81); xcol='XFe3_gt_corr'
     floor=use[pd.to_numeric(use.get(xcol),errors='coerce')<=0.012]; base=floor if len(floor)>=8 else use
     chem=base.median(numeric_only=True); rows=pd.DataFrame([chem]*len(p_iso)); rows['P_CA91']=p_iso; rows['T_TA98']=xenolith_geotherm_C(p_iso,use)
     iso=mf._fo2_from_xfe3(rows,np.full(len(p_iso),0.01)).to_numpy(dtype=float)
     vis=np.isfinite(iso)&(iso>=-6.85)&(iso<=-0.15)
     ax.plot(iso[vis],p_iso[vis],color=ISO,lw=LW_REF,ls='--',zorder=2)
+    xf=pd.to_numeric(use[xcol],errors='coerce'); fl=(xf<=0.0105)
+    ax.scatter(use.loc[fl,'delta_logfO2_FMQ'],use.loc[fl,'P_CA91'],marker='o',s=4.5,c='white',edgecolors='none',zorder=4.5)
     p_ma,f_ma=mf._fo2_depth_mean(use['P_CA91'],use['delta_logfO2_FMQ'])
     ax.plot(f_ma,p_ma,color=MEANC,lw=LW_MAIN,zorder=6)
+    p_mb,f_mb=mf._fo2_depth_mean(use.loc[~fl,'P_CA91'],use.loc[~fl,'delta_logfO2_FMQ'])
+    ax.plot(f_mb,p_mb,color=MEANC,lw=LW_MAIN,ls=(0,(3,1.5)),zorder=6)
+    log('fig11',dict(n_floor=int(fl.sum()),n=int(len(use)),mean_all=dict(zip(map(float,p_ma),map(float,f_ma))),mean_nonfloor=dict(zip(map(float,p_mb),map(float,f_mb)))))
     unc=calib.fo2_uncertainty(calib.fo2_residuals(df)); cut,w_lo,w_hi=unc['split'],unc['reduced']['sigma_log'],unc['oxidised']['sigma_log']
     p_bar,p_lab=67.6,65.55
     for x0,w,side,lab in ((-6.85,w_lo,'left',f'1\u03c3, \u0394FMQ < {M(f"{cut:.2f}")}'),(-0.15,w_hi,'right',f'1\u03c3, \u0394FMQ \u2265 {M(f"{cut:.2f}")}')):
@@ -50,8 +62,9 @@ def fig10():
     ax.text(-4.35,68.3,'BSE',color='k',fontsize=FS_ANNOT,ha='right',va='center',path_effects=halo(2.4,'0.87'),zorder=9)
     ax.text(-4.33,31.0,'Fe$^{3+}$/\u03a3Fe = 0.01',color=ISO,fontsize=FS_ANNOT,ha='left',va='center',path_effects=halo(),zorder=9)
     key_rows(fig,[[kh('slave','Slave'),kh('sib','Siberian'),kh('kaa','Kaapvaal'),kh('oth','Other')],
-                  [kh('cal','Calibration'),kh('val','Validation'),kh('mean','Depth Mean')]],W,H,cx_mm=14.5+144.5/2,top_mm=0.6)
-    print('Fig10 n',nplot,'cal',int(cal.sum()),'val',int(val.sum()),'sig',round(w_lo,2),round(w_hi,2),'cut',cut)
+                  [kh('cal','Calibration'),kh('val','Validation'),kh('mean','Depth mean'),kh('mean','Mean, floor excluded',ls=(0,(3,1.5)))],
+                  [Line2D([],[],marker='o',ls='',mfc='white',mec='0.45',mew=0.5,ms=3.2,label='Fe$^{3+}$/\u03a3Fe at 0.01 start (floor)')]],W,H,cx_mm=14.5+144.5/2,top_mm=0.6)
+    print('Fig11 n',nplot,'cal',int(cal.sum()),'val',int(val.sum()),'sig',round(w_lo,2),round(w_hi,2),'cut',cut)
     return fig,(4110,4488)
 if __name__=='__main__':
-    f,px=fig10(); save(f,'Fig10_final.png',px)
+    f,px=draw_fig11(load()); save(f,'Fig11_final.png',px)

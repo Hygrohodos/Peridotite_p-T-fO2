@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Numbers quoted in the revision-v3 text that are not in Table 1 (writes JSON to --out or stdout).
+"""Numbers quoted in the text that are not in Table 1 (writes JSON to --out or stdout).
 Floor = garnet Fe3+/SumFe at the 0.01 starting value (XGtFe3+_corr <= 0.0105)."""
 import argparse, json, sys
 from pathlib import Path
@@ -7,8 +7,10 @@ import numpy as np, pandas as pd
 from scipy import stats
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
-ap = argparse.ArgumentParser(); ap.add_argument("--out"); a_ = ap.parse_args()
-D = ROOT / "data" / "derived"
+ap = argparse.ArgumentParser(); ap.add_argument("--out")
+ap.add_argument("--derived", default=str(ROOT / "data" / "derived"), help="folder with screened_PT.csv, fO2_residuals.csv, fO2_uncertainty.json")
+a_ = ap.parse_args()
+D = Path(a_.derived)
 # full-precision working table (Geology round 2, N9: no binning on the rounded publication columns)
 s = pd.read_csv(D / "screened_PT.csv", low_memory=False); s = s.rename(columns={s.columns[0]: "SampleID"})
 s = s[s["screen_pass"] == True].copy()
@@ -52,7 +54,8 @@ r = pd.read_csv(D / "fO2_residuals.csv"); scr = pd.read_csv(D / "screened_PT.csv
 scr = scr.rename(columns={scr.columns[0]: "SampleID"})
 tt = scr.drop_duplicates("SampleID").set_index("SampleID")["T_TA98"]
 r["T"] = r.SampleID.map(tt); r["d"] = r.XFe3_est - r.XFe3_meas
-for lab, m in [("all57", r.d.notna()), ("excl52", ~r.error_group)]:
+slave25 = (r.dataset == "Slave calibration") & ~r.error_group
+for lab, m in [("all57", r.d.notna()), ("excl52", ~r.error_group), ("slave25", slave25), ("slave25_T_ge_1130", slave25 & (r["T"] >= 1130))]:
     q = r[m]; lr = stats.linregress(q["T"], q.d)
     out[f"resid_vs_T_{lab}"] = dict(n=int(len(q)), slope_per_100C=float(100 * lr.slope), se_per_100C=float(100 * lr.stderr), p=float(lr.pvalue))
 out["resid_by_T_excl52"] = {lab: [float(r[~r.error_group & m].d.mean()), int((~r.error_group & m).sum())] for lab, m in

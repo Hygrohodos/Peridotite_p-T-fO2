@@ -24,5 +24,5 @@ a = anchor_level(df)
 a["params_dt_match_c"] = PARAMS.fe3.dt_match_c
 Path(a_.out).write_text(json.dumps(a, indent=1))
 print(json.dumps({k: v for k, v in a.items() if k != "sample_ids"}, indent=1))
-if a_.check and abs(a["dt_level_C"] - PARAMS.fe3.dt_match_c) > 0.05:
-    sys.exit(f"params.dt_match_c {PARAMS.fe3.dt_match_c} != anchor {a['dt_level_C']:.2f}")
+if a_.check and abs(a["median_D_C"] - PARAMS.fe3.dt_match_c) > 0.05:
+    sys.exit(f"params.dt_match_c {PARAMS.fe3.dt_match_c} != anchor {a['median_D_C']:.2f}")

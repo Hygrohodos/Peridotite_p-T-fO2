@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fig. 4 (revision v1): weighted single-regression figure with background
+"""Fig. 4: weighted single-regression figure with background
 circles whose AREA is proportional to each run's normalised weight, a size
 key, n_eff, and a side table of the weights.
 

@@ -1,45 +1,56 @@
+"""Fig. 2: effect of garnet Fe3+ on the olivine-garnet (WZ07) temperature and on KD (Eq. 3) for
+Jericho peridotite 21-2, and the idea of the calculation: Fe3+/SumFe at which WZ07 meets TA98.
+
+Input: data/fig2_curves.csv (x = garnet Fe3+/SumFe removed from the Fe2+ budget; KD and T_WZ07 of 21-2).
+"""
 from unified import *
-import os; D=os.path.join(os.path.dirname(os.path.abspath(__file__)),'data')+'/'
-d=pd.read_csv(D+'fig2_curves.csv'); x=d.x.values
-TA_HI,TA_LO=1288.893081993608,661.4758937660928
-xc=float(np.interp(0,-d.dT_21_2.values,x))
-C_HI,C_LO=TA98C,WZ07; C_HI_T,C_LO_T='#C25600',WZ07      # colour = sample (21-2 vermilion, 22-1 blue); TA98 black dashed
+
+DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'fig2_curves.csv')
+TA98_21_2 = 1288.893081993608        # TA98 temperature of 21-2 (deg C); independent of garnet Fe3+
+COLOUR = TA98C                       # sample colour, as in the other figures
+COLOUR_TEXT = '#C25600'
+
+
 def fig2():
-    W,H=174,100
-    fig,axs=plt.subplots(2,2,figsize=(W*MM,H*MM),sharex=True,gridspec_kw=dict(hspace=0.10,wspace=0.20,height_ratios=[1.6,1]))
-    fig.subplots_adjust(left=0.10,right=0.985,top=0.915,bottom=0.115)
-    cw=[C_HI,C_LO]; cwt=[C_HI_T,C_LO_T]
-    cfg=[('21-2',d.T_WZ07_21_2,d.KD_21_2,TA_HI,(1130,1480)),('22-1',d.T_WZ07_22_1,d.KD_22_1,TA_LO,(600,950))]
-    for j,(sid,Tw,KD,ta,yl) in enumerate(cfg):
-        t,k=axs[0,j],axs[1,j]; col=cw[j]; colt=cwt[j]
-        T0=float(Tw.iloc[0]); T15=float(np.interp(0.15,x,Tw))
-        t.fill_between(x,Tw,ta,color=col,alpha=0.16,lw=0)
-        t.axhline(T0,color=col,lw=LW_THIN,ls=':',zorder=1)
-        t.axhline(ta,color='k',lw=LW_MAIN,ls=(0,(5,2)),zorder=2)
-        t.plot(x,Tw,color=col,lw=LW_MAIN,zorder=4)
-        t.set_ylim(*yl); t.set_xlim(0,0.2)
-        if j==0: t.set_ylabel('Olivine\u2013garnet\ntemperature (\u00b0C)',linespacing=1.1)
-        t.annotate('',xy=(0.15,T15),xytext=(0.15,T0),arrowprops=dict(arrowstyle='<->',color=col,lw=LW_ONE,shrinkA=0,shrinkB=0))
-        t.text(0.155,T0+0.28*(T15-T0),f'+{T15-T0:.0f} \u00b0C\nat x = 0.15',color=colt,fontsize=FS_ANNOT,fontweight='bold',ha='left',va='center')
-        if j==0:
-            t.text(0.003,ta+7,f'TA98 = {ta:.0f} \u00b0C\n(not affected by Fe$^{{3+}}$)',color='k',ha='left',va='bottom',fontsize=FS_ANNOT,fontweight='bold',linespacing=1.1)
-            t.plot([xc],[ta],'o',ms=8,mfc='white',mec='k',mew=LW_RING,zorder=6)
-            t.annotate(f'match at Fe$^{{3+}}$/\u03a3Fe = {xc:.3f}',xy=(xc,ta),xytext=(0.094,1425),fontsize=FS_ANNOT,fontweight='bold',ha='center',va='center',
-                       arrowprops=dict(arrowstyle='-|>',color='k',lw=LW_ONE,shrinkA=6,shrinkB=5))
-            t.set_title('21-2 (TA98 = %.0f \u00b0C): the thermometers can be matched'%ta,fontsize=FS_ANNOT,fontweight='bold',color=colt,loc='left',pad=5)
-        else:
-            t.text(0.195,ta-7,f'TA98 = {ta:.0f} \u00b0C (not affected by Fe$^{{3+}}$)',color='k',ha='right',va='top',fontsize=FS_ANNOT,fontweight='bold')
-            t.text(0.195,742,'the gap only widens',color=colt,fontsize=FS_ANNOT,fontweight='bold',ha='right',va='center')
-            t.set_title('22-1 (TA98 = %.0f \u00b0C): no match is possible'%ta,fontsize=FS_ANNOT,fontweight='bold',color=colt,loc='left',pad=5)
-        k.plot(x,KD,color=col,lw=LW_MAIN); k.set_xticks([0,.05,.1,.15,.2]); k.set_xlabel('Fe$^{3+}$/\u03a3Fe removed from garnet (x)')
-        if j==0: k.set_ylabel(r'$K_\mathrm{D}$')
-        rng=KD.max()-KD.min(); k.set_ylim(KD.min()-0.55*rng,KD.max()+0.12*rng)
-        k.text(0.003,KD.min()-0.5*rng,'$K_\\mathrm{D}$ falls as Fe$^{3+}$ is removed from the Fe budget',color=colt,fontsize=FS_SMALL,fontweight='bold',ha='left',va='bottom')
-        for ax in (t,k):
-            ax.grid(axis='y',color='0.9',lw=0.5,zorder=0); ax.set_axisbelow(True); minor(ax)
-        t.xaxis.set_minor_locator(AutoMinorLocator(5)); k.xaxis.set_minor_locator(AutoMinorLocator(5))
-        letter(t,'ab'[j]+'.',y=1.09,x=(-0.19 if j==0 else -0.12))
-    fig.align_ylabels(axs[:,0])
-    return fig,(4110,2362)
-if __name__=='__main__':
-    f,px=fig2(); save(f,'Fig2_final.png',px)
+    """Olivine-garnet temperature (top) and KD (bottom) against garnet Fe3+/SumFe for sample 21-2."""
+    d = pd.read_csv(DATA)
+    x, T_wz, KD = d.x.values, d.T_WZ07_21_2.values, d.KD_21_2.values
+    x_match = float(np.interp(0, -d.dT_21_2.values, x))          # where TA98 - WZ07 reaches 0
+    T0, T15 = float(T_wz[0]), float(np.interp(0.15, x, T_wz))
+
+    W, H = 84, 100
+    fig, (t, k) = plt.subplots(2, 1, figsize=(W * MM, H * MM), sharex=True,
+                               gridspec_kw=dict(hspace=0.10, height_ratios=[1.6, 1]))
+    fig.subplots_adjust(left=0.20, right=0.97, top=0.97, bottom=0.115)
+
+    t.fill_between(x, T_wz, TA98_21_2, color=COLOUR, alpha=0.16, lw=0)
+    t.axhline(T0, color=COLOUR, lw=LW_THIN, ls=':', zorder=1)
+    t.axhline(TA98_21_2, color='k', lw=LW_MAIN, ls=(0, (5, 2)), zorder=2)
+    t.plot(x, T_wz, color=COLOUR, lw=LW_MAIN, zorder=4)
+    t.set_ylim(1130, 1480); t.set_xlim(0, 0.2)
+    t.set_ylabel('Olivine\u2013garnet\ntemperature (\u00b0C)', linespacing=1.1)
+    t.annotate('', xy=(0.15, T15), xytext=(0.15, T0),
+               arrowprops=dict(arrowstyle='<->', color=COLOUR, lw=LW_ONE, shrinkA=0, shrinkB=0))
+    t.text(0.155, T0 + 0.28 * (T15 - T0), f'+{T15 - T0:.0f} \u00b0C', color=COLOUR_TEXT,
+           fontsize=FS_ANNOT, fontweight='bold', ha='left', va='center')
+    t.text(0.003, TA98_21_2 + 7, f'TA98 = {TA98_21_2:.0f} \u00b0C', color='k', ha='left', va='bottom',
+           fontsize=FS_ANNOT, fontweight='bold')
+    t.plot([x_match], [TA98_21_2], 'o', ms=8, mfc='white', mec='k', mew=LW_RING, zorder=6)
+    t.annotate(f'match at {x_match:.3f}', xy=(x_match, TA98_21_2), xytext=(0.10, 1440),
+               fontsize=FS_ANNOT, fontweight='bold', ha='center', va='center',
+               arrowprops=dict(arrowstyle='-|>', color='k', lw=LW_ONE, shrinkA=6, shrinkB=5))
+
+    k.plot(x, KD, color=COLOUR, lw=LW_MAIN)
+    k.set_xticks([0, .05, .1, .15, .2]); k.set_xlabel('Garnet Fe$^{3+}$/\u03a3Fe')
+    k.set_ylabel(r'$K_\mathrm{D}$')
+    rng = KD.max() - KD.min(); k.set_ylim(KD.min() - 0.15 * rng, KD.max() + 0.15 * rng)
+
+    for ax in (t, k):
+        ax.grid(axis='y', color='0.9', lw=0.5, zorder=0); ax.set_axisbelow(True); minor(ax)
+        ax.xaxis.set_minor_locator(AutoMinorLocator(5))
+    fig.align_ylabels((t, k))
+    return fig, (int(W * MM * 600), int(H * MM * 600))
+
+
+if __name__ == '__main__':
+    f, px = fig2(); save(f, 'Fig2_final.png', px)
