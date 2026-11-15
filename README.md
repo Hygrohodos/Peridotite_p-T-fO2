@@ -17,11 +17,12 @@ Garnet Fe3+/ΣFe is raised from 0.01 in 0.001 steps until
 
     T_TA98 − T_WZ07(Fe2+)  ≤  a + b·t + c·(Cr2O3 − 5.364)·t,      t = T_TA98 − 1207.02 °C
 
-i.e. T_corr = T_WZ07 − 92.8 − 0.285·t + 0.067·(Cr2O3 − 5.36)·t, with garnet Cr2O3 in wt%.
+i.e. T_corr = T_WZ07 − 102 − 0.285·t + 0.067·(Cr2O3 − 5.36)·t, with garnet Cr2O3 in wt%.
 
 | Coefficient | Value | 1σ |
 |---|---|---|
-| a (level at the pivot, ΔTmatch) | −92.77 °C | 2.92 |
+| a (adopted level at the pivot, ΔTmatch; Fig. 6 ±0.02 optimum) | −102 °C | — |
+| a of the joint WLS fit (not used as ΔTmatch) | −92.77 °C | 2.92 |
 | b (slope at Cr2O3 = 5.364 wt%) | −0.2850 °C/°C | 0.0472 |
 | c (Cr2O3 × T term) | +0.0673 °C/°C per wt% | 0.0199 (p = 0.0007) |
 
@@ -29,7 +30,7 @@ i.e. T_corr = T_WZ07 − 92.8 − 0.285·t + 0.067·(Cr2O3 − 5.36)·t, with ga
   calibration + validation sets, T_TA98 ≥ 1120 °C, without the four error-group samples and Uv-50-04; y = TA98 −
   WZ07 at the measured Fe3+) plus the 8 Matjuschkin et al. (2014) runs (paper σ_i, own level, so they constrain only
   b and c). Weighted least squares, natural σ = 17.43 °C. The natural samples alone give the same coefficients
-  within error (c = 0.065 ± 0.020).
+  within error (c = 0.065 ± 0.020). The adopted level a is the Fig. 6 ±0.02 optimum (−102 °C), not the WLS intercept (−92.77 °C); b and c are held fixed.
 - **Slope check.** At the mean Matjuschkin garnet Cr2O3 (1.33 wt%) the correction predicts a TA98 − WZ07 slope of
   −0.557 °C/°C; the weighted fit of the 13 experiments (Fig. 5) gives −0.555 ± 0.216.
 - **Validity range and clamping.** Cr2O3 1.3–9.8 wt% and T_TA98 1124–1394 °C. Outside, the input is held at the
@@ -48,14 +49,14 @@ Results (Table 1, v7_cr):
 
 | Dataset | n | ±0.02 | ±0.05 | 1σ Fe3+/ΣFe | 1σ log units |
 |---|---|---|---|---|---|
-| Slave calibration | 23 | 48 % | 83 % | 0.046 | 0.87 |
-| Slave, error groups excluded | 19 | 58 % | 100 % | 0.021 | 0.54 |
-| Siberian + Kaapvaal validation | 26 | 77 % | 85 % | 0.034 | 1.29 |
-| Calibration + validation | 49 | 63 % | 84 % | 0.040 | 1.10 |
-| Combined, error groups excluded | 45 | 69 % | 91 % | 0.029 | 1.04 |
+| Slave calibration | 23 | 61 % | 83 % | 0.046 | 0.75 |
+| Slave, error groups excluded | 19 | 74 % | 100 % | 0.020 | 0.43 |
+| Siberian + Kaapvaal validation | 26 | 69 % | 85 % | 0.035 | 1.25 |
+| Calibration + validation | 49 | 65 % | 84 % | 0.041 | 1.04 |
+| Combined, error groups excluded | 45 | 71 % | 91 % | 0.030 | 0.99 |
 
 The Siberian + Kaapvaal samples above 1120 °C are part of the correction fit, so the validation row is not an
-independent test in v7_cr. Of the 424 screened xenoliths, 156 (37 %) stay at the 0.01 starting value.
+independent test in v7_cr. Of the 424 screened xenoliths, 136 (32 %) stay at the 0.01 starting value.
 
 ## Revision v3 (history)
 

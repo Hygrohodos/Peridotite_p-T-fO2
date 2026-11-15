@@ -33,8 +33,8 @@ def test_formula():
     T, cr = 1300.0, 2.0
     t = T - crc.CR_PIVOT
     assert crc.predicted_discrepancy(T, cr) == pytest.approx(crc.CR_A + crc.CR_B * t + crc.CR_C * (cr - crc.CR_REF) * t)
-    # rounded form quoted in the paper: -92.8 - 0.285 t + 0.067 (Cr2O3 - 5.36) t
-    assert crc.predicted_discrepancy(T, cr) == pytest.approx(-92.8 - 0.285 * t + 0.067 * (cr - 5.36) * t, abs=0.5)
+    # rounded form quoted in the paper: -102 - 0.285 t + 0.067 (Cr2O3 - 5.36) t
+    assert crc.predicted_discrepancy(T, cr) == pytest.approx(-102 - 0.285 * t + 0.067 * (cr - 5.36) * t, abs=0.5)
     assert crc.corrected_wz07(1000.0, T, cr) == pytest.approx(1000.0 + crc.predicted_discrepancy(T, cr))
 
 
@@ -58,7 +58,7 @@ def test_clamping():
 def test_fit_reproduces_coefficients(table):
     r = fcc.fit(table)
     assert r["n_natural"] == 37 and r["n_experiments"] == 8
-    assert r["a"]["value"] == pytest.approx(crc.CR_A, abs=1e-6)
+    assert r["a"]["value"] == pytest.approx(crc.CR_A_FIT, abs=1e-6)
     assert r["b"]["value"] == pytest.approx(crc.CR_B, abs=1e-9)
     assert r["c"]["value"] == pytest.approx(crc.CR_C, abs=1e-9)
     assert r["cr_ref_wt"] == pytest.approx(crc.CR_REF, abs=1e-12)

@@ -75,7 +75,7 @@ class Fe3Params:
     # History: 29.0 with the −118 °C offset and Eq. 5 (original); −164.0 with
     # the experimental curve, tuned (rev. v1); −157.6 with the experimental
     # curve, anchored to the Slave-25 mean (rev. v2).
-    dt_match_c: float = -92.77342661716227   # revision v7_cr: level a of the Cr2O3 correction (cr_a)
+    dt_match_c: float = -102.0   # revision v7_cr: adopted level a (Fig. 6 +-0.02 optimum); WLS intercept is -92.77
 
     # Revision v7_cr: TA98 - WZ07 calibration correction that depends on TA98
     # and garnet Cr2O3 (calculations/pt_fo2/cr_correction.py has the full method):
@@ -85,7 +85,7 @@ class Fe3Params:
     #   carried by dt_match_c; the t terms are applied as a WZ07 offset.
     # "cr2o3" (default) or "experimental" (v7 Eq. 4: wz07_offset_* only).
     wz07_correction: str = "cr2o3"
-    cr_a: float = -92.77342661716227
+    cr_a: float = -102.0   # adopted Fig. 6 optimum; WLS intercept CR_A_FIT = -92.77342661716227
     cr_b: float = -0.285024042750883
     cr_c: float = 0.06733635988444961
     cr_ref: float = 5.364313828837838
@@ -127,7 +127,7 @@ class Fe3Params:
     #   no level shift.  Re-derive with:  python scripts/fit_calibration.py
     apply_empirical_correction: bool = False   # revision v1: Eq. 5 dropped
     t_emp_min_c: float = 1130.0
-    emp_fit_dt_c: float = -92.77342661716227   # error groups evaluated at the adopted level (v3: -96.0; was 25.0)
+    emp_fit_dt_c: float = -102.0   # error groups evaluated at the adopted level (v3: -96.0; was 25.0)
     emp_blue_threshold: float = 0.05
     emp_red_ids: tuple = ("14-78", "MX5011", "8-1", "MX104", "MX5000", "40-38")
     emp_offset: float = 0.0   # unused; kept for backward compatibility

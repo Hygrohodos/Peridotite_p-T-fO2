@@ -19,7 +19,8 @@ Data flow (v7_cr)
 
 Eq. 4 (v7_cr). Garnet Fe3+/SumFe is raised from 0.01 until
     T_TA98 - T_WZ07(Fe2+) <= a + b t + c (Cr2O3 - 5.364) t,   t = T_TA98 - 1207.02,
-a = -92.77, b = -0.2850, c = 0.0673, with T_TA98 held within 1124-1394 deg C and Cr2O3 within 1.3-9.8 wt%.
+a = -102 (the Fig. 6 +-0.02 optimum; the joint WLS intercept is -92.77), b = -0.2850, c = 0.0673,
+with T_TA98 held within 1124-1394 deg C and Cr2O3 within 1.3-9.8 wt%.
 a is dT_match (the bold line of Fig. 4 and the adopted level of Figs 6 and 7).
 """
 

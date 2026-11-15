@@ -11,7 +11,8 @@ Method (full description in calculations/pt_fo2/cr_correction.py):
   joint WLS  y = a*nat + e*exp + b*t + c*(Cr2O3 - Cr_ref)*t,  t = T_TA98 - pivot, weights 1/sigma^2, fixed scale,
            natural sigma = residual SD of the natural-only OLS fit of y ~ t + (CaO - CaO_ref)*t (17.43 C; the
            same natural weighting was used for every composition model compared).
---check exits non-zero unless the fitted a, b, c and Cr_ref equal calculations/pt_fo2/params.py to 1e-6.
+--check exits non-zero unless the fitted b, c and Cr_ref equal calculations/pt_fo2/params.py to 1e-6
+  and the fitted a equals cr_correction.CR_A_FIT (the WLS intercept; the adopted level cr_a is the Fig. 6 optimum).
 """
 import argparse, json, sys
 from pathlib import Path
@@ -100,6 +101,6 @@ if __name__ == "__main__":
         a_.out.write_text(json.dumps(res, indent=1, default=float))
     if a_.check:
         fp = PARAMS.fe3
-        ok = all(abs(x - y) < 1e-6 for x, y in ((res["a"]["value"], fp.cr_a), (res["b"]["value"], fp.cr_b),
+        ok = all(abs(x - y) < 1e-6 for x, y in ((res["a"]["value"], crc.CR_A_FIT), (res["b"]["value"], fp.cr_b),
                                                 (res["c"]["value"], fp.cr_c), (res["cr_ref_wt"], fp.cr_ref)))
-        sys.exit(0 if ok else "fitted coefficients differ from calculations/pt_fo2/params.py")
+        sys.exit(0 if ok else "fitted coefficients differ from CR_A_FIT / calculations/pt_fo2/params.py")

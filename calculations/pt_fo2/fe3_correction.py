@@ -14,8 +14,8 @@ Procedure
    Revision v7_cr (default): the offset is the TA98- and garnet-Cr2O3-dependent
    correction of calculations/pt_fo2/cr_correction.py, −(b·t + c·(Cr2O3 − 5.36)·t).
 4. While (T_TA98 − T_WZ07corr) > dt_match_c, increase XFe³⁺ by dxfe3
-   (0.001) and recompute.  Revision v7_cr: dt_match_c = −92.8 °C, the level
-   a of the joint natural + experiment fit (cr_correction.py).  Samples already
+   (0.001) and recompute.  Revision v7_cr: dt_match_c = −102 °C, the Fig. 6
+   ±0.02 optimum (cr_correction.py); b and c are those of the joint fit.  Samples already
    meeting the criterion at the starting value stay at 0.01 (the "floor").
 5. The empirical high-temperature correction (original manuscript Eq. 5) is
    applied only if params.fe3.apply_empirical_correction is True; it is

@@ -11,13 +11,17 @@ the thermometer discrepancy is
 
     C(T, Cr) = a + b*t + c*(Cr2O3 - Cr_ref)*t,        t = T_TA98 - T_pivot
 
-    a      = -92.77 +- 2.92 deg C          (level at the pivot; dT_match of the paper)
+    a      = -102 deg C   (adopted level at the pivot; dT_match of the paper).
+                           The Fig. 6 +-0.02 optimum on the 19 screened Slave samples
+                           outside the error groups (ties -104 to -102 C, broken by smallest |mean|).
+                           The joint WLS intercept is -92.77 +- 2.92 deg C (CR_A_FIT); b and c are
+                           those of the same fit and are not refitted when the level is set.
     b      = -0.2850 +- 0.0472 deg C/deg C  (slope at Cr_ref)
     c      = +0.0673 +- 0.0199 deg C/deg C per wt% Cr2O3   (p = 0.0007)
     Cr_ref = 5.3643 wt%   (mean garnet Cr2O3 of the 37 natural fit samples)
     T_pivot = 1207.02 deg C (median TA98 of the 23 screened Slave calibration samples, as in v7)
 
-i.e.  T_corr = T_WZ07 + C(T, Cr) = T_WZ07 - 92.8 - 0.285*t + 0.067*(Cr2O3 - 5.36)*t.
+i.e.  T_corr = T_WZ07 + C(T, Cr) = T_WZ07 - 102 - 0.285*t + 0.067*(Cr2O3 - 5.36)*t.
 
 Garnet Fe3+/SumFe is raised from the 0.01 starting value in 0.001 steps until
 
@@ -62,9 +66,10 @@ Derivation (scripts/fit_cr_correction.py reproduces every coefficient from the p
 3. Joint weighted least squares (statsmodels WLS, weights 1/sigma^2, fixed scale):
        y = a*nat + e*exp + b*t + c*dCr*t
    natural sigma = 17.43 deg C (residual SD of the natural-only fit); the experiments get their own level e
-   (+62 +- 31 deg C), so they constrain only the slopes. a, b, c are the coefficients above
-   (chi2 = 40.9 for 45 points; experiments chi2 = 5.9 for 8 runs).
-   The natural-only fit gives the same answer within error (a = -92.82, b = -0.283, c = 0.0652 +- 0.0205).
+   (+62 +- 31 deg C), so they constrain only the slopes. The WLS intercept a is -92.77 +- 2.92 deg C (CR_A_FIT);
+   b and c are the coefficients above (chi2 = 40.9 for 45 points; experiments chi2 = 5.9 for 8 runs).
+   The adopted level is the Fig. 6 +-0.02 optimum (-102 C), not the WLS intercept; b and c are held fixed.
+   The natural-only fit gives the same slopes within error (a = -92.82, b = -0.283, c = 0.0652 +- 0.0205).
    Robustness of c (natural-only): Huber 0.066; leave-one-out 0.057-0.078 (all p <= 0.011); leave-one-craton-out
    0.052 (no Siberia) to 0.101 (no Kaapvaal); bootstrap 95 % interval 0.030-0.106, c > 0 in 99.8 % of 5000 resamples.
 
@@ -81,9 +86,13 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-# Coefficients (scripts/fit_cr_correction.py; joint natural n = 37 + 8 Matjuschkin runs)
-CR_A = -92.77342661716227           # deg C, level at the pivot (= dT_match)
-CR_A_SE = 2.9164312998263755
+# Coefficients. b, c, CR_REF and the WLS intercept (CR_A_FIT) are from
+# scripts/fit_cr_correction.py (joint natural n = 37 + 8 Matjuschkin runs).
+# The adopted level CR_A is the Fig. 6 +-0.02 optimum, not the WLS intercept.
+CR_A_FIT = -92.77342661716227       # deg C, joint WLS intercept at the pivot
+CR_A_FIT_SE = 2.9164312998263755    # 1 sigma of the WLS intercept (not of the adopted level)
+CR_A = -102.0                       # deg C, adopted level at the pivot (= dT_match); Fig. 6 optimum
+CR_A_SE = CR_A_FIT_SE               # kept for callers; SE applies to CR_A_FIT
 CR_B = -0.285024042750883           # deg C per deg C at Cr_ref
 CR_B_SE = 0.04722822442158119
 CR_C = 0.06733635988444961          # deg C per deg C per wt% Cr2O3
