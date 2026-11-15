@@ -2,14 +2,16 @@
 calibration.py
 --------------
 Reproducible derivation of the locked comparative-geothermometry
-parameters (manuscript Eq. 5, Fig. 5, Fig. 6 and Table 1).
+parameters of the ORIGINAL SUBMISSION (its Eq. 5, Figs 5 and 6 and Table 1; Eq. 5 and
+those figures are not in manuscript v7). Items 2-6 and figure numbers 5b/6 below use that
+original numbering; item 7 uses manuscript v7 numbering.
 
 Workflow (``python scripts/fit_calibration.py`` runs all of it):
 
 1. Calibration set: Slave craton samples that pass every screen and have
-   measured garnet Fe3+/ΣFe with 0 < Fe3+/ΣFe < 0.5 (n = 30).
-2. Uncorrected estimates at ΔT = ``emp_fit_dt_c`` (25 °C; Fig. 5b).
-3. Error groups at that ΔT (Fig. 5b):
+   measured garnet Fe3+/ΣFe with 0 < Fe3+/ΣFe < 0.5.
+2. Uncorrected estimates at ΔT = ``emp_fit_dt_c`` (25 °C; orig. Fig. 5b).
+3. Error groups at that ΔT (orig. Fig. 5b):
      blue  measured − estimated > ``emp_blue_threshold`` (0.05)
      red   sample IDs in ``emp_red_ids``: the samples at T > 1250 °C with
            estimated > measured by > 0.05 (21-6, +0.055 at 1135 °C, meets
@@ -17,12 +19,12 @@ Workflow (``python scripts/fit_calibration.py`` runs all of it):
            the regression set)
 4. Regression samples = calibration set minus blue and red, with
    T_TA98 ≥ ``t_emp_min_c`` (1130 °C).  These are the samples inside the
-   dashed envelope of Fig. 5b.
+   dashed envelope of orig. Fig. 5b.
 5. Eq. 5 = ordinary least-squares line through
    (measured − estimated) versus T_TA98 for the regression samples.  This
-   is exactly the solid line drawn in Fig. 5b (no level shift):
+   is exactly the solid line drawn in orig. Fig. 5b (no level shift):
        XFe3_corr = XFe3_iter + emp_slope · T + emp_intercept   (T ≥ 1130 °C)
-6. Fig. 6: with Eq. 5 held fixed, sweep the ΔT match threshold
+6. Orig. Fig. 6: with Eq. 5 held fixed, sweep the ΔT match threshold
    (0–75 °C) and score only the regression samples.  The locked ΔT is
    the value with the highest ±0.02 success rate; ties are broken by the
    smallest |mean(estimated − measured)|.
@@ -30,7 +32,7 @@ Workflow (``python scripts/fit_calibration.py`` runs all of it):
    with measured Fe3+/ΣFe, ΔFMQ is calculated (Stagno et al. 2013, same
    P, T and chemistry as the pipeline) from the estimated and from the
    measured garnet Fe3+/ΣFe; 1σ is the standard deviation of
-   ΔFMQ(estimated) − ΔFMQ(measured).  For Fig. 10 the 57 calibration +
+   ΔFMQ(estimated) − ΔFMQ(measured).  For Fig. 10 the calibration +
    validation samples are split at their median estimated ΔFMQ into a
    reduced and an oxidised half (``fo2_uncertainty``).
 """
@@ -115,7 +117,7 @@ def error_groups(df, params=None, est_fit=None):
 
 
 def fit_empirical_correction(df, params=None):
-    """Fit Eq. 5 exactly as drawn in Fig. 5b.  Returns a dict."""
+    """Fit Eq. 5 exactly as drawn in original-submission Fig. 5b.  Returns a dict."""
     p = params or PARAMS
     est = fe3_uncorrected(df, p.fe3.emp_fit_dt_c, p)
     base, meas, blue, red, rem, reg = error_groups(df, p, est_fit=est)
@@ -139,7 +141,7 @@ def fit_empirical_correction(df, params=None):
 
 
 def dt_sweep(df, slope, intercept, dts=range(0, 76), params=None, mask=None):
-    """Fig. 6 sweep: Eq. 5 held fixed, scored on ``mask`` (regression set)."""
+    """Original-submission Fig. 6 sweep: Eq. 5 held fixed, scored on ``mask`` (regression set)."""
     p = params or PARAMS
     meas = measured_fe3(df)
     T = _num(df["T_TA98"])
@@ -204,7 +206,7 @@ def fo2_residuals(df, est=None, params=None):
     Returns a DataFrame (index = df index) with measured and estimated
     Fe3+/ΣFe, ΔFMQ from each, ``res_log`` = ΔFMQ(est) − ΔFMQ(meas), the
     local sensitivity (log units per 0.02 Fe3+/ΣFe at the measured value),
-    and flags for the dataset and the Fig. 5 error groups.
+    and flags for the dataset and the error groups (manuscript v7 Fig. 7).
     """
     p = params or PARAMS
     base, meas, blue, red, _, _ = error_groups(df, p)

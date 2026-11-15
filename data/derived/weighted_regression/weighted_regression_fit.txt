@@ -1,0 +1,5 @@
+T_TA98 - T_WZ07 = -14 (+/-27) -0.555 (+/-0.216) (T_TA98 - 1350)
+n = 13, n_eff = (sum w)^2/sum w^2 = 8.39
+chi2 = 9.23, dof = 11, chi2_red = 0.839, cov scale = 1.000
+sigma0 = 50.0 C (13 of 13 runs use the default/placeholder)
+screens (C): {'dT_opx_cpx': 80.0, 'dT_pyx_gt': 60.0, 'dT_gt_ol': 50.0}
