@@ -1,4 +1,6 @@
-"""Revision v3 (option C): flat WZ07 match level anchored to the median natural Slave calibration discrepancy."""
+"""Revision v3 (option C): flat WZ07 match level anchored to the median natural Slave calibration discrepancy.
+Kept as a regression test of the v3 anchor rule: run with the v3 parameters (no Cr2O3 correction, level -96 C);
+the default v7_cr correction is tested in tests/test_cr_correction.py."""
 import sys
 from pathlib import Path
 import numpy as np
@@ -11,6 +13,15 @@ import make_figures as mf  # noqa: E402
 from calculations.pt_fo2.params import PARAMS  # noqa: E402
 from calculations.pt_fo2 import level_anchor as la  # noqa: E402
 from calculations.pt_fo2 import calibration as calib  # noqa: E402
+
+
+@pytest.fixture(autouse=True, scope="module")
+def v3_params():
+    fp = PARAMS.fe3
+    saved = (fp.wz07_correction, fp.dt_match_c)
+    fp.wz07_correction, fp.dt_match_c = "experimental", -96.0
+    yield
+    fp.wz07_correction, fp.dt_match_c = saved
 
 
 @pytest.fixture(scope="module")

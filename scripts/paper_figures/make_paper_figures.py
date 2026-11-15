@@ -1,31 +1,26 @@
 #!/usr/bin/env python3
-"""Figures 1-10, Table 1 and the numbers quoted in the text of Greene et al. (revision).
+"""Figures 1-10, Table 1 and the numbers quoted in the text of Greene et al. (revision v7_cr).
 
-Usage:  python3 scripts/paper_figures/make_paper_figures.py [--extend-slope]
+Usage:  python3 scripts/paper_figures/make_paper_figures.py            (revision v7_cr, the paper)
+        python3 scripts/paper_figures/make_paper_figures.py --v7-eq4   (revision v7: experimental slope, Slave median)
         (output folder: $PAPER_FIG_OUT, default scripts/paper_figures/out; nothing in data/ is changed)
-        --extend-slope: Supplementary Data option. The slope of c(T) is extended linearly below the coldest
-        experiment (1162 deg C) instead of being held flat there; the level is derived by the same rule.
-        Use a separate $PAPER_FIG_OUT; the paper uses the default.
+        --extend-slope (with --v7-eq4 only): the v7 slope extended linearly below 1162 deg C.
 
-Data flow
-    experimental runs (scripts/weighted_thermometer_regression.py)
-      -> weighted fit c(T) = TA98 - WZ07 (Fig. 5), held flat outside the experimental TA98 range
+Data flow (v7_cr)
     data/master/xenolith_geochem.csv
-      -> calculation pipeline: cations, P-T, screening (analytical quality of Nimis and Grutter 2010,
-         then the equilibrium screens; calculations/pt_fo2/screening.py)
-      -> match level of Eq. 4 from the screened Slave calibration samples (slave_match_level)
-      -> pipeline stopped at that level                     -> screened_PT.csv, p-T-fO2.csv
-      -> fO2 residuals and 1 sigma; Table 1                 -> fO2_residuals.csv, fO2_uncertainty.json,
-                                                               Table1_calibration_stats.csv, level_anchor.json
-      -> Figs 3, 4 and 6-10, and the numbers quoted in the text, all from these files.
-Figs 1, 2 and 5 (localities, Fe3+ effect on WZ07, experiments) do not depend on the xenolith screening.
+      -> calculation pipeline: cations, P-T, screening (analytical quality of Nimis and Grutter 2010, four-phase,
+         T_TA98 > 900 deg C, then the equilibrium screens; calculations/pt_fo2/screening.py)
+      -> garnet Fe3+/SumFe iterated with the TA98 + garnet-Cr2O3 correction (Eq. 4;
+         calculations/pt_fo2/cr_correction.py, coefficients in calculations/pt_fo2/params.py and reproduced by
+         scripts/fit_cr_correction.py)                    -> screened_PT.csv, p-T-fO2.csv, cr_correction_flags.csv
+      -> fO2 residuals and 1 sigma; Table 1                -> fO2_residuals.csv, fO2_uncertainty.json,
+                                                              Table1_calibration_stats.csv, level_anchor.json
+      -> Figs 3-10 and the numbers quoted in the text, all from these files (Fig. 5: fig5_experiments_cr.py).
 
-Match level of Eq. 4. Garnet Fe3+/SumFe is raised from 0.01 until
-    T_TA98 - T_WZ07(Fe2+) - [c(T_TA98) - c(pivot)] <= dT_match,
-where c(T) is the weighted experimental fit of Fig. 5. Over the screened Slave calibration samples the pivot
-is the median T_TA98 and dT_match the median of the slope-removed T_TA98 - T_WZ07(measured Fe3+)
-(calculations/pt_fo2/level_anchor.py). This is the bold line in Fig. 4; Figs 6-10 and every number in the
-text use it.
+Eq. 4 (v7_cr). Garnet Fe3+/SumFe is raised from 0.01 until
+    T_TA98 - T_WZ07(Fe2+) <= a + b t + c (Cr2O3 - 5.364) t,   t = T_TA98 - 1207.02,
+a = -92.77, b = -0.2850, c = 0.0673, with T_TA98 held within 1124-1394 deg C and Cr2O3 within 1.3-9.8 wt%.
+a is dT_match (the bold line of Fig. 4 and the adopted level of Figs 6 and 7).
 """
 
 import argparse, json, shutil, subprocess, sys
@@ -133,20 +128,53 @@ def run(script, *args):
     subprocess.run([sys.executable, str(SCRIPTS / script), *map(str, args)], check=True, stdout=subprocess.DEVNULL)
 
 
+def write_cr_outputs(table, out):
+    """Fig. 5 (natural samples split by garnet Cr2O3 + experiments), the range flags of the Cr2O3 correction
+    (cr_correction_flags.csv) and its coefficients and counts (cr_correction.json)."""
+    from unified import save
+    from fig5_experiments_cr import draw_fig5_cr
+    from calculations.pt_fo2.cr_correction import write_flags
+    fig, px, st = draw_fig5_cr(table)
+    save(fig, "Fig5_final.png", px)
+    (out / "Fig5_cr_split.json").write_text(json.dumps(st, indent=1, default=float))
+    fp = PARAMS.fe3
+    counts = write_flags(table, out / "cr_correction_flags.csv", fp)
+    scr = table[table["screen_pass"] == True]
+    scr_counts = write_flags(scr, out / "_tmp_flags.csv", fp); (out / "_tmp_flags.csv").unlink()
+    v7_rule, _ = match_level(table)
+    info = dict(a=fp.cr_a, b=fp.cr_b, c=fp.cr_c, cr_ref=fp.cr_ref, pivot=fp.cr_pivot_c,
+                cr_range_wt=[fp.cr_min_wt, fp.cr_max_wt], t_range_c=[fp.cr_tmin_c, fp.cr_tmax_c],
+                v7_rule_level_with_cr_slope=v7_rule, flags_iterated=counts, flags_screened=scr_counts)
+    (out / "cr_correction.json").write_text(json.dumps(info, indent=1, default=float))
+    return info
+
+
 if __name__ == "__main__":
     from unified import OUTD
     cli = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    cli.add_argument("--extend-slope", action="store_true", help="extend the slope below 1162 deg C (Supplementary Data)")
-    extend = cli.parse_args().extend_slope
+    cli.add_argument("--v7-eq4", action="store_true", help="revision v7 Eq. 4 (experimental slope, Slave median level)")
+    cli.add_argument("--extend-slope", action="store_true", help="with --v7-eq4: extend the slope below 1162 deg C")
+    a_ = cli.parse_args()
     out = Path(OUTD)
     (out / "figure_stats.json").unlink(missing_ok=True)
-    fit = set_wz07_correction(extend)
-    level, pivot = slave_match_level()
+    if a_.v7_eq4:
+        PARAMS.fe3.wz07_correction = "experimental"
+        fit = set_wz07_correction(a_.extend_slope)
+        level, pivot = slave_match_level()
+    else:
+        assert PARAMS.fe3.wz07_correction == "cr2o3" and PARAMS.fe3.wz07_offset_slope == 0 and PARAMS.fe3.wz07_offset_c == 0
+        level, pivot = PARAMS.fe3.cr_a, PARAMS.fe3.cr_pivot_c
     table = calculate_at_match_level(level, pivot, out)
     write_statistics(table, level, out)
     draw_figures(table)
-    draw_fig5(out, pivot)
+    draw_fig5(out, pivot)          # Online Resource 1 run table and the weighted experimental fit (Fig5_equation.json)
+    if not a_.v7_eq4:
+        info = write_cr_outputs(table, out)   # replaces Fig5_final.png with the Cr2O3 figure
     write_quoted_numbers(out)
-    shape = "extended" if extend else "held flat"
-    print(f"WZ07 correction c(T) = {fit.b0:.1f} {fit.b1:+.3f} (T - {fit.t_ref:.0f}), {shape} below the experiments; "
-          f"match level {level:.1f} deg C at {pivot:.1f} deg C; outputs in {out}")
+    if a_.v7_eq4:
+        shape = "extended" if a_.extend_slope else "held flat"
+        print(f"v7 Eq. 4: c(T) = {fit.b0:.1f} {fit.b1:+.3f} (T - {fit.t_ref:.0f}), {shape} below the experiments; "
+              f"match level {level:.1f} deg C at {pivot:.1f} deg C; outputs in {out}")
+    else:
+        print(f"Eq. 4 (Cr2O3): {level:.2f} {PARAMS.fe3.cr_b:+.4f} t {PARAMS.fe3.cr_c:+.4f} (Cr2O3 - {PARAMS.fe3.cr_ref:.3f}) t, "
+              f"t = T_TA98 - {pivot:.2f}; flagged {info['flags_screened']}; outputs in {out}")

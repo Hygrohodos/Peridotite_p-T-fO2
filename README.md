@@ -4,9 +4,60 @@ Oxygen fugacity of peridotite xenoliths in kimberlite, estimated by matching
 two-pyroxene (TA98) and olivine–garnet (WZ07) temperatures while iterating
 garnet Fe3+/ΣFe, then applying the Stagno et al. (2013) oxybarometer.
 
-> Note (14 Nov 2026): figure numbers in this README follow manuscript v7 (Figs 1-10). The parameter, level and
-> results sections below still describe revision v3; manuscript v7 uses Eq. 4 (experimental slope 0.555 about the
-> 1207 °C pivot, level −104 °C), set at run time by `scripts/paper_figures/make_paper_figures.py`.
+> Revision v7_cr (15 Nov 2026) is the current method and the default of `calculations/pt_fo2/params.py`. The
+> sections after "Revision v7_cr" (locked parameters, level, results, fO2 uncertainty) describe revision v3 and are
+> kept for history. Figure numbers follow manuscript v7 (Figs 1–10).
+
+## Revision v7_cr: TA98 + garnet-Cr2O3 calibration correction (Eq. 4)
+
+Full method, coefficients and validity range: `calculations/pt_fo2/cr_correction.py` (docstring).
+Coefficients are reproduced from the pipeline by `python3 scripts/fit_cr_correction.py --check`.
+
+Garnet Fe3+/ΣFe is raised from 0.01 in 0.001 steps until
+
+    T_TA98 − T_WZ07(Fe2+)  ≤  a + b·t + c·(Cr2O3 − 5.364)·t,      t = T_TA98 − 1207.02 °C
+
+i.e. T_corr = T_WZ07 − 92.8 − 0.285·t + 0.067·(Cr2O3 − 5.36)·t, with garnet Cr2O3 in wt%.
+
+| Coefficient | Value | 1σ |
+|---|---|---|
+| a (level at the pivot, ΔTmatch) | −92.77 °C | 2.92 |
+| b (slope at Cr2O3 = 5.364 wt%) | −0.2850 °C/°C | 0.0472 |
+| c (Cr2O3 × T term) | +0.0673 °C/°C per wt% | 0.0199 (p = 0.0007) |
+
+- **Joint fit.** 37 natural xenoliths with measured garnet Fe3+ (15 Slave, 13 Kaapvaal, 9 Siberia; screened
+  calibration + validation sets, T_TA98 ≥ 1120 °C, without the four error-group samples and Uv-50-04; y = TA98 −
+  WZ07 at the measured Fe3+) plus the 8 Matjuschkin et al. (2014) runs (paper σ_i, own level, so they constrain only
+  b and c). Weighted least squares, natural σ = 17.43 °C. The natural samples alone give the same coefficients
+  within error (c = 0.065 ± 0.020).
+- **Slope check.** At the mean Matjuschkin garnet Cr2O3 (1.33 wt%) the correction predicts a TA98 − WZ07 slope of
+  −0.557 °C/°C; the weighted fit of the 13 experiments (Fig. 5) gives −0.555 ± 0.216.
+- **Validity range and clamping.** Cr2O3 1.3–9.8 wt% and T_TA98 1124–1394 °C. Outside, the input is held at the
+  limit (no extrapolation); samples without garnet Cr2O3 use 5.364 wt%. Flagged samples are listed in
+  `cr_correction_flags.csv` (with `screen_pass`). Of the 424 screened xenoliths, 231 are below 1124 °C, 6 above
+  1394 °C, 2 below 1.3 wt% Cr2O3 and 2 above 9.8 wt%.
+- **Where it is applied.** After the analytical-quality, four-phase, T > 900 °C and equilibrium screens (which use
+  uncorrected temperatures), in the garnet Fe3+ iteration (`fe3_correction.iterate_garnet_fe3`). P and TA98 are
+  unchanged.
+- **Build.** `PAPER_FIG_OUT=/some/dir python3 scripts/paper_figures/make_paper_figures.py` writes Figs 1–10 (Fig. 5 =
+  natural samples split at 4.9 wt% Cr2O3 plus the experiments, `fig5_experiments_cr.py`), Table 1, the text numbers,
+  `cr_correction_flags.csv` and `cr_correction.json`. `--v7-eq4` rebuilds manuscript v7 (experimental slope 0.555,
+  Slave-median level −103.8 °C).
+
+Results (Table 1, v7_cr):
+
+| Dataset | n | ±0.02 | ±0.05 | 1σ Fe3+/ΣFe | 1σ log units |
+|---|---|---|---|---|---|
+| Slave calibration | 23 | 48 % | 83 % | 0.046 | 0.87 |
+| Slave, error groups excluded | 19 | 58 % | 100 % | 0.021 | 0.54 |
+| Siberian + Kaapvaal validation | 26 | 77 % | 85 % | 0.034 | 1.29 |
+| Calibration + validation | 49 | 63 % | 84 % | 0.040 | 1.10 |
+| Combined, error groups excluded | 45 | 69 % | 91 % | 0.029 | 1.04 |
+
+The Siberian + Kaapvaal samples above 1120 °C are part of the correction fit, so the validation row is not an
+independent test in v7_cr. Of the 424 screened xenoliths, 156 (37 %) stay at the 0.01 starting value.
+
+## Revision v3 (history)
 
 Locked parameters (revision v3, 2026-11-11; `calculations/pt_fo2/params.py` is authoritative):
 
@@ -96,7 +147,7 @@ Figure style: every figure takes its style from `scripts/paper_figures/unified.p
 
 This bundle is the P–T–fO2 calculation only. Olivine FC/DFC, garnet diffusion, and geophysical inversion are not included.
 
-## Weighted TA98 − WZ07 regression on experiments (Fig. 5; its slope is applied in Eq. 4 in manuscript v7)
+## Weighted TA98 − WZ07 regression on experiments (Fig. 5; its slope was Eq. 4 in manuscript v7; v7_cr uses it as the slope check)
 
 `scripts/weighted_thermometer_regression.py` is a stand-alone module and CLI
 (Python ≥ 3.9, numpy, pandas; no other repository imports; all temperatures in °C).

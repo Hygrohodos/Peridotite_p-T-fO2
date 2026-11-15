@@ -21,7 +21,7 @@ def per_sample(df):
     u['WZm'] = _wz07corr_fe2only(num('olivine_Mg'), num('olivine_Fe'), num('garnet_Mg'), num('garnet_Fe') * (1.0 - m),
                                  num('garnet_Ca'), num('garnet_Mn'), num('P_CA91'), offset_c=0.0)
     u['dT_raw'] = u.T_TA98 - u.WZm
-    u['dT_corr'] = u.dT_raw - slope_term(u.T_TA98)
+    u['dT_corr'] = u.dT_raw - slope_term(u.T_TA98, pd.to_numeric(u['garnet_Cr2O3'], errors='coerce').to_numpy(float))
     return u
 
 

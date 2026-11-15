@@ -75,7 +75,25 @@ class Fe3Params:
     # History: 29.0 with the −118 °C offset and Eq. 5 (original); −164.0 with
     # the experimental curve, tuned (rev. v1); −157.6 with the experimental
     # curve, anchored to the Slave-25 mean (rev. v2).
-    dt_match_c: float = -96.0
+    dt_match_c: float = -92.77342661716227   # revision v7_cr: level a of the Cr2O3 correction (cr_a)
+
+    # Revision v7_cr: TA98 - WZ07 calibration correction that depends on TA98
+    # and garnet Cr2O3 (calculations/pt_fo2/cr_correction.py has the full method):
+    #   stop when  TA98 - WZ07(Fe2+)  <=  cr_a + cr_b*t + cr_c*(Cr2O3 - cr_ref)*t,
+    #   t = clip(TA98, cr_tmin_c, cr_tmax_c) - cr_pivot_c,  Cr2O3 clipped to
+    #   [cr_min_wt, cr_max_wt] (missing Cr2O3 -> cr_ref).  The level cr_a is
+    #   carried by dt_match_c; the t terms are applied as a WZ07 offset.
+    # "cr2o3" (default) or "experimental" (v7 Eq. 4: wz07_offset_* only).
+    wz07_correction: str = "cr2o3"
+    cr_a: float = -92.77342661716227
+    cr_b: float = -0.285024042750883
+    cr_c: float = 0.06733635988444961
+    cr_ref: float = 5.364313828837838
+    cr_pivot_c: float = 1207.0242233332644
+    cr_min_wt: float = 1.3
+    cr_max_wt: float = 9.8
+    cr_tmin_c: float = 1124.0
+    cr_tmax_c: float = 1394.0
 
     # Calibration offset applied to raw WZ07 (°C):
     #   T_WZ07corr = T_WZ07raw − (wz07_offset_c + wz07_offset_slope * T_TA98)
@@ -109,7 +127,7 @@ class Fe3Params:
     #   no level shift.  Re-derive with:  python scripts/fit_calibration.py
     apply_empirical_correction: bool = False   # revision v1: Eq. 5 dropped
     t_emp_min_c: float = 1130.0
-    emp_fit_dt_c: float = -96.0   # revision v3: error groups evaluated at the adopted level (was 25.0)
+    emp_fit_dt_c: float = -92.77342661716227   # error groups evaluated at the adopted level (v3: -96.0; was 25.0)
     emp_blue_threshold: float = 0.05
     emp_red_ids: tuple = ("14-78", "MX5011", "8-1", "MX104", "MX5000", "40-38")
     emp_offset: float = 0.0   # unused; kept for backward compatibility

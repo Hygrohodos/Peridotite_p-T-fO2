@@ -38,9 +38,10 @@ def to_pipeline(level_c):
     return float(level_c) - float(curve(_LEVEL['pivot']))
 
 
-def slope_term(T):
-    """c(T) - c(pivot): the experimental slope about the pivot, within the limits set in PARAMS.fe3 (deg C)."""
-    return curve(T) - curve(_LEVEL['pivot'])
+def slope_term(T, cr2o3=None):
+    """c(T) - c(pivot): the slope of the correction about the pivot (deg C). Revision v7_cr: the TA98 and garnet
+    Cr2O3 terms of calculations/pt_fo2/cr_correction.py (cr2o3 per sample, wt%); v7: the experimental slope."""
+    return curve(T, cr2o3=cr2o3) - curve(_LEVEL['pivot'])
 
 
 def log(key, val):

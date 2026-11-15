@@ -30,14 +30,26 @@ def _num(s):
     return pd.to_numeric(s, errors="coerce")
 
 
-def curve(T, p=None):
-    """TA98 - WZ07 correction c(T) applied by the pipeline (the weighted experimental fit)."""
+def curve(T, p=None, cr2o3=None):
+    """TA98 - WZ07 correction c(T) applied by the pipeline, without its level.
+
+    Revision v7_cr (wz07_correction = "cr2o3"): b*t + c*(Cr2O3 - Cr_ref)*t of cr_correction.py, which is 0 at
+    the pivot; ``cr2o3`` is the garnet Cr2O3 (wt%) of each sample (None/NaN -> Cr_ref). Otherwise the weighted
+    experimental fit (v7 Eq. 4)."""
     fp = (p or PARAMS).fe3
+    if getattr(fp, "wz07_correction", "experimental") == "cr2o3":
+        from .cr_correction import cr_term
+        return cr_term(T, cr2o3, fp)
     T = np.asarray(T, float)
     lo = -np.inf if fp.wz07_offset_tmin_c is None else fp.wz07_offset_tmin_c
     hi = np.inf if fp.wz07_offset_tmax_c is None else fp.wz07_offset_tmax_c
     Tc = np.clip(T, lo, hi)
     return -(fp.wz07_offset_c + fp.wz07_offset_slope * Tc)
+
+
+def _cr(df):
+    """Garnet Cr2O3 (wt%) per sample, NaN where missing."""
+    return _num(df["garnet_Cr2O3"]) if "garnet_Cr2O3" in df else pd.Series(np.nan, index=df.index)
 
 
 def anchor_set(df):
@@ -71,7 +83,7 @@ def match_level(df, p=None):
     m = anchor_set(df)
     T = _num(df["T_TA98"])[m]
     pivot = float(T.median())
-    r = discrepancy_measured(df)[m] - curve(T, p)
+    r = discrepancy_measured(df)[m] - curve(T, p, _cr(df)[m])
     return float(r.median() + curve(pivot, p)), pivot
 
 
@@ -85,9 +97,9 @@ def anchor_level(df, p=None):
     _, _, blue, red, _, _ = calib.error_groups(df, p)
     eg = blue | red
     val = calib.validation_mask(df) & D.notna()
-    R = D - pd.Series(curve(T, p), index=D.index)
+    R = D - pd.Series(curve(T, p, _cr(df)), index=D.index)
     d = D[m]
-    c = pd.Series(curve(T[m], p), index=d.index)
+    c = pd.Series(curve(T[m], p, _cr(df)[m]), index=d.index)
     r = R[m]
     lo, hi = _boot_median_ci(r)
     level, pivot = match_level(df, p)

@@ -11,11 +11,11 @@ Procedure
 3. Recalculate the Wu & Zhao (2007) olivine–garnet thermometer using
    only Fe²⁺ in both phases and subtract the calibration offset
    WZ07corr = WZ07raw − (wz07_offset_c + wz07_offset_slope·clip(T_TA98)).
-   Revision v3: offset and slope are both 0 (no experimental correction).
+   Revision v7_cr (default): the offset is the TA98- and garnet-Cr2O3-dependent
+   correction of calculations/pt_fo2/cr_correction.py, −(b·t + c·(Cr2O3 − 5.36)·t).
 4. While (T_TA98 − T_WZ07corr) > dt_match_c, increase XFe³⁺ by dxfe3
-   (0.001) and recompute.  Revision v3: dt_match_c = −96 °C, the median
-   TA98 − WZ07 of the 30 Slave calibration samples at their measured
-   garnet Fe³⁺ (calculations/pt_fo2/level_anchor.py).  Samples already
+   (0.001) and recompute.  Revision v7_cr: dt_match_c = −92.8 °C, the level
+   a of the joint natural + experiment fit (cr_correction.py).  Samples already
    meeting the criterion at the starting value stay at 0.01 (the "floor").
 5. The empirical high-temperature correction (original manuscript Eq. 5) is
    applied only if params.fe3.apply_empirical_correction is True; it is
@@ -156,7 +156,7 @@ def _wz07corr_fe2only(Mg_ol, Fe2_ol, Mg_gt, Fe2_gt, Ca_gt, Mn_gt, P_kbar, offset
     return T_C
 
 
-def wz07_offset(fp, T_ta98):
+def wz07_offset(fp, T_ta98, cr2o3=None):
     """Calibration offset (°C) subtracted from raw WZ07 at TA98 = ``T_ta98``.
 
     offset = wz07_offset_c + wz07_offset_slope · T, with T limited to
@@ -170,7 +170,13 @@ def wz07_offset(fp, T_ta98):
     hi = getattr(fp, "wz07_offset_tmax_c", None)
     if lo is not None or hi is not None:
         T = np.clip(T, -np.inf if lo is None else lo, np.inf if hi is None else hi)
-    return fp.wz07_offset_c + fp.wz07_offset_slope * T
+    off = fp.wz07_offset_c + fp.wz07_offset_slope * T
+    if getattr(fp, "wz07_correction", "experimental") == "cr2o3":
+        # revision v7_cr: the T- and Cr2O3-dependent part of the correction
+        # (calculations/pt_fo2/cr_correction.py); the level is dt_match_c.
+        from .cr_correction import cr_term
+        off = off - cr_term(T_ta98, cr2o3, fp)
+    return off
 
 
 # ---------------------------------------------------------------------------
@@ -253,6 +259,8 @@ def iterate_garnet_fe3(
     Mn_gt = result["garnet_Mn"].to_numpy(dtype=float)
     T_act = result["T_TA98"].to_numpy(dtype=float)
     P_kbar = result["P_CA91"].to_numpy(dtype=float)
+    Cr_gt = (pd.to_numeric(result["garnet_Cr2O3"], errors="coerce").to_numpy(dtype=float)
+             if "garnet_Cr2O3" in result.columns else np.full(n, np.nan))   # wt%, for the Cr2O3 correction
 
     valid = (
         np.isfinite(Mg_ol) & np.isfinite(Fe_ol) & (Fe_ol > 0)
@@ -287,6 +295,7 @@ def iterate_garnet_fe3(
     Mn_gt_v = Mn_gt[idx]
     T_act_v = T_act[idx]
     P_v = P_kbar[idx]
+    Cr_v = Cr_gt[idx]
 
     for it in range(max_steps):
         if not still_active.any():
@@ -294,7 +303,7 @@ def iterate_garnet_fe3(
 
         Fe2_gt = Fe_gt_v * XFe2
         fp_off = params.fe3 if params is not None else PARAMS.fe3
-        offset_v = wz07_offset(fp_off, T_act_v)
+        offset_v = wz07_offset(fp_off, T_act_v, Cr_v)
         T_wz = _wz07corr_fe2only(
             Mg_ol_v, Fe_ol_v, Mg_gt_v, Fe2_gt, Ca_gt_v, Mn_gt_v, P_v,
             offset_c=offset_v,
@@ -313,7 +322,7 @@ def iterate_garnet_fe3(
     # Final evaluation at the converged XFe2
     Fe2_gt = Fe_gt_v * XFe2
     fp_off = params.fe3 if params is not None else PARAMS.fe3
-    offset_v = wz07_offset(fp_off, T_act_v)
+    offset_v = wz07_offset(fp_off, T_act_v, Cr_v)
     T_wz = _wz07corr_fe2only(
         Mg_ol_v, Fe_ol_v, Mg_gt_v, Fe2_gt, Ca_gt_v, Mn_gt_v, P_v,
         offset_c=offset_v,
