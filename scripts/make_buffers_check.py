@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Generate the Fig. 12 reference buffers (EMOG/D, Fe–Ni precipitation,
+Generate the reference buffers drawn in Figs 9 and 10 (EMOG/D, Fe–Ni precipitation,
 BSE trend, Nimis 2015 mantle band) and overlay them on P–ΔFMQ.
 
 Usage (from the project root):
-    python scripts/make_fig12_buffers.py
+    python scripts/make_buffers_check.py
 
 Writes
-    data/derived/fig12_buffers.csv
-    Figures/Fig12_P_fO2.png / .pdf
+    data/derived/fO2_buffers_check.csv
+    Figures/diagnostics/P_fO2_buffers_check.png / .pdf  (check plot, not a paper figure)
 and prints a literature-anchor check.
 """
 
@@ -32,8 +32,8 @@ from calculations.pt_fo2.buffers import (
 )
 
 FULL = ROOT / "data" / "derived" / "screened_PT.csv"
-OUT_CSV = ROOT / "data" / "derived" / "fig12_buffers.csv"
-OUT_FIG = ROOT / "Figures"
+OUT_CSV = ROOT / "data" / "derived" / "fO2_buffers_check.csv"
+OUT_FIG = ROOT / "Figures" / "diagnostics"
 
 
 CRATON_STYLE = {
@@ -43,8 +43,15 @@ CRATON_STYLE = {
 }
 
 
+def _house_style():
+    """Apply the house style. Its one definition is scripts/paper_figures/unified.py (style())."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "paper_figures"))
+    import unified
+    unified.style()
+
+
 def main():
-    print("=== Fig. 12 buffer check ===")
+    print("=== Buffer check (Figs 9 and 10) ===")
     verify_against_literature(verbose=True)
 
     df = None
@@ -60,6 +67,7 @@ def main():
     buf.to_csv(OUT_CSV, index=False)
     print(f"Wrote {OUT_CSV}")
 
+    _house_style()
     fig, ax = plt.subplots(figsize=(4.8, 5.6))
     lo, hi = nimis2015_band(P)
     ax.fill_betweenx(P, lo, hi, color="0.85", lw=0, zorder=0,
@@ -96,13 +104,13 @@ def main():
     ax.set_ylabel("P (GPa)")
     ax.tick_params(direction="in", top=True, right=True)
     ax.legend(frameon=False, fontsize=7, loc="lower left")
-    ax.set_title("Fig. 12  P–fO₂ with buffers", loc="left", fontsize=10)
+    ax.set_title("P–fO₂ with buffers (check; drawn in Figs 9 and 10)", loc="left", fontsize=10)
     OUT_FIG.mkdir(parents=True, exist_ok=True)
     fig.tight_layout()
-    fig.savefig(OUT_FIG / "Fig12_P_fO2.png", dpi=300)
-    fig.savefig(OUT_FIG / "Fig12_P_fO2.pdf")
+    fig.savefig(OUT_FIG / "P_fO2_buffers_check.png", dpi=300)
+    fig.savefig(OUT_FIG / "P_fO2_buffers_check.pdf")
     plt.close(fig)
-    print(f"Wrote {OUT_FIG / 'Fig12_P_fO2.png'}")
+    print(f"Wrote {OUT_FIG / 'P_fO2_buffers_check.png'}")
 
 
 if __name__ == "__main__":

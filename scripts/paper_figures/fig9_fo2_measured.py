@@ -1,7 +1,7 @@
-"""Fig. 10: pressure vs fO2 calculated from MEASURED garnet Fe3+/SumFe (n = 103). Independent of the match level."""
+"""Fig. 9: pressure vs fO2 calculated from MEASURED garnet Fe3+/SumFe (n = 103). Independent of the match level."""
 from unified import *
 from common import log
-from fig11_fo2_estimated import depth_axis, gpa
+from fig10_fo2_estimated import depth_axis, gpa
 from matplotlib.legend_handler import HandlerBase
 class HandlerXOnCircle(HandlerBase):
     def create_artists(self,legend,orig,xd,yd,width,height,fontsize,trans):
@@ -10,8 +10,8 @@ class HandlerXOnCircle(HandlerBase):
         b=Line2D([cx],[cy],marker='x',ls='none',mec='w',mew=LW_THIN+0.1,ms=4.2)
         a.set_transform(trans); b.set_transform(trans); return [a,b]
 FAILH=Line2D([0],[0],ls='none')
-def draw_fig10(df):
-    """Fig. 10 from the pipeline table df (measured Fe3+ only)."""
+def draw_fig9(df):
+    """Fig. 9 from the pipeline table df (measured Fe3+ only)."""
     from calculations.pt_fo2.buffers import buffer_table, nimis2015_band
     meas=pd.to_numeric(df["garnet_Fe3+"],errors="coerce")
     use=df.loc[meas.notna()&(meas>0)&(meas<0.5)].copy()
@@ -50,17 +50,16 @@ def draw_fig10(df):
     ax.text(0.985,0.015,f'n = {len(use)}',transform=ax.transAxes,ha='right',va='bottom',fontsize=FS_ANNOT,path_effects=halo(),zorder=9)
     failh=FAILH
     r1=[kh('slave','Slave'),kh('sib','Siberian'),kh('kaa','Kaapvaal')]+([kh('oth','Other')] if has_other else [])
-    bl=Line2D([],[],marker='o',ls='',mfc='none',mec=BLUE_RING,mew=LW_RING,ms=7,label='Blue error group')
-    rd=Line2D([],[],marker='o',ls='',mfc='none',mec=RED_RING,mew=LW_RING,ms=7,label='Red error group')
+    bl=kh('blue','blue error group'); rd=kh('red','red error group')
     handles=[];labels=[]
-    cells=[[kh('slave','Slave'),bl],[kh('sib','Siberian'),rd],[kh('kaa','Kaapvaal'),kh('mean','Depth Mean')],[failh,kh('blank')]]
-    names=[['Slave','Blue error group'],['Siberian','Red error group'],['Kaapvaal','Depth Mean'],['Quality or equilibrium fail',' ']]
+    cells=[[kh('slave','Slave'),bl],[kh('sib','Siberian'),rd],[kh('kaa','Kaapvaal'),kh('mean','depth mean')],[failh,kh('blank')]]
+    names=[['Slave','blue error group'],['Siberian','red error group'],['Kaapvaal','depth mean'],['quality or equilibrium fail',' ']]
     for c in range(4):
         for r in range(2): handles.append(cells[c][r]); labels.append(names[c][r])
-    fig.legend(handles=handles,labels=labels,handler_map={FAILH:HandlerXOnCircle()},loc='upper center',bbox_to_anchor=((L+AW/2)/W,1-0.6/H),ncol=4,frameon=False,fontsize=FS_KEY,handletextpad=0.4,columnspacing=2.2,labelspacing=0.5,handlelength=1.6,borderaxespad=0)
-    print('Fig10 n',len(use),'blue',int(blue_u.sum()),'red',int(red_u.sum()),'fail',int(fail.sum()),'other',has_other)
-    log('fig10',dict(n=int(len(use)),fail=int(fail.sum()),quality_fail=int(q_fail.sum()),equilibrium_fail=int((~eq_ok).sum())))
+    fig.legend(handles=handles,labels=labels,handler_map={FAILH:HandlerXOnCircle()},loc='upper center',bbox_to_anchor=((L+AW/2)/W,1-0.6/H),ncol=4,fontsize=FS_KEY,columnspacing=1.8,labelspacing=0.45,borderaxespad=0)
+    print('Fig9 n',len(use),'blue',int(blue_u.sum()),'red',int(red_u.sum()),'fail',int(fail.sum()),'other',has_other)
+    log('fig9',dict(n=int(len(use)),fail=int(fail.sum()),quality_fail=int(q_fail.sum()),equilibrium_fail=int((~eq_ok).sum())))
     assert len(use)==103
-    return fig,(4110,2834)
+    return fig,pxsize(W,H)
 if __name__=='__main__':
-    f,px=draw_fig10(load()); save(f,'Fig10_final.png',px)
+    f,px=draw_fig9(load()); save(f,'Fig9_final.png',px)

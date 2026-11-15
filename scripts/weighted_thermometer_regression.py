@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Weighted TA98 - WZ07 regression on experiments (manuscript Fig. 4, Sect. 3.3).
+"""Weighted TA98 - WZ07 regression on experiments (manuscript Fig. 5, Sect. 3.3).
 
 Stand-alone module and CLI. It reads a CSV of experimental run products,
 weights each run by how far it is from equilibrium, and fits

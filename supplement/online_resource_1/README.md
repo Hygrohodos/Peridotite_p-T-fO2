@@ -3,6 +3,7 @@
 | Item (manuscript place) | Generator | Output (in `$PAPER_FIG_OUT`) |
 |---|---|---|
 | Weighted fit to the 13 experiments, with weights, χ², n_eff and bootstrap (Section 3.3, Fig. 5) | `weighted_thermometer_regression.py --robustness` | `data/derived/weighted_regression/` |
+| Run/weight table of the 13 experiments (moved out of Fig. 5, 14 Nov 2026; Section 3.3, Fig. 5): `Online_Resource_1_experiment_weights.csv` / `.md` in this folder | `make_fig05_weightcircles.py` (called by `paper_figures/make_paper_figures.py`) | `Online_Resource_1/` |
 | Diagnostics of the withdrawn rev. v2 correction (+0.023 per 100 °C residual trend; 35 % at the floor) (Section 3.3) | `v2_withdrawn_diagnostics.py` | `v2_withdrawn_diagnostics.json` |
 | Level-choice sensitivity, −92 to −102 °C (Section 3.4) | `v3_level_sensitivity.py` | `v3_level_sensitivity.csv` |
 | Floor counts, residual trend, deep-vs-BSE scatter test (Sections 3.4, 4) | `v3_text_numbers.py` | `v3_text_numbers.json` |

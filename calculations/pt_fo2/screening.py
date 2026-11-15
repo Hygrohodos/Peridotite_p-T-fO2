@@ -5,12 +5,15 @@ Sample screening: analytical quality, then the equilibrium filters translated
 from the Screening sheet of SD1.
 
 Samples must pass successive tests:
-  1. Four required phases present (cpx, opx, olivine, garnet)
-  2. Analytical quality (Nimis and Grütter 2010, p. 413; see analytical_quality)
+  1. Analytical quality (Nimis and Grütter 2010, p. 413; see analytical_quality)
+  2. Four required phases present (cpx, opx, olivine, garnet)
   3. TA98 temperature > 900 °C
   4. Opx–Cpx equilibrium (|TA98 – NG10| < 80 °C)
   5. Pyroxene–Garnet equilibrium (|HA84 − quadratic in TA98| < 60 °C)
   6. Garnet–Olivine equilibrium (ΔT < 50 °C after linear correction)
+
+  screen_quality and screen_4phases are independent flags. Later screens are
+  cumulative and start from the intersection of those two.
 
 Note: measured garnet Fe³⁺ is NOT required for the calculation path.
 
@@ -56,7 +59,7 @@ def analytical_quality(df, params=None):
 
 def apply_equilibrium_screening(df, verbose=True, params=None):
     """
-    Apply the full sequence of screens (analytical quality, then equilibrium).
+    Apply the full sequence of screens (analytical quality first, then four-phase, then equilibrium).
 
     Parameters
     ----------
@@ -81,9 +84,20 @@ def apply_equilibrium_screening(df, verbose=True, params=None):
         print("\n=== Equilibrium screening ===")
 
     # ------------------------------------------------------------------
-    # Screen 1: four required phases present
+    # Screen 1: analytical quality of the opx, cpx and garnet analyses
+    # Applied first, ahead of the four-phase screen. The flag is not
+    # cumulative: a sample can pass quality and still lack a phase.
+    # ------------------------------------------------------------------
+    result["screen_quality"] = analytical_quality(result, params)
+    n_quality = int(result["screen_quality"].sum())
+    if verbose:
+        print(f"Analyses meet the quality criteria in {n_quality} of {n_total} samples.")
+
+    # ------------------------------------------------------------------
+    # Screen 2: four required phases present
     # Excel checks oxide wt% SiO2 > 1 (CU-*!B), not cation Si.
     # Using cation Si > 1 fails for olivine (4-O basis, Si ≈ 0.99–1.0).
+    # The flag is the phase-presence test only (not cumulative with quality).
     # ------------------------------------------------------------------
     def _has_phase(prefix):
         # Prefer oxide column if present; else fall back to cation Si > 0.5
@@ -100,25 +114,21 @@ def apply_equilibrium_screening(df, verbose=True, params=None):
 
     result["screen_4phases"] = (has_opx & has_cpx & has_ol & has_gt)
     n_4ph = int(result["screen_4phases"].sum())
+    n_quality_4ph = int((result["screen_quality"] & result["screen_4phases"]).sum())
     if verbose:
-        print(f"Four required phases are present in {n_4ph} of {n_total} samples.")
-
-    # ------------------------------------------------------------------
-    # Screen 2: analytical quality of the opx, cpx and garnet analyses
-    # ------------------------------------------------------------------
-    result["screen_quality"] = result["screen_4phases"] & analytical_quality(result, params)
-    n_quality = int(result["screen_quality"].sum())
-    if verbose:
-        print(f"Analyses meet the quality criteria in {n_quality} of {n_4ph} samples.")
+        print(f"Four required phases are present in {n_4ph} of {n_total} samples "
+              f"({n_quality_4ph} after the quality screen).")
 
     # ------------------------------------------------------------------
     # Screen 3: TA98 temperature > 900 °C
     # ------------------------------------------------------------------
     T_threshold = sp.t_min_c
-    result["screen_T900"] = result["screen_quality"] & (result["T_TA98"] > T_threshold)
+    result["screen_T900"] = (
+        result["screen_quality"] & result["screen_4phases"] & (result["T_TA98"] > T_threshold)
+    )
     n_T900 = int(result["screen_T900"].sum())
     if verbose:
-        print(f"Temperature > {T_threshold:.0f} °C in {n_T900} of {n_quality} samples.")
+        print(f"Temperature > {T_threshold:.0f} °C in {n_T900} of {n_quality_4ph} samples.")
 
     # ------------------------------------------------------------------
     # Screen 4: Opx–Cpx equilibrium (|TA98 – NG10| < 80 °C)
@@ -161,8 +171,9 @@ def apply_equilibrium_screening(df, verbose=True, params=None):
 
     stats = {
         "n_total": n_total,
-        "n_4phases": n_4ph,
         "n_quality": n_quality,
+        "n_4phases": n_4ph,
+        "n_quality_4phases": n_quality_4ph,
         "n_T900": n_T900,
         "n_opx_cpx": n_opx_cpx,
         "n_pyx_gt": n_pyx_gt,

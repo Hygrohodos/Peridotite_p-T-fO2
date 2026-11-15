@@ -15,7 +15,9 @@ experimental pressure.  The pipeline's flat −118 °C WZ07 offset
 Pyroxene–garnet screening uses dT_pyx_gt (HA84 − quadratic in TA98),
 which replaced the former KR00−HA84 test (dT_KR00).
 
-Writes Figures/Fig04_TA98_WZ07_measured_Fe3.{png,pdf} and
+Legacy (original-submission Fig. 4, flat F1300o offset; the v7 experiments figure is Fig. 5,
+made by scripts/make_fig05_weightcircles.py). Writes
+Figures/original_submission/Fig04_TA98_WZ07_measured_Fe3.{png,pdf} and
 data/derived/exp_TA98_WZ07_Fe3.csv.
 
 MaLm2 (Rzehak) has no olivine and no cpx, so it cannot be plotted.
@@ -44,7 +46,7 @@ from calculations.pt_fo2.thermobarometry import (
 )
 
 IN_COMP = ROOT / "data" / "incoming" / "experiments_20260913.csv"
-OUT = ROOT / "Figures"
+OUT = ROOT / "Figures" / "original_submission"
 OUT.mkdir(parents=True, exist_ok=True)
 
 
@@ -120,7 +122,7 @@ def temperatures(df: pd.DataFrame) -> pd.DataFrame:
 
 STYLE = {
     "Matjuschkin et al. 2014": dict(marker="o", color="#333333", label="Matjuschkin 2014"),
-    "Rzehak et al. 2020": dict(marker="s", color="#4c72b0", label="Rzehak 2020"),
+    "Rzehak et al. 2020": dict(marker="D", color="#009E73", label="Rzehak 2020"),  # was blue square (t1832u)
 }
 
 # Annotated groups on the Fe³⁺-included figure
@@ -167,12 +169,20 @@ def _hull_xy(x, y, pad=0.12):
     return np.vstack([vert, vert[0]])
 
 
+def _house_style():
+    """Apply the house style. Its one definition is scripts/paper_figures/unified.py (style())."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "paper_figures"))
+    import unified
+    unified.style()
+
+
 def _plot(df: pd.DataFrame, ycol: str, ylabel: str, title: str, stem: str,
           href=None, href_label=None, groups=False) -> None:
     from matplotlib.patches import Polygon
 
     use = df[df["usable"]].copy()
     use["_sid"] = use["SampleID"].map(_sid)
+    _house_style()
     fig, ax = plt.subplots(figsize=(119 / 25.4, 95 / 25.4))
     ax.axhline(0, color="0.6", lw=0.7)
     if href is not None:

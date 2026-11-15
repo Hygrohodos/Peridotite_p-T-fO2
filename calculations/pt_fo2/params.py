@@ -101,7 +101,7 @@ class Fe3Params:
 
     # Empirical high-T correction (manuscript Eq. 5), T ≥ t_emp_min_c only:
     #   XFe3_corr = XFe3_iter + emp_slope·T + emp_intercept
-    # Fitted exactly as drawn in Fig. 5b (calibration.fit_empirical_correction):
+    # Fitted exactly as drawn in original-submission Fig. 5b (calibration.fit_empirical_correction):
     #   uncorrected estimates at ΔT = emp_fit_dt_c (25 °C); Slave calibration
     #   samples minus the blue (meas − est > emp_blue_threshold) and red
     #   (emp_red_ids) error groups; T_TA98 ≥ t_emp_min_c (the dashed

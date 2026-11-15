@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Figures 1-11, Table 1 and the numbers quoted in the text of Greene et al. (revision).
+"""Figures 1-10, Table 1 and the numbers quoted in the text of Greene et al. (revision).
 
 Usage:  python3 scripts/paper_figures/make_paper_figures.py [--extend-slope]
         (output folder: $PAPER_FIG_OUT, default scripts/paper_figures/out; nothing in data/ is changed)
@@ -9,7 +9,7 @@ Usage:  python3 scripts/paper_figures/make_paper_figures.py [--extend-slope]
 
 Data flow
     experimental runs (scripts/weighted_thermometer_regression.py)
-      -> weighted fit c(T) = TA98 - WZ07 (Fig. 4), held flat outside the experimental TA98 range
+      -> weighted fit c(T) = TA98 - WZ07 (Fig. 5), held flat outside the experimental TA98 range
     data/master/xenolith_geochem.csv
       -> calculation pipeline: cations, P-T, screening (analytical quality of Nimis and Grutter 2010,
          then the equilibrium screens; calculations/pt_fo2/screening.py)
@@ -17,14 +17,14 @@ Data flow
       -> pipeline stopped at that level                     -> screened_PT.csv, p-T-fO2.csv
       -> fO2 residuals and 1 sigma; Table 1                 -> fO2_residuals.csv, fO2_uncertainty.json,
                                                                Table1_calibration_stats.csv, level_anchor.json
-      -> Figs 3 and 5-11, and the numbers quoted in the text, all from these files.
-Figs 1, 2 and 4 (localities, Fe3+ effect on WZ07, experiments) do not depend on the xenolith screening.
+      -> Figs 3, 4 and 6-10, and the numbers quoted in the text, all from these files.
+Figs 1, 2 and 5 (localities, Fe3+ effect on WZ07, experiments) do not depend on the xenolith screening.
 
 Match level of Eq. 4. Garnet Fe3+/SumFe is raised from 0.01 until
     T_TA98 - T_WZ07(Fe2+) - [c(T_TA98) - c(pivot)] <= dT_match,
-where c(T) is the weighted experimental fit of Fig. 4. Over the screened Slave calibration samples the pivot
+where c(T) is the weighted experimental fit of Fig. 5. Over the screened Slave calibration samples the pivot
 is the median T_TA98 and dT_match the median of the slope-removed T_TA98 - T_WZ07(measured Fe3+)
-(calculations/pt_fo2/level_anchor.py). This is the bold line in Fig. 5; Figs 6-11 and every number in the
+(calculations/pt_fo2/level_anchor.py). This is the bold line in Fig. 4; Figs 6-10 and every number in the
 text use it.
 """
 
@@ -91,30 +91,34 @@ def write_statistics(table, level_c, out):
 
 
 def draw_figures(table):
-    """Draw Figs 1-3 and 5-11 into the output folder; Figs 3 and 5-11 from the table at the match level."""
+    """Draw Figs 1-4 and 6-10 into the output folder; Figs 3, 4 and 6-10 from the table at the match level."""
     from unified import save
     import fig1, fig2, fig3
-    from fig5_slave_level import draw_fig5
-    from fig6_fe3_match_level import draw_fig6
-    from fig7_level_sensitivity import draw_fig7
-    from fig8_fe3_match_level import draw_fig8
-    from fig9_validation import draw_fig9
-    from fig10_fo2_measured import draw_fig10
-    from fig11_fo2_estimated import draw_fig11
+    from fig4_slave_level import draw_fig4
+    from fig6_level_sensitivity import draw_fig6
+    from fig7_fe3_match_level import draw_fig7
+    from fig8_validation import draw_fig8
+    from fig9_fo2_measured import draw_fig9
+    from fig10_fo2_estimated import draw_fig10
     for n, draw in ((1, fig1.fig1), (2, fig2.fig2)):
         fig, px = draw()
         save(fig, f"Fig{n}_final.png", px)
-    for n, draw in ((3, fig3.fig3), (5, draw_fig5), (6, draw_fig6), (7, draw_fig7), (8, draw_fig8), (9, draw_fig9), (10, draw_fig10), (11, draw_fig11)):
+    for n, draw in ((3, fig3.fig3), (4, draw_fig4), (6, draw_fig6), (7, draw_fig7), (8, draw_fig8), (9, draw_fig9), (10, draw_fig10)):
+        # file and function numbers follow manuscript v7; the former Fig. 6 is retired_former_fig6_fe3_three_levels.py (not drawn)
         fig, px = draw(table)
         save(fig, f"Fig{n}_final.png", px)
 
 
-def draw_fig4(out):
-    """Fig. 4 (the 13 experiments and their weighted fit), drawn by scripts/make_fig04_weightcircles.py."""
-    tmp = out / "_fig4"
-    run("make_fig04_weightcircles.py", "--outdir", tmp)
-    (tmp / "Fig04_TA98_WZ07_measured_Fe3.png").replace(out / "Fig4_final.png")
-    (tmp / "Fig04_weights.csv").replace(out / "Fig4_weights.csv")
+def draw_fig5(out, pivot):
+    """Fig. 5 (the 13 experiments and their weighted fit, equation written about the pivot) and the Online
+    Resource 1 run/weight table, both from scripts/make_fig05_weightcircles.py."""
+    tmp = out / "_fig5"
+    run("make_fig05_weightcircles.py", "--outdir", tmp, "--pivot", repr(float(pivot)))
+    (tmp / "Fig05_TA98_WZ07_measured_Fe3.png").replace(out / "Fig5_final.png")
+    (tmp / "Fig05_weights.csv").replace(out / "Fig5_weights.csv")
+    (tmp / "Fig05_TA98_WZ07_measured_Fe3_equation.json").replace(out / "Fig5_equation.json")
+    shutil.rmtree(out / "Online_Resource_1", ignore_errors=True)
+    (tmp / "Online_Resource_1").replace(out / "Online_Resource_1")
     shutil.rmtree(tmp)
 
 
@@ -141,7 +145,7 @@ if __name__ == "__main__":
     table = calculate_at_match_level(level, pivot, out)
     write_statistics(table, level, out)
     draw_figures(table)
-    draw_fig4(out)
+    draw_fig5(out, pivot)
     write_quoted_numbers(out)
     shape = "extended" if extend else "held flat"
     print(f"WZ07 correction c(T) = {fit.b0:.1f} {fit.b1:+.3f} (T - {fit.t_ref:.0f}), {shape} below the experiments; "

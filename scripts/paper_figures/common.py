@@ -1,6 +1,6 @@
-"""Helpers shared by the scripts of Figs 5-11.
+"""Helpers shared by the scripts of Figs 4 and 6-10.
 
-WZ07 is corrected by the slope of the weighted experimental fit c(T) of Fig. 4, applied about a pivot
+WZ07 is corrected by the slope of the weighted experimental fit c(T) of Fig. 5, applied about a pivot
 temperature, and garnet Fe3+/SumFe is raised until (Eq. 4)
     T_TA98 - T_WZ07(Fe2+) <= dT_match + c(T_TA98) - c(T_pivot).
 The level dT_match and the pivot are set once, in make_paper_figures.py, through set_match_level().
@@ -17,7 +17,7 @@ def set_match_level(level_c, pivot_c):
     """Set dT_match (deg C, at the pivot) and the pivot temperature, and write them into PARAMS.fe3.
 
     The pipeline stops at T_TA98 - T_WZ07 - c(T) <= FP.dt_match_c, so FP.dt_match_c = level - c(pivot).
-    The error groups (Figs 6, 8) are identified at the same level.
+    The error groups (Fig. 7) are identified at the same level.
     """
     _LEVEL.update(level=float(level_c), pivot=float(pivot_c))
     FP.dt_match_c = FP.emp_fit_dt_c = to_pipeline(level_c)

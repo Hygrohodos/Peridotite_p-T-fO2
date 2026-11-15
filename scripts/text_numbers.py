@@ -48,7 +48,7 @@ out["deep_vs_BSE"] = dict(n_deep=int(deep5.sum()), n_below=int((deep5 & (marg > 
     below_more_than_2sigma_offfloor=int((m & (marg > 2 * sig)).sum()),
     ids_below=s.loc[deep5 & (marg > 0), "SampleID"].astype(str).tolist())
 plotted = (F.between(-7, 0) & s["P_CA91"].between(30, 70)).to_numpy()
-out["fig11_floor_plotted"] = [int((plotted & flv).sum()), int(flv.sum())]
+out["fig10_floor_plotted"] = [int((plotted & flv).sum()), int(flv.sum())]
 # residual trend with T on the calibration + validation samples, all and with the error groups excluded
 r = pd.read_csv(D / "fO2_residuals.csv"); scr = pd.read_csv(D / "screened_PT.csv", low_memory=False)
 scr = scr.rename(columns={scr.columns[0]: "SampleID"})

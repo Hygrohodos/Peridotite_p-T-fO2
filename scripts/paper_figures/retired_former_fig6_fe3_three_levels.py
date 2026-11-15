@@ -1,11 +1,11 @@
-"""Fig. 6: estimated against measured garnet Fe3+/SumFe for the screened Slave calibration samples at the match level
-of Fig. 5 and 25 deg C either side, with the residuals against temperature."""
+"""RETIRED: former Fig. 6, removed from the paper in manuscript v7 and not drawn by make_paper_figures.py. Estimated against measured garnet Fe3+/SumFe for the screened Slave calibration samples at the match level
+of Fig. 4 and 25 deg C either side, with the residuals against temperature."""
 from fe3rows import *
 from common import *
 
 
-def draw_fig6(df):
-    """Fig. 6 from the pipeline table df, at the match level and 25 deg C either side."""
+def draw_former_fig6(df):
+    """Former Fig. 6 from the pipeline table df, at the match level and 25 deg C either side."""
     base, meas, blue, red, rem = mf._error_groups(df); T = pd.to_numeric(df['T_TA98'], errors='coerce')
     lev = match_level(); dts = (lev + 25, lev, lev - 25)
     W, H = 174, 210; fig = newfig(W, H)
@@ -29,9 +29,9 @@ def draw_fig6(df):
         if i < 2: aL.set_xlabel(''); aR.set_xlabel('')
     fig.legend(handles=key_handles(), loc='upper center', bbox_to_anchor=(0.5, 1 - 0.8 / H), ncol=5, frameon=False, fontsize=FS_KEY,
                handletextpad=0.4, columnspacing=2.2, handlelength=1.6, borderaxespad=0)
-    log('fig6', out); print('Fig6', out)
+    log('former_fig6', out); print('former Fig6', out)
     return fig, (4110, 4960)
 
 
 if __name__ == '__main__':
-    f, px = draw_fig6(load()); save(f, 'Fig6_final.png', px)
+    f, px = draw_former_fig6(load()); save(f, 'former_Fig6_three_levels.png', px)

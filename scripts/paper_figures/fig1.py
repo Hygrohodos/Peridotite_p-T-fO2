@@ -28,7 +28,7 @@ def fig1():
         xy=mf._label_xy(f)
         if xy is None: continue
         dx,dy=wanted[key]
-        ax.text(xy[0]+dx,xy[1]+dy,key.replace(' Craton',''),fontsize=FS_ANNOT,fontweight='bold',color='#3b2a14',ha='left',va='center',zorder=5,path_effects=halo(2.6))
+        ax.text(xy[0]+dx,xy[1]+dy,key.replace(' Craton',''),fontsize=FS_ANNOT,fontweight='bold',color='#2b1d0c',ha='left',va='center',zorder=5,path_effects=halo(2.6))
         placed.add(key)
     pipes=json.loads((web/'kimberlite_localities.geojson').read_text()); by_c={k:{'lon':[],'lat':[]} for k in [c[0] for c in CRATON]+['Other']}; npts=0
     for f in pipes['features']:
@@ -41,8 +41,11 @@ def fig1():
         if p['lon']: ax.scatter(p['lon'],p['lat'],s=S_DENSE,marker=mk,c=c,edgecolors='k',linewidths=EW_DENSE,zorder=4)
     if by_c['Other']['lon']: ax.scatter(by_c['Other']['lon'],by_c['Other']['lat'],s=S_DENSE,marker='o',facecolors='none',edgecolors='#2b2623',linewidths=EW_OTHER,zorder=3)
     ax.set_xlim(-170,190); ax.set_ylim(-58,78); ax.set_aspect('equal',adjustable='box')
-    ax.set_xlabel('Longitude'); ax.set_ylabel('Latitude'); minor(ax)
-    # key above the map: row 1 geology, row 2 kimberlites (same key style as Figs 6-11)
+    ax.set_xlabel('Longitude'); ax.set_ylabel('Latitude')
+    ax.xaxis.set_major_locator(MultipleLocator(60)); ax.yaxis.set_major_locator(MultipleLocator(30)); minor(ax)
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda v,_: '0\u00b0' if v==0 else f'{abs(v):.0f}\u00b0{"E" if v>0 else "W"}'))
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda v,_: '0\u00b0' if v==0 else f'{abs(v):.0f}\u00b0{"N" if v>0 else "S"}'))
+    # key above the map: row 1 geology, row 2 kimberlites (house key style)
     kw=dict(loc='center left',frameon=False,fontsize=FS_KEY,handletextpad=0.4,columnspacing=1.2,handlelength=1.6,borderaxespad=0,borderpad=0)
     geo=[Patch(facecolor=COL[k],edgecolor='0.4',linewidth=0.3,label=LAB[k]) for k in ("craton","sedimentary_basin","orogen","volcanic_province","oceanic")]
     kim=[kh('slave','Slave'),kh('sib','Siberian'),kh('kaa','Kaapvaal'),kh('oth','Other')]

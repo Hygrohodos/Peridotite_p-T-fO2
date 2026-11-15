@@ -13,7 +13,7 @@ garnet Fe3+/ΣFe.  The fO2 1σ is the standard deviation of
 ΔFMQ(estimated) − ΔFMQ(measured).  Error groups are retained (the
 conservative case).  The samples are split at their median estimated
 ΔFMQ into reduced and oxidised halves; these two 1σ values are the
-Fig. 11 bars, and the per-dataset values are the Table 1 log column.
+Fig. 10 bars, and the per-dataset values are the Table 1 log column.
 
 Outputs:
   data/derived/fO2_residuals.csv      per-sample values
@@ -39,10 +39,18 @@ DERIVED = ROOT / "data" / "derived"
 DIAG = ROOT / "Figures" / "diagnostics"
 
 
+def _house_style():
+    """Apply the house style. Its one definition is scripts/paper_figures/unified.py (style())."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "paper_figures"))
+    import unified
+    unified.style()
+
+
 def _plot(res, unc, path):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    _house_style()
 
     g = res["error_group"].astype(bool)
     slave = res["dataset"] == "Slave calibration"
@@ -52,7 +60,7 @@ def _plot(res, unc, path):
         a.scatter(x[~g & slave], y[~g & slave], c="k", marker="*", s=60, label="Slave calibration")
         a.scatter(x[~g & ~slave], y[~g & ~slave], facecolors="none", edgecolors="k",
                   marker="*", s=60, label="Validation")
-        a.scatter(x[g], y[g], c="#c0392b", s=30, label="Error groups (Figs 6 and 8)")
+        a.scatter(x[g], y[g], c="#c0392b", s=30, label="Error groups (Fig. 7)")
 
     sc(ax[0], res["XFe3_meas"], res["res_log"].abs())
     ax[0].set_xlabel(r"Measured garnet Fe$^{3+}$/$\Sigma$Fe")

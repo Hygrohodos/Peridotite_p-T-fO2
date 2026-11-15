@@ -1,4 +1,4 @@
-"""Reproduces the revision-v1 Fig. 4 fit from the 13 current experiments.
+"""Reproduces the revision-v1 experimental fit (manuscript v7 Fig. 5) from the 13 current experiments.
 Run:  python3 -m pytest tests/test_weighted_regression.py   (or python3 tests/test_weighted_regression.py)
 Needs pytest.
 """

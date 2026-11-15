@@ -2,6 +2,8 @@
 """
 Derive the locked Eq. 5 coefficients and the ΔT match threshold.
 
+LEGACY: original-submission method; Eq. 5 and the figures named here are not in manuscript v7.
+
 Usage (from the project root, after ``python run_pipeline.py``):
 
     python scripts/fit_calibration.py                  # report + check params.py
@@ -10,8 +12,8 @@ Usage (from the project root, after ``python run_pipeline.py``):
 Steps (see calculations/pt_fo2/calibration.py):
   1. Eq. 5 = least-squares line of (measured − estimated) Fe3+/ΣFe on
      T_TA98 at ΔT = 25 °C, for the Slave samples inside the dashed
-     envelope of Fig. 5b (error groups removed, T ≥ 1130 °C).
-  2. Fig. 6 sweep of ΔT with Eq. 5 held fixed, scored on those samples
+     envelope of original-submission Fig. 5b (error groups removed, T ≥ 1130 °C).
+  2. Original-submission Fig. 6 sweep of ΔT with Eq. 5 held fixed, scored on those samples
      only; the locked ΔT has the highest ±0.02 rate (ties: smallest |bias|).
 
 Outputs:
@@ -81,7 +83,7 @@ def main():
           f"blue {fit['n_blue']}, red {fit['n_red']}):")
     print(f"  XFe3_corr = XFe3_iter + {fit['slope']:.4e}·T + ({fit['intercept']:.5f})")
     r = rec["selected_row"]
-    print(f"Fig. 6 selected ΔT = {dt} °C  (n = {r['n']}, ±0.02 = {r['p02']:.1%}, "
+    print(f"Original-submission Fig. 6 sweep: selected ΔT = {dt} °C  (n = {r['n']}, ±0.02 = {r['p02']:.1%}, "
           f"±0.05 = {r['p05']:.1%}, mean = {r['mean']:+.4f})")
 
     fp = PARAMS.fe3

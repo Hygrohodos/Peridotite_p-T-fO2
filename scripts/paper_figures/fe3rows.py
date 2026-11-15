@@ -1,7 +1,7 @@
 from unified import *
 from matplotlib.ticker import FormatStrFormatter
 from matplotlib.patches import Patch
-XM=r'Garnet Fe$^{3+}$/$\Sigma$Fe (measured)'; YE=r'Garnet Fe$^{3+}$/$\Sigma$Fe (estimated)'; YR='Fe$^{3+}$/$\\Sigma$Fe (measured\u2212estimated)'
+XM=r'Garnet Fe$^{3{+}}$/$\Sigma$Fe, measured'; YE=r'Garnet Fe$^{3{+}}$/$\Sigma$Fe, estimated'; YR='Fe$^{3{+}}$/$\\Sigma$Fe, measured \u2212 estimated'
 def points(ax,xv,yv,df,ok,meas_unused=None):
     cr=df['Craton'].fillna('').astype(str)
     known=cr.isin([c[0] for c in CRATON]); oth=ok&~known
@@ -21,13 +21,13 @@ def row(axL,axR,df,meas,T,est,ok,blue=None,red=None):
     if has_e.any(): axL.errorbar(meas[has_e],est[has_e],xerr=sigma[has_e],fmt='none',ecolor='0.45',elinewidth=LW_THIN,capsize=1.5,zorder=2)
     points(axL,meas,est,df,ok); rings(axL,meas,est,blue,red)
     axL.set_xlim(0,0.35); axL.set_ylim(0,0.20); axL.set_xlabel(XM); axL.set_ylabel(YE)
-    fmt(axL,np.arange(0,0.351,0.05),np.arange(0,0.2001,0.025),'%.2f','%.3f')
+    fmt(axL,np.arange(0,0.351,0.05),np.arange(0,0.2001,0.05),'%.2f','%.2f')
     band_fill(axR,'resid'); axR.axhline(0,color='0.35',lw=LW_THIN,zorder=1)
     resid=meas-est; points(axR,T,resid,df,ok); rings(axR,T,resid,blue,red)
-    axR.set_xlim(900,1400); axR.set_ylim(-0.12,0.20); axR.set_xlabel('Temperature (\u00b0C)'); axR.set_ylabel(YR)
+    axR.set_xlim(900,1400); axR.set_ylim(-0.12,0.20); axR.set_xlabel(XT_TA98); axR.set_ylabel(YR)
     fmt(axR,np.arange(900,1401,100),np.arange(-0.10,0.2001,0.05),'%d','%.2f')
 def key_handles(rings_too=True):
-    h=[kh('slave','Slave'),Patch(fc=GREEN_INNER,ec='none',label=r'$\pm$0.02'),Patch(fc=GREEN_OUTER,ec='none',label=r'$\pm$0.05')]
+    h=[kh('slave','Slave'),Patch(fc=GREEN_INNER,ec='none',label=r'within $\pm$0.02'),Patch(fc=GREEN_OUTER,ec='none',label=r'within $\pm$0.05')]
     if rings_too:
-        h+=[Line2D([],[],marker='o',ls='',mfc='none',mec=BLUE_RING,mew=LW_RING,ms=7,label='Blue error group'),Line2D([],[],marker='o',ls='',mfc='none',mec=RED_RING,mew=LW_RING,ms=7,label='Red error group')]
+        h+=[kh('blue','blue error group'),kh('red','red error group')]
     return h

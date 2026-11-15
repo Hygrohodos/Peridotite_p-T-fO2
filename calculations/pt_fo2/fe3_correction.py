@@ -346,7 +346,7 @@ def apply_empirical_fe3_correction(df, verbose=True, params=None):
             XFe3_corr = XFe3_iterated + emp_slope * T + emp_intercept
 
     emp_slope and emp_intercept are the least-squares line of
-    (measured − estimated) on T for the Fig. 5b regression samples
+    (measured − estimated) on T for the original-submission Fig. 5b regression samples
     (Slave, error groups removed, T ≥ t_emp_min_c) at ΔT = emp_fit_dt_c;
     see calibration.fit_empirical_correction.  No level shift is applied.
 

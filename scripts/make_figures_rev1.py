@@ -1,5 +1,8 @@
 """Revision v1 figures (local branch revision-v1-figures; not pushed).
 
+LEGACY NUMBERING: figure numbers here (Fig. 4-7, Fig. X) are the revision-v1 numbering, not
+manuscript v7 (see scripts/paper_figures/make_paper_figures.py for the v7 figures).
+
 Point 1 (item 1): WZ07 correction = weighted 13-experiment linear fit
 (exp_calibration, inverse variance, sigma0 = 50 C), clamped to the
 experimental TA98 range; Eq. 5 dropped; match level dt_match_c re-tuned on

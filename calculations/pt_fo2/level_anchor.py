@@ -5,7 +5,7 @@ Match level of Eq. 4, anchored to natural xenoliths (not tuned on the Fe3+ succe
 
 For each sample with measured garnet Fe3+/SumFe, the measured Fe3+ is removed from the olivine-garnet
 calculation and D_i = T_TA98,i - T_WZ07,i(measured Fe3+). The weighted experimental slope of c(T)
-(Fig. 4; params wz07_offset_*) is removed about a pivot, r_i = D_i - [c(T_TA98,i) - c(pivot)]. Over all
+(Fig. 5; params wz07_offset_*) is removed about a pivot, r_i = D_i - [c(T_TA98,i) - c(pivot)]. Over all
 screened Slave calibration samples
 
 * the pivot is the MEDIAN of T_TA98, and

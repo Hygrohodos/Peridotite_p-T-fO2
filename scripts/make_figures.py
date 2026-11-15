@@ -2,10 +2,15 @@
 """
 Rebuild chapter figures from the calculated xenolith table.
 
+LEGACY NUMBERING: every figure number in this file (Fig. 1-12, fig01-fig12 functions and file
+stems) is the ORIGINAL-SUBMISSION numbering, not manuscript v7. The v7 figures are built by
+scripts/paper_figures/make_paper_figures.py; this module is imported there only for helpers.
+Legacy figures are written to Figures/original_submission/.
+
 Usage (from the project root):
     python scripts/make_figures.py
 
-Outputs PNG + PDF files to Figures/.
+Outputs PNG + PDF files to Figures/original_submission/.
 Edit symbol / colour choices below if you want a closer Grapher match.
 """
 
@@ -35,7 +40,7 @@ from calculations.pt_fo2.params import PARAMS
 from calculations.pt_fo2 import calibration as calib
 
 FULL = ROOT / "data" / "derived" / "screened_PT.csv"
-OUT = ROOT / "Figures"
+OUT = ROOT / "Figures" / "original_submission"
 _LOC_CANDIDATES = (
     ROOT / "data" / "master" / "kimberlite_locations.csv",
     ROOT / "data" / "kimberlite_locations.csv",
@@ -196,25 +201,11 @@ def _scatter_by_craton(ax, df, x, y, screened_only=False, legend_loc="lower left
 
 
 def _apply_journal_style():
-    """CMP-ready fonts and line weights at print size (no later rescaling)."""
-    plt.rcParams.update({
-        "font.family": "sans-serif",
-        "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
-        "font.size": 8,
-        "axes.labelsize": 8,
-        "axes.titlesize": 8,
-        "xtick.labelsize": 8,
-        "ytick.labelsize": 8,
-        "legend.fontsize": 7,
-        "axes.linewidth": 0.8,
-        "xtick.major.width": 0.6,
-        "ytick.major.width": 0.6,
-        "xtick.major.size": 3.0,
-        "ytick.major.size": 3.0,
-        "lines.linewidth": 1.15,
-        "pdf.fonttype": 42,
-        "ps.fonttype": 42,
-    })
+    """House style for every figure. Its one definition is scripts/paper_figures/unified.py (style()),
+    imported here at call time (unified imports this module for helpers)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "paper_figures"))
+    import unified
+    unified.style()
 
 
 def _save(fig, stem, tight=True, dpi=600):
