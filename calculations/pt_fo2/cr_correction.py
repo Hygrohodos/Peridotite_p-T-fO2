@@ -1,35 +1,37 @@
 """
 cr_correction.py
 ----------------
-Calibration correction of TA98 - WZ07 that depends on TA98 temperature and garnet Cr2O3 (revision v7_cr).
-This replaces the v7 Eq. 4 (weighted experimental slope 0.555 about the Slave pivot, level -103.8 C).
+Calibration correction of TA98 - WZ07 that depends on TA98 temperature and garnet Cr2O3 (Eq. 4; v2 method,
+manuscript s35_lowT, adopted 20 Nov 2026). This replaces the v7 Eq. 4 (weighted experimental slope 0.555 about
+the Slave pivot, level -103.8 C) and the v7_cr level of -102 C.
 
 The correction
 ==============
 For a sample with two-pyroxene temperature T_TA98 (deg C) and garnet Cr2O3 (wt%), the calibration part of
 the thermometer discrepancy is
 
-    C(T, Cr) = a + b*t + c*(Cr2O3 - Cr_ref)*t,        t = T_TA98 - T_pivot
+    T_TA98 >= 1124 C:  C(T, Cr) = a + b*t + c*(Cr2O3 - Cr_ref)*t,      t = min(T_TA98, 1394) - T_pivot
+    T_TA98 <  1124 C:  C(T, Cr) = D_low                                (flat, no slope or Cr2O3 term)
 
-    a      = -102 deg C   (adopted level at the pivot; dT_match of the paper).
-                           The Fig. 6 +-0.02 optimum on the 19 screened Slave samples
-                           outside the error groups (ties -104 to -102 C, broken by smallest |mean|).
-                           The joint WLS intercept is -92.77 +- 2.92 deg C (CR_A_FIT); b and c are
-                           those of the same fit and are not refitted when the level is set.
+    a      = -92.77 +- 2.92 deg C  (CR_A_FIT, the joint WLS intercept at the pivot; the level is folded into Eq. 4)
     b      = -0.2850 +- 0.0472 deg C/deg C  (slope at Cr_ref)
     c      = +0.0673 +- 0.0199 deg C/deg C per wt% Cr2O3   (p = 0.0007)
     Cr_ref = 5.3643 wt%   (mean garnet Cr2O3 of the 37 natural fit samples)
     T_pivot = 1207.02 deg C (median TA98 of the 23 screened Slave calibration samples, as in v7)
+    D_low  = -113.24 deg C (CR_D_LOW: mean TA98 - T_WZ07(measured Fe3+) of the 8 screened Slave, Siberia and
+             Kaapvaal samples with TA98 < 1124 C, outside the fit exclusions; scripts/fit_cr_correction.py)
 
-i.e.  T_corr = T_WZ07 + C(T, Cr) = T_WZ07 - 102 - 0.285*t + 0.067*(Cr2O3 - 5.36)*t.
+i.e.  T_WZ07corr = T_WZ07 + C(T, Cr) = T_WZ07 - 92.77 - 0.285*t + 0.067*(Cr2O3 - 5.36)*t   (TA98 >= 1124 C)
+      T_WZ07corr = T_WZ07 - 113.24                                                       (TA98 <  1124 C)
 
 Garnet Fe3+/SumFe is raised from the 0.01 starting value in 0.001 steps until
 
-    T_TA98 - T_WZ07(Fe2+ only) <= C(T_TA98, Cr2O3)
+    T_TA98 - T_WZ07corr <= dT_match = +10 deg C
 
-which the pipeline implements as an offset  -(b*t + c*dCr*t)  subtracted from WZ07
-(fe3_correction.wz07_offset) and the stopping value dt_match_c = a (params.Fe3Params).
-Low-Cr garnets therefore get a steeper (more negative) temperature slope than high-Cr garnets.
+The pipeline subtracts -C(T, Cr) from WZ07 (fe3_correction.wz07_offset) and stops at dt_match_c = +10
+(params.Fe3Params). Low-Cr garnets get a steeper (more negative) temperature slope than high-Cr garnets.
+Before 20 Nov 2026 (fe606c1) the level was carried by dt_match_c = -102 C (the Fig. 6 +-0.02 optimum) and
+the slope was held at 1124 C below 1124 C instead of the flat D_low.
 
 Where it is applied
 ===================
@@ -45,7 +47,7 @@ The fit is constrained over garnet Cr2O3 1.3-9.8 wt% (8 Matjuschkin runs 1.28-1.
 1.77-9.80 wt%) and T_TA98 1124-1394 deg C (natural samples 1124-1366 deg C; the two 1400 deg C Matjuschkin runs
 1394.1-1394.2 deg C). Outside that box the inputs are HELD AT THE LIMIT (never extrapolated):
 
-    t  = clip(T_TA98, 1124, 1394) - T_pivot
+    t  = min(T_TA98, 1394) - T_pivot   (below 1124 C the flat D_low applies instead)
     Cr = clip(Cr2O3, 1.3, 9.8);  samples without garnet Cr2O3 use Cr_ref (dCr = 0)
 
 and the sample is flagged (flags(); cr_correction_flags.csv written by scripts/paper_figures/make_paper_figures.py,
@@ -68,7 +70,10 @@ Derivation (scripts/fit_cr_correction.py reproduces every coefficient from the p
    natural sigma = 17.43 deg C (residual SD of the natural-only fit); the experiments get their own level e
    (+62 +- 31 deg C), so they constrain only the slopes. The WLS intercept a is -92.77 +- 2.92 deg C (CR_A_FIT);
    b and c are the coefficients above (chi2 = 40.9 for 45 points; experiments chi2 = 5.9 for 8 runs).
-   The adopted level is the Fig. 6 +-0.02 optimum (-102 C), not the WLS intercept; b and c are held fixed.
+   The WLS intercept is the adopted level (folded into Eq. 4); dT_match = +10 C is the Fig. 5 threshold
+   (79 % of the 19 screened Slave samples outside the error groups within +-0.02, 100 % within +-0.05).
+4. Below 1124 C (the lower end of the fit range) the natural discrepancies bend below the trend, so a flat
+   level D_low = mean D of the 8 screened natural samples with TA98 < 1124 C (outside FIT_EXCLUDED) is used.
    The natural-only fit gives the same slopes within error (a = -92.82, b = -0.283, c = 0.0652 +- 0.0205).
    Robustness of c (natural-only): Huber 0.066; leave-one-out 0.057-0.078 (all p <= 0.011); leave-one-craton-out
    0.052 (no Siberia) to 0.101 (no Kaapvaal); bootstrap 95 % interval 0.030-0.106, c > 0 in 99.8 % of 5000 resamples.
@@ -86,13 +91,12 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-# Coefficients. b, c, CR_REF and the WLS intercept (CR_A_FIT) are from
-# scripts/fit_cr_correction.py (joint natural n = 37 + 8 Matjuschkin runs).
-# The adopted level CR_A is the Fig. 6 +-0.02 optimum, not the WLS intercept.
+# Coefficients. b, c, CR_REF, the WLS intercept CR_A_FIT and the low-T level CR_D_LOW are from
+# scripts/fit_cr_correction.py (joint natural n = 37 + 8 Matjuschkin runs; 8 low-T natural samples).
 CR_A_FIT = -92.77342661716227       # deg C, joint WLS intercept at the pivot
-CR_A_FIT_SE = 2.9164312998263755    # 1 sigma of the WLS intercept (not of the adopted level)
-CR_A = -102.0                       # deg C, adopted level at the pivot (= dT_match); Fig. 6 optimum
-CR_A_SE = CR_A_FIT_SE               # kept for callers; SE applies to CR_A_FIT
+CR_A_FIT_SE = 2.9164312998263755    # 1 sigma of the WLS intercept
+CR_A = CR_A_FIT                     # deg C, adopted level at the pivot (folded into Eq. 4)
+CR_A_SE = CR_A_FIT_SE
 CR_B = -0.285024042750883           # deg C per deg C at Cr_ref
 CR_B_SE = 0.04722822442158119
 CR_C = 0.06733635988444961          # deg C per deg C per wt% Cr2O3
@@ -100,7 +104,10 @@ CR_C_SE = 0.019923184067913657
 CR_REF = 5.364313828837838          # wt% garnet Cr2O3
 CR_PIVOT = 1207.0242233332644       # deg C
 CR_MIN, CR_MAX = 1.3, 9.8           # wt%, validity range (held at the limit outside)
-T_MIN, T_MAX = 1124.0, 1394.0       # deg C, validity range (held at the limit outside)
+T_MIN, T_MAX = 1124.0, 1394.0       # deg C, validity range (held at the limit above; flat D_low below)
+CR_D_LOW = -113.24224691422943      # deg C, flat C(T, Cr) below T_LOW (mean of the 8 low-T natural samples)
+T_LOW = 1124.0                      # deg C, flat level below this TA98
+DT_MATCH = 10.0                     # deg C, adopted dT_match on the Eq. 4 scale (level folded in)
 NATURAL_T_MIN_FIT = 1120.0          # deg C, natural samples used in the fit
 FIT_EXCLUDED = ("14-107", "MX044", "MX088", "MX104", "Uv-50-04")
 
@@ -112,25 +119,37 @@ def _coef(fp=None):
             fp.cr_min_wt, fp.cr_max_wt, fp.cr_tmin_c, fp.cr_tmax_c)
 
 
+def _low(fp=None):
+    """(D_low, T_low): the flat low-T level and the TA98 below which it applies (D_low None = no flat branch)."""
+    if fp is None:
+        return CR_D_LOW, T_LOW
+    return getattr(fp, "cr_d_low_c", None), getattr(fp, "cr_low_t_c", T_LOW)
+
+
 def cr_term(T_ta98, cr2o3=None, fp=None):
-    """Temperature- and Cr-dependent part b*t + c*dCr*t (deg C), with T and Cr held within the validity range.
+    """C(T, Cr) - a (deg C): b*t + c*dCr*t with T and Cr held within the validity range for TA98 >= T_low, and
+    D_low - a (flat) below T_low.
 
     ``cr2o3`` may be None or NaN (no garnet Cr2O3): Cr_ref is used (dCr = 0)."""
     a, b, c, ref, piv, clo, chi, tlo, thi = _coef(fp)
+    d_low, t_low = _low(fp)
     T = np.asarray(T_ta98, dtype=float)
     cr = np.full(T.shape, np.nan) if cr2o3 is None else np.broadcast_to(np.asarray(cr2o3, dtype=float), T.shape)
     t = np.clip(T, tlo, thi) - piv
     dcr = np.where(np.isfinite(cr), np.clip(cr, clo, chi), ref) - ref
-    return b * t + c * dcr * t
+    out = b * t + c * dcr * t
+    if d_low is not None:
+        out = np.where(T < t_low, d_low - a, out)
+    return out if out.ndim else float(out)
 
 
 def predicted_discrepancy(T_ta98, cr2o3=None, fp=None):
-    """C(T, Cr) = a + b*t + c*dCr*t: TA98 - WZ07 expected from calibration alone (deg C)."""
+    """C(T, Cr): TA98 - WZ07 expected from calibration alone (deg C); a + b*t + c*dCr*t, or D_low below T_low."""
     return _coef(fp)[0] + cr_term(T_ta98, cr2o3, fp)
 
 
 def corrected_wz07(T_wz07, T_ta98, cr2o3=None, fp=None):
-    """T_corr = T_WZ07 + C(T_TA98, Cr2O3) (deg C)."""
+    """T_WZ07corr = T_WZ07 + C(T_TA98, Cr2O3) (deg C); Fe3+ is raised until T_TA98 - T_WZ07corr <= dT_match."""
     return np.asarray(T_wz07, dtype=float) + predicted_discrepancy(T_ta98, cr2o3, fp)
 
 

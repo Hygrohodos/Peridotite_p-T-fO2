@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproduce the coefficients of the TA98 + garnet-Cr2O3 correction (Eq. 4, revision v7_cr) from the pipeline.
+"""Reproduce the coefficients of the TA98 + garnet-Cr2O3 correction (Eq. 4, v2 method) from the pipeline.
 
     python3 scripts/fit_cr_correction.py [--out cr_fit.json] [--check]
 
@@ -11,8 +11,9 @@ Method (full description in calculations/pt_fo2/cr_correction.py):
   joint WLS  y = a*nat + e*exp + b*t + c*(Cr2O3 - Cr_ref)*t,  t = T_TA98 - pivot, weights 1/sigma^2, fixed scale,
            natural sigma = residual SD of the natural-only OLS fit of y ~ t + (CaO - CaO_ref)*t (17.43 C; the
            same natural weighting was used for every composition model compared).
---check exits non-zero unless the fitted b, c and Cr_ref equal calculations/pt_fo2/params.py to 1e-6
-  and the fitted a equals cr_correction.CR_A_FIT (the WLS intercept; the adopted level cr_a is the Fig. 6 optimum).
+  low-T level: D_low = mean D of the same natural samples with T_TA98 < 1124 C, outside the fit exclusions (n = 8).
+--check exits non-zero unless the fitted a (= CR_A_FIT, the adopted level), b, c, Cr_ref and D_low equal
+  calculations/pt_fo2/params.py to 1e-6.
 """
 import argparse, json, sys
 from pathlib import Path
@@ -33,8 +34,8 @@ INPUT = ROOT / "data" / "master" / "xenolith_geochem.csv"
 EXPERIMENTS = ROOT / "data" / "incoming" / "experiments_20260913.csv"
 
 
-def natural_samples(table):
-    """The 37 natural fit samples: id, craton, T, t, y = D, garnet Cr2O3 and CaO."""
+def natural_all(table):
+    """All screened natural samples with measured garnet Fe3+ (calibration + validation), before the T cut."""
     m = (calib.calibration_mask(table) | calib.validation_mask(table)) & calib.measured_fe3(table).notna()
     t = table[m]
     g = pd.DataFrame({"id": t["SampleID"].astype(str).str.strip().values,
@@ -43,7 +44,19 @@ def natural_samples(table):
                       "y": discrepancy_measured(table)[m].values,
                       "Cr2O3": pd.to_numeric(t["garnet_Cr2O3"], errors="coerce").values,
                       "CaO": pd.to_numeric(t["garnet_CaO"], errors="coerce").values})
-    g = g[(g["T"] >= crc.NATURAL_T_MIN_FIT) & ~g["id"].isin(crc.FIT_EXCLUDED)].reset_index(drop=True)
+    return g[~g["id"].isin(crc.FIT_EXCLUDED)].reset_index(drop=True)
+
+
+def low_t_samples(table):
+    """The 8 natural samples below the flat-level boundary (T_TA98 < 1124 C) that set D_low."""
+    g = natural_all(table)
+    return g[g["T"] < crc.T_LOW].reset_index(drop=True)
+
+
+def natural_samples(table):
+    """The 37 natural fit samples: id, craton, T, t, y = D, garnet Cr2O3 and CaO."""
+    g = natural_all(table)
+    g = g[g["T"] >= crc.NATURAL_T_MIN_FIT].reset_index(drop=True)
     g["t"] = g["T"] - crc.CR_PIVOT
     return g
 
@@ -71,6 +84,7 @@ def fit(table):
     nat_only = smf.ols("y ~ t + t:dCr", g.assign(dCr=g.Cr2O3 - cr_ref)).fit()
     p = lambda k: dict(value=float(m.params[k]), se=float(m.bse[k]), p=float(m.pvalues[k]))
     cr_exp = float(e.Cr2O3.mean())
+    lo = low_t_samples(table)
     out = dict(
         n_natural=int(len(g)), n_by_craton=g.craton.value_counts().to_dict(), n_experiments=int(len(e)),
         natural_T_range_C=[float(g["T"].min()), float(g["T"].max())],
@@ -79,6 +93,7 @@ def fit(table):
         experiment_Cr2O3_range_wt=[float(e.Cr2O3.min()), float(e.Cr2O3.max())],
         pivot_C=crc.CR_PIVOT, cr_ref_wt=cr_ref, natural_sigma_C=nat_sd,
         a=p("nat"), experiment_level=p("exp"), b=p("t"), c=p("t:dCr"),
+        d_low=dict(value=float(lo.y.mean()), n=int(len(lo)), t_low_C=crc.T_LOW, ids=lo.id.tolist()),
         chi2=float(np.sum(m.resid ** 2 / D.sig ** 2)), n_points=int(len(D)),
         natural_only=dict(a=float(nat_only.params.Intercept), b=float(nat_only.params.t),
                           c=float(nat_only.params["t:dCr"]), c_se=float(nat_only.bse["t:dCr"])),
@@ -101,6 +116,8 @@ if __name__ == "__main__":
         a_.out.write_text(json.dumps(res, indent=1, default=float))
     if a_.check:
         fp = PARAMS.fe3
-        ok = all(abs(x - y) < 1e-6 for x, y in ((res["a"]["value"], crc.CR_A_FIT), (res["b"]["value"], fp.cr_b),
-                                                (res["c"]["value"], fp.cr_c), (res["cr_ref_wt"], fp.cr_ref)))
-        sys.exit(0 if ok else "fitted coefficients differ from CR_A_FIT / calculations/pt_fo2/params.py")
+        ok = all(abs(x - y) < 1e-6 for x, y in ((res["a"]["value"], crc.CR_A_FIT), (res["a"]["value"], fp.cr_a),
+                                                (res["b"]["value"], fp.cr_b), (res["c"]["value"], fp.cr_c),
+                                                (res["cr_ref_wt"], fp.cr_ref), (res["d_low"]["value"], fp.cr_d_low_c),
+                                                (res["d_low"]["value"], crc.CR_D_LOW)))
+        sys.exit(0 if ok else "fitted coefficients differ from cr_correction.py / calculations/pt_fo2/params.py")

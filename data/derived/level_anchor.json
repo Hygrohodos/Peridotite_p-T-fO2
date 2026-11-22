@@ -1,22 +1,41 @@
 {
- "rule": "median of TA98 - WZ07(measured Fe3+) over all screened Slave calibration samples",
- "n": 30,
- "dt_level_C": -96.04034579427491,
- "ci95_bootstrap_C": [
-  -107.6363365436149,
-  -81.0907924193836
+ "rule": "pivot: median TA98; level: median of TA98 - WZ07(measured Fe3+) with the slope removed; all screened Slave calibration samples",
+ "n": 23,
+ "pivot_C": 1207.0242233332644,
+ "level_at_pivot_C": -92.30953797369627,
+ "ci95_bootstrap_level_C": [
+  -105.74554151375153,
+  -73.3199793635638
  ],
- "mean_curve_C": 0.0,
- "mean_D_C": -101.5009949647853,
- "sd_D_C": 57.566901150136715,
- "median_D_C": -96.04034579427491,
- "mean_T_TA98_C": 1189.4853891751452,
+ "median_r_C": 0.46388864346600656,
+ "ci95_bootstrap_r_C": [
+  -12.972114896589261,
+  19.45344725359847
+ ],
+ "ci95_bootstrap_D_C": [
+  -117.4070558996691,
+  -81.8563400255764
+ ],
+ "mean_curve_C": -98.33706815976514,
+ "mean_D_C": -107.7706888289013,
+ "sd_D_C": 62.83809808717163,
+ "median_D_C": -99.47918021166174,
+ "mean_T_TA98_C": 1179.1987765082083,
+ "median_T_TA98_C": 1207.0242233332644,
  "sensitivity": {
-  "slave25_mean_excl_error_groups_C": -91.88691474997464,
-  "slave30_mean_C": -101.5009949647853,
-  "validation27_median_C": -94.6284782174389,
-  "all52_mean_excl_error_groups_C": -95.73117539659717
+  "slave_mean_excl_error_groups_C": 3.5266627422568715,
+  "slave_mean_C": -9.433620669136138,
+  "validation_median_C": -4.029060559143652,
+  "all_mean_excl_error_groups_C": 3.510393218156849
  },
+ "n_slave_excl_error_groups": 19,
+ "n_validation": 26,
+ "error_groups": [
+  "14-107",
+  "MX044",
+  "MX088",
+  "MX104"
+ ],
  "sample_ids": [
   "21-6",
   "21-4",
@@ -33,21 +52,13 @@
   "MX044",
   "MX088",
   "MX104",
-  "MX131",
   "MX144",
-  "MX162",
-  "MX5000",
   "MX5001",
   "MX5004",
   "MX5006",
   "MX5008",
   "MX5009",
   "MX5012",
-  "507141455",
-  "507101450",
-  "605301147",
-  "605051108",
-  "507151714"
- ],
- "params_dt_match_c": -96.0
+  "507101450"
+ ]
 }

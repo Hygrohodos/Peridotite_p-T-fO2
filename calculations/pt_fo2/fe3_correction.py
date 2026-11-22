@@ -11,11 +11,14 @@ Procedure
 3. Recalculate the Wu & Zhao (2007) olivine–garnet thermometer using
    only Fe²⁺ in both phases and subtract the calibration offset
    WZ07corr = WZ07raw − (wz07_offset_c + wz07_offset_slope·clip(T_TA98)).
-   Revision v7_cr (default): the offset is the TA98- and garnet-Cr2O3-dependent
-   correction of calculations/pt_fo2/cr_correction.py, −(b·t + c·(Cr2O3 − 5.36)·t).
+   Default (Eq. 4, v2 method): WZ07corr = WZ07 + C(TA98, Cr2O3) of
+   calculations/pt_fo2/cr_correction.py, with the level folded in:
+     TA98 ≥ 1124 °C: C = −92.77 − 0.285·t + 0.067·(Cr2O3 − 5.36)·t,
+                     t = min(TA98, 1394) − 1207.02, Cr2O3 held within 1.3–9.8 wt%;
+     TA98 < 1124 °C: C = −113.24 (flat).
 4. While (T_TA98 − T_WZ07corr) > dt_match_c, increase XFe³⁺ by dxfe3
-   (0.001) and recompute.  Revision v7_cr: dt_match_c = −102 °C, the Fig. 6
-   ±0.02 optimum (cr_correction.py); b and c are those of the joint fit.  Samples already
+   (0.001) and recompute.  dt_match_c = +10 °C on the Eq. 4 scale (fe606c1:
+   −102 °C with the level not folded in).  Samples already
    meeting the criterion at the starting value stay at 0.01 (the "floor").
 5. The empirical high-temperature correction (original manuscript Eq. 5) is
    applied only if params.fe3.apply_empirical_correction is True; it is
@@ -162,8 +165,8 @@ def wz07_offset(fp, T_ta98, cr2o3=None):
     offset = wz07_offset_c + wz07_offset_slope · T, with T limited to
     [wz07_offset_tmin_c, wz07_offset_tmax_c] when those are set (the offset
     is then held constant beyond the calibrated range rather than
-    extrapolated).  With the defaults (slope 0, no limits) this is the flat
-    118 °C F1300o offset.
+    extrapolated).  With wz07_correction = "cr2o3" (default) the Eq. 4
+    correction −C(T_TA98, Cr2O3) is added (cr_correction.predicted_discrepancy).
     """
     T = np.asarray(T_ta98, dtype=float)
     lo = getattr(fp, "wz07_offset_tmin_c", None)
@@ -172,10 +175,10 @@ def wz07_offset(fp, T_ta98, cr2o3=None):
         T = np.clip(T, -np.inf if lo is None else lo, np.inf if hi is None else hi)
     off = fp.wz07_offset_c + fp.wz07_offset_slope * T
     if getattr(fp, "wz07_correction", "experimental") == "cr2o3":
-        # revision v7_cr: the T- and Cr2O3-dependent part of the correction
-        # (calculations/pt_fo2/cr_correction.py); the level is dt_match_c.
-        from .cr_correction import cr_term
-        off = off - cr_term(T_ta98, cr2o3, fp)
+        # Eq. 4: the full TA98- and Cr2O3-dependent correction C(T, Cr), level
+        # included (calculations/pt_fo2/cr_correction.py); WZ07corr = WZ07 + C.
+        from .cr_correction import predicted_discrepancy
+        off = off - predicted_discrepancy(T_ta98, cr2o3, fp)
     return off
 
 
@@ -205,7 +208,7 @@ def iterate_garnet_fe3(
     dXFe2 : float
         Step size subtracted from XFe²⁺ each iteration (default 0.001).
     tol_C : float
-        Temperature agreement tolerance in °C (default 25).
+        Temperature agreement tolerance in °C (default params.fe3.dt_match_c, +10).
     XFe2_start : float
         Initial XFe²⁺ (default 0.99 → XFe³⁺ = 0.01).
     verbose : bool

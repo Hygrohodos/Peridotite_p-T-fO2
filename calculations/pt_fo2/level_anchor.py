@@ -31,15 +31,15 @@ def _num(s):
 
 
 def curve(T, p=None, cr2o3=None):
-    """TA98 - WZ07 correction c(T) applied by the pipeline, without its level.
+    """TA98 - WZ07 correction c(T) applied by the pipeline (minus the offset subtracted from WZ07).
 
-    Revision v7_cr (wz07_correction = "cr2o3"): b*t + c*(Cr2O3 - Cr_ref)*t of cr_correction.py, which is 0 at
-    the pivot; ``cr2o3`` is the garnet Cr2O3 (wt%) of each sample (None/NaN -> Cr_ref). Otherwise the weighted
-    experimental fit (v7 Eq. 4)."""
+    Eq. 4 (wz07_correction = "cr2o3"): C(T, Cr) of cr_correction.py, level folded in (-92.77 at the pivot,
+    flat -113.24 below 1124 C); ``cr2o3`` is the garnet Cr2O3 (wt%) of each sample (None/NaN -> Cr_ref).
+    Otherwise the weighted experimental fit (v7 Eq. 4)."""
     fp = (p or PARAMS).fe3
     if getattr(fp, "wz07_correction", "experimental") == "cr2o3":
-        from .cr_correction import cr_term
-        return cr_term(T, cr2o3, fp)
+        from .cr_correction import predicted_discrepancy
+        return predicted_discrepancy(T, cr2o3, fp)
     T = np.asarray(T, float)
     lo = -np.inf if fp.wz07_offset_tmin_c is None else fp.wz07_offset_tmin_c
     hi = np.inf if fp.wz07_offset_tmax_c is None else fp.wz07_offset_tmax_c

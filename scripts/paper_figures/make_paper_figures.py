@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Figures 1-10, Table 1 and the numbers quoted in the text of Greene et al. (revision v7_cr).
+"""Figures 1-10, Table 1 and the numbers quoted in the text of Greene et al. (Eq. 4 v2 method, manuscript s35_lowT).
 
-Usage:  python3 scripts/paper_figures/make_paper_figures.py            (revision v7_cr, the paper)
+Usage:  python3 scripts/paper_figures/make_paper_figures.py            (v2 method, the paper)
         python3 scripts/paper_figures/make_paper_figures.py --v7-eq4   (revision v7: experimental slope, Slave median)
         (output folder: $PAPER_FIG_OUT, default scripts/paper_figures/out; nothing in data/ is changed)
         --extend-slope (with --v7-eq4 only): the v7 slope extended linearly below 1162 deg C.
@@ -17,11 +17,11 @@ Data flow (v7_cr)
                                                               Table1_calibration_stats.csv, level_anchor.json
       -> Figs 3-10 and the numbers quoted in the text, all from these files (Fig. 5: fig5_experiments_cr.py).
 
-Eq. 4 (v7_cr). Garnet Fe3+/SumFe is raised from 0.01 until
-    T_TA98 - T_WZ07(Fe2+) <= a + b t + c (Cr2O3 - 5.364) t,   t = T_TA98 - 1207.02,
-a = -102 (the Fig. 6 +-0.02 optimum; the joint WLS intercept is -92.77), b = -0.2850, c = 0.0673,
-with T_TA98 held within 1124-1394 deg C and Cr2O3 within 1.3-9.8 wt%.
-a is dT_match (the bold line of Fig. 4 and the adopted level of Figs 6 and 7).
+Eq. 4 (v2 method). Garnet Fe3+/SumFe is raised from 0.01 in 0.001 steps until T_TA98 - T_WZ07corr <= +10 deg C,
+    TA98 >= 1124 C:  T_WZ07corr = T_WZ07 + a + b t + c (Cr2O3 - 5.364) t,   t = min(T_TA98, 1394) - 1207.02,
+    TA98 <  1124 C:  T_WZ07corr = T_WZ07 + D_low,
+a = -92.77 (the joint WLS intercept), b = -0.2850, c = 0.0673, Cr2O3 held within 1.3-9.8 wt%, D_low = -113.24.
+The level at the pivot used by the figures (bold line of Fig. 4, adopted level of Figs 6 and 7) is a + 10.
 """
 
 import argparse, json, shutil, subprocess, sys
@@ -145,6 +145,7 @@ def write_cr_outputs(table, out):
     v7_rule, _ = match_level(table)
     info = dict(a=fp.cr_a, b=fp.cr_b, c=fp.cr_c, cr_ref=fp.cr_ref, pivot=fp.cr_pivot_c,
                 cr_range_wt=[fp.cr_min_wt, fp.cr_max_wt], t_range_c=[fp.cr_tmin_c, fp.cr_tmax_c],
+                d_low=fp.cr_d_low_c, t_low_c=fp.cr_low_t_c, dt_match=fp.dt_match_c,
                 v7_rule_level_with_cr_slope=v7_rule, flags_iterated=counts, flags_screened=scr_counts)
     (out / "cr_correction.json").write_text(json.dumps(info, indent=1, default=float))
     return info
@@ -164,7 +165,8 @@ if __name__ == "__main__":
         level, pivot = slave_match_level()
     else:
         assert PARAMS.fe3.wz07_correction == "cr2o3" and PARAMS.fe3.wz07_offset_slope == 0 and PARAMS.fe3.wz07_offset_c == 0
-        level, pivot = PARAMS.fe3.cr_a, PARAMS.fe3.cr_pivot_c
+        # level at the pivot = a + dT_match; set_match_level writes dt_match_c = level - a back (+10)
+        level, pivot = PARAMS.fe3.cr_a + PARAMS.fe3.dt_match_c, PARAMS.fe3.cr_pivot_c
     table = calculate_at_match_level(level, pivot, out)
     write_statistics(table, level, out)
     draw_figures(table)
@@ -177,5 +179,6 @@ if __name__ == "__main__":
         print(f"v7 Eq. 4: c(T) = {fit.b0:.1f} {fit.b1:+.3f} (T - {fit.t_ref:.0f}), {shape} below the experiments; "
               f"match level {level:.1f} deg C at {pivot:.1f} deg C; outputs in {out}")
     else:
-        print(f"Eq. 4 (Cr2O3): {level:.2f} {PARAMS.fe3.cr_b:+.4f} t {PARAMS.fe3.cr_c:+.4f} (Cr2O3 - {PARAMS.fe3.cr_ref:.3f}) t, "
-              f"t = T_TA98 - {pivot:.2f}; flagged {info['flags_screened']}; outputs in {out}")
+        print(f"Eq. 4 (Cr2O3): {PARAMS.fe3.cr_a:.2f} {PARAMS.fe3.cr_b:+.4f} t {PARAMS.fe3.cr_c:+.4f} (Cr2O3 - {PARAMS.fe3.cr_ref:.3f}) t, "
+              f"t = T_TA98 - {pivot:.2f}; {PARAMS.fe3.cr_d_low_c:.2f} below {PARAMS.fe3.cr_low_t_c:.0f}; "
+              f"dT_match {PARAMS.fe3.dt_match_c:+.0f}; flagged {info['flags_screened']}; outputs in {out}")

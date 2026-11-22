@@ -66,26 +66,27 @@ class Fe3Params:
 
     # Temperature agreement level (°C): stop when
     #   TA98 − WZ07corr  ≤  dt_match_c
-    # Revision v3 (option C): a FLAT level with no temperature slope, ANCHORED
-    # (not tuned) to the natural calibration data: the median of
-    #   D = TA98 − WZ07(measured garnet Fe3+)
-    # over all 30 screened Slave calibration samples (no exclusions; the
-    # validation samples are not used).  Exact value −95.97 °C; see
-    # calculations/pt_fo2/level_anchor.py and scripts/anchor_level.py.
+    # v2 method (manuscript s35_lowT, adopted 20 Nov 2026): +10 °C on the Eq. 4
+    # scale, i.e. with the level folded into WZ07corr (cr_a below, and the flat
+    # cr_d_low_c below cr_low_t_c).  Fig. 5 threshold: 79 % of the 19 screened
+    # Slave samples outside the error groups within ±0.02, 100 % within ±0.05.
     # History: 29.0 with the −118 °C offset and Eq. 5 (original); −164.0 with
     # the experimental curve, tuned (rev. v1); −157.6 with the experimental
-    # curve, anchored to the Slave-25 mean (rev. v2).
-    dt_match_c: float = -102.0   # revision v7_cr: adopted level a (Fig. 6 +-0.02 optimum); WLS intercept is -92.77
+    # curve, anchored to the Slave-25 mean (rev. v2); −96.0, Slave-30 median
+    # (rev. v3; calculations/pt_fo2/level_anchor.py); −102.0 with the level NOT
+    # folded into WZ07corr (rev. v7_cr, fe606c1).
+    dt_match_c: float = 10.0
 
-    # Revision v7_cr: TA98 - WZ07 calibration correction that depends on TA98
-    # and garnet Cr2O3 (calculations/pt_fo2/cr_correction.py has the full method):
-    #   stop when  TA98 - WZ07(Fe2+)  <=  cr_a + cr_b*t + cr_c*(Cr2O3 - cr_ref)*t,
-    #   t = clip(TA98, cr_tmin_c, cr_tmax_c) - cr_pivot_c,  Cr2O3 clipped to
-    #   [cr_min_wt, cr_max_wt] (missing Cr2O3 -> cr_ref).  The level cr_a is
-    #   carried by dt_match_c; the t terms are applied as a WZ07 offset.
-    # "cr2o3" (default) or "experimental" (v7 Eq. 4: wz07_offset_* only).
+    # Eq. 4 (calculations/pt_fo2/cr_correction.py has the full method):
+    #   T_WZ07corr = T_WZ07 + C(TA98, Cr2O3),
+    #   C = cr_a + cr_b*t + cr_c*(Cr2O3 - cr_ref)*t   for TA98 >= cr_low_t_c,
+    #       t = clip(TA98, cr_tmin_c, cr_tmax_c) - cr_pivot_c,  Cr2O3 clipped to
+    #       [cr_min_wt, cr_max_wt] (missing Cr2O3 -> cr_ref);
+    #   C = cr_d_low_c (flat)                          for TA98 <  cr_low_t_c.
+    # cr_d_low_c = None drops the flat branch (the slope is then held at cr_tmin_c).
+    # "cr2o3" (default) or "experimental" (v7 Eq. 4: wz07_offset_* only, level in dt_match_c).
     wz07_correction: str = "cr2o3"
-    cr_a: float = -102.0   # adopted Fig. 6 optimum; WLS intercept CR_A_FIT = -92.77342661716227
+    cr_a: float = -92.77342661716227   # WLS intercept CR_A_FIT, folded into Eq. 4 (fe606c1: -102 via dt_match_c)
     cr_b: float = -0.285024042750883
     cr_c: float = 0.06733635988444961
     cr_ref: float = 5.364313828837838
@@ -94,12 +95,15 @@ class Fe3Params:
     cr_max_wt: float = 9.8
     cr_tmin_c: float = 1124.0
     cr_tmax_c: float = 1394.0
+    cr_d_low_c: float | None = -113.24224691422943   # mean TA98 - WZ07(measured) of the 8 low-T natural samples
+    cr_low_t_c: float = 1124.0
 
     # Calibration offset applied to raw WZ07 (°C):
     #   T_WZ07corr = T_WZ07raw − (wz07_offset_c + wz07_offset_slope * T_TA98)
     # Slope = 0 is a flat offset. Non-zero slope is a T-sensitive
     # experimental calibration (TA98−WZ07 = a·T + b  ⇒  offset = −a·T − b).
     # Revision v3: no offset and no slope (the level is carried by dt_match_c).
+    # Since v7_cr the Eq. 4 correction (cr_*) is added on top of this offset.
     # The weighted 13-experiment fit (scripts/weighted_thermometer_regression.py;
     # rev. v1/v2: wz07_offset_c −734.5397, slope 0.554746, held flat outside
     # 1162.03–1619.80 °C) is shown in the paper (Fig. 5) but is not applied,
@@ -127,7 +131,7 @@ class Fe3Params:
     #   no level shift.  Re-derive with:  python scripts/fit_calibration.py
     apply_empirical_correction: bool = False   # revision v1: Eq. 5 dropped
     t_emp_min_c: float = 1130.0
-    emp_fit_dt_c: float = -102.0   # error groups evaluated at the adopted level (v3: -96.0; was 25.0)
+    emp_fit_dt_c: float = 10.0   # error groups evaluated at the adopted level (v7_cr: -102.0; v3: -96.0; was 25.0)
     emp_blue_threshold: float = 0.05
     emp_red_ids: tuple = ("14-78", "MX5011", "8-1", "MX104", "MX5000", "40-38")
     emp_offset: float = 0.0   # unused; kept for backward compatibility

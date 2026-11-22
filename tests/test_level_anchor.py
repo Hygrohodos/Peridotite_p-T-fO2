@@ -1,6 +1,7 @@
 """Revision v3 (option C): flat WZ07 match level anchored to the median natural Slave calibration discrepancy.
-Kept as a regression test of the v3 anchor rule: run with the v3 parameters (no Cr2O3 correction, level -96 C);
-the default v7_cr correction is tested in tests/test_cr_correction.py."""
+Kept as a regression test of the v3 anchor rule: run with the v3 parameters (no Cr2O3 correction). With the
+analytical-quality screen the anchor set is the 23 screened Slave samples (median -99.48 C; v3 had 30 and -96.04 C);
+the default Eq. 4 correction is tested in tests/test_cr_correction.py."""
 import sys
 from pathlib import Path
 import numpy as np
@@ -15,11 +16,14 @@ from calculations.pt_fo2 import level_anchor as la  # noqa: E402
 from calculations.pt_fo2 import calibration as calib  # noqa: E402
 
 
+V3_LEVEL = -99.48   # v3 rule (Slave median of D) on the quality-screened anchor set
+
+
 @pytest.fixture(autouse=True, scope="module")
 def v3_params():
     fp = PARAMS.fe3
     saved = (fp.wz07_correction, fp.dt_match_c)
-    fp.wz07_correction, fp.dt_match_c = "experimental", -96.0
+    fp.wz07_correction, fp.dt_match_c = "experimental", V3_LEVEL
     yield
     fp.wz07_correction, fp.dt_match_c = saved
 
@@ -32,7 +36,7 @@ def df():
 
 def test_params_level_is_the_anchor(df):
     a = la.anchor_level(df)
-    assert a["n"] == 30
+    assert a["n"] == 23
     assert PARAMS.fe3.dt_match_c == pytest.approx(a["median_D_C"], abs=0.05)
     assert a["median_r_C"] == pytest.approx(a["median_D_C"])        # no curve: r = D
     assert a["ci95_bootstrap_D_C"][0] < a["median_D_C"] < a["ci95_bootstrap_D_C"][1]

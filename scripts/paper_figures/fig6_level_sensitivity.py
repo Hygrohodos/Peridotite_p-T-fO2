@@ -5,8 +5,9 @@ from common import *
 def draw_fig6(df):
     """Fig. 6 from the pipeline table df: sweep of the match level, adopted level marked."""
     base,meas,blue,red,rem=mf._error_groups(df)
-    s=calib.dt_sweep(df,0.0,0.0,dts=[to_pipeline(v) for v in np.arange(-250,0.5,1.0)],mask=rem)
-    s['dt']=(s.dt-to_pipeline(0.0)).round(0)   # level at the pivot
+    lv=np.arange(-250,0.5,1.0)
+    s=calib.dt_sweep(df,0.0,0.0,dts=[to_pipeline(v) for v in lv],mask=rem)
+    s['dt']=lv.round(0)   # level at the pivot (dt_sweep truncates the pipeline value to int)
     lev=match_level()
     sa=calib.dt_sweep(df,0.0,0.0,dts=[to_pipeline(lev)],mask=rem).iloc[0]
     opt=calib.select_dt(s); ro=s[s.dt==opt].iloc[0]; ties=s.loc[s.p02==s.p02.max(),'dt']
