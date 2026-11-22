@@ -1,5 +1,5 @@
 """
-Oxygen-fugacity buffers for Fig. 12 (P vs Δlog fO₂ FMQ).
+Oxygen-fugacity buffers for Figs 9 and 10 (P vs Δlog fO₂ FMQ).
 
 Solid-state buffers use the Frost (1991) parameterization
     log10 fO2 = A/T + B + C*(P_bar - 1)/T
@@ -72,7 +72,7 @@ def delta_frost_vs_sd1_fmq(name: str, T_C, P_kbar):
 def cratonic_geotherm_C(P_kbar):
     """
     Simple 40 mW m⁻² cratonic geotherm (Hasterok & Chapman style),
-    adequate for drawing reference buffers on Fig. 12.
+    adequate for drawing reference buffers on Figs 9 and 10.
     T (°C) ≈ 420 + 14.2 P(kbar)  →  ~850 °C at 30 kbar, ~1200 °C at 55 kbar.
     """
     P = np.asarray(P_kbar, dtype=float)

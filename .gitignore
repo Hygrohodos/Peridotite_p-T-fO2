@@ -20,3 +20,6 @@ Thumbs.db
 .vscode/
 
 # Result tables in data/derived/ are part of this release and should be tracked.
+
+# paper figure default output
+scripts/paper_figures/out/

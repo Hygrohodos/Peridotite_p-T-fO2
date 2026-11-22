@@ -2,10 +2,15 @@
 """
 Rebuild chapter figures from the calculated xenolith table.
 
+LEGACY NUMBERING: every figure number in this file (Fig. 1-12, fig01-fig12 functions and file
+stems) is the ORIGINAL-SUBMISSION numbering, not manuscript v7. The v7 figures are built by
+scripts/paper_figures/make_paper_figures.py; this module is imported there only for helpers.
+Legacy figures are written to Figures/original_submission/.
+
 Usage (from the project root):
     python scripts/make_figures.py
 
-Outputs PNG + PDF files to Figures/.
+Outputs PNG + PDF files to Figures/original_submission/.
 Edit symbol / colour choices below if you want a closer Grapher match.
 """
 
@@ -35,7 +40,7 @@ from calculations.pt_fo2.params import PARAMS
 from calculations.pt_fo2 import calibration as calib
 
 FULL = ROOT / "data" / "derived" / "screened_PT.csv"
-OUT = ROOT / "Figures"
+OUT = ROOT / "Figures" / "original_submission"
 _LOC_CANDIDATES = (
     ROOT / "data" / "master" / "kimberlite_locations.csv",
     ROOT / "data" / "kimberlite_locations.csv",
@@ -196,25 +201,11 @@ def _scatter_by_craton(ax, df, x, y, screened_only=False, legend_loc="lower left
 
 
 def _apply_journal_style():
-    """CMP-ready fonts and line weights at print size (no later rescaling)."""
-    plt.rcParams.update({
-        "font.family": "sans-serif",
-        "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
-        "font.size": 8,
-        "axes.labelsize": 8,
-        "axes.titlesize": 8,
-        "xtick.labelsize": 8,
-        "ytick.labelsize": 8,
-        "legend.fontsize": 7,
-        "axes.linewidth": 0.8,
-        "xtick.major.width": 0.6,
-        "ytick.major.width": 0.6,
-        "xtick.major.size": 3.0,
-        "ytick.major.size": 3.0,
-        "lines.linewidth": 1.15,
-        "pdf.fonttype": 42,
-        "ps.fonttype": 42,
-    })
+    """House style for every figure. Its one definition is scripts/paper_figures/unified.py (style()),
+    imported here at call time (unified imports this module for helpers)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "paper_figures"))
+    import unified
+    unified.style()
 
 
 def _save(fig, stem, tight=True, dpi=600):
@@ -466,14 +457,9 @@ def fig04_screens(df):
 def _fe3_at_dt(df, dt):
     from calculations.pt_fo2.fe3_correction import iterate_garnet_fe3
     from calculations.pt_fo2.params import Fe3Params, CalculationParams
-    fp = Fe3Params(
-        xfe3_start=PARAMS.fe3.xfe3_start,
-        dxfe3=PARAMS.fe3.dxfe3,
-        dt_match_c=float(dt),
-        wz07_offset_c=PARAMS.fe3.wz07_offset_c,
-        max_steps=PARAMS.fe3.max_steps,
-        apply_empirical_correction=False,
-    )
+    from dataclasses import replace
+    # Keep every offset field (slope and T limits too), not only the flat value.
+    fp = replace(PARAMS.fe3, dt_match_c=float(dt), apply_empirical_correction=False)
     out = iterate_garnet_fe3(
         df, verbose=False,
         params=CalculationParams(
@@ -1081,13 +1067,13 @@ def fig08_stoichiometry(df):
     diff = (est[ok] - meas[ok]).abs()
     ax.text(
         0.97, 0.04,
-        f"n = {int(ok.sum())}\n±0.02: {(diff<=0.02).mean()*100:.0f}%\n"
-        f"±0.05: {(diff<=0.05).mean()*100:.0f}%",
+        f"n = {int(ok.sum())}\n±0.02: {(diff<=0.02+1e-9).mean()*100:.0f}%\n"
+        f"±0.05: {(diff<=0.05+1e-9).mean()*100:.0f}%",
         transform=ax.transAxes, fontsize=8, ha="right", va="bottom",
     )
     print(f"  Fig08 Quinn: n={int(ok.sum())}  "
-          f"±0.02={(diff<=0.02).mean()*100:.0f}%  "
-          f"±0.05={(diff<=0.05).mean()*100:.0f}%")
+          f"±0.02={(diff<=0.02+1e-9).mean()*100:.0f}%  "
+          f"±0.05={(diff<=0.05+1e-9).mean()*100:.0f}%")
     _save(fig, "Fig08_stoichiometric_Fe3")
 
 
@@ -1166,8 +1152,8 @@ def fig09_nonslave_fe3(df):
     diff = (est[ok] - meas[ok]).abs()
     axL.text(
         0.98, 0.04,
-        f"n = {int(ok.sum())}\n±0.02: {(diff<=0.02).mean()*100:.0f}%\n"
-        f"±0.05: {(diff<=0.05).mean()*100:.0f}%",
+        f"n = {int(ok.sum())}\n±0.02: {(diff<=0.02+1e-9).mean()*100:.0f}%\n"
+        f"±0.05: {(diff<=0.05+1e-9).mean()*100:.0f}%",
         transform=axL.transAxes, fontsize=8, ha="right", va="bottom",
     )
 
@@ -1176,8 +1162,8 @@ def fig09_nonslave_fe3(df):
     _style_ax(axR, "Temperature (°C)",
               r"Fe$^{3+}$/$\Sigma$Fe (measured−estimated)")
     print(f"  Fig09 non-Slave: n={int(ok.sum())}  "
-          f"±0.02={(diff<=0.02).mean()*100:.0f}%  "
-          f"±0.05={(diff<=0.05).mean()*100:.0f}%")
+          f"±0.02={(diff<=0.02+1e-9).mean()*100:.0f}%  "
+          f"±0.05={(diff<=0.05+1e-9).mean()*100:.0f}%")
     fig.tight_layout()
     _save(fig, "Fig08_nonslave_Fe3")
 
@@ -1360,6 +1346,12 @@ def main():
     tab = calib.calibration_stats(df)
     tab.to_csv(ROOT / "data" / "derived" / "Table1_calibration_stats.csv", index=False)
     print(tab.drop(columns="notes").round(4).to_string(index=False))
+    if not PARAMS.fe3.apply_empirical_correction:
+        # Revision v2/v3: the legacy figure functions below draw the ORIGINAL calibration
+        # (Eq. 5, Delta T sweep 0-75 C) and no longer apply. Paper figures are built by
+        # scripts/paper_figures/make_all.sh; Table 1 alone by scripts/table1_stats.py.
+        print("Legacy figures skipped (Eq. 5 is off); run: bash scripts/paper_figures/make_all.sh")
+        return
     print(f"Writing figures to {OUT}")
     _apply_journal_style()
     fig01_map()
